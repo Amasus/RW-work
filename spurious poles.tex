@@ -508,11 +508,11 @@ The Wilson loop diagram\bas V_1 =  \begin{tikzpicture}[rotate=67.5,baseline=(cur
 \end{eg}
 
 \begin{prop}
-Let $C$ be a \todo{minimial paratmetrization}{needs a definition} of the positroid cell $\Sigma$. Let $V$ and $W$ be \hlfix{cyclic flats}{needs defintion} of less than full rank such that one is not contained in the other ($W \subsetneq V$) in the associated matroid $M(W)$. For any $v \in V \setminus W$, the matroid defined by replacing the cyclic flats $W$ and $V$ with $W \cup v$ and $V \setminus v$ reduces the dimension of the positroid cell thus defined.
+Let $C$ be a \hlfix{minimial paratmetrization}{needs a definition} of the positroid cell $\Sigma$. Let $V$ and $W$ be \hlfix{cyclic flats}{needs defintion} of less than full rank suchhl that one is not contained in the other ($W \subsetneq V$) in the associated matroid $M(W)$. The matroid defined by replacing the cyclic flats $W$ and $V$ with $W \cup V$ reduces the dimension of the positroid cell thus defined.
 \end{prop}
-{\color{red} This needs some discussion and clarification. For instance I" playing fast and loose between the variable valued matrix, the matroid and the positroid it parametrized.}
+{\color{red} This needs some discussion and clarification. For instance I'm playing fast and loose between the variable valued matrix, the matroid and the positroid it parametrized.}
 \begin{proof}
-Note that since $W$ and $V$ are both cyclic flats, any elements of $M$ or rank $0$ (columns of $C$ consisting of only $0$) are in both $W$ and $V$. Without loss of generality, assume that $\rk(V) \leq \rk(S)$. That it, the columns of $V$ have non-zero entries in fewer rows of $C$ than $W$ does. Then one may replace the non-zero entries in $v$ with $0$, and replace them with the same number of non-zero entries with rows that are found in $W$ but not $V$. By \hlfix{arguments in {\cite{basisshapeloci}}}{discuss} the associated positroid cell has lower dimension that the positroid cell associated to $C$.  
+Note that since $W$ and $V$ are both cyclic flats, any elements of $M$ or rank $0$ (columns of $C$ consisting of only $0$) are in both $W$ and $V$. Without loss of generality, assume that $\rk(V) \leq \rk(W)$. That it, the columns of $V$ have non-zero entries in fewer rows of $C$ than $W$ does. Then one may replace the non-zero entries in $V$ with $0$, and replace them with the same number of non-zero entries with rows that are found in $W$ but not $V$. By \hlfix{arguments in {\cite{basisshapeloci}}}{discuss} the associated positroid cell has lower dimension that the positroid cell associated to $C$.  
 \end{proof}
 
 \begin{thm}
