@@ -508,7 +508,7 @@ The point represented by
 is in $G(W) \setminus \Sigma(W)$, since the minor $\Delta_{I_1} = \Delta_{12}$ vanishes. Hence,
 %
 \begin{displaymath}
-R(W) = COMPUTE
+R(W) = (c_{p,1}c_{q,2} - c_{p,2}c_{q,1}) c_{p,1} c_{p,4} c_{p,5} c_{q,2} c_{q,5} c_{q,6}
 \end{displaymath}
 \noindent
 vanishes at this point.
@@ -534,28 +534,43 @@ The point represented by
 is in $\overline{\Sigma(W)} \setminus \Sigma(W) \cup G(W)$.
 \end{eg}
 
-This fact has been shown explicity in the case of $n = 4$ and $k=2$, however, has not been shown in general.
+This fact has been shown explicitly in the case of $n = 4$ and $k=2$, however, has not been shown in general.
 
 {\color{red} We should say something here about the non-orientability result? Definitely something about all the boundary cancelation calculation are being done on a section of the bundle in $\Grall(k, n+1)$ as identified in \cite{non-orientable}.}
 
 \section{The poles of Wilson loop diagrams}
 
-\subsection{Cluster algebras, frozen variables, Grassman Necklaces}
+\subsection{Cluster algebras, frozen variables, Grassmann Necklaces}
 
-This (unfortunately) has little to do with this paper, but we should probably speak to this.
+As a brief aside, we note that the polynomial $R(W)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(W)$. Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(W)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(W)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}$ be the reverse Grassmann necklace associated to $\Sigma(W)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(W)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(W)$ can equivalently be defined as an intersection of reverse Schubert varieties. Running the combinatorial algorithm for {\color{red} citation?} producing a Grassmann necklace for $\Sigma(W)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(W)$. Define
+%
+\begin{displaymath}
+R^{\ast}(W) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
+\end{displaymath}
+
+{\color{red} the paragraph above might have been kind of fast, but i think it gives enough to convince the reader of the following lemma we had been including? at least enough for an aside section?
 
 \begin{lem}
-We can read the backwards GN off the diagram by reversing direction. {\color{red} do we need this?}
-\end{lem}
+We can read the backwards GN off the diagram by reversing direction. 
+\end{lem}}
+
 
 \begin{thm}
-Result about forward and backwards Grassman Necklaces. \sanote{Does this need a proof that one can read the backwords GN off the diagram? Not sure if we need that proof or not.}
+Using the notation from above, $R^{\ast}(W) = R(W)$.
 \end{thm}
 
-Maybe say something about parametrizing w.r.t. matrix entries vs. Plucker coordinates? Don't know what?
+\begin{proof}
+Since $R^{\ast}(W)$ and by $R(W)$ are both radical polynomials defining the $\overline{\Sigma(W)}$, $R^{\ast}(W) = R(W)$.
+\end{proof}
+
+\begin{rmk}
+Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $c_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(W)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. {\color{red} is this paragraph enough to satisfy someone who is picky about these things?}
+\end{rmk}
+
+{\color{red} finally, have a paragraph just saying what role $R^{\ast}(W)$ plays in the cluster algebra stuff (at least as well as i understand it)}
 
 \begin{thm}
-If a WLD does not have a non-trivial exact subdiagram, then $C(W)$ is its unique  minimal representation. {\color{red} Again, do we need this?}
+If a WLD does not have a non-trivial exact subdiagram, then $C(W)$ is its unique  minimal representation. {\color{red} Again, do we need this?...i don't think we need this for this section?}
 \end{thm}
 
 \subsection{Geometry of the poles}
