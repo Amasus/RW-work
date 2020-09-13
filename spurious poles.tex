@@ -386,8 +386,7 @@
 \subsection{Diagramatics and matroids \label{sec:diagramdefs}}
 A Wilson loop diagram $W = (\cP, [n])$ consists of a cyclically ordered set $[n] = \{1, \cdots, n\}$ and a set of propagators $\cP = \{(i,j) | i, j \in [n]\}$ as an unordered pair of integers. We depict these diagrams by drawing the set $[n]$ as vertices on a circle. The $i^{th}$ edge of the marked circle is the edge between the vertices $i$ and $i+1$. Then the propagator $p =(i,j)$ is depicted as a wavy line on the interior of the circle connecting the $i^{th}$ edge to the $j^{th}$ edge. In this manner, we say that the propagator $p$ is supported by the vertices $V_p = \{i, i+1, j, j+1\}$, as these are the vertices bounding the edges that $p$ ends on. 
 
-More generally, for a subset of propagators $P \subset \cP$, we write $V_P = \cup_{p \in P} V_p$ to indicate the set of vertices supporting the propagator set $P$. For any $V \subset [n]$, the wet of propagators supported by $V$ is written $\Prop(V) = \{ p \in \cP | V_p \cap V \neq \emptyset\}$. 
-
+More generally, for a subset of propagators $P \subset \cP$, we write $V_P = \cup_{p \in P} V_p$ to indicate the set of vertices supporting the propagator set $P$. For any $V \subset [n]$, the set of propagators supported by $V$ is written $\Prop(V) = \{ p \in \cP | V_p \cap V \neq \emptyset\}$.  
 For example, we draw $W = (\{(3,5), (1,7)\}, [8])$ as \bas W\ =\ \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{8}{1.5}
@@ -437,11 +436,17 @@ Note that, as a subspace of $\Grall(k, n)$ (resp. $\Grall(k, n+1)$), or ordering
 \end{rmk}
 
 
-The matroidal properties of Wilson loop diagrams derived in \cite{Wilsonloops} \todo{cite result?} can be verified by considering the independent columns of $C(W)$. The fact that as matroids, these are positroids indicates that there exist values for the entries of $C(W)$ such that the resulting matrix has positive maximal minors. That is, that the subspace of $\Grall(k,n)$ parametrized by $C(W)$ intersects $\Gr(k,n)$. In particular, it intersects the corresponding positroid cell inside $\Gr(k,n)$. \sanote{I don't want to go into a long discussion of what a positroid cell is, or how they tile the positive Grassmannians. On the other hand, it is necessary for a discussion of poles. Any ideas of how/where to put it in?} Let \hlfix{$G(W)$}{Cameron, do you have a name you like for this?} be the subspace of $\Gr(k,n)$ parametrized by $C(W)$. The author of \cite{basisshapeloci} shows that each $G(W)$ parametrizes dense subset of a $3k$ dimensional positroid cell, $\Sigma(W)$. In particular, the closures of each space are identical: $\overline{G(W)\cap \Gr(k,n)} = \overline{\Sigma(W)}$. 
+The matroidal properties of Wilson loop diagrams derived in \cite{Wilsonloops}  can be verified by considering the independent columns of $C(W)$. Namely, 
+\begin{enumerate} 
+\item Theorem [???] of \cite{Wilsonloops} states that a set of vertices of a Wilson loop diagram, $(\cP, [n])$  is independent if and only if no subset supports fewer propagators than vertices in the subset. I.e. $V \subset [n]$ is independent if, for all $U \subseteq V$, $\Prop(U) \geq |U|$. In terms of rows and columns of $C(W)$, this simply states that any set of columns of $C(W)$ contains a dependent subset if said subset is non-zero on fewer rows than columns in the subset.
+\item Theorem [???] shows that all admissible Wilson loop diagrams correspond to positroids. This means that, as matroids, the Wilson loop diagrams can be represented by matrices with all positive maximal minors. That is, the subspace of $\Grall(k,n)$ parametrized by $C(W)$ intersects $\Gr(k,n)$.
+\end{enumerate}
 
-We have now constructed a map from Wilson loop diagrams to the positroid cells. Let $\cW_{k,n}$ be the set of all admissible Wilson loop diagrams with $k$ propagators and $n$ vertices. Then \bas \cW_{k,n} \leftrightarrow (\RP^4 )^{\times k} \hookrightarrow (\RP^n )^{\times k} \rightarrow G(W)  \;.\eas
+Following the conventions of \cite{casestudy, generalcombinatorics1}, we call the positroid cell defined by the Wilson loop diagram $W$, $\Sigma(W)$. In \cite{basisshapeloci}, the author shows that the closure of the subspace of $\Gr(k,n)$ parametrized by the matrices $C(W)$ is $\overline{\Sigma(W)}$\sanote{I haven't defined what a positoid cell is}. Let $G(W)$ be the subspace of $\Gr(k,n)$ parametrized by $C(W)$. In other words, the space $G(W)$ differs from the positroid cell $\Sigma(W)$ only on a set of measure 0. For an explict example of where these spaces differ, see Example \ref{eg:closuresmatch}. The author of \cite{basisshapeloci} also shows each $\Sigma(W)$ is a $3k$ dimensional cell.
 
-{\color{red}  I want to say something here about the last map being neither surjective nor injective. I think this comes mostly from the result that most WLDs map to different positroids, so therefore, they must map to different subspaces of $\Grall{k,n}$. However, exact diagrams map to different parametrizations of the same space. The reason I'm making a big deal of it here is that the integrals that we discuss below are all over $\RP^4$, but we talk about the geometry of $\Gr(k,n)$, and the fact that one goes cleanly into another is not at all clear to me. I'd love your input on this.}
+In \cite{non-orientable}, the authors show that  the subspace of $\Grall(k,n)$ parameterized by $C_*(W)$ can be viewed as a real $k$ bundle over the space parametrized by $C(W)$ . Restricting to $G(W)$ gives the vector bundle $G_*(W) \rightarrow G(W)$. As shown in Theorem [??] of loc. cit., the space $G_*(W)$ is not orientable. 
+
+We have now constructed a map from Wilson loop diagrams to the positroid cells. Let $\cW_{k,n}$ be the set of all admissible Wilson loop diagrams with $k$ propagators and $n$ vertices. Then \ba \cW_{k,n} \leftrightarrow (\RP^4 )^{\times k} \hookrightarrow (\RP^{n+1} )^{\times k} \leftarrow G_*(W)  \;. \label{eq:maps}\ea The composition of the first two maps comes from the definition of the vectors $Y_p$.  The map $G_*(W) \rightarrow (\RP^{n+1} )^{\times k}$ is a dense inclusion for each $W \in \cW_{k,n}$. In particular, this map misses exactly the points in the image of $W$ in $(\RP^{n+1} )^{\times k}$ where the set of vectors $Y_p$ would not have full rank when evaluated. However, this is a space of measure $0$ in the image of $W$ in $(\RP^{n+1} )^{\times k}$. \sanote{haven't said anything about exact subdiagrams yet.}
 
 \subsection{Integrals and poles \label{sec:integrals}}
 
@@ -455,6 +460,8 @@ We are now ready to define the integrals assoicated to each Wilson loop diagram 
 \item Define $R_e = c_{q_1, e} \big(\prod_{r = 1}^{s-1} (c_{q_r, e+1}c_{q_{r+1}, e+1} - c_{q_r, e+1}c_{q_{r+1}, e})\big) c_{q_s, e}$
 \item $R(W) = \prod_{e \in [n]} R_e$
 \end{enumerate} \end{dfn}
+
+Note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}.
 
 \begin{dfn}
 We say that $q_i$ and $q_{i+1}$ are adjascent on the edge $e$.
@@ -487,7 +494,7 @@ G(W) \setminus \Sigma(W) \subset \overline{\Sigma(W)} \setminus \Sigma(W). \qedh
 \end{displaymath}
 \end{proof}
 
-\begin{eg}
+\begin{eg} \label{eg:closuresmatch}
 This example illustrates the differences between the sets $G(W)$, $\Sigma(W)$, and $\overline{\Sigma(W)}$. Let
 \bas C(W) =
 \begin{bmatrix}
@@ -542,17 +549,17 @@ This fact has been shown explicitly in the case of $n = 4$ and $k=2$, however, h
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces}
 
-As a brief aside, we note that the polynomial $R(W)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(W)$. Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(W)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(W)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}$ be the reverse Grassmann necklace associated to $\Sigma(W)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(W)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(W)$ can equivalently be defined as an intersection of reverse Schubert varieties. Running the combinatorial algorithm for {\color{red} citation?} producing a Grassmann necklace for $\Sigma(W)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(W)$. Define
+As a brief aside, we note that the polynomial $R(W)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(W)$. Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(W)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(W)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(W)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(W)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(W)$ can equivalently be defined as an intersection of reverse Schubert varieties. Running the combinatorial algorithm for {\color{red} citation?} produces a Grassmann necklace for $\Sigma(W)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(W)$. Define
 %
 \begin{displaymath}
 R^{\ast}(W) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
 \end{displaymath}
 
-{\color{red} the paragraph above might have been kind of fast, but i think it gives enough to convince the reader of the following lemma we had been including? at least enough for an aside section?
+%{\color{red} the paragraph above might have been kind of fast, but i think it gives enough to convince the reader of the following lemma we had been including? at least enough for an aside section?
 
-\begin{lem}
-We can read the backwards GN off the diagram by reversing direction. 
-\end{lem}}
+%\begin{lem}
+%We can read the backwards GN off the diagram by reversing direction. 
+%\end{lem}}
 
 
 \begin{thm}
@@ -560,18 +567,22 @@ Using the notation from above, $R^{\ast}(W) = R(W)$.
 \end{thm}
 
 \begin{proof}
-Since $R^{\ast}(W)$ and by $R(W)$ are both radical polynomials defining the $\overline{\Sigma(W)}$, $R^{\ast}(W) = R(W)$.
+This follows from the fact that $R^{\ast}(W)$ and by $R(W)$ are both radical polynomials defining the variety $\overline{\Sigma(W)}$, $R^{\ast}(W) = R(W)$. 
+
+Theorem ?? from \cite{generalcombinatorics2} shows that $R(W)$ generates the radical of the ideal generated by $\prod_\mathcal{I} \Delta_{I_i}$, where $\mathcal{I}$ is the Grassmann Necklace of $\Sigma(W)$. Since the $\Delta_{I_i}$ do not vanish on $\Sigma(W)$, $R(W)$ vanishes on $\overline{\Sigma(W)} \setminus \Sigma(W)$. Therefore, it is the polynomial that generates the radical ideal of the variety $\overline{\Sigma(W)}\setminus \Sigma(W)$ \cite{??}
+
+Since $R^*(W)$ is the product of $\Delta_{I^*_i}$, it too is the polynomial generating the  the radical ideal of the variety $\overline{\Sigma(W)}\setminus \Sigma(W)$. Therefore, $R^{\ast}(W) = R(W)$. \todo{Okay Cam, fix the hash I've made of this; Recall note sent to me on May 18}
 \end{proof}
 
 \begin{rmk}
-Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $c_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(W)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. {\color{red} is this paragraph enough to satisfy someone who is picky about these things?}
+Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $c_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(W)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. 
 \end{rmk}
 
 {\color{red} finally, have a paragraph just saying what role $R^{\ast}(W)$ plays in the cluster algebra stuff (at least as well as i understand it)}
 
-\begin{thm}
-If a WLD does not have a non-trivial exact subdiagram, then $C(W)$ is its unique  minimal representation. {\color{red} Again, do we need this?...i don't think we need this for this section?}
-\end{thm}
+%\begin{thm}
+%If a WLD does not have a non-trivial exact subdiagram, then $C(W)$ is its unique  minimal representation. {\color{red} Again, do we need this?...i don't think we need this for this section?}
+%\end{thm}
 
 \subsection{Geometry of the poles}
 
