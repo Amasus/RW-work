@@ -450,7 +450,7 @@ We have now constructed a map from Wilson loop diagrams to the positroid cells. 
 
 \subsection{Integrals and poles \label{sec:integrals}}
 
-The Wilson loop diagrams represent the tree level contributions to the scattering amplitudes in the physical theory N=4 SYM. The holomorphic Wilson loop for $n$ particles and $k$ propagators gives the contribution to the n particle scattering amplitude of N=4 SYM by $k$ propagators. The tree level contribution to this amplitude is given by a sum of integrals associated to admissible Wilson loop diagrams: \bas \cA_{k,n}^{tree} = \sum_{W \subset \cW} I(W) \;.\eas The scattering amplitude is a functional on the particles of the theory, represented in twistor space. In this case, the external data are represented as $n$ sections of a $k$ dimensional real vector bundle over a real twistor space, $\{Z_1, \ldots, Z_n\}$  such that the $n \times n+4$ matrix who's $i^{th}$ row is $Z_i$ has positive maximal minors. Furthemore, we fix a guage section, $Z_0$, which can be taken, without loss of generality to be a $0$ section. We define the matrices \bas \cZ = \begin{bmatrix} - & Z_1& - \\ & \vdots &  \\ - & Z_n& -\end{bmatrix} \; ; \; \cZ_* = \begin{bmatrix}- & Z_0& - \\  - & Z_1& - \\ & \vdots & \\  - & Z_n& -\end{bmatrix} \; .\eas By the above, $\cZ$ has positive maximal minors. 
+The Wilson loop diagrams represent the tree level contributions to the scattering amplitudes in the physical theory N=4 SYM. The holomorphic Wilson loop for $n$ particles and $k$ propagators gives the contribution to the n particle scattering amplitude of N=4 SYM by $k$ propagators. The tree level contribution to this amplitude is given by a sum of integrals associated to admissible Wilson loop diagrams: \ba \cA_{k,n}^{tree} = \sum_{W \subset \cW_{k,n}} I(W) \;.\label{eq:treelevelamplitude}\ea The scattering amplitude is a functional on the particles of the theory, represented in twistor space. In this case, the external data are represented as $n$ sections of a $k$ dimensional real vector bundle over a real twistor space, $\{Z_1, \ldots, Z_n\}$  such that the $n \times n+4$ matrix who's $i^{th}$ row is $Z_i$ has positive maximal minors. Furthemore, we fix a guage section, $Z_0$, which can be taken, without loss of generality to be a $0$ section. We define the matrices \bas \cZ = \begin{bmatrix} - & Z_1& - \\ & \vdots &  \\ - & Z_n& -\end{bmatrix} \; ; \; \cZ_* = \begin{bmatrix}- & Z_0& - \\  - & Z_1& - \\ & \vdots & \\  - & Z_n& -\end{bmatrix} \; .\eas By the above, $\cZ$ has positive maximal minors. 
 
 We are now ready to define the integrals assoicated to each Wilson loop diagram $W = (\cP, [n])$, with $k = |\cP|$:
 
@@ -541,9 +541,32 @@ The point represented by
 is in $\overline{\Sigma(W)} \setminus \Sigma(W) \cup G(W)$.
 \end{eg}
 
-This fact has been shown explicitly in the case of $n = 4$ and $k=2$, however, has not been shown in general.
+This fact has been shown explicitly in the case of $n = 6$ and $k=2$, however, has not been shown in general.
 
-{\color{red} We should say something here about the non-orientability result? Definitely something about all the boundary cancelation calculation are being done on a section of the bundle in $\Grall(k, n+1)$ as identified in \cite{non-orientable}.}
+It is worth noting here that with the $N^kMHV$ (tree level) amplitude
+on $n$ points is taken to be the sum of all the integrals associated
+to Wilson loop diagrams. Above, we have shown that the spurious poles
+all fall on the boundaries of the geometric space. Below, we show that
+all the spurious poles do, in fact, cancel. However, unlike in the
+Amplituhedron story, one cannot assoiciate a geometric meaning to the
+sum of these integrals. In \cite{non-orientable}, the authors show
+that while the subspace of $\Grall (k,n+1)$ associated to each
+$C_*(W)$ is orientable, the union of said spaces are not. Therefore,
+one cannot interpret the sum of the associated integrals as the volume
+of a geometric space. This result has also been shown explicitly and
+separately in \cite{Heslop-Stewart} which calucates contradiction that
+occures if one attempts this interpretation.
+
+Here, we propose a different geometric interpretation of the sum of
+these integrals. One can consider \hlfix{$G_*(W)$ as a $k$-dimensional
+  line bundle over $G(W)$ }{Is this true, or is this only true on
+  $\Sigma(W)$?} \cite{non-orientable}. Then, we may consider the
+cancelation of spurious poles on any section of the bundle. In fact,
+for the spurious poles, one typically sets the values of $c_{p,0}$ to
+be $\pm 1$, as the physical poles of $N=4 SYM$ occur when $c_{p,0} =
+0$. \hlfix{After fixing any such section, the sum can be interpreted as a
+volume on this section.}{verify that this is consistent with \eqref{eq:maps}}
+{\color{red} Do we have a proof that the space parametrized by the $C_*(W)$, or tiled by the $\Sigma(W)$, is orientable? Can we create such a proof using arguments similar to that showing that the full space is non-orientable? maybe skip the volume argument in this paragraph altogether?}
 
 \section{The poles of Wilson loop diagrams}
 
