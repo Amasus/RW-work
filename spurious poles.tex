@@ -624,7 +624,7 @@ Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matri
 
 \subsection{Geometry of the poles}
 
-Note that not every co-dimension one boundary of a $\Sigma(W)$ do not contain a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not causing any perviously vanishing minors to become positive. Sending parameters to $0$, which causes the polynomial $R(W)$ to vanish, is certainly one way to do this. However, the boundary of $\Sigma(W)$ contains other positroid cells which do not necessarily intersect the vanishing set of $R(W)$. For instance, consider the following example  
+Note that not every co-dimension one boundary of a $\Sigma(W)$ contains a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not causing any perviously vanishing minors to become positive. Sending parameters to $0$, which causes the polynomial $R(W)$ to vanish, is certainly one way to do this. However, the boundary of $\Sigma(W)$ contains other positroid cells which do not necessarily intersect the vanishing set of $R(W)$. For instance, consider the following example:
 
 \begin{eg}
 The Wilson loop diagram\bas V_1 =  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
@@ -649,9 +649,6 @@ replacing the cyclic flats $W$ and $V$ with $W \cup V$ reduces the dimension of 
 Note that since $W$ and $V$ are both cyclic flats, any elements of $M$ or rank $0$ (columns of $C$ consisting of only $0$) are in both $W$ and $V$. Without loss of generality, assume that $\rk(V) \leq \rk(W)$. That it, the columns of $V$ have non-zero entries in fewer rows of $C$ than $W$ does. Then one may replace the non-zero entries in $V$ with $0$, and replace them with the same number of non-zero entries with rows that are found in $W$ but not $V$. By \hlfix{arguments in {\cite{basisshapeloci}}}{discuss} the associated positroid cell has lower dimension that the positroid cell associated to $C$.  
 \end{proof}
 
-\begin{eg}
-\color{red}{MAKE AN EXAMPLE}
-\end{eg}
 
 \begin{thm}
 Let $W$ be an admissible Wilson loop diagram and let $G' \subset G(W)$ be the vanishing locus of a single factor of $R(W)$ inside $G(W)$ and suppose that $G'$ has codimension $1$ in $G(W)$. Let the open positroid $\Sigma'$ be the boundary of $\Sigma(W)$ corresponding to $G'$. Then, $G'$ is dense in $\Sigma'$.
@@ -661,6 +658,7 @@ Let $W$ be an admissible Wilson loop diagram and let $G' \subset G(W)$ be the va
 \begin{itemize}
 \item Entry vanishing, cite basis shape paper.
 \item $2 \time 2$ factor vanishing, see notes. The subtle thing here is that the hard part is normally showing that the dimension is correct in this case, but here I built it into the hypothesis (which is kinda lame, but I think captures the situation we're in).
+\end{itemize}
 \end{proof}
 
 \begin{thm}
