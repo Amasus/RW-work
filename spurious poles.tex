@@ -624,7 +624,7 @@ Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matri
 
 \subsection{Geometry of the poles}
 
-Note that not every co-dimension one boundary of a $\Sigma(W)$ do not contain a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not making others positive. Sending parameters to $0$, i.e. finding poles of $R(W)$ is certainly one way to do this. But one may just as easily expand a set of vertices that are not of full rank. For instance, consider the following example  
+Note that not every co-dimension one boundary of a $\Sigma(W)$ do not contain a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not causing any perviously vanishing minors to become positive. Sending parameters to $0$, which causes the polynomial $R(W)$ to vanish, is certainly one way to do this. However, the boundary of $\Sigma(W)$ contains other positroid cells which do not necessarily intersect the vanishing set of $R(W)$. For instance, consider the following example  
 
 \begin{eg}
 The Wilson loop diagram\bas V_1 =  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
@@ -632,7 +632,8 @@ The Wilson loop diagram\bas V_1 =  \begin{tikzpicture}[rotate=67.5,baseline=(cur
 	\drawnumbers
 	\drawlabeledprop{1}{-1}{5}{0}{$p$}
 	\drawlabeledprop{1}{1}{3}{0}{$q$}
-	\end{scope} \end{tikzpicture} \eas Has a matrix \bas C(V_1) = \begin{bmatrix} c_{p,1} &  c_{p,2} & 0 & 0 &c_{p,5} &c_{p,6} \\c_{q,1} &  c_{q,2} & c_{q,3} &  c_{q,4}& 0 & 0 \end{bmatrix}\; . \eas From \cite{casestudy}, we see that this shares a boundary with the positroid cells parametrized by \bas C(N_2) = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix}\eas and \bas C(N_3) = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas Here the $*$ correspond not no-zero, independent real variables. In particular, the common boundary is parametrized by the matrix \bas \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas \todo{Cameron, can you explain to me  your way, why this is 5 dim? I can see it from the Le diags, but I'd rather not introduce those here}
+	\end{scope} \end{tikzpicture} \eas Has a matrix \bas C(V_1) = \begin{bmatrix} c_{p,1} &  c_{p,2} & 0 & 0 &c_{p,5} &c_{p,6} \\c_{q,1} &  c_{q,2} & c_{q,3} &  c_{q,4}& 0 & 0 \end{bmatrix}\; . \eas From \cite{casestudy}, we see that this shares a boundary with the positroid cells parametrized by \bas C(N_2) = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix}\eas and \bas C(N_3) = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas Here the $*$ correspond not no-zero, independent real variables. In particular, the common boundary is parametrized by the matrix \bas \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas
+This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From (\ref{eqn:rw_vanishes}), the vanishing set of $R(V_1)$ is exactly $G(V_1) \setminus \Sigma(V_1)$, where $G(V_1)$ is the geometric space parameterized by $V_1$. On the boundary (open) positroid cell, $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising. On $G(V_1)$, the nonvanishing of $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of $\Delta_{35}$. Since $\Delta_{35}$ vanishes on the boundary positroid cell in question, $G(V_1)$ does not intersect this boundary and hence $R(V_1)$ does not vanish.
 \end{eg}
 
 \begin{prop}
@@ -648,13 +649,19 @@ replacing the cyclic flats $W$ and $V$ with $W \cup V$ reduces the dimension of 
 Note that since $W$ and $V$ are both cyclic flats, any elements of $M$ or rank $0$ (columns of $C$ consisting of only $0$) are in both $W$ and $V$. Without loss of generality, assume that $\rk(V) \leq \rk(W)$. That it, the columns of $V$ have non-zero entries in fewer rows of $C$ than $W$ does. Then one may replace the non-zero entries in $V$ with $0$, and replace them with the same number of non-zero entries with rows that are found in $W$ but not $V$. By \hlfix{arguments in {\cite{basisshapeloci}}}{discuss} the associated positroid cell has lower dimension that the positroid cell associated to $C$.  
 \end{proof}
 
-\begin{ex}
+\begin{eg}
 \color{red}{MAKE AN EXAMPLE}
-\end{ex}
+\end{eg}
 
 \begin{thm}
-For $W$ admissible WLD, the codimension 1 boundaries of $G(W)$ formed by setting factors of $R(W)$ to 0 are dense in the codimension 1 boundaries of $\Sigma(W)$. \sanote{I'm certain I'm saying this wrong}
+Let $W$ be an admissible Wilson loop diagram and let $G' \subset G(W)$ be the vanishing locus of a single factor of $R(W)$ inside $G(W)$ and suppose that $G'$ has codimension $1$ in $G(W)$. Let the open positroid $\Sigma'$ be the boundary of $\Sigma(W)$ corresponding to $G'$. Then, $G'$ is dense in $\Sigma'$.
 \end{thm}
+
+\begin{proof}
+\begin{itemize}
+\item Entry vanishing, cite basis shape paper.
+\item $2 \time 2$ factor vanishing, see notes. The subtle thing here is that the hard part is normally showing that the dimension is correct in this case, but here I built it into the hypothesis (which is kinda lame, but I think captures the situation we're in).
+\end{proof}
 
 \begin{thm}
 All the codimension 1 poles of admissible Wilson loop diagrams cancel.
