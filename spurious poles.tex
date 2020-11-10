@@ -866,6 +866,40 @@ Let $W_4$, $W_5$ and $W_6$ be admissible Wilson loop diagrams that are identical
 This proof follows similarly to the above. Write \bas C_*(W_4) = \begin{bmatrix}1 & \ldots & a &b &\ldots & c & d & 0 & \ldots \\  1 & \dots &  ae &be + f  & \ldots &0 & g & h & \ldots    \end{bmatrix}  \\ C_*(W_5) = \begin{bmatrix}1 & \ldots & a' &b' &\ldots & c' & d' & 0 & 0& \ldots \\  1 & \dots &  0&0  & \ldots &c'e' & d'e' +f' & g' & h' & \ldots    \end{bmatrix} \\ C_*(W_6) = \begin{bmatrix}1 & \ldots & 0 &0 &\ldots & a'' & b'' & c''g'' & h'' c'' + d'' & \ldots \\  1 & \dots &  e'' & f''  & \ldots &0&0 & g'' & h'' & \ldots    \end{bmatrix} \;. \eas We consider the change of variables defined by the product \bas \begin{bmatrix}1 & 0 \\ \frac{-e'}{1-e'} & \frac{1}{1-e'} \end{bmatrix} C_*(W_5)  \quad \textrm{ and } \quad \begin{bmatrix}\frac{1}{1-c''} & \frac{-c''}{1-c''} \\ 0 & 1 \end{bmatrix} C_*(W_6) \;.\eas Then the same types of calculations as in Lemma \ref{??} shows that $ \lim_{c_{r, k-2} \rightarrow 0}I(W_6)  =  \lim_{f \rightarrow 0} \frac{-1}{1-e} I(W_4) $ and $\lim_{c_{r, k-2} \rightarrow 0}I(W_5)  =  \lim_{f \rightarrow 0} \frac{e}{1-e} I(W_4) $, proving the result.
 \end{proof}
 
+\begin{thm}
+Let $\mathbf{p} = p_1, p_2, \dots, p_d$ be algebraically independent invertible variables and let $C(\mathbf{p})$ be a $n \times k$ matrix with entries in $\mathbb{R}(\mathbf{p})$.
+Let $R_i$ be the $i^{th}$ row of $C(\mathbf{p})$. SOME HYPOTHESIS ABOUT NOT HAVING A SILLY OVER PARAMETERIZATION JUST WITHIN A ROW. Let $G(C(\mathbf{p}))$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the parameters of $C(\mathbf{p})$ at real entries. The following are equivalent:
+\begin{itemize}
+\item[(i)] For all $I \subseteq \{1,2, \dots, k\}$ and all $j \notin I$,
+\begin{displaymath}
+\mathrm{span} \left( \bigcup_{i \in I} R_i \right)
+\neq \mathrm{span} \left( \bigcup_{i \in I \cup j} R_i \right),
+\end{displaymath}
+\noindent
+where spans are taken in $(\mathbb{R}(\mathbf{p}))^n$.
+\item[(ii)] $\mathrm{dim} (G(C(\mathbf{p}))) = d$.
+\end{itemize}
+\end{thm}
+
+Theorem XX in \cite{basisshapeloce} gave a formula
+\begin{proof}
+\end{proof}
+
+\begin{eg}
+Consider
+\begin{displaymath}
+\begin{bmatrix}
+1 & p_1 & p_2 & p_3 & p_4 & 0 & 0 \\
+1 & p_1 p_5 & p_2 p_5 + p_6 & 0 & 0 & p_7 & p_8 \\
+1 & 0 & 0 & p_9 & p_{10} & p_{11} & p_{12}
+\end{bmatrix}
+\end{displaymath}
+can kill off 9
+\end{eg}
+
+\begin{rmk}
+remark: this is a rado theorem thing.
+\end{rmk}
 
 \end{appendices}
 
