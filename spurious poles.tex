@@ -891,20 +891,20 @@ Let $W_4$, $W_5$ and $W_6$ be admissible Wilson loop diagrams that are identical
 This proof follows similarly to the above. Write \bas C_*(W_4) = \begin{bmatrix}1 & \ldots & a &b &\ldots & c & d & 0 & \ldots \\  1 & \dots &  ae &be + f  & \ldots &0 & g & h & \ldots    \end{bmatrix}  \\ C_*(W_5) = \begin{bmatrix}1 & \ldots & a' &b' &\ldots & c' & d' & 0 & 0& \ldots \\  1 & \dots &  0&0  & \ldots &c'e' & d'e' +f' & g' & h' & \ldots    \end{bmatrix} \\ C_*(W_6) = \begin{bmatrix}1 & \ldots & 0 &0 &\ldots & a'' & b'' & c''g'' & h'' c'' + d'' & \ldots \\  1 & \dots &  e'' & f''  & \ldots &0&0 & g'' & h'' & \ldots    \end{bmatrix} \;. \eas We consider the change of variables defined by the product \bas \begin{bmatrix}1 & 0 \\ \frac{-e'}{1-e'} & \frac{1}{1-e'} \end{bmatrix} C_*(W_5)  \quad \textrm{ and } \quad \begin{bmatrix}\frac{1}{1-c''} & \frac{-c''}{1-c''} \\ 0 & 1 \end{bmatrix} C_*(W_6) \;.\eas Then the same types of calculations as in Lemma \ref{??} shows that $ \lim_{c_{r, k-2} \rightarrow 0}I(W_6)  =  \lim_{f \rightarrow 0} \frac{-1}{1-e} I(W_4) $ and $\lim_{c_{r, k-2} \rightarrow 0}I(W_5)  =  \lim_{f \rightarrow 0} \frac{e}{1-e} I(W_4) $, proving the result.
 \end{proof}
 
+
+Let $\mathcal{P} = \{P_1, P_2, \dots, P_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be algebraically independent invertible variables. Define $M_{\mathcal{P}}(\mathbf{x})$ to be the $n \times k$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in P_i$ and $0$ otherwise.
+
 \begin{thm}
-Let $\mathbf{p} = p_1, p_2, \dots, p_d$ be algebraically independent invertible variables and let $C(\mathbf{p})$ be a $n \times k$ matrix with entries in $\mathbb{R}(\mathbf{p})$.
-Let $R_i$ be the $i^{th}$ row of $C(\mathbf{p})$. SOME HYPOTHESIS ABOUT NOT HAVING A SILLY OVER PARAMETERIZATION JUST WITHIN A ROW. Let $G(C(\mathbf{p}))$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the parameters of $C(\mathbf{p})$ at real entries. The following are equivalent:
+Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Suppose there are $d$ variables remaining. Let $G$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. For $I \subset \{1, \dots, k\}$, let $R_I$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows of $M'$ indexed by $I$ at real parameters. The following are equivalent:
 \begin{itemize}
-\item[(i)] For all $I \subseteq \{1,2, \dots, k\}$ and all $j \notin I$,
-\begin{displaymath}
-\mathrm{span} \left( \bigcup_{i \in I} R_i \right)
-\neq \mathrm{span} \left( \bigcup_{i \in I \cup j} R_i \right),
-\end{displaymath}
-\noindent
-where spans are taken in $(\mathbb{R}(\mathbf{p}))^n$.
-\item[(ii)] $\mathrm{dim} (G(C(\mathbf{p}))) = d$.
+\item[(i)] For all $I \subseteq \{1,2, \dots, k\}$ and all $j \notin I$, $R_{I \cup j} \neq R_I$.
+\item[(ii)] $\mathrm{dim}(G) = d - k$.
 \end{itemize}
 \end{thm}
+
+\begin{proof}
+To show that (ii) implies (i), suppose that for some $I$ and $j$, $R_{I \cup j} = R_{I}$.
+\end{proof}
 
 Theorem XX in \cite{basisshapeloce} gave a formula
 \begin{proof}
