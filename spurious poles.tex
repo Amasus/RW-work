@@ -898,12 +898,19 @@ Let $\mathcal{P} = \{P_1, P_2, \dots, P_k\}$ be a collection of subsets of $\{1,
 Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Suppose there are $d$ variables remaining. Let $G$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. For $I \subset \{1, \dots, k\}$, let $R_I$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows of $M'$ indexed by $I$ at real parameters. The following are equivalent:
 \begin{itemize}
 \item[(i)] For all $I \subseteq \{1,2, \dots, k\}$ and all $j \notin I$, $R_{I \cup j} \neq R_I$.
-\item[(ii)] $\mathrm{dim}(G) = d - k$.
+\item[(ii)] $\mathrm{dim}(G) = d-k$.
 \end{itemize}
 \end{thm}
 
 \begin{proof}
 To show that (ii) implies (i), suppose that for some $I$ and $j$, $R_{I \cup j} = R_{I}$.
+
+To show that (i) implies (ii), suppose that $\mathrm{dim}(G) < d-k$. Then, there is some $A \in Gl(k,\mathbb{R}(\mathbf{x}))$ such that $A \cdot M'$ contains strictly fewer than $d$ parameters. Suppose that the parameter $x_{a,b}$ is eliminated in $A \cdot M'$. We claim that $R_{[k] \setminus a} = R_{[k]}$.
+
+\begin{itemize}
+\item Take $a$-th row of a specific evaluation of $M'$, suppose it is not contained in $R_{[k] \setminus a}$.
+\item
+\end{itemize}
 \end{proof}
 
 Theorem XX in \cite{basisshapeloce} gave a formula
