@@ -459,6 +459,7 @@ Let $\mathcal{V} = \{V_1, V_2, \dots, V_k\}$ be a collection of subsets of $\{1,
 Given a $k \times n$ variable valued matix $M_\cV \in M_{k,n}$, we write $L(\cV)$ to be the locus of the variables defining that matrix in $\Grall(k,n)$. In other words, $L(\cV)$ is the set of point of $\Grall(k,n)$ that can be realized by setting the entries of $M_{k,n}$ to real values.
 \end{dfn}
 
+It is worth noting that since $L(\cV)$ corresponds to the points in $\Grall(k,n)$, any matrices of less than full rank realized by evaluating $M_{\cV}$ at real values are ignored.
 
 \subsection{Wilson loop diagrams as positroids \label{sec:WLDmatroid}}
 
@@ -521,9 +522,31 @@ Recall that if multiple propagators end on the $e^{th}$ edge, we order them acco
 \item $R(W) = \prod_{e \in [n]} R_e$
 \end{enumerate} \end{dfn}
 
-Note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}. \sanote{Cameron, I definitely need a second brian on this paragraph.}
+Note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}. Namely, the integal $I(W)$ is defined on all but the set of measure 0 where $C_*(W)$ is of less than full rank. This subspace is exactly $L(\VPs)$, which differs from $\Sigma(\VPs) \times \R^k$ by a set of measure 0. 
 
-The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. The spurious poles occur when $R(W)$ evaluates to $0$ \cite{??}. In this paper, we are interested only in the degree one poles of $R(W)$. Namely, Theorem \ref{res:deg1polescancel} shows that the all the degree 1 poles in the sum  $A_{k,n}$ cancel.
+ It is worth noting here that with the $N^kMHV$ (tree level) amplitude
+on $n$ points is taken to be the sum of all the integrals associated
+to Wilson loop diagrams. Theorem \ref{res:polesonboundaries} shows that the spurious poles
+all fall on the boundaries of a geometric space defined by these diagrams. In Theorem \ref{res:deg1polescancel} we show that
+the poles that fall on codimension 1 boundaries cancel. However, unlike in the
+Amplituhedron story, one cannot assoiciate a geometric meaning to the
+sum of these integrals. In \cite{non-orientable}, the authors show
+that while the subspace of $\Grall (k,n+1)$ associated to each
+$C_*(W)$ is orientable, the union of said spaces are not. Therefore,
+one cannot interpret the sum of the associated integrals as the volume
+of a geometric space. This result has also been shown explicitly and
+separately in \cite{Heslop-Stewart} which calucates contradiction that
+occures if one attempts this interpretation.
+
+Here, we propose a different geometric interpretation of the sum of
+these integrals. One can consider $\overline{L(\VPs)}$ as the closure of a $k$-dimensional
+  line bundle over $\overline{L(\VP)}$ \cite{non-orientable}. Then, we may consider the
+cancelation of spurious poles on any section of the bundle, i.e. after fixing values to the variables $x_{p, 0}$. In fact,
+for the spurious poles, one typically sets the values of $x_{p,0}$ to
+be $\pm 1$, and factors of $R(W)$ evaluates to $0$ \cite{??}. The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. 
+
+
+ In this paper, we are interested only in the poles of $I(W)$, i.e. factors of $R(W)$ that lie on codim 1 subspaces of $\overline{\Sigma(W)}$.  Namely, Theorem \ref{res:polesonboundaries} shows that these singularities lie on codimension 1 boundaries of $\Sigma(W)$, and Theorem \ref{res:deg1polescancel} shows that the all of these spurious poles in the sum  $A_{k,n}$ cancel.
 
 In order to do this, we to show that the factors of $R(W)$ vanish on the boundary of the associated positroid cells. In \cite{generalcombinatoricsII}, the authors show that $R(W)$ is exactly the product of the prime factors of the determinants of $C(W)$ defined by the Grassmann necklace of the associated matroid, $\Sigma(W)$. Then we show that when the factor of $R(W)$ corresponds to a simple pole in the integral (i.e. a codimension 1 boundary of $\Sigma(W)$), the locus of the resulting matrix is dense in the corresponding boundary cell in the Grassmannian.
 
@@ -603,7 +626,7 @@ This fact has been shown explicitly in the case of $n = 6$ and $k=2$, however, h
 
 Next we show that the loci of the matrices after the codimension 1 poles of $R(W)$ have been set to 0 is dense in the corresponding positroid.
 
-\begin{thm}
+\begin{thm}\label{res:polesonboundaries}
 Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(W)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \hlfix{Let the open positroid $\Sigma'$ be the boundary of $\Sigma(W)$ corresponding to $L'$. Then, $L'$ is dense in $\Sigma'$.}{think we should remove this sentence and replace with preceding one. still need to change notation in proof.}
 \end{thm}
 
@@ -614,13 +637,13 @@ Next, suppose that $G'$ is a codimension $1$ boundary obtained by setting a two 
 \end{proof}
 
 \begin{eg} \label{eg:codim2}
-Note that not all factors of $R(W)$ correspond to codimension 1 poles. 
+Note that not all factors of $R(W)$ correspond to codimension 1 subspaces of $\Sigma(W)$. 
 
 For instance, consider the diagram in \ref{eg:closuresmatch}. Setting $x_{p,4}$ to $0$ gives the matrix \bas C' =
 \begin{bmatrix}
 x_{p,1} & x_{p,2} & 0 &0 & x_{p,5} & 0 \\
 x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
-\end{bmatrix}, \eas which can be written as $M_{\cV}$ with $\cV = \{V_1 = \{ 1, 2, 5\}, V_2 = \{1, 2, 5, 6\}\}$. Note that while $ |\bigcup_{V \in \cV}V|  = 4$, the quantity $ \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1$. Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimensional subspace of $\Sigma(W)$. \sanote{This actually shows that the codimension is higher, not that the pole is of higher degree. One should follow the other, given the proper aruguments}
+\end{bmatrix}, \eas which can be written as $M_{\cV}$ with $\cV = \{V_1 = \{ 1, 2, 5\}, V_2 = \{1, 2, 5, 6\}\}$. Note that while $ |\bigcup_{V \in \cV}V|  = 4$, the quantity $ \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1$. Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimensional subspace of $\Sigma(W)$. 
 
 
 
@@ -630,30 +653,6 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 Check if this content below is still needed or can be folded into the note above \\
 **************
 
-It is worth noting here that with the $N^kMHV$ (tree level) amplitude
-on $n$ points is taken to be the sum of all the integrals associated
-to Wilson loop diagrams. Above, we have shown that the spurious poles
-all fall on the boundaries of the geometric space. Below, we show that
-all the spurious poles do, in fact, cancel. However, unlike in the
-Amplituhedron story, one cannot assoiciate a geometric meaning to the
-sum of these integrals. In \cite{non-orientable}, the authors show
-that while the subspace of $\Grall (k,n+1)$ associated to each
-$x_*(W)$ is orientable, the union of said spaces are not. Therefore,
-one cannot interpret the sum of the associated integrals as the volume
-of a geometric space. This result has also been shown explicitly and
-separately in \cite{Heslop-Stewart} which calucates contradiction that
-occures if one attempts this interpretation.
-
-Here, we propose a different geometric interpretation of the sum of
-these integrals. One can consider \hlfix{$G_*(W)$ as a $k$-dimensional
-  line bundle over $G(W)$ }{Is this true, or is this only true on
-  $\Sigma(W)$?} \cite{non-orientable}. Then, we may consider the
-cancelation of spurious poles on any section of the bundle. In fact,
-for the spurious poles, one typically sets the values of $x_{p,0}$ to
-be $\pm 1$, as the physical poles of $N=4 SYM$ occur when $x_{p,0} =
-0$. \hlfix{After fixing any such section, the sum can be interpreted as a
-volume on this section.}{verify that this is consistent with \eqref{eq:maps}}
-{\color{red} Do we have a proof that the space parametrized by the $x_*(W)$, or tiled by the $\Sigma(W)$, is orientable? Can we create such a proof using arguments similar to that showing that the full space is non-orientable? maybe skip the volume argument in this paragraph altogether?}
 
 \section{The poles of Wilson loop diagrams}
 
