@@ -386,7 +386,20 @@
 \maketitle
 \section{Introduction}
 
-\section{Background}
+The holomorphic Wilson loop representation of $N=4$ SYM theory is calculated on families of Feynman diagrams called maximally helicity violating (MHV) diagrams, next to maximal helicity violating (NMHV) diagrams, and so forth ($N^k$MHV diagrams). When represented in twistor space \cite{Adamo:2011pr}, the calculations of the associated integrals simplify dramatically. Furthermore, in a dual representation of $N^k$MHV diagrams, called Wilson loop diagrams in this paper, the diagrams correspond to subspaces of the positive Grassmanian, called positroid cells. The connection between the tree level physical interactions and the geometry of the positive Grassmannians is well studied, both in the holomorphic Wilson loop context, and in the context of BCFW diagrams (or plabic graphs) where the associated geometric object is called the Amplituhedron \cite{???}. 
+
+This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams ($W$), and the geometry of the associated positroid cells ($\Sigma(W)$). For instance, a positroid cell can be uniquely defined by a set of minors, called the Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defining the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, \hlfix{the authors show that the radical of the product of the determinants of the Grassman necklace elements also corresponds to the product of the frozen variables of the cluster algebra defined by the plabic graph corresponding to the same cell.}{help?} While the varaibles involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
+
+The factors that appear in the denominator of the integrals associated to Wilson loop diagrams are called the spurious poles of the theory. Here, the adjective spurious is applied in order to differentiate them from the physical poles. The physical poles of the theory arise when the external momenta of the interaction are coplanar, giving rise to infrared divergences. As $N=4$ is a renormalizable theory, it only has infrared divergences. That is, the physical poles are the only singularities that appear in the theory. Therefore, in the sum of tree level integrals, all other singularities, i.e. the singular poles, must cancel. However, this cancelation is not at all obvious from an algebraic point of view. 
+
+In this paper, we consider the singular poles of the theory in terms of the geometry of the associated positroid cell. In Theorem \ref{???} we show that the spurious poles lie on the boundaries of the associated positroid cells. In fact, when the singular poles lie on codimension one subspaces of the closure of the positroid cell $\overline{\Sigma(W)}$, it too is dense in a positroid cell. We use this fact to show that the codimension 1 spurious poles of tree level Wilson loop diagrams cancel exactly in the tree level amplitude. 
+
+We proceed as follows. Section \ref{sec:background} gives the necessary background on Wilson loop diagrams, gives a brief summary of matriods, describes the integrals and assocociated suprious poles, as well as the geometry of the positroid cells of tree level Wilson loop diagrams as a subet of the positive Grassmannians. Section \ref{sec:poles} we discuss the spurious poles of the three level interactions. In particular, we show that the polynomials defining the spurious poles have the same geoemtric interpretation as the product of the frozen variables of the cluster algebra assoicated to the same positroid cell, as in \cite{SS-BW, LamGalashin}. We also explicitly show that the codimension one spurious poles cancel exactly. {\color{red} also something about Proposition \ref{res:moving variables}?}
+
+
+ 
+
+\section{Background \label{sec:background}}
 
 \subsection{Diagramatics \label{sec:diagramdefs}}
 A Wilson loop diagram $W = (\cP, [n])$ consists of a cyclically ordered set $[n] = \{1, \cdots, n\}$ and a set of propagators $\cP = \{(i,j) | i, j \in [n]\}$ as an unordered pair of integers. We depict these diagrams by drawing the set $[n]$ as vertices on a circle. The $i^{th}$ edge of the marked circle is the edge between the vertices $i$ and $i+1$. Then the propagator $p =(i,j)$ is depicted as a wavy line on the interior of the circle connecting the $i^{th}$ edge to the $j^{th}$ edge. In this manner, we say that the propagator $p$ is supported by the vertices $V_p = \{i, i+1, j, j+1\}$, as these are the vertices bounding the edges that $p$ ends on. 
@@ -528,6 +541,10 @@ Recall that if multiple propagators end on the $e^{th}$ edge, we order them acco
 \item $R(W) = \prod_{e \in [n]} R_e$
 \end{enumerate} \end{dfn}
 
+\begin{thm}
+{\color{red} Restate theorem form Karen and Sian here about $R(W)$ being a radical.}
+\end{thm}
+
 Note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}. Namely, the integal $I(W)$ is defined on all but the set of measure 0 where $C_*(W)$ is of less than full rank. This subspace is exactly $L(\VPs)$, which differs from $\Sigma(\VPs) \times \R^k$ by a set of measure 0. 
 
 Equation \eqref{eq:treelevelamplitude} shows that $N^kMHV$ (tree level) amplitude
@@ -552,7 +569,7 @@ for the spurious poles, one typically sets the values of $x_{p,0}$ to
 be $\pm 1$, and factors of $R(W)$ evaluates to $0$ \cite{??}. The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. 
 
 
- In this paper, we are interested only in the \hlfix{degree 1 poles}{want to discuss. Have poles of the form $ad-cb$, or degree 2 as well} of $I(W)$, i.e. factors of $R(W)$ that lie on codim 1 subspaces of $\overline{\Sigma(W)}$.  Namely, Proposition \ref{res:vanishonbdny} shows that all factors of $R(W)$ vanish on the boundary of $\Sigma(W)$. Then, Theorem \ref{res:polesonboundaries} shows that the vanishing loci are dense in the codimension $1$ boundary of $\Sigma(W)$, and Theorem \ref{res:deg1polescancel} shows that the all of these poles in the sum  $A_{k,n}$ cancel. 
+ In this paper, we are interested in the poles of $I(W)$ that lie on codim 1 subspaces of $\overline{\Sigma(W)}$. By construction, these are the factors of $R(W)$ that have vanishing loci on codim 1 subspaces of $\overline{\Sigma(W)}$. Proposition \ref{res:vanishonbdny} shows that all factors of $R(W)$ vanish on the boundary of $\Sigma(W)$. Then, Theorem \ref{res:polesonboundaries} shows that if the vanishing loci has codimension 1, then it is dense in some codimension $1$ boundary of $\Sigma(W)$, and Theorem \ref{res:deg1polescancel} shows that the all the poles with codimension 1 vanishing loci cancel in the sum  $A_{k,n}$ cancel. 
 \sanote{I think the cancelations are exact, not dense, correct? If this is the case, needs to be said explicitly.}
 
 In order to do this, we to show that the factors of $R(W)$ vanish on the boundary of the associated positroid cells. In \cite{generalcombinatoricsII}, the authors show that $R(W)$ is exactly the product of the prime factors of the determinants of $C(W)$ defined by the Grassmann necklace of the associated matroid, $\Sigma(W)$. Then we show that when the factor of $R(W)$ corresponds to a simple pole in the integral (i.e. a codimension 1 boundary of $\Sigma(W)$), the locus of the resulting matrix is dense in the corresponding boundary cell in the Grassmannian.
@@ -633,9 +650,10 @@ This fact has been shown explicitly in the case of $n = 6$ and $k=2$, however, h
 
 Next we show that the loci of the matrices after the codimension 1 poles of $R(W)$ have been set to 0 is dense in the corresponding positroid.
 
+\todo{Check if the closures of Loci are put in the right places throughtout paper}
+
 \begin{thm}\label{res:polesonboundaries}
-Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(W)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \hlfix{Let the open positroid $\Sigma'$ be the boundary of $\Sigma(W)$ corresponding to $L'$. Then, $L'$ is dense in $\Sigma'$.}{think we should remove this sentence and replace with preceding one. still need to change notation in proof.}
-\end{thm}
+Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(W)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
 
 \begin{proof}
 From CITE THEOREM, $R(W)$ is the product of individual entries and two by two minors of $M_{\mathcal{P}}(\mathbf{x})$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Proposition \ref{prop:rw_vasnishes_on_boundary} implies that $G' \subset \overline{\Sigma}$. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
@@ -656,12 +674,8 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 
 \end{eg}
 
-************** \\
-Check if this content below is still needed or can be folded into the note above \\
-**************
 
-
-\section{The poles of Wilson loop diagrams}
+\section{The poles of Wilson loop diagrams \label{sec:poles}}
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces}
 
