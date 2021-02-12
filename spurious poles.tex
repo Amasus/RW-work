@@ -666,19 +666,23 @@ Next we show that the loci of the matrices after the codimension 1 poles of $R(W
 Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(W)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
 
 \begin{proof}
-From CITE THEOREM, $R(W)$ is the product of individual entries and two by two minors of $M_{\mathcal{P}}(\mathbf{x})$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Proposition \ref{prop:rw_vasnishes_on_boundary} implies that $G' \subset \overline{\Sigma}$. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
+From CITE THEOREM, $R(W)$ is the product of individual entries and two by two minors of $M_{\mathcal{P}}(\mathbf{x})$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
 
-Next, suppose that $G'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in REFERENCE EXAMPLE, $G'$ may be represented by reparameterizing this two by two minor in $M_{\mathcal{P}}(\mathbf{x})$, then setting one of the new parameters to zero. Let $M'$ denote the matrix obtained by this operation. Generic points in $G'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Since $G' \subset \overline{\Sigma}$ and has codimension $1$, the matroid represented by a generic point in $G'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{G'} = \overline{\Sigma'}$.
+Next, suppose that $G'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $G'$ may be represented by reparameterizing this two by two minor in $M_{\mathcal{P}}(\mathbf{x})$, then setting one of the new parameters to zero. Let $M'$ denote the matrix obtained by this operation. Generic points in $G'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $G' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $G'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $G'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{G'} = \overline{\Sigma'}$.
 \end{proof}
 
 \begin{eg} \label{eg:codim2}
 Note that not all factors of $R(W)$ correspond to codimension 1 subspaces of $\Sigma(W)$. 
 
-For instance, consider the diagram in \ref{eg:closuresmatch}. Setting $x_{p,4}$ to $0$ gives the matrix \bas C' =
+For instance, consider the diagram in Example \ref{eg:closuresmatch}. Setting $x_{p,4}$ to $0$ gives the matrix \bas C' =
 \begin{bmatrix}
 x_{p,1} & x_{p,2} & 0 &0 & x_{p,5} & 0 \\
 x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
-\end{bmatrix}, \eas which can be written as $M_{\cV}$ with $\cV = \{V_1 = \{ 1, 2, 5\}, V_2 = \{1, 2, 5, 6\}\}$. Note that while $ |\bigcup_{V \in \cV}V|  = 4$, the quantity $ \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1$. Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimensional subspace of $\Sigma(W)$. 
+\end{bmatrix}, \eas which can be written as $M_{\cV}$ with $\cV = \{V_1 = \{ 1, 2, 5\}, V_2 = \{1, 2, 5, 6\}\}$. Note that while $ |\bigcup_{V \in \cV}V|  = 4$,
+\begin{displaymath}
+\max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1.
+\end{displaymath}
+Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(W)$. 
 
 
 
@@ -913,7 +917,7 @@ In this section, we present some calculations to aid in the understanding of the
 
 Recall from definition \ref{dfn:I(W)} that \bas \cI(W) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(W)} \delta^{4k|4k}(x_*(W) \cdot \cZ_*) \eas where, for $X$ a $k \times n+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \;.\eas Write $\cZ_*^i$ to indicate the $i^{th}$ column of $\cZ_*$ and $\cZ_*^\mu$ to indicate the matrix formed by taking the first 4 columns of $\cZ_*$. Then evaluating the integral $I(W)$ corresponds to localizing the expression \bas \frac{\prod_{b = 1}^k (Y_b \cdot \cZ_*^b)^4}{R(W)}\eas at the solution to $x_*(W) \cdot \cZ_*^\mu = 0$. By Cramer's rule, we see that this localization evaluates \ba x_{p, 0} &= \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \\ x_{p, i} = \det(Z_0^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; &; \; x_{p, i+1} = \det( Z_{i}^\mu, Z_0^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; \text{ etc.} \label{eq:matrixvalues}\ea That is, the entry $x_{p, m}$ evaluates to the minor of $\cZ_*^\mu$ indicated by the rows in $V(p)$, with the $m^{th}$ row replaced by $Z_0^\mu$.
 
-\begin{lem} {lem:movingpropnegative}
+\begin{lem} \label{lem:movingpropnegative}
 For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j} = -x_{q, j+2}$
 \end{lem} 
 
@@ -921,9 +925,9 @@ For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j
 By the above arguments, note that $x_{p, j} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{0}^\mu, Z_{j+1}^\mu )$ while $x_{q, j+2} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j+1}^\mu , Z_{0}^\mu )$. Thus these two values are negatives.
 \end{proof}
 
-Sometimes, it is necessary to perform changes of variables in order to perform the cancellation of variables. For ease of caluculation, we introduce a simplifying change of variables:
+Sometimes, it is necessary to perform changes of variables in order to perform the cancellation of variables. For ease of calculation, we introduce a simplifying change of variables:
 \begin{lem}\label{lem:simplifyR(W)}
-When two propagators $p = (i, j)$ and $q = (i, k)$ are \hlfix{adjacent}{note, we need to keep the order in mind for this reparameter} on an of $W$, then there is a reparametrization under which one can replace the factor $x_{p, i}(x_{p, i}x_{q, i+1} - x_{p, i+1}x_{q, i})x_{q, i+1}$ in $R(W)$ with the product of 4 terms: $xyzw$.
+When two propagators $p = (i, j)$ and $q = (i, k)$ are \hlfix{adjacent }{note, we need to keep the order in mind for this reparameter} on an of $W$, then there is a reparametrization under which one can replace the factor $x_{p, i}(x_{p, i}x_{q, i+1} - x_{p, i+1}x_{q, i})x_{q, i+1}$ in $R(W)$ with the product of 4 terms: $xyzw$.
 \end{lem}
 
 \begin{proof}
