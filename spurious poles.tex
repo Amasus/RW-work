@@ -684,9 +684,9 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 \end{displaymath}
 Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(W)$. 
 
-
-
 \end{eg}
+
+We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref{res:polesonboundaries} does not hold. Namely, not every co-dimension one boundary of $\Sigma(W)$ contains the vanishing loci of a factor of $R(W)$.  \sanote{we really need to set a notation that explains that we are only referring to the vanishing loci in the positive Grassmanninas, so we don't have to keep saying it.}
 
 
 \section{The poles of Wilson loop diagrams \label{sec:poles}}
@@ -743,18 +743,21 @@ Be careful that above $R(W)$ and $R^{\ast}(W)$ are both polynomials in the matri
 %If a WLD does not have a non-trivial exact subdiagram, then $C(W)$ is its unique  minimal representation. {\color{red} Again, do we need this?...i don't think we need this for this section?}
 %\end{thm}
 
-\subsection{Geometry of the poles}
+\subsection{Geometry of the poles\label{sec:boundarysanspoles}}
 
-Note that not every co-dimension one boundary of a $\Sigma(W)$ contains a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not causing any perviously vanishing minors to become positive. Sending parameters to $0$, which causes the polynomial $R(W)$ to vanish, is certainly one way to do this. However, the boundary of $\Sigma(W)$ contains other positroid cells which do not necessarily intersect the vanishing set of $R(W)$. For instance, consider the following example:
+Note that not every co-dimension one boundary of a $\Sigma(W)$ contains the vanishing loci of a factor of $R(W)$. In order to reach a boundary of a positroid cell, one must send certain minors to 0 while not causing any perviously vanishing minors to become positive. Sending parameters to $0$, which causes the polynomial $R(W)$ to vanish, is certainly one way to do this. However, the boundary of $\Sigma(W)$ contains other positroid cells which do not necessarily intersect the vanishing set of $R(W)$. In this section, we give one criterion for identifying boundaries of positroid cells that do not contain the loci of these vanishing factors. 
+
+We begin with an example. 
 
 \begin{eg} \label{eg:strangeboundary}
-The Wilson loop diagram\bas V_1 =  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+The Wilson loop diagram\bas W =  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
 	\drawWLD{6}{1.5}
 	\drawnumbers
 	\drawlabeledprop{1}{-1}{5}{0}{$p$}
 	\drawlabeledprop{1}{1}{3}{0}{$q$}
-	\end{scope} \end{tikzpicture} \eas Has a matrix \bas C(V_1) = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; . \eas From \cite{casestudy}, we see that this shares a boundary with the positroid cells parametrized by \bas C(N_2) = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix}\eas and \bas C(N_3) = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas Here the $*$ correspond not no-zero, independent real variables. In particular, the common boundary is parametrized by the matrix \bas \D_1 = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas
-This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From (\ref{eqn:rw_vanishes}), the vanishing set of $R(V_1)$ is exactly $G(V_1) \setminus \Sigma(V_1)$, where $G(V_1)$ is the geometric space parameterized by $V_1$. On the boundary (open) positroid cell, $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising. On $G(V_1)$, the nonvanishing of $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of $\Delta_{35}$. Since $\Delta_{35}$ vanishes on the boundary positroid cell in question, $G(V_1)$ does not intersect this boundary and hence $R(V_1)$ does not vanish.
+	\end{scope} \end{tikzpicture} \eas has a matrix \bas C(W) = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; , \eas or, equivalently, can be written as \bas \cV = \{V_1 = \{1, 2, 5,6\} \; ; \; V_2 = \{1, 2, 3,4 \} \} \;.\eas The Grassmann Necklace of $\Sigma(W)$ is $GN(W) = \{ \{12\},\{23\}, \{35\}, \{45\}, \{51\}, \{61\} \}$. From \cite{casestudy}, we see that $\Sigma(W)$ shares a boundary with the positroid cells corresponding to \bas C(W_2) = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix}\eas and \bas C(W_3') = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas Here the $*$ correspond not no-zero, independent real variables. In particular, the common boundary is parametrized by the matrix \bas M_{\cV}' = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From (\ref{eqn:rw_vanishes}), the vanishing set of $R(W)$ is exactly $L(\cV) \setminus \Sigma(\cV)$, where $L(\cV)$ is the geometric space parameterized by the matrix $C(W)$. 
+
+Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(W)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(W)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\cW)$, the nonvanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(W)$ does not intersect this boundary and hence $R(W)$ does not vanish on $\Sigma(\cV')$.
 \end{eg}
 
 Below, we give a characterization of a class of variable valued matrices for which this type of boundary occurs. First, we extend the definitions of $\Prop(V)$ and $V(p)$ for general variable valued matrices and not just those representing Wilson loop diagrams.
@@ -765,20 +768,20 @@ Let $M_{\mathcal{V}}$ be a variable valued matrix as in definition \ref{dfn:vari
 
 Note that if $M_{\mathcal{V}} = C(W)$ the matrix associated to a Wilson loop diagram, the rows are the propagators and the columns are the vertices. Then $\Rows(c) = \Prop(c)$ and $\Cols(r) = V(r)$.
 
-We consider pairs of variable valued matrices defined as follows. Let $\Sigma(\cV)$ be a positroid cell of dimension $d$ in $\Gr(k,n)$, and $M_\cV$ be a variable valued matrix realizing $\Sigma(\cV)$ with a minimal number of independent variables. \st{Let $M(\cV)$ be the associated matroid.} Let $V$ and $W$ be cyclic flats such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The columns ($\Cols(V)$, $\Cols(W)$ and $\Cols(V \cup W)$) are cyclic intervals and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that $|\Rows(V) \setminus \Rows(W)| \geq |\Rows(W) \setminus \Rows(V)|$. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non zero entries in $\Rows(V)$ and $\Cols(V\cup W)$ such that circuits in $V$ and $W$ are preserved. An example of this type of boundary pair is given in Example \ref{eg:strange boundary} and explained in Example \ref{eg:strangeboundar2} below.
+We consider pairs of variable valued matrices defined as follows. Let $\Sigma(\cV)$ be a positroid cell of dimension $d$ in $\Gr(k,n)$, and $M_\cV$ be a variable valued matrix realizing $\Sigma(\cV)$ with a minimal number of independent variables. Let $V$ and $W$ be cyclic flats such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The columns ($\Cols(V)$, $\Cols(W)$ and $\Cols(V \cup W)$) are cyclic intervals and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that the flat $V$ has non-zero entries in more rows outside of the rows of $W$ than vice versa: $|\Rows(V) \setminus \Rows(W)| \geq |\Rows(W) \setminus \Rows(V)|$. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non zero entries in $\Rows(V)$ and $\Cols(V\cup W)$ such that circuits in $V$ and $W$ are preserved. An example of this type of boundary pair is given in Example \ref{eg:strangeboundary} and explained in Example \ref{eg:strangeboundary2} below.
 
 
 \begin{prop}\label{res:moving variables}
 Let $M_\cV$ and $M_{\cV'}$ are variable valued matrices as above, and both have the same rank, then $M_{\cV'}$ defines a positroid, $\Sigma(\cV')$, that lies in the boundary of the positroid $\Sigma(\cV)$, the positroid defined by $M_\cV$. \end{prop}
 
 \begin{proof} 
-In this proof, we abuse notation, and use \hlfix{$M_\cV$ to indicate both the variable valued matrix, and its associated matroid.}{Do I need to justify being able to do this?}
+In this proof, we abuse notation, and use $M_\cV$ to indicate both the variable valued matrix, and its associated matroid.
 
 We prove the theorem by showing that the Grassmann Necklace associated to $M_{\cV'}$, call it $GN(\cV')$ is different from the Grassmann Necklace defined by $M_{\cV}$, call it $GN(\cV)$, and that the basis set of $M_{\cV}$ contains the basis set of $M_{\cV'}$. In this way, we show that $\Sigma(\cV') \neq \Sigma(\cV)$, and that  $\Sigma(\cV')$ lies in the boundary of $\Sigma(\cV)$. 
 
-First, we compare the Grassmann necklaces defining $\Sigma(\cV)$ and $\Sigma(\cV')$. We may read these directly off the matrices $M_{\cV}$ and $M_{\cV'}$. In particular, we with to show that that $GN(\cV) \neq GN(\cV')$. To see this, first note that $\rk(V)$ (resp. $\rk(W)$) $>0$. If this were not true, then whichever flat had rank $0$ would be contained in the other flat, which contradicts our hypothesis. Since $V \cup W$ is a cyclic interval (in both $M_\cV$ and $M_{\cV'}$), let $v$ denote the first element of $\Cols(V\cup W)$ in the $>i$ ordering such that $\rk(v) >0$. Let $I_v$ and $I_v'$ be the Grassmann Necklace element starting at the column $v$ in $GN(\cV)$ and $GN(\cV')$ respectively. We have that $v \in I_v$ and $v \in I_v'$. 
+First, we compare the Grassmann necklaces defining $\Sigma(\cV)$ and $\Sigma(\cV')$. We may read these directly off the matrices $M_{\cV}$ and $M_{\cV'}$. In particular, we with to show that that $GN(\cV) \neq GN(\cV')$. To see this, first note that $\rk(V)$ (resp. $\rk(W)$) $>0$. If this were not true, then whichever flat had rank $0$ would be contained in the other flat, which contradicts our hypothesis. Since $V \cup W$ is a cyclic interval (in both $M_\cV$ and $M_{\cV'}$), let $v$ denote the first element of $\Cols(V\cup W)$ in the $>_v$ ordering such that $\rk(v) >0$. Let $I_v$ and $I_v'$ be the Grassmann Necklace element starting at the column $v$ in $GN(\cV)$ and $GN(\cV')$ respectively. We have that $v \in I_v$ and $v \in I_v'$. 
 
-Recally that $V$ and $W$ are both cyclic intervals and that $V \cup W$ is also cyclic interval. Without loss of generality, assume that $V$ preceeds $W$ in the $>_i$ ordering. Write $I_v = \{v = v_1, \ldots, v_r, w_1, \ldots w_s, u_1, \ldots u_t\}$, where $v_i \in V$, $w_i \in W$ and $u_i \not \in (V \cup W)$. From this, we can see that $\rk(V) = r$ and $\rk(V\cup W) = r+s$. Furthermore, since $W$ is not a subset of $V$, we know that $s > 0$. 
+Recally that $V$ and $W$ are both cyclic intervals and that $V \cup W$ is also cyclic interval. Without loss of generality, assume that $V$ preceeds $W$ in the $>_v$ ordering. Write $I_v = \{v = v_1, \ldots, v_r, w_1, \ldots w_s, u_1, \ldots u_t\}$, where $v_i \in V$, $w_i \in W$ and $u_i \not \in (V \cup W)$. From this, we can see that $\rk(V) = r$ and $\rk(V\cup W) = r+s$. Furthermore, since $W$ is not a subset of $V$, we know that $s > 0$. 
 
 Suppose, for contradiction, we have that $GN(\cV) = GN(\cV)$. Then we would have $I_v = I'_v$. But this would imply that $\rk(V \cup W)$ in $C'$ is $r+ s$. However, by construction, in $C'$, $\rk(V) = \rk(V\cup W)$, i.e. $r = r+s$ which contradicts the fact that $s > 0$. 
 
@@ -792,8 +795,20 @@ To see that basis set $\cB$ of $M_\cV$ contains the basis set $\cB'$ of $M_{\cV'
 \end{proof}
 
 \begin{eg}\label{eg:strangeboundary2}
-Continuing with Example \ref{eg:strangeboundary2}, if $\cV = \{V(p) = \{1, 2, 5, 6\}, V(q) = \{1, 2, 3, 4\}\}$, we may write $C(V_1) = M_\cV$. Let $W = \{ 3, 4\}$, and $V = \{5, 6\}$ are cyclic flats that satisfy the conditions of the proposition. Then, up to permuations of the rows, there is only one choice for $M_{\cV'}$: \bas M_{\cV'} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\ *  &  * & *&  *& * & * \end{bmatrix}. \eas Not that while this is not the same matrix as $\D_1$ in Example \ref{eg:strangeboundary}, these two matrices do represent the same matriod. (This can be seen by comparing basis sets.)
+Continuing with Example \ref{eg:strangeboundary2}, if $\cV = \{V(p) = \{1, 2, 5, 6\}, V(q) = \{1, 2, 3, 4\}\}$, we may write $C(V_1) = M_\cV$. Let $W = \{ 3, 4\}$, and $V = \{5, 6\}$ are cyclic flats that satisfy the conditions of the proposition. Then, up to permuations of the rows, there is only one choice for $M_{\cV'}$: \bas M_{\cV'} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\ *  &  * & *&  *& * & * \end{bmatrix}. \eas Not that while this is not the same matrix as $M_{\cV'}$ in Example \ref{eg:strangeboundary}, these two matrices do represent the same matriod. (This can be seen by comparing basis sets.)
 \end{eg}
+
+In order to see that, given a minimal parametrization $M_{\cV'}$, the product of the Grassmann Necklace minors, $R(\cV)$\todo{introduce this notation} doesn't vanishon the boundary we need to apply consider the minors $I_v$ and $I'_v$ defined in Proposition \ref{res:moving variables}. The follow proof follows the logic of  Example \ref{eg:strangeboundary}.
+
+\begin{thm}
+Given a matrix $M_{\cV}$ and $M_{\cV'}$ as above, the polynomial $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
+\end{thm} \todo{Cam: check this for correctness}
+
+\begin{proof}
+Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of $M(\cV)$. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M_(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(W)$ does not contain the positroid cell $\Sigma(\cV')$.
+
+By display \eqref{eqn:rw_vanishes}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
+\end{proof}
 
 \begin{rmk}
 In particular, not that the construction $M_{\cV'}$ need not have the minimal number of parameters to represent $\Sigma(\cV')$. In particular, we have that  \bas |\bigcup_{V \in \cV}V| = 6 \quad \textrm{ while } \max_{V \in  \cV} (|V|) + |\mathcal{V}| +1 = 5 + 2 +1 = 8 \;.\eas Therefore, setting $\cV = \mathcal{T}$, we see that the third equivalence of Theorem \ref{ref:minimalrep} doesn't hold, and thus $M_{\cV'}$ is not a minimal representation. In fact, there is a $Gl(k)$ transformation taking $M_{\cV'}$ to $\D_1$: \bas \begin{bmatrix}1 & 0  \\ -\frac{x_{q_1}}{x_{p_1}} & 1 \end{bmatrix}  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\x_{q,1}  &  x_{q,2} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} =  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\0  &  x_{q,2} -\frac{x_{q_1}x_{p_2}}{x_{p_1}} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} \eas \end{rmk}
@@ -803,7 +818,8 @@ In particular, not that the construction $M_{\cV'}$ need not have the minimal nu
 The requirement that $V$ and $W$ are cyclic intervals may seem arbitrary until one considers that all flacets of a matroid are cyclic intervals if and only if the matroid is a positroid, and that all flacets are cyclic intervals. In some moral sense, the algorithm prescribed in Proposition \ref{res:moving vairables} aims to combine two flacets into a larger flacets in order to define a new positroid cell. 
 \end{rmk}
 
-SAY SOMETHING HERE ABOUT HOW THIS APPLIES TO WLDS.
+In the particular case of Wilson loop diagrams ($W = (\cP, [n])$), recall from Lemma 2.28 of \cite{wilsonloops} that all cyclic flats can be represented as a propagator flat, $F(P)$, and that be Lemma 3.35 of the same, any propagator flat that is a cyclic flat has rank equal to the number of propagators in the set defining it. Therefore, the boundaries of the sort considered above occur when there are two propagators flats $F(P)$ and $F(Q)$ such that \begin{enumerate} \item Neither $P$ nor $Q$ are the full propagators set, $\cP$. \item The sets $F(P)$, $F(Q)$ and $F(P) \cup F(Q)$ form cylic intervals in $[n]$, \item On propagators set is not contained in the other. \end{enumerate} It is easy to check that these conditions are met in the Wilson loop diagram $W$ in Examaple \ref{eg:strangeboundary}.
+
 
 \begin{thm} \label{res:deg1polescancel}
 All the codimension 1 poles of admissible Wilson loop diagrams cancel.
