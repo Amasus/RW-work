@@ -805,7 +805,7 @@ Given a matrix $M_{\cV}$ and $M_{\cV'}$ as above, the polynomial $R(\cV)$ does n
 \end{thm} \todo{Cam: check this for correctness}
 
 \begin{proof}
-Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of $M(\cV)$. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M_(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(W)$ does not contain the positroid cell $\Sigma(\cV')$.
+Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of $M(\cV)$. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M_(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.
 
 By display \eqref{eqn:rw_vanishes}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
 \end{proof}
@@ -820,13 +820,17 @@ The requirement that $V$ and $W$ are cyclic intervals may seem arbitrary until o
 
 In the particular case of Wilson loop diagrams ($W = (\cP, [n])$), recall from Lemma 2.28 of \cite{wilsonloops} that all cyclic flats can be represented as a propagator flat, $F(P)$, and that be Lemma 3.35 of the same, any propagator flat that is a cyclic flat has rank equal to the number of propagators in the set defining it. Therefore, the boundaries of the sort considered above occur when there are two propagators flats $F(P)$ and $F(Q)$ such that \begin{enumerate} \item Neither $P$ nor $Q$ are the full propagators set, $\cP$. \item The sets $F(P)$, $F(Q)$ and $F(P) \cup F(Q)$ form cylic intervals in $[n]$, \item On propagators set is not contained in the other. \end{enumerate} It is easy to check that these conditions are met in the Wilson loop diagram $W$ in Examaple \ref{eg:strangeboundary}.
 
+We are now ready to prove the main result of this section: that the singularities of $I(W)$ that lie on codimension $1$ boundaries of $\Sigma(W)$ all cancel in the tree amplitude. Before we begin, we recall a few facts about the polynomial $R(W)$. As a motivating example, we consider the diagram \ba W =   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+	\begin{scope}
+	\drawWLD{10}{1.5}
+	\drawnumbers
+	\drawprop{1}{0}{8}{1}
+	\drawprop{3}{0}{8}{0}
+        \drawprop{5}{0}{8}{-1}
+		\end{scope}
+	\end{tikzpicture} \label{eq:relevantexample}\ea with the associated matrix \bas  C(W)  = \begin{bmatrix}  x_{p,1} & x_{p,2} &0 & 0 & 0 & 0& 0 & x_{p,8} & x_{p,9} & 0 \\ 0 &  0 & x_{r,3} & x_{r,4} & 0  & 0  & 0 & x_{r,8} & x_{r,9} & 0  \\  0 & 0 & 0 &0 &x_{s, 5}  &x_{s,6}& 0  & x_{s,8} & x_{s, 9} & 0 \end{bmatrix} \;.\eas 
 
-\begin{thm} \label{res:deg1polescancel}
-All the codimension 1 poles of admissible Wilson loop diagrams cancel.
-\end{thm}
-
-\begin{proof}
-By construction, the primitive factors of $R(W)$ either correspond to $1 \times 1$ or $2 \times 2$ minors of $C(W)$. Infact, by construction, setting a $1 \times 1$ minor to zero corresponds to, in the notaton of definition \ref{dfn:I(W)}, setting $x_{q_1, e+1} = 0$ or $x_{q_s, e} = 0$. We depict this diagramatically as (for $e = 8$) \bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+Every codimension one pole of an admissible Wilson loop diagram is a factor of the polynomial $R(W)$ appearing in the denominator of the associated integrand. By Definition \ref{dfn:I(W)}, the primitive factors of $R(W)$ either either have degree one or two, corresponding to $1 \times 1$ or $2 \times 2$ minors of $C(W)$. Infact, by this definiton, the degree one factors of $R(W)$ are of the form  $x_{q_1, e+1}$ or $x_{q_s, e}$. Setting these factors to $0$ correspons to changing the support of either the first or the last propagators supported on the edge $e$ such that the first propagator is no longer supported by the vertex $e +1$ (i.e.  $x_{q_1, e+1} = 0 $) or the last propagator is not supported on the vertex $e$, (i.e. $x_{q_1, e} = 0$). For instance, for $W$ as in \eqref{eq:relevantexample}, we depict this diagramatically, for $e = 8$ as \bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -842,7 +846,9 @@ By construction, the primitive factors of $R(W)$ either correspond to $1 \times 
 	\drawprop{3}{0}{8}{0}
         \boundaryprop{5}{0}{8}{propagator, dashed}
 		\end{scope}
-	\end{tikzpicture} \;.\eas That is, a setting a $1\times 1$ minor to zero can be depicted by supporting a single propagator on the remaining three vertices. Similarly, the $2 \times 2$ minors correspond to setting two of the variables supporting adjasacent propagators as scalar multiples of each other. In the same example, we draw this as \bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+	\end{tikzpicture} \;.\eas Note that unless there is exactly one propagator adjascent on an edge, there is at most ever one variable corresponding to that edge that is a factor of $R(W)$. 
+
+Similarly, the degree two factors corresponds to setting two pairs of variables, ($x_{q_i, e} , x_{q_i e+1}$) and ($x_{q_{i+1}, e} , x_{q_{i+1}, e+1}$), precicely those supporting adjasacent propagators on an edge, as scalar multiples of each other. Diagramatically, we depict this as  we draw this by making two adjascent propagators meet on the common edge. Again, from display \eqref{eq:relevantexample}, with $e = 8$, \bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -850,17 +856,25 @@ By construction, the primitive factors of $R(W)$ either correspond to $1 \times 
 	\modifiedprop{3}{0}{8}{2}{propagator, dashed}
         \drawprop{5}{0}{8}{-1}
 		\end{scope}
-	\end{tikzpicture} \;, \eas or setting a $2 \times 2$ minor is depicted by making two adjascent propagators meet on the common edge.
+	\end{tikzpicture} \;.\eas. Note that there is never any factor of $R(W)$ that involves two non-adjascent propagators.   
 
-We first consider all the possible degree 1 factors of $R(W)$. Write $W = (\cP, [n])$ with $p= (i,j)  \in \cP$. Suppose $j > i+2$ (i.e. if $V(p)$ does not consist of $4$ cyclically consecutive vertices) and, wihtout loss of generality, assume $x_{p, i}$ is a factor of $R(W)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ such that $\lim_{x_{p, i} \rightarrow 0} I(W) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopSteward, correlahedron}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 1 boundary of $\Sigma(W)$. It is easy to check that $W'$ sasisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not in \cP$, and $W$ satisfies density) conditions for admissibility. Thereofre $W'$ is admissible. 
+\begin{thm} \label{res:deg1polescancel}
+All the codimension 1 poles of admissible Wilson loop diagrams cancel.
+\end{thm}
 
-If $q \in \cP$, then, the two rows of $\lim_{x_{p, i} \rightarrow 0}C(W)$ defined by the propagators $p$ (now supported on 3 vertices) and $q$ have non-zero entries in only 4 columns. Therefore, by the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 2 boundary of $\Sigma(W)$. Therefore, we do not consider these poles. 
+\begin{proof}
 
-It remains to consider the degree one factors of $R(W)$ contributed by propagators of the form $p = (i, i+2)$. If $x_{p, i+1}$ or $x_{p, i+2}$ are factors of $R(W)$, then consider the propatators $q = (i-1, i+2)$ or $q = (i, i+3)$ respectively. If $q \not \in W$, then the diagram $W' = ((\cP \setminus p)\cup q, [n])$ is admissible, and the argument proceeds as above. If $x_{p, i}$ or $x_{p, i+3}$ are factors of $R(W)$, let $q = (i+1, i+3)$ or $q = (i-1, i+1)$ respectively. By the non-crossing condition, $p$ and $q$ cannot simultaneously exist in $W$. If $W$ does not contain another propagator of the form $(i+2, k)$ or $(i, k)$ respectfully, we may define an admissible diagram $W' = ((\cP \setminus p)\cup q, [n])$ (otherwise, $q$ would cross the existing propagator $(i+2, k)$ or $(i, k)$).  In this case, $\lim_{x_{p, i} \rightarrow 0} I(W) = -\lim_{x_{q, i+4} \rightarrow 0} I(W')$ where the negative sign comes from the same arguments as above. 
+We first consider all the possible degree 1 factors of $R(W)$. Write $W = (\cP, [n])$ with $p= (i,j)  \in \cP$. Suppose $j > i+2$ (i.e. if $V(p)$ does not consist of $4$ cyclically consecutive vertices) and, wihtout loss of generality, assume $x_{p, i}$ is a factor of $R(W)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ such that $\lim_{x_{p, i} \rightarrow 0} I(W) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopSteward, correlahedron}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 1 boundary of $\Sigma(W)$. It is easy to check that $W'$ satisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not \in \cP$, and $W$ satisfies density) conditions for admissibility. Therefore $W'$ is admissible. 
+
+If $q = (i+1, j) \in \cP$, then, in the matrix $\lim_{x_{p, i} \rightarrow 0}C(W)$, the row corresponding to the propagator $p$ now has 3 non-zero entries (corresponding to the columns $\{i+1, j, j+1\}$) and the row corresponding to $q$ has $4$ non-zero entries (corresponding to the columns $\{i+1, i+2, j, j+1\}$). That is, we have $2$ rows with non-zero entries in $4$ columns. Therefore, by Theorem \ref{res:minimalrep}, we see that this parametrizes a co-dimension 2 boundary of $\Sigma(W)$. Therefore, we do not consider these poles in this argument. 
+
+It remains to consider the degree one factors of $R(W)$ contributed by propagators of the form $p = (i, i+2)$. If $x_{p, i+1}$ or $x_{p, i+2}$ is a factor of $R(W)$, then consider the propatator $q = (i-1, i+2)$ or $q = (i, i+3)$ respectively. If $q \not \in \cP$, then the diagram $W' = ((\cP \setminus p)\cup q, [n])$ is admissible, and the argument proceeds as above, using Lemma \ref{lem:movingpropnegative}. If $q \in \cP$, then by the arguments above, by Theorem \ref{res:minimalrep}, we see that the matrix $\lim_{x_{p, i+1} \to 0} C(W)$ (resp. $\lim_{x_{p, i+1} \to 0} C(W)$) parametrizes a co-dimension 2 boundary of $\Sigma(W)$. Therefore we do not consider this case. If $x_{p, i}$ or $x_{p, i+3}$ is a factor of $R(W)$, consider $q = (i+1, i+3)$ and $q = (i-1, i+1)$ respectively. By the non-crossing condition, $p$ and $q$ cannot simultaneously exist in $W$. If $W$ does not contain another propagator of the form $(i+2, k)$ or $(i, k)$ respectively, we may define an admissible diagram $W' = ((\cP \setminus p)\cup q, [n])$ (otherwise, $q$ would cross the existing propagator $(i+2, k)$ or $(i, k)$).  In this case, $\lim_{x_{p, i} \rightarrow 0} I(W) = -\lim_{x_{q, i+4} \rightarrow 0} I(W')$ where the negative sign again comes from Lemma \ref{lem:movingpropnegative}.
 
 It remains to check the case when $x_{p, i}$ (resp. $x_{p, i+3}$) is a factor of $R(W)$ and there exists a propagator $(i+2, k)$ (resp. $(i, k)$) in $W$. In this case, the simple pole formed by taking the limit as $x_{p, i}$ (resp. $x_{p, i+3}$) goes to zero cancels with a pole coming from degree 2 factors contributed by other diagrams. Therefore, we return to this during the discussion of $2 \times 2$ minors. 
 
-Next, we consider the degree 2 factors of $R(W)$. In order for such a factor to exist, there must be some edge of $W$, call it $i$, that has at least two propagators ending on it, say $p = (i, j)$ and $q = (i, k)$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjascent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams $W' = ((\cP \setminus p) \cup r, [n])$ and $W'' = ((\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ both satisfy density. Furthermore, since $W$ is admssible, and $p$ and $q$ are adjascent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy non-crossing. I.e, they are both admissible. \todo{still need a proof that this is a codimension 1 boundary.} We see from Lemma \ref{lem:Vdiagcancel} that after appropriate changes of parametrizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(W') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(W) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(W'') = 0 \; .\eas That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(W) \cap \Sigma(W') \cap \Sigma(W'')$.  {\color{red} up to some density argument, right?} \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+Next, we consider the degree 2 factors of $R(W)$. In order for such a factor to exist, there must be some edge of $W$, call it $i$, that has at least two propagators ending on it, say $p = (i, j)$ and $q = (i, k)$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjascent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams $W' = ((\cP \setminus p) \cup r, [n])$ and $W'' = ((\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ both satisfy density. Furthermore, since $W$ is admssible, and $p$ and $q$ are adjascent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy non-crossing. I.e, they are both admissible. Note that the diagrams $W$, $W'$ and $W''$ are in the configuration layed out in display \eqref{eq:wideV}. By Theorem \ref{res:Rado}, we see that the reparametrization performed in Lemma \ref{res:Vdiagcancel} means that $\lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} C(W)$  parameterized a codimension 1 subspace of $\overline{\Sigma(W)}$. By Proposition \label{res:vanishonbdny}, this is lies in a codimension 1 boundary of $\Sigma(W)$. Accoring to Lemma \ref{res:Vdiagcancel}after appropriate changes of parametrizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(W') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(W) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(W'') = 0 \; .\eas 
+\begin{comment}
+That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(W) \cap \Sigma(W') \cap \Sigma(W'')$. asdf   \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -884,9 +898,10 @@ Next, we consider the degree 2 factors of $R(W)$. In order for such a factor to 
 	\modifiedprop{3}{0}{8}{0}{propagator, dashed}
         \drawprop{5}{0}{8}{-1}
 		\end{scope}
-	\end{tikzpicture}\eas In otherwords, these three codimension 1 boundaries cancel in the sum of integrals tha make up the amplitude.
+	\end{tikzpicture}\eas \end{comment}
+In otherwords, these three codimension 1 boundaries cancel in the sum of integrals tha make up the amplitude.
 
-If $k > j+1$ but the propagator $r =  (j,k) \in \cP$, then setting any of the minors $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$, $(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})$ or $(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})$ to zero creates a codimension 2 boundary. \todo{Needs proof.}
+If $k > j+1$ but the propagator $r =  (j,k) \in \cP$, we claim that setting any of the minors $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$, $(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})$ or $(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})$ to zero creates a codimension 2 boundary. Without loss of generality, consider the case where $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) = 0$. Then by adding a scalar multiple of the row cooresponding to column $p$ to the row corresponding to the column $q$, one may reparametrize $C(W)$ such that $V(q) = V(r)$. Thus, we have 2 propagators supported on $4$ vertices, and by Theorem \ref{res:minimalrep}, this is not a minimal representation of $C(W)$. \todo{This isn't quite the proof you had about codim 2 of this boundary. Help?}
 
 It remains to check the case where $k = j+1$, i.e. $W$ contains a pair of propagotors configured as below: \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
@@ -897,9 +912,11 @@ It remains to check the case where $k = j+1$, i.e. $W$ contains a pair of propag
 		\end{scope}
 	\end{tikzpicture} \eas
 
-Consider the diagrams $W' = ((\cP \setminus p) \cup r = (j, j+2), [n])$ and $W'' = ((\cP \setminus p) \cup s = (k-2, k), [n])$. Since the edge $r \not \in \cP$ (it would cross $q$ if it were), and $s \not \in \cP$ (it would cross $p$ if it were), we see that $W'$ and $W''$ satisfy both the non-crossing and density conditions, and thus are admissible. 
+Consider the diagrams $W' = ((\cP \setminus p) \cup r = (j, j+2), [n])$ and $W'' = ((\cP \setminus p) \cup s = (k-2, k), [n])$. Since the edge $r \not \in \cP$ (it would cross $q$ if it were), and $s \not \in \cP$ (it would cross $p$ if it were), we see that $W'$ and $W''$ satisfy both the non-crossing and density conditions, and thus are admissible. Furthermore, $W$, $W'$ and $W''$ are in the configurations layed out in display \eqref{eq:narrowV}.
 
-We see from Lemma \ref{lem:narrowVcancel} that pole defined by the limit of sending $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$ to $0$ cancels with degree 1 poles in the diagrams in $W'$ and $W''$ under the correct parametrizations: \bas \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) \rightarrow 0}I(W) + \lim_{x_{r, k-2}\rightarrow 0}I(W') + \lim_{x_{s, j+3}\rightarrow 0}I(W'') =0 \;.\eas That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(W) \cap \Sigma(W') \cap \Sigma(W'')$. \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+We see from Lemma \ref{res:narrowVcancel} that pole defined by the limit of sending $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$ to $0$ cancels with degree 1 poles in the diagrams in $W'$ and $W''$ under the correct parametrizations: \bas \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) \rightarrow 0}I(W) + \lim_{x_{r, k-2}\rightarrow 0}I(W') + \lim_{x_{s, j+3}\rightarrow 0}I(W'') =0 \;.\eas That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(W) \cap \Sigma(W') \cap \Sigma(W'')$.
+\begin{comment}
+ \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -921,11 +938,14 @@ We see from Lemma \ref{lem:narrowVcancel} that pole defined by the limit of send
 	\boundaryprop{2}{1}{4}{propagator, dashed}
 	\end{scope}
 	\end{tikzpicture}\eas
-
+\end{comment}
 Note that the degree one terms of $R(W)$ involved in this calculation are exactly the degree one factors whose cancelation was put off until discussion of the degree two terms.
 \end{proof}
 
-{\color{red} Worth noting that this can only be done on a section of the $\Gr(k,n)$ in the $\Grall(k, n+1)$ bundle (i.e. when whe consider $C(W)$ as the fundamental objects, and not $x_*(W)$. \cite{HeslopStewart, non-orientability} show that we cannot do this for the space in genral because of orientation issues.} 
+
+\begin{rmk}
+We remark that this cancelation is exact only in the space parametrized by matrices of the form $M(\VP)$, as a subspace of $\Gr(k,n)$ and not in the space parametrized by matrices of the form $M(\VPs)$, as a subspace of $\Grall(k,n+1)$. In \cite{HeslopStewart,non-orientability}, the authors explicitly show that cancelations of this form do not hold in the larger space because of orientation issues.
+\end{rmk}
 
 \begin{appendices} 
 \section{Graveyard of Technical Lemmas \ref{sec:appendix}}
@@ -950,7 +970,7 @@ When two propagators $p = (i, j)$ and $q = (i, k)$ are \hlfix{adjacent }{note, w
 We restrict our attention to the relavant $2 \times 2$ minor of $x_*(W)$, $ \begin{bmatrix} x_{p, i} & x_{p, i+1} \\ x_{q, i} & x_{q, i+1} \end{bmatrix} $,  which we can reparametrize as $ \begin{bmatrix} x & y \\ xz & zy + w \end{bmatrix} $. Then we have that \bas x_{p, i} = x \quad ; \quad  x_{p, i+1} = y \quad ; \quad x_{q, i} = xz\quad  ;\quad x_{q, i+1}  = zy + w \; . \eas Furthermore, \bas dx_{p, i} = dx  \quad ; \quad  d x_{p, i+1} = dy \quad ; \quad dx_{q, i} = x dz + z dx \quad ; \quad d x_{q, i+1} = ydz + z dy + dw \;.\eas Therefore, under these changes of variables, we see that \bas \frac{dx_{p, i}\;dx_{p, i+1}\;dx_{q, i}\;dx_{q, i+1}}{x_{p, i+1}(x_{p, i}x_{q, i+1} - x_{q, i}x_{p, i+1} ) x_{q, i}}  = \frac{ dx\;dy\;x dz\; dw}{y (xyz + xw - xyz)xz}\eas which simplifies to the desired result.
 \end{proof}
 
-In future, we use whichever parametrization of the $2 \times 2$ minors is convenient. The need for a change of variables comes up in two cases. The first case involves the cancelation of the $2 \times 2$ minors in following three propagator confgurations: \bmls \textrm{Config 1} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+In future, we use whichever parametrization of the $2 \times 2$ minors is convenient. The need for a change of variables comes up in two cases. The first case involves the cancelation of the $2 \times 2$ minors in following three propagator confgurations: \bml \textrm{Config 1} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -971,9 +991,9 @@ In future, we use whichever parametrization of the $2 \times 2$ minors is conven
 	\drawprop{1}{0}{3}{-1}
 	\drawprop{3}{1}{8}{0}
 		\end{scope}
-	\end{tikzpicture}\emls 
+	\end{tikzpicture} \label{eq:wideV}\eml
 
-\begin{lem}
+\begin{lem}\label{res:Vdiagcancel}
 Let $W_1$, $W_2$ and $W_3$ be admissible Wilson loop diagrams that are identical except for the fact that the diagram $W_i$ cotains the pair of adjascent propagators shown in $\textrm{Config i}$ above. Then 
 \bas \sum_{i = 1}^3 \lim_{\textrm{degree 2 factor of } R(W_i) \rightarrow 0} I(W_i) = 0\;.\eas \end{lem}
 
@@ -982,7 +1002,7 @@ This proof is also given in \cite{HeslopStewart, casestudy} but is included here
 Without loss of generality, write $(x_*(W_i))$ with the pertinent propagators represented in the first two rows. Then the matrices $x_*(W_i)$ are identical except for the first two rows. Since the propagators are adjacent, by Lemma \ref{lem:simplifyR(W)} we may write the first two rows as \bas x_*(W_1) = \begin{bmatrix}1 & \ldots & a &b &\ldots & 0 & 0 & \ldots & c & d   \ldots\\  1 & \dots &  ae &be + f  & \ldots &g & h & \ldots &0 &0  \ldots   \end{bmatrix}  \\ x_*(W_2) = \begin{bmatrix}1 & \ldots & a' & b' &\ldots & c' & d' & \ldots & 0 & 0   \ldots\\  1 & \dots &  0 & 0  & \ldots &c'e' & d' e' + f' & \ldots &g' &h'  \ldots   \end{bmatrix} \\x_*(W_3) = \begin{bmatrix}1 & \ldots & 0 &0 &\ldots & a'' & b'' & \ldots & c'' & c''   \ldots\\  1 & \dots &  e'' & f''  & \ldots &0 & 0 & \ldots &c''g'' & d'' g'' + h'' \ldots   \end{bmatrix}\;.\eas We multiple the first two rows of $x_*(W_2)$ and $x_*(W_3)$ by elements of $GL(2)$, leaving the rest of the rows unchanged. Namely, consider the products: \bas \begin{bmatrix} \frac{- e'}{1-e'} & \frac{1}{1-e'} \\ 1 & 0  \end{bmatrix} x_*(W_2) = \begin{bmatrix}  1 & \dots & \frac{-e' a'}{1- e'}  & \frac{-e' b'}{1- e'}  & \ldots &0 & \frac{ f'}{1-e'} & \ldots &\frac{g'}{1-e'} &\frac{h'}{1-e'}  \ldots  \\ 1 & \ldots & a' & b' &\ldots & c' & d' & \ldots & 0 & 0   \ldots \end{bmatrix}  \\ \begin{bmatrix}  \frac{1}{1-c''} & \frac{-c''}{1-c''}\\ 0  & 1  \end{bmatrix} x_*(W_3) = \begin{bmatrix}1 & \ldots & \frac{-e''c''}{1-c''} &\frac{-f''c''}{1-c''} &\ldots & a'' & b'' & \ldots & 0 & \frac{d''}{1-c''}   \ldots\\  1 & \dots &  e'' & f''  & \ldots &\frac{a''}{1-c''} & \frac{b''}{1-c''} & \ldots &g'' & h'' \ldots   \end{bmatrix}\;.\eas
 From this, we see that, in the limit $f \rightarrow 0$ and $f' \rightarrow 0$, for $x_*(W_2)$, we have the change of variables \bmls a = \frac{-e'a'}{1-e'} \quad ; \quad b = \frac{-e'b'}{1-e'} \quad ; \quad c = \frac{g'}{1-e'} \quad ; \quad d = \frac{d}{1-e'}  \quad ; \\ \quad e = \frac{1-e'}{e'}\quad ; \quad f = 0 \quad ; \quad g = c' \quad ; \quad h = d'\;.\emls Inverting and performing the change of variables, we see that $\lim_{f' \rightarrow 0} I(W_2) = \lim_{f \rightarrow 0} \frac{1}{1-e} I(W_1)$. A similar calculation shows that $\lim_{d'' \rightarrow 0} I(W_3) = \lim_{f \rightarrow 0} \frac{-1}{1-e} I(W_1)$. Thus, in the appropriate limit, \bas \lim_{f \rightarrow 0} I(W_1) + \lim_{f' \rightarrow 0} I(W_2) + \lim_{d'' \rightarrow 0} I(W_3) = 0\;.\eas  \end{proof} \todo{actually check these calculations, minus signs, etc.}
 
-The last case to consider consists of understanding the poles shared between the diagrams with the following configureations: \bmls \textrm{Config 4} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+The last case to consider consists of understanding the poles shared between the diagrams with the following configureations: \bml \textrm{Config 4} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -1003,9 +1023,9 @@ The last case to consider consists of understanding the poles shared between the
 	\drawprop{3}{1}{8}{0}
 	\drawprop{3}{-1}{1}{0}
 		\end{scope}
-	\end{tikzpicture}\emls 
+	\end{tikzpicture} \label{eq:narrowV}\eml
 
-\begin{lem}
+\begin{lem}\label{res:narrowVcancel}
 Let $W_4$, $W_5$ and $W_6$ be admissible Wilson loop diagrams that are identical except for the fact that the diagram $W_i$ cotains the pair of propagators shown in $\textrm{Config i}$ above. Let $p = (i, j)$ and $q = (i, k)$ with $k = j+1$. Then \bas \lim_{(x_{p,i}x_{q, i+1} - x_{p, i+1}, x_{q, i}) \rightarrow 0} I(W_4) + \lim_{x_{r, j+3} \rightarrow 0}I(W_5) + \lim_{x_{r, k-2} \rightarrow 0}I(W_6) = 0\;.\eas \end{lem}
 \begin{proof}
 This proof follows similarly to the above. Write \bas x_*(W_4) = \begin{bmatrix}1 & \ldots & a &b &\ldots & c & d & 0 & \ldots \\  1 & \dots &  ae &be + f  & \ldots &0 & g & h & \ldots    \end{bmatrix}  \\ x_*(W_5) = \begin{bmatrix}1 & \ldots & a' &b' &\ldots & c' & d' & 0 & 0& \ldots \\  1 & \dots &  0&0  & \ldots &c'e' & d'e' +f' & g' & h' & \ldots    \end{bmatrix} \\ x_*(W_6) = \begin{bmatrix}1 & \ldots & 0 &0 &\ldots & a'' & b'' & c''g'' & h'' c'' + d'' & \ldots \\  1 & \dots &  e'' & f''  & \ldots &0&0 & g'' & h'' & \ldots    \end{bmatrix} \;. \eas We consider the change of variables defined by the product \bas \begin{bmatrix}1 & 0 \\ \frac{-e'}{1-e'} & \frac{1}{1-e'} \end{bmatrix} x_*(W_5)  \quad \textrm{ and } \quad \begin{bmatrix}\frac{1}{1-c''} & \frac{-c''}{1-c''} \\ 0 & 1 \end{bmatrix} x_*(W_6) \;.\eas Then the same types of calculations as in Lemma \ref{??} shows that $ \lim_{x_{r, k-2} \rightarrow 0}I(W_6)  =  \lim_{f \rightarrow 0} \frac{-1}{1-e} I(W_4) $ and $\lim_{x_{r, k-2} \rightarrow 0}I(W_5)  =  \lim_{f \rightarrow 0} \frac{e}{1-e} I(W_4) $, proving the result.
@@ -1014,7 +1034,7 @@ This proof follows similarly to the above. Write \bas x_*(W_4) = \begin{bmatrix}
 
 %Let $\mathcal{P} = \{P_1, P_2, \dots, P_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be algebraically independent invertible variables. Define $M_{\mathcal{P}}(\mathbf{x})$ to be the $n \times k$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in P_i$ and $0$ otherwise.
 
-\begin{thm}
+\begin{thm}\label{res:Rado}
 Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $G$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. For $I \subset \{1, \dots, k\}$, let $R_I$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows of $M'$ indexed by $I$ at real parameters. The following are equivalent:
 \begin{itemize}
 \item[(i)] For all $I \subsetneq \{1,2, \dots, k\}$ and all $j \in I^c$, $R_{I \cup j} \neq R_I$.
