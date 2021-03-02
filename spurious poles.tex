@@ -1043,23 +1043,31 @@ Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and
 \end{thm}
 
 \begin{proof}
-To show that (ii) implies (i), suppose that for some $I$ and $j$, $R_{I \cup j} = R_{I}$.
+We show that (ii) implies (i) via induction on $k$. When $k = 1$, $G$ is a parameterized subset of projective space and the result holds. Suppose that the result holds for $k = l-1$. Let $M'$ be an $n \times l$ matrix such that $R_{\{1,\dots,l\}} = R_{1,\dots,l-1}$, and suppose that $R_I \neq R_{I \cup j}$ for $j \notin I$ whenever $|I| < l$. For any subset $S \subset [k]$, let $d_S$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $S$.
+
+$G$ is spanned by an element $r$ in $G_{\{l\}}$, plus a $k-1$ plane in $G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)$. Since $r \in R_{1, \dots, l-1}$,
+%
+\begin{displaymath}
+\dim(G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)) < \dim(G_{\{1,\dots,l-1\}}).
+\end{displaymath}
+%
+\noindent
+So,
+%
+\begin{displaymath}
+\dim(G) \leq \dim(G_{\{l\}}) + (\dim(G_{\{1,\dots,l-1\}}) - 1) = d -k - 1,
+\end{displaymath}
+%
+\noindent
+and thus (ii) implies (i) when $k = l$.
+
+
 
 To show that (i) implies (ii), suppose that $\mathrm{dim}(G) < d-k$. Then, there is some $A \in Gl(k,\mathbb{R}(\mathbf{x}))$ such that $A \cdot M'$ contains strictly fewer than $d$ parameters. Suppose that the parameter $x_{a,b}$ is eliminated in $A \cdot M'$. We claim that $R_{[k] \setminus a} = R_{[k]}$.
 
 \begin{itemize}
 \item Take $a$-th row of a specific evaluation of $M'$, suppose it is not contained in $R_{[k] \setminus a}$.
 \item
-\end{itemize}
-\end{proof}
-
-Theorem XX in \cite{basisshapeloce} gave a formula
-\begin{proof}
-\begin{itemize}
-\item Extra condition is:
-\item start with one variable per nonzero entry
-\item change variables in a way with Jacobian nonzero determinant
-\item start setting things equal to zero.
 \end{itemize}
 \end{proof}
 
