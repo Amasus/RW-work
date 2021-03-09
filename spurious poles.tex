@@ -550,6 +550,7 @@ In \cite[section 2.3]{non-orientable}, the authors show that  the subspace of $\
 
 The goal of this paper is to show that the spurious poles of the Wilson loop diagrams cancel in the calculation of the full amplitude. Recall that there are two types of singularities to this theory: the physical poles and the spurious poles. The physical poles arise when the vectors representing the particles do not span $\R^4$, as one expects in a physical theory with infrared singularites. The sprurious poles are those that arise in each summand of the integrals involved in calculating the three level scattering amplitude. These should cancel in the sum. In this section, we discuss the algebraic and geometric propoerties  of these poles. 
 
+\subsubsection{Integrals associated to Wilson loop diagrams}
 The Wilson loop diagrams represent the tree level contributions to the scattering amplitudes in the physical theory N=4 SYM. The holomorphic Wilson loop for $n$ particles and $k$ propagators gives the contribution to the n particle scattering amplitude of N=4 SYM by $k$ propagators. The tree level contribution to this amplitude is given by a sum of integrals associated to admissible Wilson loop diagrams: \ba \cA_{k,n}^{tree} = \sum_{(\cP, [n]) \subset \cW_{k,n}} I(\VP) \;.\label{eq:treelevelamplitude}\ea The scattering amplitude is a functional on the particles of the theory, represented in twistor space. In this case, the external data are represented as $n$ sections of a $k$ dimensional real vector bundle over a real twistor space, $\{Z_1, \ldots, Z_n\}$  such that the $n \times n+4$ matrix who's $i^{th}$ row is $Z_i$ has positive maximal minors. Furthemore, we fix a guage section, $Z_0$, which can be taken, without loss of generality to be a $0$ section. We define the matrices \bas \cZ = \begin{bmatrix} - & Z_1& - \\ & \vdots &  \\ - & Z_n& -\end{bmatrix} \; ; \; \cZ_* = \begin{bmatrix}- & Z_0& - \\  - & Z_1& - \\ & \vdots & \\  - & Z_n& -\end{bmatrix} \; .\eas Note from above, the matrix $\cZ$ has positive maximal minors, while the matrix $\cZ_*$ may not.
 
 Before we define the actual integral, $\cI(\VP)$, recall that if multiple propagators end on the $e^{th}$ edge, we order them according to their proximity to the vertex $e$. We are now ready to define the integrals assoicated to each Wilson loop diagram $W = (\cP, [n])$, with $k = |\cP|$:
@@ -563,6 +564,7 @@ Before we define the actual integral, $\cI(\VP)$, recall that if multiple propag
 There are a few features to note in this defintion. First, notice that the spurious poles of the theory correspond to setting the factors of $R(\VP)$ to zero. Specifically, by equations \eqref{eq:matrixvalues} in Appendix \ref{sec:appendix}, the variables $x_{p,0}$ localize to $0$ when the vectors representing the particles do not span $\R^4$. This corresponds to the physical poles of the theory. The spurious poles occur when  $x_{p,0} \neq 0$, but the polynomial $R(\VP)$ goes to $0$. See \cite{casestudy, HeslopSteward, AmplituhedonSquared} for more calculations of this form. 
 
 Secondly, note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}. Namely, the integal $I(\VP)$ is defined on all but the set of measure 0 where $M_{\YP}$ is of less than full rank. This subspace is exactly $L(\YP)$, which differs from $\Sigma(\VP) \times \R^k$ by a set of measure 0. 
+
 
 Equation \eqref{eq:treelevelamplitude} shows that $N^kMHV$ (tree level) amplitude
 on $n$ points is taken to be the sum of all the integrals associated
@@ -584,6 +586,8 @@ these integrals. One can consider $\overline{L(\YP)}$ as the closure of a $k$-di
 cancelation of spurious poles on any section of the bundle, i.e. after fixing values to the variables $x_{p, 0}$. In fact,
 for the spurious poles, one typically sets the values of $x_{p,0}$ to
 be $\pm 1$, and factors of $R(\VP)$ evaluates to $0$ \cite{??}. The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. 
+
+\subsubsection{Geometry of spurious poles}
 
 In \cite{GWLDCII}, the authors show a direct relationship between the polynomial $R(\VP)$ and the positroid cell $\Sigma(\VP)$. They show that the prime factors of $R(\VP)$ to are also the prime factors of the product of the minors defined by the Grassmann necklace of $\Sigma(\VP)$. We restate it here using the notation of this paper.
 
@@ -611,40 +615,38 @@ In order to do this, we to show that the factors of $R(\VP)$ vanish on the bound
 
 \todo{pick up here}
 
-\begin{prop}\label{res:vanishonbdny}
-All the factors of $R(\VP)$ vanish on the boundary of $\Sigma(\VP)$.
+\begin{prop}\label{res:vanishonbdny} \note{changed all $\VP$ to $\cV$}
+If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid cell $\Sigma(\cV)$.
 \end{prop}
 
 
 \begin{proof}
-Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\VP)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
+Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
 %
 \begin{displaymath}
 R(\VP) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
 \end{displaymath}
 %
-From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\VP)}$ is generated by $\{\Delta_I : I \notin M(W)\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $G(W) \subset \overline{\Sigma(\VP)}$ and hence every function vanishing on $\Sigma(\VP)$ vanishes on $G(W)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\VP)$ is defined as a subset of $\overline{\Sigma(\VP)}$ by
+From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
 %
 \begin{displaymath}
 \Delta_{I_1}, \Delta_{I_2}, \dots, \Delta_{I_k} \neq 0.
 \end{displaymath}
 %
-Thus, the subset of $G(W)$ where $R(\VP)$ vanishes is exactly
+Thus, the subset of $L(\cV)$ where $R(\cV)$ vanishes is exactly
 %
 \begin{displaymath}
-G(W) \setminus \Sigma(\VP) \subset \overline{\Sigma(\VP)} \setminus \Sigma(\VP). \qedhere
+G(W) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
 \end{displaymath}
 \end{proof}
 
 \begin{eg} \label{eg:closuresmatch}
-This example illustrates the differences between the sets $G(W)$, $\Sigma(\VP)$, and $\overline{\Sigma(\VP)}$. Let
-\bas M_{\VP} =
+This example illustrates the differences between the sets $L(\cV)$, $\Sigma(\cV)$, and $\overline{\Sigma(\cV)}$. Let
+\bas M_{\cV} =
 \begin{bmatrix}
 x_{p,1} & x_{p,2} & 0 &x_{p,4} & x_{p,5} & 0 \\
 x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
-\end{bmatrix}.\eas
-\noindent
-Let $\Sigma(\VP)$ and $\overline{\Sigma(\VP)}$ be the associated open and closed positroid cells respectively.
+\end{bmatrix}.\eas Not that this matrix corresponds to a Wilson loop diagram, but the result demonstrated in this example is much more general. Let $\Sigma(\cV)$ and $\overline{\Sigma(\cV)}$ be the associated open and closed positroid cells respectively.
 
 The point represented by
 \begin{displaymath}
@@ -654,10 +656,10 @@ The point represented by
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $G(W) \setminus \Sigma(\VP)$, since the minor $\Delta_{I_1} = \Delta_{12}$ vanishes. Hence,
+is in $L(\cV) \setminus \Sigma(\cV)$, since the minor $\Delta_{I_1} = \Delta_{12}$ vanishes. Hence,
 %
 \begin{displaymath}
-R(\VP) = (x_{p,1}x_{q,2} - x_{p,2}x_{q,1}) x_{p,1} x_{p,4} x_{p,5} x_{q,2} x_{q,5} x_{q,6}
+R(\cV) = (x_{p,1}x_{q,2} - x_{p,2}x_{q,1}) x_{p,1} x_{p,4} x_{p,5} x_{q,2} x_{q,5} x_{q,6}
 \end{displaymath}
 \noindent
 vanishes at this point.
@@ -670,7 +672,7 @@ The point represented by
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $\Sigma(\VP) \setminus G(W)$ since there is no point in $G(W)$ where $\Delta_{45},\Delta_{56} \neq 0$ and $\Delta_{46} = 0$.
+is in $\Sigma(\cV) \setminus L(\cV)$ since there is no point in $L(\cV)$ where $\Delta_{45},\Delta_{56} \neq 0$ and $\Delta_{46} = 0$.
 
 The point represented by
 \begin{displaymath}
@@ -680,20 +682,21 @@ The point represented by
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $\overline{\Sigma(\VP)} \setminus \Sigma(\VP) \cup G(W)$.
+is in $\overline{\Sigma(\cV)} \setminus \Sigma(\cV) \cup L(\cV)$.
 \end{eg}
 
-This fact has been shown explicitly in the case of $n = 6$ and $k=2$, however, has not been shown in general.
+\hlfix{This fact}{which fact? The Proposition?} has been shown explicitly in the case of $n = 6$ and $k=2$, however, has not been shown in general.
 
-Next we show that the loci of the matrices after the codimension 1 poles of $R(\VP)$ have been set to 0 is dense in the corresponding positroid.
+We can use Propositiob \ref{res:vanishonbdny} to show that for Wilson loop diagrams, factors of $R(\VP)$ that vanish on codimension 1 boundaries of $\Sigma(\VP)$ have a locus that is dense in the corresponding positroid. \sanote{Cam, did I break this?}
 
-\todo{Check if the closures of Loci are put in the right places throughtout paper}
+{\color{red} Things to check: \begin{enumerate} \item Check if the closures of Loci are put in the right places throughtout paper
+\item Do we always use $L(\cV)$ to mean the full locus, or sometimes do we mean the positive locus? Do we need extra notation?\end{enumerate}}
 
 \begin{thm}\label{res:polesonboundaries}
 Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(\VP)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
 
 \begin{proof}
-From CITE THEOREM, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\mathcal{P}}(\mathbf{x})$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
+From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
 
 Next, suppose that $G'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $G'$ may be represented by reparameterizing this two by two minor in $M_{\mathcal{P}}(\mathbf{x})$, then setting one of the new parameters to zero. Let $M'$ denote the matrix obtained by this operation. Generic points in $G'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $G' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $G'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $G'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{G'} = \overline{\Sigma'}$.
 \end{proof}
@@ -713,8 +716,7 @@ Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does no
 
 \end{eg}
 
-We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref{res:polesonboundaries} does not hold. Namely, not every co-dimension one boundary of $\Sigma(\VP)$ contains the vanishing loci of a factor of $R(\VP)$.  \sanote{we really need to set a notation that explains that we are only referring to the vanishing loci in the positive Grassmanninas, so we don't have to keep saying it.}
-
+We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref{res:polesonboundaries} does not hold. Namely, not every co-dimension one boundary of $\Sigma(\VP)$ contains the vanishing loci of a factor of $R(\VP)$. 
 
 \section{The poles of Wilson loop diagrams \label{sec:poles}}
 
