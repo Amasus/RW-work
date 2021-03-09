@@ -1088,14 +1088,19 @@ So,
 \noindent
 and thus (ii) implies (i) when $k = l$.
 
-
-
-To show that (i) implies (ii), suppose that $\mathrm{dim}(G) < d-k$. Then, there is some $A \in Gl(k,\mathbb{R}(\mathbf{x}))$ such that $A \cdot M'$ contains strictly fewer than $d$ parameters. Suppose that the parameter $x_{a,b}$ is eliminated in $A \cdot M'$. We claim that $R_{[k] \setminus a} = R_{[k]}$.
-
-\begin{itemize}
-\item Take $a$-th row of a specific evaluation of $M'$, suppose it is not contained in $R_{[k] \setminus a}$.
-\item
-\end{itemize}
+Next, we show that (i) implies (ii). When $k = 1$, $G$ is again a parameterized subset of projective space. Suppose the result holds for $k = l-1$ and let $M'$ be an $n \times l$ matrix such that $R_{\{1,\dots,l\}} \neq R_{\{1,\dots,l-1\}}$. Let $d_l$ be the number of parameters appearing in row $l$ of $M$ which do not appear in rows $1, \dots, l-1$. Then, for generic $r \in R_{l}$, $r \notin R_{\{1,\dots,l-1\}}$. So,
+%
+\begin{displaymath}
+\dim(G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)) = \dim(G_{\{1,\dots,l-1\}}).
+\end{displaymath}
+%
+\noindent
+Thus,
+%
+\begin{displaymath}
+\dim(G_{\{1,\dots,l\}}) = (d_l - 1) + \dim(G_{\{1,\dots,l-1\}}) = d-k.
+\qedhere
+\end{displaymath}
 \end{proof}
 
 \begin{eg}
