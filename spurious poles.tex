@@ -386,6 +386,12 @@
 \maketitle
 \section{Introduction}
 
+{\color{red} Things to check: \begin{enumerate} \item Check if the closures of Loci are put in the right places throughtout paper
+\item Make matriods and matrices have different notation.
+\item Do we always use $L(\cV)$ to mean the full locus, or sometimes do we mean the positive locus? Do we need extra notation?
+\item $L_{\geq 0}(\cV)$ and $M_{\geq 0}(\cV)$ to indicate intersection with $\Gr(k, n)$.\end{enumerate}}
+
+
 The holomorphic Wilson loop representation of $N=4$ SYM theory is calculated on families of Feynman diagrams called maximally helicity violating (MHV) diagrams, next to maximal helicity violating (NMHV) diagrams, and so forth ($N^k$MHV diagrams). When represented in twistor space \cite{Adamo:2011pr}, the calculations of the associated integrals simplify dramatically. Furthermore, in a dual representation of $N^k$MHV diagrams, called Wilson loop diagrams in this paper, the diagrams correspond to subspaces of the positive Grassmanian, called positroid cells. The connection between the tree level physical interactions and the geometry of the positive Grassmannians is well studied, both in the holomorphic Wilson loop context, and in the context of BCFW diagrams (or plabic graphs) where the associated geometric object is called the Amplituhedron \cite{???}. 
 
 This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams ($W$), and the geometry of the associated positroid cells ($\Sigma(\VP)$). For instance, a positroid cell can be uniquely defined by a set of minors, called the Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defining the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, \hlfix{the authors show that the radical of the product of the determinants of the Grassman necklace elements also corresponds to the product of the frozen variables of the cluster algebra defined by the plabic graph corresponding to the same cell.}{help?} While the varaibles involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
@@ -604,16 +610,15 @@ Write $\cI = \{I_1, \ldots I_n\}$ be the Grassmann necklace assoicates to the po
 We can generalize this result to define a polynomial given by a minimal parametrization of a positroid cell. 
 
 \begin{dfn}\label{dfn:RV}
-Let the set of subsets $\cV$ define a matroid $M_{\cV}$. If $M_{\cV}$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
+Let the set of subsets $\cV$ define a matroid $M_{\cV}$. If $M_{\cV}$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
 \end{dfn}
 
-\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by $\cI$. For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example both $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ define the same matroid. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system. \end{eg}
+\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by $\cI$. This is different from the approach elsewhere in the literature, eg \cite{GalashinLam, SSBW}, where similar polynomials are defined on the Plu\"{u}cker coordinates. For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example both $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ define the same matroid. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system. \end{eg}
 
 In this paper, we are interested in the poles of $I(\VP)$ that lie on codim 1 subspaces of $\overline{\Sigma(\VP)}$. By construction, these are the factors of $R(\VP)$ that have vanishing loci on codim 1 subspaces of $\overline{\Sigma(\VP)}$. Proposition \ref{res:vanishonbdny} shows that all factors of $R(\VP)$ vanish on the boundary of $\Sigma(\VP)$. Then, Theorem \ref{res:polesonboundaries} shows that if the vanishing loci has codimension 1, then it is dense in some codimension $1$ boundary of $\Sigma(\VP)$, and Theorem \ref{res:deg1polescancel} shows that the all the poles with codimension 1 vanishing loci cancel in the sum  $A_{k,n}$ cancel. 
 
 In order to do this, we to show that the factors of $R(\VP)$ vanish on the boundary of the associated positroid cells. In \cite{generalcombinatoricsII}, the authors show that $R(\VP)$ is exactly the product of the prime factors of the determinants of $M_{\VP}$ defined by the Grassmann necklace of the associated matroid, $\Sigma(\VP)$. Then we show that when the factor of $R(\VP)$ corresponds to a simple pole in the integral (i.e. a codimension 1 boundary of $\Sigma(\VP)$), the locus of the resulting matrix is dense in the corresponding boundary cell in the Grassmannian.
 
-\todo{pick up here}
 
 \begin{prop}\label{res:vanishonbdny} \note{changed all $\VP$ to $\cV$}
 If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid cell $\Sigma(\cV)$.
@@ -624,7 +629,7 @@ If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positr
 Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
 %
 \begin{displaymath}
-R(\VP) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
+R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
 \end{displaymath}
 %
 From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
@@ -636,7 +641,7 @@ From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions def
 Thus, the subset of $L(\cV)$ where $R(\cV)$ vanishes is exactly
 %
 \begin{displaymath}
-G(W) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
+L(\cV) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
 \end{displaymath}
 \end{proof}
 
@@ -687,13 +692,15 @@ is in $\overline{\Sigma(\cV)} \setminus \Sigma(\cV) \cup L(\cV)$.
 
 \hlfix{This fact}{which fact? The Proposition?} has been shown explicitly in the case of $n = 6$ and $k=2$, however, has not been shown in general.
 
-We can use Propositiob \ref{res:vanishonbdny} to show that for Wilson loop diagrams, factors of $R(\VP)$ that vanish on codimension 1 boundaries of $\Sigma(\VP)$ have a locus that is dense in the corresponding positroid. \sanote{Cam, did I break this?}
+We can use Proposition \ref{res:vanishonbdny} to show that for Wilson loop diagrams, factors of $R(\VP)$ that vanish on codimension 1 boundaries of $\Sigma(\VP)$ have a locus that is dense in the corresponding positroid. \sanote{Cam, did I break this?}
 
-{\color{red} Things to check: \begin{enumerate} \item Check if the closures of Loci are put in the right places throughtout paper
-\item Do we always use $L(\cV)$ to mean the full locus, or sometimes do we mean the positive locus? Do we need extra notation?\end{enumerate}}
+
 
 \begin{thm}\label{res:polesonboundaries}
 Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(\VP)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
+
+\todo{pick up here}
+\note{$\Sigma$ here is for the full grassmannian}
 
 \begin{proof}
 From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
