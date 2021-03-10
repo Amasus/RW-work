@@ -719,7 +719,7 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 \begin{displaymath}
 \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1.
 \end{displaymath}
-Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. 
+Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. In fact, direct calculation shows that this factor lies on a codimension 2 locus.
 
 \end{eg}
 
@@ -729,10 +729,10 @@ We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces \label{sec:clusteralgebras}}
 
-As a brief aside, we note that the polynomial $R(\VP)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\VP)$. Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\VP)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\VP)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\VP)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\VP)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\VP)$ can equivalently be defined as an intersection of reverse Schubert varieties. Running the combinatorial algorithm for {\color{red} citation?} produces a Grassmann necklace for $\Sigma(\VP)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(\VP)$. Define
+As a brief aside, \hlfix{we note that the polynomial $R(\cV)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$.}{I want to be careful here with the distinction made between the polynomial in plucker coords and the parametrized matrices} Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. \hlfix{Running the combinatorial algorithm given in {\cite{GWLD}}in produces a Grassmann necklace for $\Sigma(\cV)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(\cV)$.}{change because this is not a more general statement?} Define
 %
 \begin{displaymath}
-R^{\ast}(W) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
+R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
 \end{displaymath}
 
 %{\color{red} the paragraph above might have been kind of fast, but i think it gives enough to convince the reader of the following lemma we had been including? at least enough for an aside section?
@@ -743,9 +743,12 @@ R^{\ast}(W) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
 
 
 \begin{thm}
-Using the notation from above, $R^{\ast}(W) = R(\VP)$.
+Using the notation from above, $R^{\ast}(\VP) = R(\VP)$.
 \end{thm}
-
+{\color{red}\begin{enumerate}
+\item In this section/ proof, are we talking about the full Grassmannian or the non-negative?
+\item Does this theorem hold in general? I think it should. However, we also talk about pulling back to $(\RP^4)^k$, and I'm not certain why we are doing that here.
+\end{enumerate}}
 \begin{proof}
 This follows from the fact that $R^{\ast}(W)$ and by $R(\VP)$ are both radical polynomials defining the same subvariety of the Wilson loop cell $G(W)$. 
 
