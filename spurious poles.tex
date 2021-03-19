@@ -492,7 +492,7 @@ Given a collection of subsets $\cV$ as in definition \ref{dfn:variablevaluedmatr
 
 A positroid is a matroid, endowed with a cyclic ordering on the ground set, that can be realized as a matrix with all positive minors. Note that if $M$ is a positroid, as a matroid it is invariant under any cyclic permutation of the ground set. However, as a postroid, in order to  preserve the nonnegativity of the minors, it is only invariant under cycic permutations of the ground set. If a matroid is a positroid, then the cyclic ordering on $E$ defines a \hlfix{Gale ordering on the subsets}{Probably needs a definition or at least a cite?}. The minimal basis sets in this Gale ordering gives the Grassmann necklace associated to the positroid. 
 
-One way to detemine if a matroid is a positroid is to look at its flacets. A flacet, $F$, of a (connected) matroid $M$ is any subset of $M$ such that $M|F$ and $M/F$ are both connected. If $M$ is a positroid, then every flacet is a cyclic interval. Furthermore, for any matroid, any flacet is a cyclic flat.
+One way to determine if a matroid is a positroid is to look at its flacets. A flacet, $F$, of a (connected) matroid $M$ is any subset of $M$ such that $M|F$ and $M/F$ are both connected. If $M$ is a positroid, then every flacet is a cyclic interval. Furthermore, for any matroid, any flacet is a cyclic flat.
 
 In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning. \sanote{make this clearer?}
 
@@ -502,7 +502,7 @@ We are now ready to apply the notation above to Wilson loop diagrams. We first s
 
 In order to associate a matrix to a Wilson loop diagram, $W = (\cP, [n])$,  to each propagator $p \subset \cP$ associate a $4$ dimensional subspace of $\RP^{n+1}$ of the form \bas Y_p = \begin{cases}  x_{p,i} &  i = 0 \textrm{ or } i \in V_p \\ 0 &  \textrm{else,}\end{cases} \eas where $x_{p,i}$ are algebraically independent real valued variables \cite{a physics paper}.Then one may associated to $W$ a subspace of $\Grall(k, n+1)$ given by the linear span of the $Y_p$. 
 
-In otherwords, for each Wilson loop diagram $(\cP, [n])$, we have two sets of subsets \bas \YP = \{ V_p \cup 0 | p \in \cP\} \quad \textrm{ and } \quad \VP = \{ V_p | p \in \cP\} \eas  that define two matrices $M_{\VP}$ and $M_{\YP}$. These define subspaces of $\Grall(k, n+1)$ and $\Grall(k, n)$ respectively, that we call $L(\YP)$ and $L(\VP)$ as in Definition \ref{dfn:loci}.
+In other words, for each Wilson loop diagram $(\cP, [n])$, we have two sets of subsets \bas \YP = \{ V_p \cup 0 | p \in \cP\} \quad \textrm{ and } \quad \VP = \{ V_p | p \in \cP\} \eas  that define two matrices $M_{\VP}$ and $M_{\YP}$. These define subspaces of $\Grall(k, n+1)$ and $\Grall(k, n)$ respectively, that we call $L(\YP)$ and $L(\VP)$ as in Definition \ref{dfn:loci}.
 
 \begin{eg} \label{eg:matrices}That is, given the Wilson loop diagram $W$ in example \ref{eg:admissible}, with $p = (3,5)$, $r = (2,5)$, and $s = (1,7)$ one may write \bas M_{\YP} = \begin{bmatrix}  x_{p,0} & 0 & 0 &x_{p,3} & x_{p,4} &  x_{p,5} & x_{q,6} & 0 & 0 \\ x_{r,0} & 0 & x_{r,2} & x_{r,3} & 0  &x_{r,5} & x_{r,6} & 0 &0 \\ x_{s,0} & x_{s,1} & x_{s,2} & 0 &0 &0 &0 &x_{s,7} & x_{s,8} \end{bmatrix} \;.\eas
 
@@ -1077,13 +1077,50 @@ This proof follows similarly to the above. Write \bas M_{\cY(\cP_4)} = \begin{bm
 
 {\color{red}Many points of confusion in this proof, see footnotes}
 
+\begin{dfn}
+For an $n \times k$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $\mathrm{span}(M_I)$ to be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters.
+\end{dfn}
+
+\begin{eg}
+Let
+%
+\begin{displaymath}
+M =
+\begin{bmatrix}x_1 & x_2 & 0 & 0 \\
+0 & 0 & x_1 & 0 \\
+0 & 0 & x_2 & x_1 \end{bmatrix}.
+\end{displaymath}
+\noindent
+Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose last coordinate is zero. $\mathrm{span}(M_{13})$ consists of points of the form $(a,b,\frac{bc}{a},c)$ for some $a,b,c \in \mathbb{R} \setminus \{0\}$ together with points of the form $(0,b,c,0)$. $\mathrm{span}(M_{123})$ is all of $\mathbb{R}^4$.
+\end{eg}
+
 \begin{thm}\label{res:Rado}
-Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $G$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. For $I \subset \{1, \dots, k\}$, let \hlfix{$R_I$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows of $M'$ indexed by $I$ at real parameters}{clarify}. The following are equivalent: \todo{Can we pull some of this out a definitions right before this result?}
+Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: \todo{Can we pull some of this out a definitions right before this result?}
 \begin{itemize}
-\item[(i)] For all $I \subsetneq \{1,2, \dots, k\}$ and all $j \in I^c$, $R_{I \cup j} \neq R_I$. \todo{i.e. adding a row changes the span? can we say this in words?}
+\item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_{I \cup j}) \neq \mathrm{span}(M_I)$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
 \item[(ii)] $\mathrm{dim}(G) = d-k$.
 \end{itemize}
 \end{thm}
+
+\begin{rmk}
+This theorem is a generalization of the equivalence of 1 and 3 in Theorem \ref{res:minimalrep}. Condition 3 from Theorem \ref{res:minimalrep} is analogous to the inequality from Hall's Matching Theorem.
+%, which can be interpreted as saying that a variable valued matrix is full rank if (using the notation of Theorem \ref{res:minimalrep}) for all $\mathcal{T} \subseteq \mathcal{V}$
+%%
+%\begin{displaymath}
+%\left| \bigcup_{T \in \mathcal{T}} T|  \geq |\mathcal{T}|.
+%\end{displaymath}
+%%
+%\noindent
+%Condition 3 from \ref{res:minimalrep} says that not only does this condition hold.
+The matrices in Theorem \ref{res:minimalrep} have the restriction that entries are either zero or totally independent. Theorem \ref{res:Rado} relaxes this condition, allowing one to introduce restrictions such on the entries of the matrix by operations such as performing the change of variables from Lemma \ref{lem:simplifyR(W)} and then setting $w = 0$. This relaxation on the matrix side of the theorem is mirrored by a relaxation of the inequality from Hall's Matching Theorem. Namely, Rado's Theorem, which says that if $S_1, \dots, S_k \subseteq \mathbb{R}^{n}$, then it is possible to select linearly independent vectors $s_1 \in S_1, \dots, s_k \in S_k$ if and only if for all $I \subseteq [k]$,
+%
+\begin{displaymath}
+\mathrm{dim}\left(\mathrm{span}\left( \bigcup_{i \in I} S_i \right) \right) \geq |I|.
+\end{displaymath}
+%
+\noindent
+Condition (ii) from Theorem \ref{res:Rado} relaxes this condition from Rado's theorem, saying not only does any subset of vectors have the correct dimension, but adding a new vector always increases the dimension.
+\end{rmk}
 
 \begin{proof}
 We show that (ii) implies (i) via induction on $k$. When $k = 1$, $G$ is a parameterized subset of projective space and the result holds.\footnote{is $M_\cP$ a $k \times n$ matrix? If $k =1$ how to you define $I$? Its forced to be empty. This initial step needs more clarification.} Suppose that the result holds for $k = l-1$. Let $M'$ be an $n \times l$\footnote{is this an indexing issue? Are we not inducing on the dimension of the relevant Grassmannian or something else?} matrix such that $R_{\{1,\dots,l\}} = R_{1,\dots,l-1}$\footnote{Is this just saying that the last row doesn't contribute to the span?}, and suppose that $R_I \neq R_{I \cup j}$ for $j \notin I$ whenever $|I| < l$. For any subset $S \subset [k]$, let $d_S$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $S$.\footnote{If $\cP = \{ P_1 \ldots P_k\}$, then isn't $d_S = \sum_{i \in S}|P_i|$. Making certain I understand, and trying to avoid new notation.}
@@ -1104,8 +1141,6 @@ So,
 %
 \noindent
 and thus (ii) implies (i) when $k = l$.
-
-HERE IS A SILLY CHANGE
 
 Next, we show that (i) implies (ii). When $k = 1$, $G$ is again a parameterized subset of projective space. Suppose the result holds for $k = l-1$ and let $M'$ be an $n \times l$ matrix such that $R_{\{1,\dots,l\}} \neq R_{\{1,\dots,l-1\}}$. Let $d_l$ be the number of parameters appearing in row $l$ of $M$ which do not appear in rows $1, \dots, l-1$. Then, for generic $r \in R_{l}$, $r \notin R_{\{1,\dots,l-1\}}$. So,
 %
@@ -1134,9 +1169,6 @@ Consider
 can kill off 9
 \end{eg}
 
-\begin{rmk}
-remark: this is a rado theorem thing.
-\end{rmk}
 
 \end{appendices}
 
