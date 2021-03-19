@@ -329,6 +329,8 @@
 \newcommand{\cY}{\mathcal{Y}}
 \newcommand{\VP}{\cV(\cP)}
 \newcommand{\YP}{\cY(\cP)}
+\newcommand{\Sigmapos}{\Sigma_{\geq 0}}
+\newcommand{\Lpos}{L_{\geq 0}}
 \newcommand{\fZ}{\mathfrak{Z}}
 \newcommand{\cM}{\mathcal{M}}
 \newcommand{\cA}{\mathcal{A}}
@@ -450,7 +452,7 @@ In the physics literature, we are only intersted in a certain subclass of these 
 
 Note that the diagram $W$ above is admissible, while $W'$ is not. Furthermore, note that local density implies that one cannot have a propagators $p = (i, i+1)$ or pairs of propagators with the same endpoints: $p = q = (i, j)$.
 
-For the remainder of this paper, we restrict our attention only to admissible Wilson loop diagrams.
+For the remainder of this paper, we restrict our attention only to admissible Wilson loop diagrams. We denote by $\cW_{k,n}$ to be the set of all Wilson loop diagrams with $k$ propagators and $n$ vertices: $\cW_{k,n} = \{ (\cP,[n])| \textrm{ admissible }; \; |\cP| = k\}$. 
 
 
 \subsection{Variable valued matrices and matroids \label{sec:matrices and matroids}}
@@ -486,172 +488,28 @@ Given a matroid $M = (E, \mathcal{B})$, and a subset $S \subset E$, the restrict
 A matroid is representable if it can be written as a matrix with the same independence data. In particular, since the matrices $M_\cV$ have algebraically independent non-zero entries, it is straight forward to read off the matriod assoiciated to the collection of sets $\cV$.
 
 \begin{eg}\label{eg:variablevaluesasmatroids}
-Given a collection of subsets $\cV$ as in definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a base set consiting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a cycle in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ are a dependent set if and only if there are fewer rows with non-zero entries than columns indicated by $S$. \hlfix{In the sequel, we will often abuse notation and refer to $M_\cV$ as both the matrix and the matroid it defines, and leave the distinction to be made from context.}{remember to change this}
+  Given a collection of subsets $\cV$ as in definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a base set consiting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a cycle in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ are a dependent set if and only if there are fewer rows with non-zero entries than columns indicated by $S$. 
 \end{eg}
 
+\begin{dfn}\label{dfn:matroid}
+We write $M(\cV)$ to denote the matroid defined by the variable valued matrix $M_\cV$. 
+\end{dfn}
 
-A positroid is a matroid, endowed with a cyclic ordering on the ground set, that can be realized as a matrix with all positive minors. Note that if $M$ is a positroid, as a matroid it is invariant under any cyclic permutation of the ground set. However, as a postroid, in order to  preserve the nonnegativity of the minors, it is only invariant under cycic permutations of the ground set. If a matroid is a positroid, then the cyclic ordering on $E$ defines a \hlfix{Gale ordering on the subsets}{Probably needs a definition or at least a cite?}. The minimal basis sets in this Gale ordering gives the Grassmann necklace associated to the positroid. 
+
+
+A positroid is a matroid, endowed with a cyclic ordering on the ground set, that can be realized as a matrix with all positive minors. Note that if $M$ is a positroid, as a matroid it is invariant under any cyclic permutation of the ground set. However, as a postroid, in order to  preserve the nonnegativity of the minors, it is only invariant under cycic permutations of the ground set. If a matroid is a positroid, then the cyclic ordering on $E$ defines a Gale ordering on the subsets. The minimal basis sets in this Gale ordering gives the Grassmann necklace associated to the positroid. See \cite[Chp ??]{Postnikov} for the original construction or \cite{non-crossingpartiion} for a good exposition.
 
 One way to determine if a matroid is a positroid is to look at its flacets. A flacet, $F$, of a (connected) matroid $M$ is any subset of $M$ such that $M|F$ and $M/F$ are both connected. If $M$ is a positroid, then every flacet is a cyclic interval. Furthermore, for any matroid, any flacet is a cyclic flat.
 
-In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning. \sanote{make this clearer?}
+Positroid varieties define subsets of $\Grall(k,n)$ that give a CW complex when restricted to $\Gr(k,n)$ \cite[Chapter ]{Postnikov}. We refer to the positroid cells by the letter $\Sigma$.
 
-\section{Geometry of Wilson loop diagrams \label{sec:WLDgeom}}
+In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
 
-We are now ready to apply the notation above to Wilson loop diagrams. We first show that a Wilson loop diagram can be associated to a matrix with real independent variable entries. 
+\begin{dfn}\hlfix{If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ be the subspace of $\Grall(k,n)$ defined by the corresponding positroid variety}{This is anguished English}. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ to be the positroid cell defined when this is retricted to $\Gr(k,n)$. \end{dfn}
 
-In order to associate a matrix to a Wilson loop diagram, $W = (\cP, [n])$,  to each propagator $p \subset \cP$ associate a $4$ dimensional subspace of $\RP^{n+1}$ of the form \bas Y_p = \begin{cases}  x_{p,i} &  i = 0 \textrm{ or } i \in V_p \\ 0 &  \textrm{else,}\end{cases} \eas where $x_{p,i}$ are algebraically independent real valued variables \cite{a physics paper}.Then one may associated to $W$ a subspace of $\Grall(k, n+1)$ given by the linear span of the $Y_p$. 
+Similarly, we write $\Lpos(\cV)$ to be the restriction of $L(\cV)$ to $\Gr(k,n)$. Note that while the geometrically motivated subspaces of $\Grall(k,n)$, $\Sigma(\cV)$, are in one to one correpondence with the subspaces defined by matrices, $L(\cV)$, these two subspaces are not the same.
 
-In other words, for each Wilson loop diagram $(\cP, [n])$, we have two sets of subsets \bas \YP = \{ V_p \cup 0 | p \in \cP\} \quad \textrm{ and } \quad \VP = \{ V_p | p \in \cP\} \eas  that define two matrices $M_{\VP}$ and $M_{\YP}$. These define subspaces of $\Grall(k, n+1)$ and $\Grall(k, n)$ respectively, that we call $L(\YP)$ and $L(\VP)$ as in Definition \ref{dfn:loci}.
-
-\begin{eg} \label{eg:matrices}That is, given the Wilson loop diagram $W$ in example \ref{eg:admissible}, with $p = (3,5)$, $r = (2,5)$, and $s = (1,7)$ one may write \bas M_{\YP} = \begin{bmatrix}  x_{p,0} & 0 & 0 &x_{p,3} & x_{p,4} &  x_{p,5} & x_{q,6} & 0 & 0 \\ x_{r,0} & 0 & x_{r,2} & x_{r,3} & 0  &x_{r,5} & x_{r,6} & 0 &0 \\ x_{s,0} & x_{s,1} & x_{s,2} & 0 &0 &0 &0 &x_{s,7} & x_{s,8} \end{bmatrix} \;.\eas
-
-We define the matrix $M_{\VP}$ to be the one defined by ignoring the first column of $M_{\YP}$.  In the running example, \bas M_{\VP} = \begin{bmatrix}  0 & 0 &x_{p,3} & x_{p,4} &  x_{p,5} & x_{q,6} & 0 & 0 \\ 0 & x_{r,2} & x_{r,3} & 0  &x_{r,5} & x_{r,6} & 0 &0 \\  x_{s,1} & x_{s,2} & 0 &0 &0 &0 &x_{s,7} & x_{s,8} \end{bmatrix} \;.\eas
-\end{eg}
-
- 
-\begin{rmk}
-Note that, as a subspace of $\Grall(k, n)$ (resp. $\Grall(k, n+1)$), or ordering of the rows in $M_{\VP}$, resp. $M_{\YP}$ do not matter.
-\end{rmk}
-
-\begin{rmk}
-It is also worth noting that in previous literature, the matrices $M_{\YP}$ and $M_{\VP}$ were denoted $C_*(W)$ and $C(W)$ respectively. However, in this paper, we wish to exploit the results of \cite{basisshapeloci} to understand the properties of the parametrized spaces, and therefore, change the naming conventions. 
-\end{rmk}
-
-Note that in this setup, for $W = (\cP, [n])$ and $V \subset [n]$, the set $\Prop(V)$ indicates the rows of $M_{\VP}$ that have non-zero entries in the collumns indicated by $V$. That is, in the notation of Defintion \ref{dfn:columns}, $\Prop(V) = \VP_V$. 
-
-\subsection{Wilson loop diagrams as positroids \label{sec:WLDmatroid}}
-
-In \cite{wilsonloop} the authors show that each admissible Wilson loop diagram is assoicated to a positroid, which we also call $M_\cV$, or a matroid that can be represented by a matrix with positive maximal minors. In other words, the loci $L(\VP) \subset \Grall(k,n)$ intersects the positive Grassmannian, $\Gr(k,n)$. Positroid varieties give a tiling of $\Gr(k,n)$ into positroid cells \cite{??}, which we refer to by the letter $\Sigma$. In \cite[Theorem 8.4]{basisshapeloci} the author shows that for a Wilson Loop diagram $W = (\cP, [n])$, the closure of the intersection of the locus wtih the positive Grassmannian corresponds to the closure of a postroid cell in that positive Grassmanian: $\overline{L(\VP) \cap \Gr(k,n)} = \overline{\Sigma(\VP)}$. In this section, we discuss the relationship between Wilson loop diagrams and postroids. In section \ref{sec:geometry}, we discuss their geometry as a subset of $\Grall(k, n)$. We begin with a brief summary of the matroidal properties of Wilson loop diagrams, we give a brief overview of matroids and positroids. Those familiar with the subject may skip the followins section.
-
-
-\subsubsection{Wilson Loop diagrams as matroids} 
-The matroidal properties of Wilson loop diagrams derived in \cite{Wilsonloops}  can be verified by considering the independent columns of $M_{\VP}$.
-\begin{enumerate} 
-\item Theorem [3.9] of \cite{wilsonloops} states that a set of vertices of a Wilson loop diagram, $(\cP, [n])$  is independent if and only if no subset supports fewer propagators than vertices in the subset. I.e. $V \subset [n]$ is independent if, for all $U \subseteq V$, $\Prop(U) \geq |U|$. In terms of rows and columns of $M_{\VP}$, this simply states that any set of columns of $M_{\VP}$ contains a dependent subset if said subset is non-zero on fewer rows than columns in the subset.
-\item Corrollary [3.39] shows that all admissible Wilson loop diagrams, in particular those satisfying the non-crossing and local density conditions, correspond to positroids. This means that, as matroids, the Wilson loop diagrams can be represented by matrices with all positive maximal minors. That is, the subspace of $\Grall(k,n)$ parametrized by $M_{\VP}$ intersects $\Gr(k,n)$.
-\end{enumerate}
-
-
-\begin{eg}\label{eg:wldmatroid}The independence condition in \cite[Theorem 3.9]{wilsonloops} is equivalent to saying that $U$ is a cycle of the matroid associated to $W$, call it $M_{\VP}$, if and only if  $|\Prop (U)| \leq |U|$. This is exactly the same as the cycle condition laid out in Example \ref{eg:variablevaluesasmatroids}. For instance, in $W$  from Example \ref{eg:admissible}, the vertices $\{7,8\}$ are a cycle since they only support one propagator between them. In fact, the define a circuit. On the other hand, the vertices $\{3,4\}$ support two propagators, and thus are independent. Consider the set of proppagators $P = \{ (2, 5), (3, 5)\}$. Then $F(P) = \{ 1, 7, 8\}$. This is a flat of rank $2$. In \cite{wilsonloops}, set of the form $F(P)$ are called propagator flats, and the author shows that the cyclic flats of the matroid assoicated to $W$ are propagator flats.
- \end{eg}
-
-
-\subsubsection{Geometry of WLDs \label{sec:geometry}}
-Paralell to the the conventions of \cite{casestudy, generalcombinatorics1}, we call the positroid cell defined by the Wilson loop diagram $(\cP, [n])$, $\Sigma(\VP)$. We indicate by $\cW_{k,n}$ be the set of all admissible Wilson loop diagrams with $k$ propagators and $n$ vertices. In \cite[Theorem 8.4]{basisshapeloci}, the author shows that $\overline{L(\VP) \cap \Gr(k,n)} = \overline{\Sigma(\VP)}$. In other words, the space $L(\VP)$ differs from the positroid cell $\Sigma(\VP)$ only on a set of measure 0. For an explict example of where these spaces differ, see Example \ref{eg:closuresmatch}. The author of \cite{basisshapeloci} also shows each $\Sigma(\VP)$ is a $3k$ dimensional cell. More generally, the author shows, using slightly different notation:
-
-\begin{thm}[Theorem 3.2, \cite{basisshapeloci}]\label{res:minimalrep}
-Given a variable valued $k \times n$ matrix $M_\cV$ with $m$ non-zero entries representing a positroid cell $\Sigma(\cV)$, the following are equivalent:
-\begin{enumerate}
-\item $\dim(\Sigma(\cV)) = m -k$ 
-\item $M_\cV$ has the smallest number of non-zero variable entries of any variable valued matries representing $\Sigma(\cV)$
-\item For all $\mathcal{T} \subseteq \cV$, \bas |\bigcup_{T \in \mathcal{T}}T| \geq \max_{T \in  \mathcal{T}} (|T|) + |\mathcal{T}| -1 \;. \eas
-\end{enumerate}
-\end{thm}
-
-
-In \cite[section 2.3]{non-orientable}, the authors show that  the subspace of $\Grall(k,n)$ parameterized by $M_{\YP}$, can be viewed as a real $k$ vector bundle over the space parametrized by $M_{\VP}$, i.e.  $\cup_{W \in \cW_{k,n}}L(\YP) \rightarrow \cup_{W \in \cW_{k,n}}L(\VP)$. Restricting to any given Wilson loop diagram gives a trivial vector bundle $L(\YP) \rightarrow L(\VP)$. As shown in Theorem 2.29 of loc. cit., the space $\cup_{(\cP, [n]) \in \cW_{k,n}}L(\YP)$ need not be orientable. 
-
-\begin{rmk} \label{rmk:parametrization} We have now constructed a map from Wilson loop diagrams to the positroid cells. First note that every diagram $W = (\cP, [n])$  defines a map between products of projective spaces: \ba  \xymatrix{(\RP^4 )^{\times k}  \ar@{^{(}->}[r]^-{W} &  \{Y_p | p \in \cP\} \subset (\RP^{n+1} )^{\times k}  } \;. \label{eq:maps}\ea When the set of vectors $\{Y_p | p \in \cP\}$ are in general position, they define a $k$-dimensional hyperplane in $\RP^{n+1}$. Thus, outside of a space of measure $0$, the vectors $\{Y_p | p \in \cP\}$ parametrize a subspace of $\Grall(k,n+1)$, which we call $L(\YP)$. At the same time the parametrized sapces define a vector bundle: $L(\YP) \rightarrow L(\VP)$. In \cite{wilsonloops}, the authors show that the matroid defined by $M_{\VP}$ is a positroid, i.e. it intersects the non-negative Grassmannian. Furthermore, \cite{basisshapeloci} shows that \ba \overline{L(\VP) \cap \Gr(k,n)} = \overline{\Sigma(\VP)} \label{eq:density}\ea where $\Sigma(\VP)$ is the positroid cell in $\Gr(k,n)$ defined by the positroid $M_{\VP}$. In other words, up to a space of measure $0$, the spaces parametrized by the Wilson loop diagrams, $\{Y_p\} \subset (\RP^{n+1})^k$ and $M_{\VP} \subset (\R^{n \times k}$ also parametrize positroid cells in the positive Grassmannians. \end{rmk} \todo{put in theorem numbers}
-
-
-{\color{red} Got rid of this display in the above discussion: \bas \overline{\textrm{span}\langle\{Y_p | p \in \cP\}\rangle} = L(\YP)\;. \eas Are we okay with that?}
-
-%The composition of the first two maps comes from the definition of the vectors $Y_p$.  The map $\cup_{W \in \cW_{k,n}}L(\YP) \rightarrow (\RP^{n+1} )^{\times k}$ is formed by setting the first entry of each $Y_p$ to 1. (Note, that in making this choice, we are deliberately preventing the variables in the first column of $M_{\YP}$ from being $0$. In the physics literature, these points correspond to the physical poles of the scattering amplitude \cite{}, and therefore are not the subject of this paper.) Under this choice, it is a dense inclusion for each $W \in \cW_{k,n}$. \sanote{this paragraph is too central to our arguments to leave like this. Can we specify it better?}
-
-
-\subsection{Integrals and poles \label{sec:integrals}} \todo{divide into 2 sections? maybe before Theorem 3.8?}
-
-The goal of this paper is to show that the spurious poles of the Wilson loop diagrams cancel in the calculation of the full amplitude. Recall that there are two types of singularities to this theory: the physical poles and the spurious poles. The physical poles arise when the vectors representing the particles do not span $\R^4$, as one expects in a physical theory with infrared singularites. The sprurious poles are those that arise in each summand of the integrals involved in calculating the three level scattering amplitude. These should cancel in the sum. In this section, we discuss the algebraic and geometric propoerties  of these poles. 
-
-\subsubsection{Integrals associated to Wilson loop diagrams}
-The Wilson loop diagrams represent the tree level contributions to the scattering amplitudes in the physical theory N=4 SYM. The holomorphic Wilson loop for $n$ particles and $k$ propagators gives the contribution to the n particle scattering amplitude of N=4 SYM by $k$ propagators. The tree level contribution to this amplitude is given by a sum of integrals associated to admissible Wilson loop diagrams: \ba \cA_{k,n}^{tree} = \sum_{(\cP, [n]) \subset \cW_{k,n}} I(\VP) \;.\label{eq:treelevelamplitude}\ea The scattering amplitude is a functional on the particles of the theory, represented in twistor space. In this case, the external data are represented as $n$ sections of a $k$ dimensional real vector bundle over a real twistor space, $\{Z_1, \ldots, Z_n\}$  such that the $n \times n+4$ matrix who's $i^{th}$ row is $Z_i$ has positive maximal minors. Furthemore, we fix a guage section, $Z_0$, which can be taken, without loss of generality to be a $0$ section. We define the matrices \bas \cZ = \begin{bmatrix} - & Z_1& - \\ & \vdots &  \\ - & Z_n& -\end{bmatrix} \; ; \; \cZ_* = \begin{bmatrix}- & Z_0& - \\  - & Z_1& - \\ & \vdots & \\  - & Z_n& -\end{bmatrix} \; .\eas Note from above, the matrix $\cZ$ has positive maximal minors, while the matrix $\cZ_*$ may not.
-
-Before we define the actual integral, $\cI(\VP)$, recall that if multiple propagators end on the $e^{th}$ edge, we order them according to their proximity to the vertex $e$. We are now ready to define the integrals assoicated to each Wilson loop diagram $W = (\cP, [n])$, with $k = |\cP|$:
-
-\begin{dfn} \label{dfn:I(W)} \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times k+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \eas and $R(\VP)$ is a polynomial determined from the $W$ as follows: 
-\begin{enumerate}
-\item Define $R_e = x_{q_1, e+1} \big(\prod_{r = 1}^{s-1} (x_{q_r, e}x_{q_{r+1}, e+1} - x_{q_r, e+1}x_{q_{r+1}, e})\big) x_{q_s, e}$
-\item $R(\VP) = \prod_{e \in [n]} R_e$
-\end{enumerate} \end{dfn}
-
-There are a few features to note in this defintion. First, notice that the spurious poles of the theory correspond to setting the factors of $R(\VP)$ to zero. Specifically, by equations \eqref{eq:matrixvalues} in Appendix \ref{sec:appendix}, the variables $x_{p,0}$ localize to $0$ when the vectors representing the particles do not span $\R^4$. This corresponds to the physical poles of the theory. The spurious poles occur when  $x_{p,0} \neq 0$, but the polynomial $R(\VP)$ goes to $0$. See \cite{casestudy, HeslopSteward, AmplituhedonSquared} for more calculations of this form. 
-
-Secondly, note that in this definition, we take the integral over $(\RP^4)^k$, while previously, we have referred to the matrices as parametrizing subspaces of $\Gr(k,n)$. This is permissible due to the density arguments following display \eqref{eq:maps}. Namely, the integal $I(\VP)$ is defined on all but the set of measure 0 where $M_{\YP}$ is of less than full rank. This subspace is exactly $L(\YP)$, which differs from $\Sigma(\VP) \times \R^k$ by a set of measure 0. 
-
-
-Equation \eqref{eq:treelevelamplitude} shows that $N^kMHV$ (tree level) amplitude
-on $n$ points is taken to be the sum of all the integrals associated
-to tree level Wilson loop diagrams. Theorem \ref{res:polesonboundaries} shows that the spurious poles
-all fall on the boundaries of a geometric space defined by these diagrams. In Theorem \ref{res:deg1polescancel} we show that
-the poles that fall on codimension 1 boundaries cancel. However, unlike in the
-Amplituhedron story, one cannot assoiciate a geometric meaning to the
-sum of these integrals. In \cite{non-orientable}, the authors show
-that while the subspace of $\Grall (k,n+1)$ associated to each
-$M_{\YP}$ is orientable, the union of said spaces are not. Therefore,
-one cannot interpret the sum of the associated integrals as the volume
-of a geometric space. This result has also been shown explicitly and
-separately in \cite{HeslopStewart} which explicitly calculates a contradiction that
-occurs if one attempts this interpretation.
-
-Here, we propose a different geometric interpretation of the sum of
-these integrals. One can consider $\overline{L(\YP)}$ as the closure of a $k$-dimensional
-  line bundle over $\overline{L(\VP)}$ \cite{non-orientable}. Then, we may consider the
-cancelation of spurious poles on any section of the bundle, i.e. after fixing values to the variables $x_{p, 0}$. In fact,
-for the spurious poles, one typically sets the values of $x_{p,0}$ to
-be $\pm 1$, and factors of $R(\VP)$ evaluates to $0$ \cite{??}. The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. 
-
-\subsubsection{Geometry of spurious poles}
-
-In \cite{GWLDCII}, the authors show a direct relationship between the polynomial $R(\VP)$ and the positroid cell $\Sigma(\VP)$. They show that the prime factors of $R(\VP)$ to are also the prime factors of the product of the minors defined by the Grassmann necklace of $\Sigma(\VP)$. We restate it here using the notation of this paper.
-
-\begin{thm} \cite[Proposition 5.3]{GWLDCII} \label{res:prop alg gives rad}
-Write $\cI = \{I_1, \ldots I_n\}$ be the Grassmann necklace assoicates to the positroid cell $\Sigma(\VP)$. Let $\Delta_{I_i}$ be the minor of $M_{\VP}$ defined by the columns indicated by $I_i$. Then
-  \begin{enumerate}
-   \item Each $\Delta_{I_i}$ splits into linear and quadratic factors.  All linear factors of  $\Delta_{I_i}$ are single variables and all irreducible quadratic factors are $2\times 2$ determinants of single variables.
-    \item Quadratic factors in $\Delta_{I_i}$ arise precisely when propagators $p$ and $q$ are supported on a common edge $a$ with $I_i(p)=a$ and $I_i(q)=a+1$.
-    \item The factor $r_e$ divides $\Delta_{I_e}$.
-    \item The ideal generated by $R(\VP)$ is the radical of the ideal generated by $\prod_{i=1}^{n}\Delta_{I_i}$.
-  \end{enumerate}
-\end{thm}
-
-We can generalize this result to define a polynomial given by a minimal parametrization of a positroid cell. 
-
-\begin{dfn}\label{dfn:RV}
-Let the set of subsets $\cV$ define a matroid $M_{\cV}$. If $M_{\cV}$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
-\end{dfn}
-
-\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by $\cI$. This is different from the approach elsewhere in the literature, eg \cite{GalashinLam, SSBW}, where similar polynomials are defined on the Plu\"{u}cker coordinates. For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example both $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ define the same matroid. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system. \end{eg}
-
-In this paper, we are interested in the poles of $I(\VP)$ that lie on codim 1 subspaces of $\overline{\Sigma(\VP)}$. By construction, these are the factors of $R(\VP)$ that have vanishing loci on codim 1 subspaces of $\overline{\Sigma(\VP)}$. Proposition \ref{res:vanishonbdny} shows that all factors of $R(\VP)$ vanish on the boundary of $\Sigma(\VP)$. Then, Theorem \ref{res:polesonboundaries} shows that if the vanishing loci has codimension 1, then it is dense in some codimension $1$ boundary of $\Sigma(\VP)$, and Theorem \ref{res:deg1polescancel} shows that the all the poles with codimension 1 vanishing loci cancel in the sum  $A_{k,n}$ cancel. 
-
-In order to do this, we to show that the factors of $R(\VP)$ vanish on the boundary of the associated positroid cells. In \cite{generalcombinatoricsII}, the authors show that $R(\VP)$ is exactly the product of the prime factors of the determinants of $M_{\VP}$ defined by the Grassmann necklace of the associated matroid, $\Sigma(\VP)$. Then we show that when the factor of $R(\VP)$ corresponds to a simple pole in the integral (i.e. a codimension 1 boundary of $\Sigma(\VP)$), the locus of the resulting matrix is dense in the corresponding boundary cell in the Grassmannian.
-
-
-\begin{prop}\label{res:vanishonbdny} \note{changed all $\VP$ to $\cV$}
-If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid cell $\Sigma(\cV)$.
-\end{prop}
-
-
-\begin{proof}
-Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
-%
-\begin{displaymath}
-R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
-\end{displaymath}
-%
-From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
-%
-\begin{displaymath}
-\Delta_{I_1}, \Delta_{I_2}, \dots, \Delta_{I_k} \neq 0.
-\end{displaymath}
-%
-Thus, the subset of $L(\cV)$ where $R(\cV)$ vanishes is exactly
-%
-\begin{displaymath}
-L(\cV) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
-\end{displaymath}
-\end{proof}
+We conclude this section with an example of how $L(\cV)$ and $\Sigma(\cV)$ differ.
 
 \begin{eg} \label{eg:closuresmatch}
 This example illustrates the differences between the sets $L(\cV)$, $\Sigma(\cV)$, and $\overline{\Sigma(\cV)}$. Let
@@ -659,7 +517,7 @@ This example illustrates the differences between the sets $L(\cV)$, $\Sigma(\cV)
 \begin{bmatrix}
 x_{p,1} & x_{p,2} & 0 &x_{p,4} & x_{p,5} & 0 \\
 x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
-\end{bmatrix}.\eas Not that this matrix corresponds to a Wilson loop diagram, but the result demonstrated in this example is much more general. Let $\Sigma(\cV)$ and $\overline{\Sigma(\cV)}$ be the associated open and closed positroid cells respectively.
+\end{bmatrix}\eas  Note that this matrix corresponds to a Wilson loop diagram, but the result demonstrated in this example is much more general. Let $\Sigma(\cV)$ and $\overline{\Sigma(\cV)}$ be the associated open and closed positroid cells respectively.
 
 The point represented by
 \begin{displaymath}
@@ -669,7 +527,7 @@ The point represented by
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $L(\cV) \setminus \Sigma(\cV)$, since the minor $\Delta_{I_1} = \Delta_{12}$ vanishes. Hence,
+is in $L(\cV) \setminus \Sigma(\cV)$, since the minor $ \Delta_{12}$ vanishes. Hence,
 %
 \begin{displaymath}
 R(\cV) = (x_{p,1}x_{q,2} - x_{p,2}x_{q,1}) x_{p,1} x_{p,4} x_{p,5} x_{q,2} x_{q,5} x_{q,6}
@@ -698,7 +556,148 @@ The point represented by
 is in $\overline{\Sigma(\cV)} \setminus \Sigma(\cV) \cup L(\cV)$.
 \end{eg}
 
-\hlfix{This fact}{which fact? The Proposition?} has been shown explicitly in the case of $n = 6$ and $k=2$, however, has not been shown in general.
+
+
+
+\section{Geometry of Wilson loop diagrams \label{sec:WLDgeom}}
+
+We are now ready to apply the notation above to Wilson loop diagrams. We first show that a Wilson loop diagram can be associated to a matrix with real independent variable entries, and thus to a matroid. The authors of \cite{wilsonloops} show that these matroids are infact all positroids, $\Sigma(\VP)$. Then we define the integrals associated to each Wilson loop diagram, and show that the poles of the integrand appear on the boundary of $\Sigmapos(\VP)$. 
+
+\subsection{Wilson loop diagrams as positroids \label{sec:WLDmatroid}}
+
+In order to associate a matrix to a Wilson loop diagram, $W = (\cP, [n])$,  to each propagator $p \subset \cP$ associate a $4$ dimensional subspace of $\RP^{n+1}$ of the form \bas Y_p = \begin{cases}  x_{p,i} &  i = 0 \textrm{ or } i \in V_p \\ 0 &  \textrm{else,}\end{cases} \eas where $x_{p,i}$ are algebraically independent real valued variables \cite{a physics paper}.Then one may associated to $W$ a subspace of $\Grall(k, n+1)$ given by the linear span of the $Y_p$. 
+
+In other words, for each Wilson loop diagram $(\cP, [n])$, we have two sets of subsets \bas \YP = \{ V_p \cup 0 | p \in \cP\} \quad \textrm{ and } \quad \VP = \{ V_p | p \in \cP\} \eas  that define two matrices $M_{\VP}$ and $M_{\YP}$. These define subspaces of $\Grall(k, n+1)$ and $\Grall(k, n)$ respectively, that we call $L(\YP)$ and $L(\VP)$ as in Definition \ref{dfn:loci}.
+
+\begin{eg} \label{eg:matrices}That is, given the Wilson loop diagram $W$ in example \ref{eg:admissible}, with $p = (3,5)$, $r = (2,5)$, and $s = (1,7)$ one may write \bas M_{\YP} = \begin{bmatrix}  x_{p,0} & 0 & 0 &x_{p,3} & x_{p,4} &  x_{p,5} & x_{q,6} & 0 & 0 \\ x_{r,0} & 0 & x_{r,2} & x_{r,3} & 0  &x_{r,5} & x_{r,6} & 0 &0 \\ x_{s,0} & x_{s,1} & x_{s,2} & 0 &0 &0 &0 &x_{s,7} & x_{s,8} \end{bmatrix} \;.\eas
+
+We define the matrix $M_{\VP}$ to be the one defined by ignoring the first column of $M_{\YP}$.  In the running example, \bas M_{\VP} = \begin{bmatrix}  0 & 0 &x_{p,3} & x_{p,4} &  x_{p,5} & x_{q,6} & 0 & 0 \\ 0 & x_{r,2} & x_{r,3} & 0  &x_{r,5} & x_{r,6} & 0 &0 \\  x_{s,1} & x_{s,2} & 0 &0 &0 &0 &x_{s,7} & x_{s,8} \end{bmatrix} \;.\eas
+\end{eg}
+
+ 
+\begin{rmk}
+Note that, as a subspace of $\Grall(k, n)$ (resp. $\Grall(k, n+1)$), or ordering of the rows in $M_{\VP}$, resp. $M_{\YP}$ do not matter.
+\end{rmk}
+
+\begin{rmk}
+It is also worth noting that in previous literature, the matrices $M_{\YP}$ and $M_{\VP}$ were denoted $C_*(W)$ and $C(W)$ respectively. However, in this paper, we wish to exploit the results of \cite{basisshapeloci} to understand the properties of the parametrized spaces, and therefore, change the naming conventions. 
+\end{rmk}
+
+Note that in this setup, for $W = (\cP, [n])$ and $V \subset [n]$, the set $\Prop(V)$ indicates the rows of $M_{\VP}$ that have non-zero entries in the collumns indicated by $V$. That is, in the notation of Defintion \ref{dfn:columns}, $\Prop(V) = \VP_V$. 
+
+The matroidal properties of Wilson loop diagrams derived in \cite{Wilsonloops}  can be verified by considering the independent columns of $M_{\VP}$.
+\begin{enumerate} 
+\item Theorem [3.9] of \cite{wilsonloops} states that a set of vertices of a Wilson loop diagram, $(\cP, [n])$  is independent if and only if no subset supports fewer propagators than vertices in the subset. I.e. $V \subset [n]$ is independent if, for all $U \subseteq V$, $\Prop(U) \geq |U|$. In terms of rows and columns of $M_{\VP}$, this simply states that any set of columns of $M_{\VP}$ contains a dependent subset if said subset is non-zero on fewer rows than columns in the subset, which is consistent with the cycle condition laid out in Example \ref{eg:variablevaluesasmatroids}
+\item Corrollary \cite[3.39]{wilsonloops} shows that all admissible Wilson loop diagrams, in particular those satisfying the non-crossing and local density conditions, correspond to positroids. This means that, as matroids, the Wilson loop diagrams can be represented by matrices with all positive maximal minors. That is, the subspace of $\Grall(k,n)$ parametrized by $M_{\VP}$ intersects $\Gr(k,n)$.
+\end{enumerate}
+
+\begin{eg}\label{eg:wldmatroid} For instance, in $W$  from Example \ref{eg:admissible}, the vertices $\{7,8\}$ are a cycle since they only support one propagator between them. In fact, the define a circuit. On the other hand, the vertices $\{3,4\}$ support two propagators, and thus are independent. Consider the set of proppagators $P = \{ (2, 5), (3, 5)\}$. Then $F(P) = \{ 1, 7, 8\}$. This is a flat of rank $2$. In \cite{wilsonloops}, set of the form $F(P)$ are called propagator flats, and the author shows that the cyclic flats of the matroid assoicated to $W$ are propagator flats.
+\end{eg}
+
+Furthermore, work of \cite{basisshapeloci} gives insight into the geometry of Wilson loop diagrams in $\Gr(k,n)$. In \cite[Theorem 8.4]{basisshapeloci} the author shows that for a Wilson Loop diagram $W = (\cP, [n])$, the closure of the locus, $L(\VP)$, corresponds to the closure of the positroid: $\overline{L(\VP)} = \overline{\Sigma(\VP)}$, \sanote{changed this to be over the full Grassmannian. Correct?} and thus, in the positive Grassmannians as well, the subspace parametrized by the matrices $M_{\VP}$ corresponds to a positroid cell, up to a space of measure 0, $\overline{\Lpos(\VP)} = \overline{\Sigmapos(\VP)}$, as illustrated in Example \ref{eg:closuresmatch}.
+
+The author of \cite{basisshapeloci} also shows each $\Sigma(\VP)$ is a $3k$ dimensional space. More generally, the author shows, using slightly different notation:
+
+\begin{thm}[Theorem 3.2, \cite{basisshapeloci}]\label{res:minimalrep}
+Given a variable valued $k \times n$ matrix $M_\cV$ with $m$ non-zero entries representing a positroid  $\Sigma(\cV)$, the following are equivalent:
+\begin{enumerate}
+\item $\dim(\Sigma(\cV)) = m -k$ 
+\item $M_\cV$ has the smallest number of non-zero variable entries of any variable valued matries representing $\Sigma(\cV)$
+\item For all $\mathcal{T} \subseteq \cV$, \bas |\bigcup_{T \in \mathcal{T}}T| \geq \max_{T \in  \mathcal{T}} (|T|) + |\mathcal{T}| -1 \;. \eas
+\end{enumerate}
+\end{thm}
+
+
+In \cite[section 2.3]{non-orientable}, the authors show that  the subspace of $\Grall(k,n)$ parameterized by $M_{\YP}$, can be viewed as a real $k$ vector bundle over the space parametrized by $M_{\VP}$, i.e.  $\cup_{W \in \cW_{k,n}}L(\YP) \rightarrow \cup_{W \in \cW_{k,n}}L(\VP)$. Restricting to any given Wilson loop diagram gives a trivial vector bundle $L(\YP) \rightarrow L(\VP)$. As shown in Theorem 2.29 of loc. cit., the space $\cup_{(\cP, [n]) \in \cW_{k,n}}L(\YP)$ need not be orientable. 
+
+
+\subsection{Integrals and poles \label{sec:integrals}}
+
+The goal of this paper is to show that the spurious poles of the integrals associated to Wilson loop diagrams cancel in the calculation of the full amplitude. In this section we define the integrals and show that the poles lie on the boundary of the associated positroid cell ($\Sigmapos(\VP)$).
+
+Recall that there are two types of singularities to this theory: the physical poles and the spurious poles. The physical poles arise when the vectors representing the particles do not span $\R^4$, as one expects in a physical theory with infrared singularites. The sprurious poles are those that arise in each summand of the integrals involved in calculating the three level scattering amplitude. These should cancel in the sum. In this section, we discuss the algebraic and geometric properties  of these poles. 
+
+\subsubsection{Integrals associated to Wilson loop diagrams}
+The Wilson loop diagrams represent the tree level contributions to the scattering amplitudes in the physical theory N=4 SYM. The holomorphic Wilson loop for $n$ particles and $k$ propagators gives the contribution to the n particle scattering amplitude of N=4 SYM by $k$ propagators. The tree level contribution to this amplitude is given by a sum of integrals associated to admissible Wilson loop diagrams: \ba \cA_{k,n}^{tree} = \sum_{(\cP, [n]) \subset \cW_{k,n}} I(\VP) \;.\label{eq:treelevelamplitude}\ea The scattering amplitude is a functional on the particles of the theory, represented in twistor space. In this case, the external data are represented as $n$ sections of a $k$ dimensional real vector bundle over a real twistor space, $\{Z_1, \ldots, Z_n\}$  such that the $n \times n+4$ matrix who's $i^{th}$ row is $Z_i$ has positive maximal minors. Furthemore, we fix a guage section, $Z_0$, which can be taken, without loss of generality to be a $0$ section. We define the matrices \bas \cZ = \begin{bmatrix} - & Z_1& - \\ & \vdots &  \\ - & Z_n& -\end{bmatrix} \; ; \; \cZ_* = \begin{bmatrix}- & Z_0& - \\  - & Z_1& - \\ & \vdots & \\  - & Z_n& -\end{bmatrix} \; .\eas Note from above, the matrix $\cZ$ has positive maximal minors, while the matrix $\cZ_*$ may not.
+
+Before we define the actual integral, $\cI(\VP)$, recall that if multiple propagators end on the $e^{th}$ edge, we order them according to their proximity to the vertex $e$. We are now ready to define the integrals assoicated to each Wilson loop diagram $W = (\cP, [n])$, with $k = |\cP|$:
+
+\begin{dfn} \label{dfn:I(W)} \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times k+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \eas and $R(\VP)$ is a polynomial determined from the $W$ as follows: 
+\begin{enumerate}
+\item Define $R_e = x_{q_1, e+1} \big(\prod_{r = 1}^{s-1} (x_{q_r, e}x_{q_{r+1}, e+1} - x_{q_r, e+1}x_{q_{r+1}, e})\big) x_{q_s, e}$
+\item $R(\VP) = \prod_{e \in [n]} R_e$
+\end{enumerate} \end{dfn}
+
+There are a few features to note in this defintion. First, notice that the spurious poles of the theory correspond to setting the factors of $R(\VP)$ to zero. Specifically, by equations \eqref{eq:matrixvalues} in Appendix \ref{sec:appendix}, the variables $x_{p,0}$ localize to $0$ when the vectors representing the particles do not span $\R^4$. This corresponds to the physical poles of the theory. The spurious poles occur when  $x_{p,0} \neq 0$, but the polynomial $R(\VP)$ goes to $0$. See \cite{casestudy, HeslopSteward, AmplituhedonSquared} for more calculations of this form. 
+
+Secondly, note that in this definition, we take the integral over $(\RP^4)^k$, while the remainder of the paper referrs to the matrices as parametrizing subspaces of $\Gr(k,n)$. To see why this is possible, first note that every diagram $W = (\cP, [n])$  defines a map between products of projective spaces: \bas  \xymatrix{(\RP^4 )^{\times k}  \ar@{^{(}->}[r]^-{W} &  \{Y_p | p \in \cP\} \subset (\RP^{n+1} )^{\times k}  } \;. \eas When the set of vectors $\{Y_p | p \in \cP\}$ are in general position, they define a $k$-dimensional hyperplane in $\RP^{n+1}$, i.e. they parametrize $L(\YP)$. Namely, the integal $I(\VP)$ is defined on all but the set of measure 0 where $M_{\YP}$ is of less than full rank. This subspace is exactly $L(\YP)$, which differs from $\Sigma(\VP) \times \R^k$ by a set of measure 0. 
+
+
+Thirdly, in \cite{wilsonloops}, the authors show that the matroid defined by $M_{\VP}$ is a positroid, i.e. it $L(\VP)$ intersects the non-negative Grassmannian. Due to the parallels with the Amplituhedon, we are interested in the non-negative geometry of the spaces defined by the Wilson loop diagrams. In \cite{basisshapeloci}, the author shows that \ba \overline{\Lpos(\VP)} = \overline{\Sigmapos(\VP)} \label{eq:density}\;.\ea  In other words, up to a space of measure $0$, the non-negative space parametrized by the Wilson loop diagrams, $\{V_p\} \subset (\RP^{n})^k$ and $M_{\VP} \subset (\R^{n \times k})$ also parametrize positroid cells in the positive Grassmannians. 
+
+Finally, returning to the main purpose of this paper, we wish to show that  the poles of these integrals (corresponding to spurious poles) cancel in the tree level amplitude. Equation \eqref{eq:treelevelamplitude} shows that $N^kMHV$ (tree level) amplitude on $n$ points is given by the sum of all the $I(\VP)$, for $(\cP, [n]) \in \cW_{k,n}$. Theorem \ref{res:polesonboundaries} shows that the spurious poles all fall on the boundaries of a geometric space defined by these diagrams. Then Theorem \ref{res:deg1polescancel} we show that the poles that fall on codimension 1 boundaries cancel.
+
+However, unlike in the Amplituhedron story, one cannot assoiciate a geometric meaning to the sum of these integrals. In \cite{non-orientable}, the authors show that while each subspace $\Lpos(\YP)$ is orientable, the union of said spaces are not. Therefore, one cannot interpret the sum of the associated integrals as the volume of a geometric space. This result has also been shown explicitly and separately in \cite{HeslopStewart} which explicitly calculates a contradiction that occurs if one attempts this interpretation.
+
+Here, we propose a different geometric interpretation of the sum of these integrals. The space $\Lpos(\YP)$ forms a $k$ vector bundle over $\Lpos(\VP)$ \cite{non-orientable}: $\Lpos(\YP) \rightarrow \Lpos(\VP)$. One can consider $\overline{\Lpos(\YP)}$ as the closure of a $k$-dimensional line bundle over $\overline{\Lpos(\VP)}$ \cite{non-orientable}. Then, we may consider the cancelation of spurious poles on any section of the bundle, i.e. after fixing values to the variables $x_{p, 0}$. In fact, for the spurious poles, one typically sets the values of $x_{p,0}$ to be $\pm 1$, and factors of $R(\VP)$ evaluates to $0$ \cite{??}. The physical poles of the tree level amplitude $A_{k,n}$ arise when the variables $x_{p, 0} = 0$. 
+
+
+\subsubsection{Geometry of spurious poles}
+
+In this section, we investigate the geometry of the spurious poles of the Wilson loop diagrams, or the factors of the polynomial $R(\VP)$. We give three results showing that these factors are closely related to the geometry underlying the positroid $\Sigma(\VP)$. In fact, the polynomial is exactly the product of the square free factors of the minors identified in the Grassmann Neckace of $\Sigma(\VP)$. The zero loci of the factors of $R(\VP)$ lie on the the boundary of $\Sigma(\VP)$ and the codimension one zero loci are dense in the codimension one boundaries of $\Sigma(\VP)$. 
+
+In \cite{GWLDCII}, the authors show that the prime factors of $R(\VP)$ to are also the prime factors of the product of the minors defined by the Grassmann necklace of $\Sigma(\VP)$. We restate it here using the notation of this paper.
+
+\begin{thm} \cite[Proposition 5.3]{GWLDCII} \label{res:prop alg gives rad}
+Write $\cI = \{I_1, \ldots I_n\}$ be the Grassmann necklace assoicates to the positroid cell $\Sigma(\VP)$. Let $\Delta_{I_i}$ be the minor of $M_{\VP}$ defined by the columns indicated by $I_i$. Then
+  \begin{enumerate}
+   \item Each $\Delta_{I_i}$ splits into linear and quadratic factors.  All linear factors of  $\Delta_{I_i}$ are single variables and all irreducible quadratic factors are $2\times 2$ determinants of single variables.
+    \item Quadratic factors in $\Delta_{I_i}$ arise precisely when propagators $p$ and $q$ are supported on a common edge $a$ with $I_i(p)=a$ and $I_i(q)=a+1$.
+    \item The factor $r_e$ divides $\Delta_{I_e}$.
+    \item The ideal generated by $R(\VP)$ is the radical of the ideal generated by $\prod_{i=1}^{n}\Delta_{I_i}$.
+  \end{enumerate}
+\end{thm}
+
+We can generalize this result to define a polynomial given by a minimal parametrization of a positroid cell. 
+
+\begin{dfn}\label{dfn:RV}
+Let the set of subsets $\cV$ define a matroid $M(\cV)$. If $M(\cV)$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
+\end{dfn}
+
+
+\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by the Grassmann Neclace $\cI$.  For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example both $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ define the same matroid. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system.
+
+This is different from the approach elsewhere in the literature, eg \cite{GalashinLam, SSBW}, where similar polynomials are defined on the Pl\"{u}cker coordinates.
+
+\end{eg}
+
+Next, we to show that the factors of $R(\VP)$ vanish on the boundary of the associated positroids. This has been shown explicitly in the case of $n = 6$ and $k=2$ \cite{casestudy}, however, has not been shown in general.
+
+
+\begin{prop}\label{res:vanishonbdny} \note{changed all $\VP$ to $\cV$}
+If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid cell $\Sigma(\cV)$.
+\end{prop}
+
+
+\begin{proof}
+Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
+%
+\begin{displaymath}
+R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
+\end{displaymath}
+%
+From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
+%
+\begin{displaymath}
+\Delta_{I_1}, \Delta_{I_2}, \dots, \Delta_{I_k} \neq 0.
+\end{displaymath}
+%
+Thus, the subset of $L(\cV)$ where $R(\cV)$ vanishes is exactly
+%
+\begin{displaymath}
+L(\cV) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
+\end{displaymath}
+\end{proof}
 
 We can use Proposition \ref{res:vanishonbdny} to show that for Wilson loop diagrams, factors of $R(\VP)$ that vanish on codimension 1 boundaries of $\Sigma(\VP)$ have a locus that is dense in the corresponding positroid. \sanote{Cam, did I break this?}
 
@@ -726,17 +725,23 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 \begin{displaymath}
 \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1.
 \end{displaymath}
-Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Gr(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. In fact, direct calculation shows that this factor lies on a codimension 2 locus.
+Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Grall(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. In fact, direct calculation shows that this factor lies on a codimension 2 locus.
 
 \end{eg}
 
 We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref{res:polesonboundaries} does not hold. Namely, not every co-dimension one boundary of $\Sigma(\VP)$ contains the vanishing loci of a factor of $R(\VP)$. 
 
-\section{The poles of Wilson loop diagrams \label{sec:poles}}
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces \label{sec:clusteralgebras}}
 
-As a brief aside, \hlfix{we note that the polynomial $R(\cV)$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$.}{I want to be careful here with the distinction made between the polynomial in plucker coords and the parametrized matrices} Let $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$. So, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. \hlfix{Running the combinatorial algorithm given in {\cite{GWLD}}in produces a Grassmann necklace for $\Sigma(\cV)$ given the diagram $W$ in clockwise, rather than counter clockwise, order yields the reverse Grassmann necklace for $\Sigma(\cV)$.}{change because this is not a more general statement?} Define
+We conclude this section with a brief aside, noting that the polynomial $R(\cV) = \prod_{I_i \in \cI}I_i$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$ where $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$. In particular, \hlfix{take a stab at summarizing the Lam Galashin and SS-BWwork}{do this}
+
+\begin{rmk}
+Be careful that above $R(\VP)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\VP)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. 
+\end{rmk}
+
+
+In the notation of this paper, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. Define
 %
 \begin{displaymath}
 R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
@@ -779,15 +784,13 @@ Following Section 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert variet
 \end{proof}
 
 
-\begin{rmk}
-Be careful that above $R(\VP)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\VP)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. 
-\end{rmk}
 
 {\color{red} finally, have a paragraph just saying what role $R^{\ast}(W)$ plays in the cluster algebra stuff (at least as well as i understand it)}
 
-%\begin{thm}
-%If a WLD does not have a non-trivial exact subdiagram, then $M_{\VP}$ is its unique  minimal representation. {\color{red} Again, do we need this?...i don't think we need this for this section?}
-%\end{thm}
+
+\section{The poles of Wilson loop diagrams \label{sec:poles}}
+
+
 
 \subsection{Boundaries without poles \label{sec:boundarysanspoles}}
 
@@ -1095,10 +1098,10 @@ Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose las
 \end{eg}
 
 \begin{thm}\label{res:Rado}
-Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: \todo{Can we pull some of this out a definitions right before this result?}
+Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. \sanote{Do we need $|\mathbf{x}| = |\mathbf{y}|$?} Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. \hlfix{Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices}{How is this different from the locus of $M'$ defined in Defintion {\ref{dfn:loci}}} obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
 \begin{itemize}
 \item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_{I \cup j}) \neq \mathrm{span}(M_I)$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
-\item[(ii)] $\mathrm{dim}(G) = d-k$.
+\item[(ii)] $\mathrm{dim}(G) = d-k$.\sanote{$G = M'$?}
 \end{itemize}
 \end{thm}
 
