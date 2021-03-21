@@ -460,13 +460,15 @@ For the remainder of this paper, we restrict our attention only to admissible Wi
 Wilson loop diagrams have a natural matrix representation with real independent variable entries that bridges the combinatorics of the diagrams to matroids and to geometric subspaces of the positive Grassmannians. Before introducing this representation, we  define some notation around matrices with algebraically independent invertible variables, and recall some facts about Matroids
 
 \begin{dfn} \label{dfn:variablevaluedmatrix}
-Let $\cV = \{V_1, V_2, \dots, V_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be a set of algebraically independent invertible variables. Define $M_{\mathcal{V}}$ to be the $n \times k$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in V_i$ and $0$ otherwise.
+Let $\cV = \{V_1, V_2, \dots, V_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be a set of algebraically independent invertible variables. Define $M_{\mathcal{V}}\in M_{k,n}$ to be the $k \times n$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in V_i$ and $0$ otherwise.
 \end{dfn}
 
 One can realize a matrix $M_\cV$ at a point $\mathbf{x}=\{x_{i,j}\} \in \R^{|\mathbf{x}|}$ to get a real valued matrix. We can vary the points in $\R^{|\mathbf{x}|}$ to parametrize a family of real valued $k \times n$ matrices. Furthermore, by ignoring any such matrices of less than full rank, we may parametrize a subspact of $\Grall(k,n)$.
 
+Let $M^{\rk k}_{k,n}$ be the set of $k \times n$ matrices of full rank. Then the standard quotient map takes $M^{\rk k}_{k,n}$ to $\Grall(k,n)$ \ba \phi: M^{\rk k}_{k,n} \rightarrow \Grall(k,n)  \label{eq:maps}\ea
+
 \begin{dfn} \label{dfn:loci}
-Given a $k \times n$ variable valued matix $M_\cV \in M_{k,n}$, we write $L(\cV)$ to be the locus of the variables defining that matrix in $\Grall(k,n)$. In other words, $L(\cV)$ is the set of point of $\Grall(k,n)$ that can be realized by setting the entries of $M_\cV$ to real values.
+  Let $L(\cV)$ is the set of point of $\Grall(k,n)$ that can be realized by setting the entries of $M_\cV$ to real values. In other words, $L(\cV) = \phi (M_{\cV} \cap M^{\rk k}_{k,n})$.  
 \end{dfn}
 
 Finally, sometimes, we need to refer to the subsets in $\cV$ that intersect a subset  $S \in \{1,2,\dots,n\}$. I.e. which columns of $M_{\cV}$ have non-zero entries in the columns indicated by $S$. 
@@ -503,9 +505,9 @@ One way to determine if a matroid is a positroid is to look at its flacets. A fl
 
 Positroid varieties define subsets of $\Grall(k,n)$ that give a CW complex when restricted to $\Gr(k,n)$ \cite[Chapter ]{Postnikov}. We refer to the positroid cells by the letter $\Sigma$.
 
-In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
+\begin{dfn}If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ be associated positroid variety. As such, it defines a subspace of $\Grall(k,n)$. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ to be the positroid cell defined when this is retricted to $\Gr(k,n)$. \end{dfn} \todo{Cameron: check for correctness}
 
-\begin{dfn}\hlfix{If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ be the subspace of $\Grall(k,n)$ defined by the corresponding positroid variety}{This is anguished English}. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ to be the positroid cell defined when this is retricted to $\Gr(k,n)$. \end{dfn}
+In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
 
 Similarly, we write $\Lpos(\cV)$ to be the restriction of $L(\cV)$ to $\Gr(k,n)$. Note that while the geometrically motivated subspaces of $\Grall(k,n)$, $\Sigma(\cV)$, are in one to one correpondence with the subspaces defined by matrices, $L(\cV)$, these two subspaces are not the same.
 
@@ -630,10 +632,10 @@ Before we define the actual integral, $\cI(\VP)$, recall that if multiple propag
 
 There are a few features to note in this defintion. First, notice that the spurious poles of the theory correspond to setting the factors of $R(\VP)$ to zero. Specifically, by equations \eqref{eq:matrixvalues} in Appendix \ref{sec:appendix}, the variables $x_{p,0}$ localize to $0$ when the vectors representing the particles do not span $\R^4$. This corresponds to the physical poles of the theory. The spurious poles occur when  $x_{p,0} \neq 0$, but the polynomial $R(\VP)$ goes to $0$. See \cite{casestudy, HeslopSteward, AmplituhedonSquared} for more calculations of this form. 
 
-Secondly, note that in this definition, we take the integral over $(\RP^4)^k$, while the remainder of the paper referrs to the matrices as parametrizing subspaces of $\Gr(k,n)$. To see why this is possible, first note that every diagram $W = (\cP, [n])$  defines a map between products of projective spaces: \bas  \xymatrix{(\RP^4 )^{\times k}  \ar@{^{(}->}[r]^-{W} &  \{Y_p | p \in \cP\} \subset (\RP^{n+1} )^{\times k}  } \;. \eas When the set of vectors $\{Y_p | p \in \cP\}$ are in general position, they define a $k$-dimensional hyperplane in $\RP^{n+1}$, i.e. they parametrize $L(\YP)$. Namely, the integal $I(\VP)$ is defined on all but the set of measure 0 where $M_{\YP}$ is of less than full rank. This subspace is exactly $L(\YP)$, which differs from $\Sigma(\VP) \times \R^k$ by a set of measure 0. 
+Secondly, note that in this definition, we take the integral over $(\RP^4)^k$. In particular, the polynomial $R(\VP)$ is defined over $(\RP^4)^k$, and not over $L(\VP)$. Note that by a toric action, we may consider $M_{\YP}$ as a subspace of $(\RP^n)^k$, and since each row has exactly five non-zero entries, we may view each Wilson loop diagram as an isomorphism from $(\RP^4)^k$ to $M_{\YP}$. Finally, by the map in equation \eqref{eq:maps}, we may study the vanishing locus of $R(\VP)$ as a subspace of $L(\YP)$. \sanote{Changed this significantly}
 
 
-Thirdly, in \cite{wilsonloops}, the authors show that the matroid defined by $M_{\VP}$ is a positroid, i.e. it $L(\VP)$ intersects the non-negative Grassmannian. Due to the parallels with the Amplituhedon, we are interested in the non-negative geometry of the spaces defined by the Wilson loop diagrams. In \cite{basisshapeloci}, the author shows that \ba \overline{\Lpos(\VP)} = \overline{\Sigmapos(\VP)} \label{eq:density}\;.\ea  In other words, up to a space of measure $0$, the non-negative space parametrized by the Wilson loop diagrams, $\{V_p\} \subset (\RP^{n})^k$ and $M_{\VP} \subset (\R^{n \times k})$ also parametrize positroid cells in the positive Grassmannians. 
+Thirdly, in \cite{wilsonloops}, the authors show that the matroid $M(\VP)$ is a positroid, i.e. it $L(\VP)$ intersects the non-negative Grassmannian. Due to the parallels with the Amplituhedon, we are interested in the non-negative geometry of the spaces defined by the Wilson loop diagrams. In \cite{basisshapeloci}, the author shows that \ba \overline{\Lpos(\VP)} = \overline{\Sigmapos(\VP)} \label{eq:density}\;.\ea  In other words, up to a space of measure $0$, the non-negative space parametrized by the Wilson loop diagrams, $\{V_p\} \subset (\RP^{n})^k$ and $M_{\VP} \subset (\R^{n \times k})$ also parametrize positroid cells in the positive Grassmannians. 
 
 Finally, returning to the main purpose of this paper, we wish to show that  the poles of these integrals (corresponding to spurious poles) cancel in the tree level amplitude. Equation \eqref{eq:treelevelamplitude} shows that $N^kMHV$ (tree level) amplitude on $n$ points is given by the sum of all the $I(\VP)$, for $(\cP, [n]) \in \cW_{k,n}$. Theorem \ref{res:polesonboundaries} shows that the spurious poles all fall on the boundaries of a geometric space defined by these diagrams. Then Theorem \ref{res:deg1polescancel} we show that the poles that fall on codimension 1 boundaries cancel.
 
@@ -664,8 +666,11 @@ We can generalize this result to define a polynomial given by a minimal parametr
 Let the set of subsets $\cV$ define a matroid $M(\cV)$. If $M(\cV)$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
 \end{dfn}
 
+We note that here, $R(\cV)$ is a polynomial in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\cV)}$, one must consider the image under the map in \eqref{eq:maps}. 
 
-\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by the Grassmann Neclace $\cI$.  For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example both $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ define the same matroid. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system.
+In particular, there may be multiple polnomials arising from the same Grassmann Necklace defining the positroid variety $\Sigma(\cV)$, as illustrated in the following example.
+
+\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by the Grassmann Neclace $\cI$.  For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example, the $2 \times 6$ matrices defined by $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ both correspond to the positroid variety with Grassmann Necklace $\cI = \{12, 23, 34, 45, 51, 12\}$. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system.
 
 This is different from the approach elsewhere in the literature, eg \cite{GalashinLam, SSBW}, where similar polynomials are defined on the Pl\"{u}cker coordinates.
 
@@ -674,19 +679,19 @@ This is different from the approach elsewhere in the literature, eg \cite{Galash
 Next, we to show that the factors of $R(\VP)$ vanish on the boundary of the associated positroids. This has been shown explicitly in the case of $n = 6$ and $k=2$ \cite{casestudy}, however, has not been shown in general.
 
 
-\begin{prop}\label{res:vanishonbdny} \note{changed all $\VP$ to $\cV$}
-If the matrioid associated to the set of sets $\cV$, $M_{\cV}$, is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid cell $\Sigma(\cV)$.
+\begin{prop}\label{res:vanishonbdny} 
+If the matrioid $M(\cV)$ is also a positroid, then the factors of $R(\cV)$ vanish on the boundary of the positroid variety $\Sigma(\cV)$.
 \end{prop}
 
 
 \begin{proof}
-Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Proposition 5.3 in \cite{generalcombinatoricsII},
+Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Definition \ref{dfn:RV}, 
 %
 \begin{displaymath}
 R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
 \end{displaymath}
 %
-From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From (THEOREM NUMBER) in \cite{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
+From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From in \cite[Theorem 5.1]{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
 %
 \begin{displaymath}
 \Delta_{I_1}, \Delta_{I_2}, \dots, \Delta_{I_k} \neq 0.
@@ -706,7 +711,7 @@ We can use Proposition \ref{res:vanishonbdny} to show that for Wilson loop diagr
 \begin{thm}\label{res:polesonboundaries}
 Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(\VP)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
 
-\note{$\Sigma$ here is for the full grassmannian}
+\note{$\Sigma$ here is for the full grassmannian, fix notation}
 
 \begin{proof}
 From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
@@ -734,11 +739,7 @@ We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces \label{sec:clusteralgebras}}
 
-We conclude this section with a brief aside, noting that the polynomial $R(\cV) = \prod_{I_i \in \cI}I_i$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$ where $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$. In particular, \hlfix{take a stab at summarizing the Lam Galashin and SS-BWwork}{do this}
-
-\begin{rmk}
-Be careful that above $R(\VP)$ and $R^{\ast}(W)$ are both polynomials in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\VP)}$, one must further remove singular matrices and quotient by the left action of $\mathrm{Gl}(k)$. 
-\end{rmk}
+We conclude this section with a brief aside, noting that the polynomial $\prod_{I_i \in \cI}I_i$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$ where $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$, \cite{LamGalashin, SS-BW}. However, in this case, the polynomial is considered as a variety in the Pl''{u}cker coordinates coming from $\Grall(k,n)$, while here we consider the polynomial $\R(\cV)$ which are polynomials in the matrix entries $x_{p, i}$. In particular, \hlfix{take a stab at summarizing the Lam Galashin and SS-BWwork}{do this}
 
 
 In the notation of this paper, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. Define
@@ -747,45 +748,35 @@ In the notation of this paper, $I_j$ is that minimal set in the $j^{th}$ cyclic 
 R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
 \end{displaymath}
 
-%{\color{red} the paragraph above might have been kind of fast, but i think it gives enough to convince the reader of the following lemma we had been including? at least enough for an aside section?
-
-%\begin{lem}
-%We can read the backwards GN off the diagram by reversing direction. 
-%\end{lem}}
-
 
 \begin{thm}
-Using the notation from above, $R^{\ast}(\VP) = R(\VP)$.
+The two polynomials $R^{\ast}(\cV)$ and $R(\cV)$ are the same.
 \end{thm}
-{\color{red}\begin{enumerate}
-\item In this section/ proof, are we talking about the full Grassmannian or the non-negative?
-\item Does this theorem hold in general? I think it should. However, we also talk about pulling back to $(\RP^4)^k$, and I'm not certain why we are doing that here.
-\end{enumerate}}
+
 \begin{proof}
-This follows from the fact that $R^{\ast}(W)$ and by $R(\VP)$ are both radical polynomials defining the same subvariety of the Wilson loop cell $G(W)$. 
+This follows from the fact that $R^{\ast}(\cV)$ and by $R(\cV)$ are both radical polynomials defining the same subvariety of the positroid variety $\Sigma(\cV)$. 
 
-From Section 5 of \cite{knutsonlamspeyerjuggling}, the open positroid variety $\Sigma(\VP)$ is defined as a subset of $\overline{\Sigma(\VP)}$ by $\Delta_I \neq 0$ for all $I \in \mathcal{I}$, where $\mathcal{I}$ is the Grassmann Necklace of $\Sigma(\VP)$. So, $\prod_{I \in \mathcal{I}} \Delta_I$ defines the subvariety $(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)) \subset \overline{\Sigma(\VP)}$, the boundary of the open positroid inside the closed positroid. 
+From Section 5 of \cite{knutsonlamspeyerjuggling}, the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by $\Delta_I \neq 0$ for all $I \in \mathcal{I}$, where $\mathcal{I}$ is the Grassmann Necklace of $\Sigma(\cV)$. So, $\prod_{I \in \mathcal{I}} \Delta_I$ defines the subvariety $(\overline{\Sigma(\cV)} \setminus \Sigma(\cV)) \subset \overline{\Sigma(\cV)}$, the boundary of the open positroid inside the closed positroid. 
 
-Let $G(W)$ be the geometric space parameterized by the Wilson Loop diagram $W$. From Theorem ?? in \cite{basisshapeloc}, $G(W) \subset \overline{\Sigma(\VP)}$. Let $V$ be the subset of $G(W)$ which is the pull back of the set in $(\mathbb{RP}^{4})^{k}$ where $R(\VP)$ vanishes via (\ref{eq:maps}). Then,
+From Theorem 5.1 in \cite{basisshapeloc}, we know that $L(\cV) \subset \overline{\Sigma(\cV)}$. Let $V$ be the subset of $L(\cV)$ that is the image of the vanishing loci of $R(\cV)$ under the map in \eqref{eq:maps}. That is, $V = L(\cV) \cap \{\Delta_{I_i} = 0 | I_i \in \mathcal{I}\}$. Then,
 
 %
 \begin{equation} \label{eqn:rw_vanishes}
 \begin{split}
 V & = V \cap \overline{\Sigma(\VP)} \\
-& = G(W) \cap (\{\Delta_I = 0 : \exists I \in \mathcal{I}\} \cap \overline{\Sigma(\VP)}) \\
-& = G(W) \cap (\overline{\Sigma(\VP)} \setminus \Sigma(\VP)) \\
-& = G(W) \setminus \Sigma(\VP).
+& = \big(L_{\cV} \cap \{\Delta_{I_i} = 0 |  I_i \in \mathcal{I}\}\big) \cap \overline{\Sigma(\VP)} \\
+& = L_{\cV} \cap \big(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)\big) \\
+& =  L_{\cV} \setminus \Sigma(\VP).
 \end{split}
 \end{equation}
 
-Theorem ?? from \cite{generalcombinatorics2} shows that $R(\VP)$ generates the radical of the ideal generated by $\prod_\mathcal{I} \Delta_{I_i}$.
 
-Following Section 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties with opposite Schubert varieties, $\Sigma(\VP)$ is similarly defined as a subset of $\overline{\Sigma(\VP)}$ by $\Delta_{I^{\ast}} \neq 0$ for all $I^{\ast} \in \mathcal{I}^{\ast}$. So, $\prod_{I^{\ast} \in \mathcal{I}^{\ast}} \Delta_{I^{\ast}}$ also defines the subvariety $(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)) \subset \overline{\Sigma(\VP)}$. Following (\ref{eqn:rw_vanishes}), the pull back of the vanishing set of $R^{\ast}(W)$ from $(\mathbb{RP}^4)^{k}$ to $\Grall(k,n)$ is also $G(W) \setminus \Sigma(\VP)$. Pulling this set back to $(\mathbb{RP}^4)^{k}$, polynomials $R(\VP)$ and $R^{\ast}(W)$ vanish on the same set. $R^{\ast}(W)$ is radical by definition. Since $R^{\ast}(W)$ and $R(\VP)$ are radical polynomials defining the same variety, $R^{\ast}(W) = R(\VP)$.
-\end{proof}
+By Definition \ref{dfn:RV} $R(\cV)$ is the polynomial generating the radical of the idea generated by $\prod_\mathcal{I} \Delta_{I_i}$. 
 
+Following Section 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties with opposite Schubert varieties, $\Sigma(\VP)$ is similarly defined as a subset of $\overline{\Sigma(\VP)}$ by $\Delta_{I^{\ast}} \neq 0$ for all $I^{\ast} \in \mathcal{I}^{\ast}$. So, $\prod_{I^{\ast} \in \mathcal{I}^{\ast}} \Delta_{I^{\ast}}$ also defines the subvariety $(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)) \subset \overline{\Sigma(\VP)}$. If $V^\ast$ is the image of the vanishing loci of $R^\ast(\cV)$ under the map in \eqref{eq:maps}, following
 
-
-{\color{red} finally, have a paragraph just saying what role $R^{\ast}(W)$ plays in the cluster algebra stuff (at least as well as i understand it)}
+Following (\ref{eqn:rw_vanishes}), we see that $V* = V$. That is, the images of the polynomials $R(\cV)$ and $R^{\ast}(\cV)$ vanish on the same set. Since  $R^{\ast}(\cV)$ and $R(\cV)$ are bothradical polynomials defining the same variety, $R^{\ast}(\cV) = R(\cV)$.
+\end{proof} \todo{generalized this proof. Check if I've broken it}
 
 
 \section{The poles of Wilson loop diagrams \label{sec:poles}}
@@ -831,7 +822,7 @@ Given a matrix $M_{\cV}$ and $M_{\cV'}$ as above, the polynomial $R(\cV)$ does n
 \begin{proof}
 Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of \hlfix{$M(\cV)$}{Note somehow, here I have a different notation for the matroid}. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.
 
-By display \eqref{eqn:rw_vanishes}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
+By Proposition \ref{res:vanishonbdny}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
 \end{proof}
 
 We give an explicit example of the phenomenon charactertized above. 
@@ -842,7 +833,7 @@ The Wilson loop diagram\bas W =  \begin{tikzpicture}[rotate=67.5,baseline=(curre
 	\drawnumbers
 	\drawlabeledprop{1}{-1}{5}{0}{$p$}
 	\drawlabeledprop{1}{1}{3}{0}{$q$}
-	\end{scope} \end{tikzpicture} \eas can be written as \bas \cV = \{V_1 = \{1, 2, 5,6\} \; ; \; V_2 = \{1, 2, 3,4 \} \} \;.\eas with a matrix \bas M_{\VP} = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; . \eas The Grassmann Necklace of $\Sigma(\VP)$ is $GN(W) = \{ \{12\},\{23\}, \{35\}, \{45\}, \{51\}, \{61\} \}$. From \cite{casestudy}, we see that $\Sigma(\VP)$ shares a boundary with the positroid cells corresponding to \bas M_{\cV_1} = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix} \quad \textrm{and} \quad M_{\cV_2} = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas \hlfix{Here the $*$ correspond not no-zero, independent real variables.}{Should probably actually put variables here} In particular, the common boundary is parametrized by the matrix \bas M_{\D\cV} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From (\ref{eqn:rw_vanishes}), the vanishing set of $R(\VP)$ is exactly $L(\VP) \setminus \Sigma(\VP)$. 
+	\end{scope} \end{tikzpicture} \eas can be written as \bas \cV = \{V_1 = \{1, 2, 5,6\} \; ; \; V_2 = \{1, 2, 3,4 \} \} \;.\eas with a matrix \bas M_{\VP} = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; . \eas The Grassmann Necklace of $\Sigma(\VP)$ is $GN(W) = \{ \{12\},\{23\}, \{35\}, \{45\}, \{51\}, \{61\} \}$. From \cite{casestudy}, we see that $\Sigma(\VP)$ shares a boundary with the positroid cells corresponding to \bas M_{\cV_1} = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix} \quad \textrm{and} \quad M_{\cV_2} = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas \hlfix{Here the $*$ correspond not no-zero, independent real variables.}{Should probably actually put variables here} In particular, the common boundary is parametrized by the matrix \bas M_{\D\cV} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From Proposition \ref{res:vanishonbdny}, the vanishing set of $R(\VP)$ is exactly $L(\VP) \setminus \Sigma(\VP)$. 
 
 Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(\VP)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(\VP)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\VP)$, the nonvanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(\VP)$ does not intersect this boundary and hence $R(\VP)$ does not vanish on $\Sigma(\cV')$.
 
