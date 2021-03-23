@@ -1072,7 +1072,7 @@ This proof follows similarly to the above. Write \bas M_{\cY(\cP_4)} = \begin{bm
 {\color{red}Many points of confusion in this proof, see footnotes}
 
 \begin{dfn}
-For an $n \times k$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $\mathrm{span}(M_I)$ to be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters.
+For an $n \times k$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $\mathrm{span}(M_I)$ to be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters. Let $\mathrm{span}(M_{\emptyset})$ be the origin in $\mathbb{R}^n$.
 \end{dfn}
 
 \begin{eg}
@@ -1089,10 +1089,10 @@ Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose las
 \end{eg}
 
 \begin{thm}\label{res:Rado}
-Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. \sanote{Do we need $|\mathbf{x}| = |\mathbf{y}|$?} Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. \hlfix{Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices}{How is this different from the locus of $M'$ defined in Defintion {\ref{dfn:loci}}} obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
+Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. \sanote{Do we need $|\mathbf{x}| = |\mathbf{y}|$?} Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. \hlfix{Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices}{How is this different from the locus of $M'$ defined in Definition {\ref{dfn:loci}}; It's different since that definition was L(set system) and this is L(matrix), and this matrix isn't directly defined by a set system. Could sneak this definition into the earlier one if you like.} obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
 \begin{itemize}
 \item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_{I \cup j}) \neq \mathrm{span}(M_I)$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
-\item[(ii)] $\mathrm{dim}(G) = d-k$.\sanote{$G = M'$?}
+\item[(ii)] $\mathrm{dim}(L(M')) = d-k$.
 \end{itemize}
 \end{thm}
 
@@ -1117,51 +1117,39 @@ Condition (ii) from Theorem \ref{res:Rado} relaxes this condition from Rado's th
 \end{rmk}
 
 \begin{proof}
-We show that (ii) implies (i) via induction on $k$. When $k = 1$, $G$ is a parameterized subset of projective space and the result holds.\footnote{is $M_\cP$ a $k \times n$ matrix? If $k =1$ how to you define $I$? Its forced to be empty. This initial step needs more clarification.} Suppose that the result holds for $k = l-1$. Let $M'$ be an $n \times l$\footnote{is this an indexing issue? Are we not inducing on the dimension of the relevant Grassmannian or something else?} matrix such that $R_{\{1,\dots,l\}} = R_{1,\dots,l-1}$\footnote{Is this just saying that the last row doesn't contribute to the span?}, and suppose that $R_I \neq R_{I \cup j}$ for $j \notin I$ whenever $|I| < l$. For any subset $S \subset [k]$, let $d_S$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $S$.\footnote{If $\cP = \{ P_1 \ldots P_k\}$, then isn't $d_S = \sum_{i \in S}|P_i|$. Making certain I understand, and trying to avoid new notation.}
+We show that (ii) implies (i) via induction on $k$. When $k = 1$, $L(M')$ is a parameterized subset of projective space and the result holds.\footnote{is $M_\cP$ a $k \times n$ matrix? If $k =1$ how to you define $I$? Its forced to be empty. This initial step needs more clarification. - Snuck this into definition.} Suppose that the result holds for $k = l-1$. Let $M'$ be an $n \times l$\footnote{is this an indexing issue? Are we not inducing on the dimension of the relevant Grassmannian or something else? - What you should think of the induction as doing is separating out a k-plane as a (k-1)-plane plus a vector. This direction of the proof identifies circumstances where first choosing a (k-1)-plan kills off a degree of freedom in your ability to choose the vector, then the other direction identifies circumstances where choosing the (k-1)-plane does not kill off a degree of freedom.} matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$\footnote{Is this just saying that the last row doesn't contribute to the span? - Yup!}, and suppose that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever $|I| < l$. For any subset $S \subset [k]$, let $d_S$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $S$.\footnote{If $\cP = \{ P_1 \ldots P_k\}$, then isn't $d_S = \sum_{i \in S}|P_i|$. Making certain I understand, and trying to avoid new notation. - Yup! That is right! I introduced this notation, because after you do a change of variables and set stuff equal to zero the same variable could appear in more than one row. In that case, I only want the variable to be counted once toward the dimension. If you have better notation ideas, happy to use them; I'm not super pumped about this notation.}
 
-$G$ is spanned by an element $r$ in \hlfix{$G_{\{l\}}$}{???? what is this}, plus a $k-1$ plane in $G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)$. Since $r \in R_{1, \dots, l-1}$,
+For a set $S \subset [l]$, let $L(M'_{1,\dots,l-1})$ denote the set of $|S|$-dimensional planes obtained by evaluating the rows of $M'$ indexed by $S$ (as usual, ignoring evaluations which are not full rank). $L(M')$ is spanned by an element $r$ in $\mathrm{span}(M'_{l}$, plus a $k-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Gr(\mathbb{R}^n \perp r, k-1)$. Since $r \in \mathrm{span}(M'_{1, \dots, l-1}$,
 % 
 \sanote{stopped here}
 \begin{displaymath}
-\dim(G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)) < \dim(G_{\{1,\dots,l-1\}}).
+\dim(L(M'_{1,\dots,l-1}) \cap \Gr(\mathbb{R}^n \perp r, k-1)) < \dim(L(M'_{1,\dots,l-1})).
 \end{displaymath}
 %
 \noindent
 So,
 %
 \begin{displaymath}
-\dim(G) \leq \dim(G_{\{l\}}) + (\dim(G_{\{1,\dots,l-1\}}) - 1) = d -k - 1,
+\dim(L(M')) \leq \dim(L(M'_{l})) + (\dim(L(M'_{1,\dots,l-1})) - 1) = d -k - 1,
 \end{displaymath}
 %
 \noindent
 and thus (ii) implies (i) when $k = l$.
 
-Next, we show that (i) implies (ii). When $k = 1$, $G$ is again a parameterized subset of projective space. Suppose the result holds for $k = l-1$ and let $M'$ be an $n \times l$ matrix such that $R_{\{1,\dots,l\}} \neq R_{\{1,\dots,l-1\}}$. Let $d_l$ be the number of parameters appearing in row $l$ of $M$ which do not appear in rows $1, \dots, l-1$. Then, for generic $r \in R_{l}$, $r \notin R_{\{1,\dots,l-1\}}$. So,
+Next, we show that (i) implies (ii). When $k = 1$, $L(M')$ is again a parameterized subset of projective space. Suppose the result holds for $k = l-1$ and let $M'$ be an $n \times l$ matrix such that $\mathrm{span}(M'_{1,\dots,l}) \neq \mathrm{span}(M'_{1,\dots,l-1}$. Let $d_l$ be the number of parameters appearing in row $l$ of $M'$ which do not appear in rows $1, \dots, l-1$. Then, for generic $r \in \mathrm{span}(M'_{l})$, $r \notin \mathrm{span}(M'_{1,\dots,l-1}$. So,
 %
 \begin{displaymath}
-\dim(G_{\{1,\dots,l-1\}} \cap \Gr(\mathbb{R}^n \perp r, k-1)) = \dim(G_{\{1,\dots,l-1\}}).
+\dim(L(M'_{1,\dots,l-1})) \cap \Gr(\mathbb{R}^n \perp r, k-1)) = \dim(L(M'_{1,\dots,l-1})).
 \end{displaymath}
 %
 \noindent
 Thus,
 %
 \begin{displaymath}
-\dim(G_{\{1,\dots,l\}}) = (d_l - 1) + \dim(G_{\{1,\dots,l-1\}}) = d-k.
+\dim(L(M'_{1,\dots,l})) = (d_l - 1) + \dim(L(M'_{1,\dots,l-1})) = d-k.
 \qedhere
 \end{displaymath}
 \end{proof}
-
-\begin{eg}
-Consider
-\begin{displaymath}
-\begin{bmatrix}
-1 & p_1 & p_2 & p_3 & p_4 & 0 & 0 \\
-1 & p_1 p_5 & p_2 p_5 + p_6 & 0 & 0 & p_7 & p_8 \\
-1 & 0 & 0 & p_9 & p_{10} & p_{11} & p_{12}
-\end{bmatrix}
-\end{displaymath}
-can kill off 9
-\end{eg}
 
 
 \end{appendices}
