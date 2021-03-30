@@ -396,13 +396,13 @@
 
 The holomorphic Wilson loop representation of $N=4$ SYM theory is calculated on families of Feynman diagrams called maximally helicity violating (MHV) diagrams, next to maximal helicity violating (NMHV) diagrams, and so forth ($N^k$MHV diagrams). When represented in twistor space \cite{Adamo:2011pr}, the calculations of the associated integrals simplify dramatically. Furthermore, in a dual representation of $N^k$MHV diagrams, called Wilson loop diagrams in this paper, the diagrams correspond to subspaces of the positive Grassmanian, called positroid cells. The connection between the tree level physical interactions and the geometry of the positive Grassmannians is well studied, both in the holomorphic Wilson loop context, and in the context of BCFW diagrams (or plabic graphs) where the associated geometric object is called the Amplituhedron \cite{???}. 
 
-This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams ($W$), and the geometry of the associated positroid cells ($\Sigma(\VP)$). For instance, a positroid cell can be uniquely defined by a set of minors, called the Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defining the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, \hlfix{the authors show that the radical of the product of the determinants of the Grassman necklace elements also corresponds to the product of the frozen variables of the cluster algebra defined by the plabic graph corresponding to the same cell.}{help?} While the varaibles involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
+This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams, $W$, and the geometry of the associated positroid cells $\Sigma(\VP)$. For instance, a positroid cell can be uniquely defined by a set of minors, called a Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defined by the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, \hlfix{the authors show that, in the cluster algebra defined by the plabic graph, a similarly defined polynomial the product of the cluster algebra's frozen variables.}{help? - i think i made this similar, hopefully it's still accurate.} While the variables involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
 
 The factors that appear in the denominator of the integrals associated to Wilson loop diagrams are called the spurious poles of the theory. Here, the adjective spurious is applied in order to differentiate them from the physical poles. The physical poles of the theory arise when the external momenta of the interaction are coplanar, giving rise to infrared divergences. As $N=4$ is a renormalizable theory, it only has infrared divergences. That is, the physical poles are the only singularities that appear in the theory. Therefore, in the sum of tree level integrals, all other singularities, i.e. the singular poles, must cancel. However, this cancelation is not at all obvious from an algebraic point of view. 
 
-In this paper, we consider the singular poles of the theory in terms of the geometry of the associated positroid cell. In Theorem \ref{???} we show that the spurious poles lie on the boundaries of the associated positroid cells. In fact, when the singular poles lie on codimension one subspaces of the closure of the positroid cell $\overline{\Sigma(\VP)}$, it too is dense in a positroid cell. We use this fact to show that the codimension 1 spurious poles of tree level Wilson loop diagrams cancel exactly in the tree level amplitude. 
+In this paper, we consider the singular poles of the theory in terms of the geometry of the associated positroid cell. In Theorem \ref{???} we show that the spurious poles lie on the boundaries of the associated positroid cells. Moreover, when a singular poles lies on a codimension one subspace of the closure of the positroid cell $\overline{\Sigma(\VP)}$, the singular pole is a dense subset of another closed positroid cell. We use this fact to show that the codimension one spurious poles of tree level Wilson loop diagrams cancel exactly in the tree level amplitude. 
 
-We proceed as follows. Section \ref{sec:background} gives the necessary background on Wilson loop diagrams (\ref{sec:diagramdefs}, \ref{sec:WLDmatrix}), the describes the geometry of Wilson loop diagrams  as a subet of the positive Grassmannians \eqref{sec:WLDmatroid}, including a brief summary of matriods \eqref{sec:WLDmatroid}, and describes the integrals and assocociated suprious poles \eqref{sec:integrals}. Section \ref{sec:poles} we discuss the spurious poles of the three level interactions. In particular, we show that the polynomials defining the spurious poles have the same geoemtric interpretation as the product of the frozen variables of the cluster algebra assoicated to the same positroid cell, as in \cite{SS-BW, LamGalashin}(\ref{sec:clusteralgebras}). We show that while the variety defined by these polynomials lives on the boundary of the corresponding positroid cells, not all codimension one boundaries intersect these varieties \ref{sec:boundarysanspoles}. We also explicitly show that the codimension one spurious poles cancel exactly \ref{res:deg1polescancel}. 
+Section \ref{sec:background} gives the necessary background on Wilson loop diagrams (\ref{sec:diagramdefs}, \ref{sec:WLDmatrix}), the describes the geometry of Wilson loop diagrams  as a subet of the positive Grassmannians \eqref{sec:WLDmatroid}, including a brief summary of matriods \eqref{sec:WLDmatroid}, and describes the integrals and assocociated suprious poles \eqref{sec:integrals}. Section \ref{sec:poles} discusses the spurious poles of the three level interactions. In particular, we show that the polynomials defining the spurious poles have the same geoemtric interpretation as the product of the frozen variables of the cluster algebra assoicated to the same positroid cell, as in \cite{SS-BW, LamGalashin}(\ref{sec:clusteralgebras}). We show that while the variety defined by these polynomials lives on the boundary of the corresponding positroid cells, not all codimension one boundaries intersect these varieties \ref{sec:boundarysanspoles}. We also explicitly show that the codimension one spurious poles cancel exactly \ref{res:deg1polescancel}. 
 
 
  
@@ -463,7 +463,7 @@ Wilson loop diagrams have a natural matrix representation with real independent 
 Let $\cV = \{V_1, V_2, \dots, V_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be a set of algebraically independent invertible variables. Define $M_{\mathcal{V}}\in M_{k,n}$ to be the $k \times n$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in V_i$ and $0$ otherwise.
 \end{dfn}
 
-One can realize a matrix $M_\cV$ at a point $\mathbf{x}=\{x_{i,j}\} \in \R^{|\mathbf{x}|}$ to get a real valued matrix. We can vary the points in $\R^{|\mathbf{x}|}$ to parametrize a family of real valued $k \times n$ matrices. Furthermore, by ignoring any such matrices of less than full rank, we may parametrize a subspact of $\Grall(k,n)$.
+One can realize a matrix $M_\cV$ at a point $\mathbf{x}=\{x_{i,j}\} \in \R^{|\mathbf{x}|}$ to get a real valued matrix. We can vary the points in $\R^{|\mathbf{x}|}$ to parametrize a family of real valued $k \times n$ matrices. Furthermore, by ignoring any such matrices of less than full rank, we may parametrize a subset of $\Grall(k,n)$.
 
 Let $M^{\rk k}_{k,n}$ be the set of $k \times n$ matrices of full rank. Then the standard quotient map takes $M^{\rk k}_{k,n}$ to $\Grall(k,n)$ \ba \phi: M^{\rk k}_{k,n} \rightarrow \Grall(k,n)  \label{eq:maps}\ea
 
@@ -471,26 +471,26 @@ Let $M^{\rk k}_{k,n}$ be the set of $k \times n$ matrices of full rank. Then the
   Let $L(\cV)$ is the set of point of $\Grall(k,n)$ that can be realized by setting the entries of $M_\cV$ to real values. In other words, $L(\cV) = \phi (M_{\cV} \cap M^{\rk k}_{k,n})$.  
 \end{dfn}
 
-Finally, sometimes, we need to refer to the subsets in $\cV$ that intersect a subset  $S \in \{1,2,\dots,n\}$. I.e. which columns of $M_{\cV}$ have non-zero entries in the columns indicated by $S$. 
+Finally, sometimes, we need to refer to the subsets in $\cV$ that intersect a subset  $S \in \{1,2,\dots,n\}$. These sets correspond to the rows of $M_{\cV}$ have non-zero entries in the columns indicated by $S$. 
 
 \begin{dfn}\label{dfn:columns}
 For $S \in \{1,2,\dots,n\}$, write $\cV_S =\{V_i \in \cV |  V_i \cap S \neq \emptyset\}$. 
 \end{dfn}
 
-The matrices of the form $M_\cV$ correspond to matroids \footnote{Specifically, they appear naturally transversal matroids \cite{????}, as disucssed in \cite{basisshapeloci}, but that is beyond the scope of this discussion.} For the remainder of this section, we give a brief overview of matroids, which the expert reader may skip. 
+Matrices of the form $M_\cV$ define matroids\footnote{Specifically, the class of matroids defined in this way are transversal matroids \cite{????}, as discussed in \cite{basisshapeloci}, but that is beyond the scope of this discussion.}. The remainder of this section gives a brief overview of matroids, which the expert reader may skip. 
 
-A matroid can be defined as a set, and a set of independence conditions on said set. For instance, one can define $M = (E, \mathcal{B})$, where $\mathcal{B}$, called a basis set, is a non-empty set of subsets of $E$, each of the same size, satisfying the basis exchange condition: \bas \textrm{for  all } A \textrm{ and } B \in \cB, \textrm{ if }  a \in A\setminus B \textrm{ then } \exists b \in B \setminus A \textrm{ and } (A \setminus a) \cup b \in  \cB \;.\eas Each element of $\mathcal{B}$ is a basis of $M$ and denotes a maximal independent set. The rank of the matroid, denoted $\rk(M)$ is the unique size of all the basis sets. We may also refer to the rank of a subset of $E$, $S \subset E$. We write the restriction of a matroid to $S$ $\rk(M|S) = \max \{B \subset S| B \in \mathcal{B} \}$, which, by abuse of notation, we also denote $\rk(S)$. 
+A matroid can be defined as a set, and a set of independence conditions on said set. For instance, one can define $M = (E, \mathcal{B})$, where $\mathcal{B}$, called a basis set, is a non-empty set of subsets of $E$, each of the same size, satisfying the basis exchange condition: \bas \textrm{for  all } A \textrm{ and } B \in \cB, \textrm{ if }  a \in A\setminus B \textrm{ then } \exists b \in B \setminus A \textrm{ and } (A \setminus a) \cup b \in  \cB \;.\eas Each element of $\mathcal{B}$ is a basis of $M$ and denotes a maximal independent set. The rank of the matroid, denoted $\rk(M)$ is the unique size of all the basis sets. We may also refer to the rank of a subset of $E$, $S \subset E$. We write the rank of $S$ as \hlfix{as}{i just switched the definition to be rank of set} $\rk(S) = \max \{|B \cap S| : B \in \mathcal{B} \}$.%, which, by abuse of notation, we also denote $\rk(S)$. The restriction of $M$ to $S$ is $M|S = \{B \cap S : B \in \calB, |B \cap S| \rk(S)\}$.
 
 Equivalently, one can define $M = (E, \mathcal{F})$, where $\mathcal{F} = \{ F \subset E| \forall x \in E \setminus F, \rk(F \cup x) > \rk(F)\}$ is the set of flats of $M$. For any subset $S \subset E$, we can define the closure of the set $\textrm{cl}(S)  = \{x \in E | \rk(S) = \rk(S \cup x)\}$ as the smallest flat containing $S$. Note that if $S$ and $T$ are two flats, then $S \cap T$ is also a flat. 
 
 Also equivalently, we may write $M = (E, \mathcal{C})$ where $\mathcal{C} = \{C \subset E | \forall S \subsetneq C, \; S \subset B \textrm{ for some } B \in \mathcal{B}\}$ is the set of circuits of $M$. The circuits are the minimal dependent sets, i.e. each proper subset of $C$ is independent. If $C$ and $D$ are both circuits, then $C \cup D$ is a cycle. 
 
-Given a matroid $M = (E, \mathcal{B})$, and a subset $S \subset E$, the restriction $M|S = (S, \mathcal{B|S} = \{B\cap S| B \subset \mathcal{B} \textrm{ such that } |B \cap S| \textrm{ maximal} \}$. The contration is defined $M/S = (E \setminus S, \mathcal{B/S} = \{B\setminus S| B \subset \mathcal{B} \textrm{ such that } |B \cap S| \textrm{ maximal}\}$. A matroid is disconnected if it can be written as the direct sum of two matroids: $M = (E_1, \mathcal{B}_1) \oplus (E_2, \mathcal{B}_2)  = (E_1 \cup E_2 , \mathcal{B}_1 \times \mathcal{B}_2)$. Otherwise, it is connected.
+Given a matroid $M = (E, \mathcal{B})$, and a subset $S \subset E$, the restriction $M|S = (S, \mathcal{B|S} = \{B\cap S| B \subset \mathcal{B} \textrm{ such that } |B \cap S| = \rk(S) \}$. The contraction is defined $M/S = (E \setminus S, \mathcal{B/S} = \{B\setminus S| B \subset \mathcal{B} \textrm{ such that } |B \cap S| \textrm{ maximal}\}$. A matroid is disconnected if it can be written as the direct sum of two matroids: $M = (E_1, \mathcal{B}_1) \oplus (E_2, \mathcal{B}_2)  = (E_1 \cup E_2 , \mathcal{B}_1 \times \mathcal{B}_2)$. Otherwise, it is connected.
 
 A matroid is representable if it can be written as a matrix with the same independence data. In particular, since the matrices $M_\cV$ have algebraically independent non-zero entries, it is straight forward to read off the matriod assoiciated to the collection of sets $\cV$.
 
 \begin{eg}\label{eg:variablevaluesasmatroids}
-  Given a collection of subsets $\cV$ as in definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a base set consiting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a cycle in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ are a dependent set if and only if there are fewer rows with non-zero entries than columns indicated by $S$. 
+Given a collection of subsets $\cV$ as in Definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a ground consisting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. A $k$ element subset $S \subset E$ is a basis if and only if the $k \times k$ minor corresponding to $S$, with determinants computed in the ring $\mathbb{R}(\mathbf{x})$, is \hlfix{nonzero.}{i switched this definition to be in terms of bases. commented out, it was inaccurate but in terms of independent sets. if we want the independent set version, i can add that.} %Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a cycle in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ are a dependent set if and only if there are fewer rows with non-zero entries than columns indicated by $S$. 
 \end{eg}
 
 \begin{dfn}\label{dfn:matroid}
@@ -499,19 +499,19 @@ We write $M(\cV)$ to denote the matroid defined by the variable valued matrix $M
 
 
 
-A positroid is a matroid, endowed with a cyclic ordering on the ground set, that can be realized as a matrix with all positive minors. Note that if $M$ is a positroid, as a matroid it is invariant under any cyclic permutation of the ground set. However, as a postroid, in order to  preserve the nonnegativity of the minors, it is only invariant under cycic permutations of the ground set. If a matroid is a positroid, then the cyclic ordering on $E$ defines a Gale ordering on the subsets. The minimal basis sets in this Gale ordering gives the Grassmann necklace associated to the positroid. See \cite[Chp ??]{Postnikov} for the original construction or \cite{non-crossingpartiion} for a good exposition.
+A positroid is a matroid, endowed with a cyclic ordering on the ground set, that can be realized as a matrix with all positive minors. Note that if $M$ is a positroid, as a matroid it is invariant under any cyclic permutation of the ground set. However, as a postroid, in order to  preserve the nonnegativity of the minors, it is only invariant under cycic permutations of the ground set. Let $<_a$ denote the $a$-th cyclic shift of the standard order on $\{1, \dots, n\}$. So, $a <_a (a+1) <_a \cdots <_a (a-1)$. These cyclic orderings on $E$ define Gale orderings on the subsets, $\{s_1 <_a s_2 <_a \cdots <_a s_k\} \leq_a \{t_1 <_a t_2 <_a \cdots <_a t_k\}$ if and only if $s_i \leq_a t_i$ for all $1 \leq i \leq k$. The collection of minimal basis sets for each cyclic shift of the Gale ordering gives the Grassmann necklace associated to a positroid. See \cite[Chp ??]{Postnikov} for the original construction or \cite{non-crossingpartiion} for a good exposition.
 
-One way to determine if a matroid is a positroid is to look at its flacets. A flacet, $F$, of a (connected) matroid $M$ is any subset of $M$ such that $M|F$ and $M/F$ are both connected. If $M$ is a positroid, then every flacet is a cyclic interval. Furthermore, for any matroid, any flacet is a cyclic flat.
+One way to determine if a matroid is a positroid is to look at its flacets. A flacet, $F$, of a (connected) matroid $M$ is any subset of $M$ such that $M|F$ and $M/F$ are both connected. If $M$ is a positroid, then every flacet is a cyclic interval of the ground set. Furthermore, for any matroid, any flacet is a cyclic flat.
 
 Positroid varieties define subsets of $\Grall(k,n)$ that give a CW complex when restricted to $\Gr(k,n)$ \cite[Chapter ]{Postnikov}. We refer to the positroid cells by the letter $\Sigma$.
 
-\begin{dfn}If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ be associated positroid variety. As such, it defines a subspace of $\Grall(k,n)$. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ to be the positroid cell defined when this is retricted to $\Gr(k,n)$. \end{dfn} \todo{Cameron: check for correctness}
+\begin{dfn}If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ and $\overline{\Sigma(\cV)}$ be associated open and closed positroid varieties respectively. As such, it defines a subspace of $\Grall(k,n)$. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ and $\overline{\Sigmapos(\cV)} = \Sigma(\cV) \cap \Gr(k,n)$ to be the open and closed positroid cells defined by restricting to $\Gr(k,n)$. \end{dfn} 
 
-In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a groundset where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. When we refer to the matroid of a point in the positive Grassmanians, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
+In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a matroid where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. \hlfix{It should be clear from context whether the word positroid is referring to a combinatorial object or a subset of the Grassmannian.}{this is intentionally vaguer than what we had before, since i'm pretty sure at least i'd broken the more specific rule you had laid out...} %When we refer to the matroid of a point in the positive Grassmanian, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
 
 Similarly, we write $\Lpos(\cV)$ to be the restriction of $L(\cV)$ to $\Gr(k,n)$. Note that while the geometrically motivated subspaces of $\Grall(k,n)$, $\Sigma(\cV)$, are in one to one correpondence with the subspaces defined by matrices, $L(\cV)$, these two subspaces are not the same.
 
-We conclude this section with an example of how $L(\cV)$ and $\Sigma(\cV)$ differ.
+We conclude this section with an example of how $L(\cV)$, $\Sigma(\cV)$, and $\overline{\Sigma(\cV)}$ differ.
 
 \begin{eg} \label{eg:closuresmatch}
 This example illustrates the differences between the sets $L(\cV)$, $\Sigma(\cV)$, and $\overline{\Sigma(\cV)}$. Let
@@ -529,13 +529,13 @@ The point represented by
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $L(\cV) \setminus \Sigma(\cV)$, since the minor $ \Delta_{12}$ vanishes. Hence,
-%
-\begin{displaymath}
-R(\cV) = (x_{p,1}x_{q,2} - x_{p,2}x_{q,1}) x_{p,1} x_{p,4} x_{p,5} x_{q,2} x_{q,5} x_{q,6}
-\end{displaymath}
-\noindent
-vanishes at this point.
+is in $L(\cV) \setminus \Sigma(\cV)$, since the minor $ \Delta_{12}$ vanishes. \hlfix{}{part of the example was talking about R(V), which hadn't been defined yet. i commented it out, but should possibly include that part of the example later.}%Hence,
+%%
+%\begin{displaymath}
+%R(\cV) = (x_{p,1}x_{q,2} - x_{p,2}x_{q,1}) x_{p,1} x_{p,4} x_{p,5} x_{q,2} x_{q,5} x_{q,6}
+%\end{displaymath}
+%\noindent
+%vanishes at this point.
 
 The point represented by
 \begin{displaymath}
@@ -551,11 +551,11 @@ The point represented by
 \begin{displaymath}
 \begin{bmatrix}
 0 & 0 & 0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 0 & 0 & 1
+0 & 0 & 0 & 1 & 0 & 1
 \end{bmatrix}
 \end{displaymath}
 \noindent
-is in $\overline{\Sigma(\cV)} \setminus \Sigma(\cV) \cup L(\cV)$.
+is in $\overline{\Sigma(\cV)} \setminus (\Sigma(\cV) \cup L(\cV))$.
 \end{eg}
 
 
