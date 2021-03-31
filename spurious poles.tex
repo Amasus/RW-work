@@ -388,15 +388,22 @@
 \maketitle
 \section{Introduction}
 
-{\color{red} Things to check: \begin{enumerate} \item Check if the closures of Loci are put in the right places throughtout paper
-\item Make matriods and matrices have different notation.
-\item Do we always use $L(\cV)$ to mean the full locus, or sometimes do we mean the positive locus? Do we need extra notation?
-\item $L_{\geq 0}(\cV)$ and $M_{\geq 0}(\cV)$ to indicate intersection with $\Gr(k, n)$.\end{enumerate}}
+TODO:
+\begin{enumerate}
+\item SA: Finish reading through Appendix
+\item SA: Rework intro/ story
+\item SA: Bibliography
+\item SA/CM: Decide notation for Grassmann necklaces. Sometimes $GN(\cV)$, sometimes $\cI$
+\item CM: Therem \ref{res:vanishonbdny}
+\item SA/CM: Cluster algebra discussion in section \ref{sec:clusteralgebras}
+\item SA: intro for all sections
+\item CM: Final read through
 
+\end{enumerate}
 
 The holomorphic Wilson loop representation of $N=4$ SYM theory is calculated on families of Feynman diagrams called maximally helicity violating (MHV) diagrams, next to maximal helicity violating (NMHV) diagrams, and so forth ($N^k$MHV diagrams). When represented in twistor space \cite{Adamo:2011pr}, the calculations of the associated integrals simplify dramatically. Furthermore, in a dual representation of $N^k$MHV diagrams, called Wilson loop diagrams in this paper, the diagrams correspond to subspaces of the positive Grassmanian, called positroid cells. The connection between the tree level physical interactions and the geometry of the positive Grassmannians is well studied, both in the holomorphic Wilson loop context, and in the context of BCFW diagrams (or plabic graphs) where the associated geometric object is called the Amplituhedron \cite{???}. 
 
-This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams, $W$, and the geometry of the associated positroid cells $\Sigma(\VP)$. For instance, a positroid cell can be uniquely defined by a set of minors, called a Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defined by the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, \hlfix{the authors show that, in the cluster algebra defined by the plabic graph, a similarly defined polynomial the product of the cluster algebra's frozen variables.}{help? - i think i made this similar, hopefully it's still accurate.} While the variables involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
+This paper is concerned with the relationship between the singluarities that appear in the integral representations of the Wilson loop diagrams, $W$, and the geometry of the associated positroid cells $\Sigma(\VP)$. For instance, a positroid cell can be uniquely defined by a set of minors, called a Grassman necklace. In \cite[Theorem 5.3]{GWLDII}, the authors show that the polynomials that appear in the denominators of the integrals associated to Wislon loop diagrams is the radical (product of square free factors) of the polynomial given by the product of the determinants of the minors defined by the Grassmann necklace of the associated positroid cell. In \cite{SS-BW, LamGalashin}, the authors show that, in the cluster algebra defined by the plabic graph, a similarly defined polynomial the product of the cluster algebra's frozen variables. While the variables involved in the plabic graph representation of the Grassmann Necklace are quite different from the representation of the Grassman necklace in the case of the Wilson loop diagram, this similarity is another tantalizing clue pointing at the similarities between the Amplituhedron and the geometry of the holomorphic Wilson loop representation. 
 
 The factors that appear in the denominator of the integrals associated to Wilson loop diagrams are called the spurious poles of the theory. Here, the adjective spurious is applied in order to differentiate them from the physical poles. The physical poles of the theory arise when the external momenta of the interaction are coplanar, giving rise to infrared divergences. As $N=4$ is a renormalizable theory, it only has infrared divergences. That is, the physical poles are the only singularities that appear in the theory. Therefore, in the sum of tree level integrals, all other singularities, i.e. the singular poles, must cancel. However, this cancelation is not at all obvious from an algebraic point of view. 
 
@@ -479,7 +486,7 @@ For $S \in \{1,2,\dots,n\}$, write $\cV_S =\{V_i \in \cV |  V_i \cap S \neq \emp
 
 Matrices of the form $M_\cV$ define matroids\footnote{Specifically, the class of matroids defined in this way are transversal matroids \cite{????}, as discussed in \cite{basisshapeloci}, but that is beyond the scope of this discussion.}. The remainder of this section gives a brief overview of matroids, which the expert reader may skip. 
 
-A matroid can be defined as a set, and a set of independence conditions on said set. For instance, one can define $M = (E, \mathcal{B})$, where $\mathcal{B}$, called a basis set, is a non-empty set of subsets of $E$, each of the same size, satisfying the basis exchange condition: \bas \textrm{for  all } A \textrm{ and } B \in \cB, \textrm{ if }  a \in A\setminus B \textrm{ then } \exists b \in B \setminus A \textrm{ and } (A \setminus a) \cup b \in  \cB \;.\eas Each element of $\mathcal{B}$ is a basis of $M$ and denotes a maximal independent set. The rank of the matroid, denoted $\rk(M)$ is the unique size of all the basis sets. We may also refer to the rank of a subset of $E$, $S \subset E$. We write the rank of $S$ as \hlfix{as}{i just switched the definition to be rank of set} $\rk(S) = \max \{|B \cap S| : B \in \mathcal{B} \}$.%, which, by abuse of notation, we also denote $\rk(S)$. The restriction of $M$ to $S$ is $M|S = \{B \cap S : B \in \calB, |B \cap S| \rk(S)\}$.
+A matroid can be defined as a set, and a set of independence conditions on said set. For instance, one can define $M = (E, \mathcal{B})$, where $\mathcal{B}$, called a basis set, is a non-empty set of subsets of $E$, each of the same size, satisfying the basis exchange condition: \bas \textrm{for  all } A \textrm{ and } B \in \cB, \textrm{ if }  a \in A\setminus B \textrm{ then } \exists b \in B \setminus A \textrm{ and } (A \setminus a) \cup b \in  \cB \;.\eas Each element of $\mathcal{B}$ is a basis of $M$ and denotes a maximal independent set. The rank of the matroid, denoted $\rk(M)$ is the unique size of all the basis sets. We may also refer to the rank of a subset of $E$, $S \subset E$. We write the rank of $S$ as $\rk(S) = \max \{|B \cap S| : B \in \mathcal{B} \}$.%, which, by abuse of notation, we also denote $\rk(S)$. The restriction of $M$ to $S$ is $M|S = \{B \cap S : B \in \calB, |B \cap S| \rk(S)\}$.
 
 Equivalently, one can define $M = (E, \mathcal{F})$, where $\mathcal{F} = \{ F \subset E| \forall x \in E \setminus F, \rk(F \cup x) > \rk(F)\}$ is the set of flats of $M$. For any subset $S \subset E$, we can define the closure of the set $\textrm{cl}(S)  = \{x \in E | \rk(S) = \rk(S \cup x)\}$ as the smallest flat containing $S$. Note that if $S$ and $T$ are two flats, then $S \cap T$ is also a flat. 
 
@@ -489,8 +496,8 @@ Given a matroid $M = (E, \mathcal{B})$, and a subset $S \subset E$, the restrict
 
 A matroid is representable if it can be written as a matrix with the same independence data. In particular, since the matrices $M_\cV$ have algebraically independent non-zero entries, it is straight forward to read off the matriod assoiciated to the collection of sets $\cV$.
 
-\begin{eg}\label{eg:variablevaluesasmatroids}
-Given a collection of subsets $\cV$ as in Definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a ground consisting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. A $k$ element subset $S \subset E$ is a basis if and only if the $k \times k$ minor corresponding to $S$, with determinants computed in the ring $\mathbb{R}(\mathbf{x})$, is \hlfix{nonzero.}{i switched this definition to be in terms of bases. commented out, it was inaccurate but in terms of independent sets. if we want the independent set version, i can add that.} %Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a cycle in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ are a dependent set if and only if there are fewer rows with non-zero entries than columns indicated by $S$. 
+\begin{eg}\label{eg:variablevaluesasmatroids} \sanote{Cam: check this. I've changed this back into dependent set notation.}
+Given a collection of subsets $\cV$ as in Definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a ground set consisting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a circut in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$, i.e. $|\cV_S| < |S|$. More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ contains minimally dependent set if there are fewer rows with non-zero entries than columns indicated by $S$.  %A $k$ element subset $S \subset E$ is a basis if and only if the $k \times k$ minor corresponding to $S$, with determinants computed in the ring $\mathbb{R}(\mathbf{x})$, is \hlfix{nonzero.}{i switched this definition to be in terms of bases. commented out, it was inaccurate but in terms of independent sets. if we want the independent set version, i can add that.} %
 \end{eg}
 
 \begin{dfn}\label{dfn:matroid}
@@ -507,7 +514,7 @@ Positroid varieties define subsets of $\Grall(k,n)$ that give a CW complex when 
 
 \begin{dfn}If the matroid $M(\cV)$, is a positroid, let $\Sigma(\cV)$ and $\overline{\Sigma(\cV)}$ be associated open and closed positroid varieties respectively. As such, it defines a subspace of $\Grall(k,n)$. We write $\Sigmapos(\cV) = \Sigma(\cV) \cap \Gr(k,n)$ and $\overline{\Sigmapos(\cV)} = \Sigma(\cV) \cap \Gr(k,n)$ to be the open and closed positroid cells defined by restricting to $\Gr(k,n)$. \end{dfn} 
 
-In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a matroid where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. \hlfix{It should be clear from context whether the word positroid is referring to a combinatorial object or a subset of the Grassmannian.}{this is intentionally vaguer than what we had before, since i'm pretty sure at least i'd broken the more specific rule you had laid out...} %When we refer to the matroid of a point in the positive Grassmanian, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
+In this way, the word positroid has both a geometric meaning (as a subset of a Grasmannian) and a matroidal meaning (as a matroid where every flacet is a cyclic flat). These two meanings are tightly related in that every geometric positroid can be represented matroidally as a positroid and vice versa. It should be clear from context whether the word positroid is referring to a combinatorial object or a subset of the Grassmannian. %When we refer to the matroid of a point in the positive Grassmanian, we refer to the positroid of that point in the matroidal sense. When we say the positroid of a matrix, we refer to the geometric meaning.
 
 Similarly, we write $\Lpos(\cV)$ to be the restriction of $L(\cV)$ to $\Gr(k,n)$. Note that while the geometrically motivated subspaces of $\Grall(k,n)$, $\Sigma(\cV)$, are in one to one correpondence with the subspaces defined by matrices, $L(\cV)$, these two subspaces are not the same.
 
@@ -650,28 +657,29 @@ In this section, we investigate the geometry of the spurious poles of the Wilson
 
 In \cite{GWLDCII}, the authors show that the prime factors of $R(\VP)$ to are also the prime factors of the product of the minors defined by the Grassmann necklace of $\Sigma(\VP)$. We restate it here using the notation of this paper.
 
+Recall that the matrix $M_{\cV}$ is parametrized by the independent variables $\bf{x}$, with one algebraically independent variable in each non-zero entry.
+
 \begin{thm} \cite[Proposition 5.3]{GWLDCII} \label{res:prop alg gives rad}
-Write $\cI = \{I_1, \ldots I_n\}$ be the Grassmann necklace assoicates to the positroid cell $\Sigma(\VP)$. Let $\Delta_{I_i}$ be the minor of $M_{\VP}$ defined by the columns indicated by $I_i$. Then \sanote{make clear these are polynomials}
-\begin{enumerate}
+Write $\cI = \{I_1, \ldots I_n\}$ be the Grassmann necklace assoicates to the positroid cell $\Sigma(\VP)$. Let $\Delta_{I_i}(\bf{x})$ be polynomial in $\bf{x}$ defined by the minor of $M_{\VP}$ indicated by the columns indexed by $I_i$.  Then \begin{enumerate}
  
-   \item Each $\Delta_{I_i}$ splits into linear and quadratic factors.  All linear factors of  $\Delta_{I_i}$ are single variables and all irreducible quadratic factors are $2\times 2$ determinants of single variables.
-    \item Quadratic factors in $\Delta_{I_i}$ arise precisely when propagators $p$ and $q$ are supported on a common edge $a$ with $I_i(p)=a$ and $I_i(q)=a+1$.
-    \item The factor $r_e$ divides $\Delta_{I_e}$.
-    \item The ideal generated by $R(\VP)$ is the radical of the ideal generated by $\prod_{i=1}^{n}\Delta_{I_i}$.
+   \item Each $\Delta_{I_i}(\bf{x})$ splits into linear and quadratic factors.  All linear factors of  $\Delta_{I_i}(\bf{x})$ are single variables and all irreducible quadratic factors are $2\times 2$ determinants of single variables.
+    \item Quadratic factors in $\Delta_{I_i}(\bf{x})$ arise precisely when propagators $p$ and $q$ are supported on a common edge $a$.
+    \item The factor $r_e$ divides $\Delta_{I_e}(\bf{x})$.
+    \item The ideal generated by $R(\VP)$ is the radical of the ideal generated by $\prod_{i=1}^{n}\Delta_{I_i}(\bf{x})$.
   \end{enumerate}
 \end{thm}
 
 We can generalize this result to define a polynomial given by a minimal parametrization of a positroid cell. 
 
 \begin{dfn}\label{dfn:RV}
-Let the set of subsets $\cV$ define a matroid $M(\cV)$. If $M(\cV)$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})$. 
+Let the set of subsets $\cV$ define a matroid $M(\cV)$. If $M(\cV)$ is also a positroid, let $\cI =  \{I_1, \ldots I_n\}$ be the associated Grassman Necklace. Then define $R(\cV)$ to be the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}(\bf{x})$ in the variables $\{x_{i,j}\}$ defined by the set $\cV$. That is, $R(\cV) = \textrm{rad}(\prod_{i=1}^{n}\Delta_{I_i})(\bf{x})$. 
 \end{dfn}
 
-We note that here, $R(\cV)$ is a polynomial in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring in these variables, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\cV)}$, one must consider the image under the map in \eqref{eq:maps}. 
+We note that here, $R(\cV)$ is a polynomial in the matrix entries $x_{p,i}$. The radicals taken are over the polynomial ring $\R[\bf{x}]$, defining a variety in the space of $n \times k$ matrices. To pass to the Grassmannian and obtain the variety $\overline{\Sigma(\cV)}$, one must consider the image under the map in \eqref{eq:maps}. 
 
-In particular, there may be multiple polnomials arising from the same Grassmann Necklace defining the positroid variety $\Sigma(\cV)$, as illustrated in the following example.
+In particular, there may be multiple polynomials arising from the same Grassmann Necklace defining the positroid variety $\Sigma(\cV)$, as illustrated in the following example.
 
-\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by the Grassmann Neclace $\cI$.  For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example, the $2 \times 6$ matrices defined by $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ both correspond to the positroid variety with Grassmann Necklace $\cI = \{12, 23, 34, 45, 51, 12\}$. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}$ under the corresponding coordinate system.
+\begin{eg} \label{eg:differentpolys} Note that the polynomial $R(\cV)$ is dependent on the minimal parametrization of the postroid defined by the Grassmann Neclace $\cI$.  For instance, in \cite{GWLDCI}, the authors give conditions for when multiple Wilson loop diagrams can correspond to the same positroid cell. For example, the $2 \times 6$ matrices defined by $\cV_1 = \{\{1, 2, 4, 5\}, \; \{1, 2, 3, 4\} \}$ and $\cV_2 = \{\{1, 2, 4, 5\}, \; \{2, 3, 4, 5\} \}$ both correspond to the positroid variety with Grassmann Necklace $\cI = \{12, 23, 34, 45, 51, 12\}$. However \bas R(\cV_1) = x_{1,2}(x_{1,1}x_{2,2}- x_{2,1}x_{1,2})x_{2,1}x_{2, 3}x_{2,4}x_{1,4}x_{1,5}  \quad \textrm{while} \\ R(\cV_2) =  x_{1,1}x_{1,2}x_{2,2}x_{2, 3} x_{2,5}(x_{1,4}x_{2,5}- x_{2,4}x_{1,5})x_{1,4}\;.\eas Both correspond to the polynomial formed by the product of the prime factors of $\prod_{i=1}^{n}\Delta_{I_i}(\bf{x})$ under the corresponding coordinate system.
 
 This is different from the approach elsewhere in the literature, eg \cite{GalashinLam, SSBW}, where similar polynomials are defined on the Pl\"{u}cker coordinates.
 
@@ -686,19 +694,19 @@ If the matrioid $M(\cV)$ is also a positroid, then the factors of $R(\cV)$ vanis
 
 
 \begin{proof}
-Let $\{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Definition \ref{dfn:RV}, 
+Let $GN(\cV) = \{I_1, I_2, \dots, I_k\}$ be the Grassmann necklace associated $\Sigma(\cV)$. From Definition \ref{dfn:RV}, 
 %
 \begin{displaymath}
-R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}\right).
+R(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I_i}(\bf{x})\right).
 \end{displaymath}
 %
-From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I : I \notin M_{\cV}\}$. From in \cite[Theorem 5.1]{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by
+From Theorem 5.15 in \cite{knutsonlamspeyerjuggling}, the ideal of functions defining the variety $\overline{\Sigma(\cV)}$ is generated by $\{\Delta_I | I_b \not \leq_b I; \; b \in I\}$ \st{$\{\Delta_I : I \notin M_{\cV}\}$} where $\leq_b$ indicates the Gale ordering.\todo{Cam: is this correct?} From in \cite[Theorem 5.1]{basisshapeloci}, $L(\cV) \subset \overline{\Sigma(\cV)}$ and hence every function vanishing on $\Sigma(\cV)$ vanishes on $L(\cV)$. Theorem 5.1 in \cite{knutsonlamspeyerjuggling} implies that the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by requiring certain minors to be non-vanishing. Namely, 
 %
 \begin{displaymath}
 \Delta_{I_1}, \Delta_{I_2}, \dots, \Delta_{I_k} \neq 0.
 \end{displaymath}
 %
-Thus, the subset of $L(\cV)$ where $R(\cV)$ vanishes is exactly
+We may consider the minors $\Delta_{I_i}$ either as Pl\"{u}cker coordinates, or as polynomials in variables defining $M_{\cV}$. Using the latter interpretation, we note that the polynomial $R(\cV)$ vansihes exactly where at least one of the $\Delta_{I_i}(\bf{x})$ vanish, ie exactly  of $L(\cV)$ defined 
 %
 \begin{displaymath}
 L(\cV) \setminus \Sigma(\cV) \subset \overline{\Sigma(\cV)} \setminus \Sigma(\cV). \qedhere
@@ -710,20 +718,20 @@ We can use Proposition \ref{res:vanishonbdny} to show that for Wilson loop diagr
 
 
 \begin{thm}\label{res:polesonboundaries}
-Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(\VP)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, $\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell in the boundary of $\Sigma$. \end{thm}
+Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subset L(\VP)$ be the vanishing locus of a single factor of $R(\VP)$ inside $L(\VP)$ and suppose that $L'$ has codimension $1$ in $L(\VP)$. Then, \hlfix{$\overline{L'\cap \Gr(k, n)} = \overline{\Sigma'}$, where $\Sigma'$ is a positroid cell}{do we need to restrict to the positive grassmanninans here?} in the boundary of $\Sigmapos$. \end{thm}
 
-\note{$\Sigma$ here is for the full grassmannian, fix notation}
+
 
 \begin{proof}
-From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $G'$ is a codimension $1$ boundary obtained by setting a single variable $x_{p,i}$ to zero. Then, $G'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\mathcal{P}}(\mathbf{x})$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. Theorem CITE THEOREM implies that a generic point in $G'$ represents the same matroid. Since the positroid stratification is coarser than the matroid stratification, a generic point in $G'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$. Proposition \ref{res:vanishonbdny} implies that $G' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $G'$ was assumed to be codimension $1$, the matroid represented by a generic point in $G'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{G'} = \overline{\Sigma'}$, as desired.
+From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $L'$ is a codimension $1$ locus obtained by setting a single variable $x_{p,i}$ to zero. Then, $L'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\VP}$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. \hlfix{Theorem CITE THEOREM  implies that a generic point in $L'$ represents the same matroid.}{Same matroid as what?} Since the positroid stratification is coarser than the matroid stratification, \hlfix{a generic point in $L'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$}{???}. Proposition \ref{res:vanishonbdny} implies that $L' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $L'$ was assumed to be codimension $1$, the matroid represented by a generic point in $L'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{L'} = \overline{\Sigma'}$, as desired.
 
-Next, suppose that $G'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $G'$ may be represented by reparameterizing this two by two minor in $M_{\mathcal{P}}(\mathbf{x})$, then setting one of the new parameters to zero. Let $M'$ denote the matrix obtained by this operation. Generic points in $G'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $G' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $G'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $G'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{G'} = \overline{\Sigma'}$.
+Next, suppose that $L'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $L'$ may be represented by reparameterizing this two by two minor in $M_{\VP}$, then setting one of the new parameters to zero. Let $M'$ denote the variable valued matrix obtained by this operation. Generic points in $L'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $L' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $L'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $L'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{L'} = \overline{\Sigma'}$.
 \end{proof}
 
 \begin{eg} \label{eg:codim2}
 Note that not all factors of $R(\VP)$ correspond to codimension 1 subspaces of $\Sigma(\VP)$. 
 
-For instance, consider the diagram in Example \ref{eg:closuresmatch}. Setting $x_{p,4}$ to $0$ gives the matrix \bas C' =
+For instance, consider the diagram in Example \ref{eg:closuresmatch}. Setting $x_{p,4}$ to $0$ gives the matrix \bas M' =
 \begin{bmatrix}
 x_{p,1} & x_{p,2} & 0 &0 & x_{p,5} & 0 \\
 x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
@@ -746,9 +754,9 @@ We conclude this section with a brief aside, noting that the polynomial $\prod_{
 In the notation of this paper, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. Define
 %
 \begin{displaymath}
-R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}\right).
+R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}(\bf{x})\right)
 \end{displaymath}
-
+where $\bf{x}$ is the set of variables defining $M_{\cV}$.
 
 \begin{thm}
 The two polynomials $R^{\ast}(\cV)$ and $R(\cV)$ are the same.
@@ -759,22 +767,22 @@ This follows from the fact that $R^{\ast}(\cV)$ and by $R(\cV)$ are both radical
 
 From Section 5 of \cite{knutsonlamspeyerjuggling}, the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by $\Delta_I \neq 0$ for all $I \in \mathcal{I}$, where $\mathcal{I}$ is the Grassmann Necklace of $\Sigma(\cV)$. So, $\prod_{I \in \mathcal{I}} \Delta_I$ defines the subvariety $(\overline{\Sigma(\cV)} \setminus \Sigma(\cV)) \subset \overline{\Sigma(\cV)}$, the boundary of the open positroid inside the closed positroid. 
 
-From Theorem 5.1 in \cite{basisshapeloc}, we know that $L(\cV) \subset \overline{\Sigma(\cV)}$. Let $V$ be the subset of $L(\cV)$ that is the image of the vanishing loci of $R(\cV)$ under the map in \eqref{eq:maps}. That is, $V = L(\cV) \cap \{\Delta_{I_i} = 0 | I_i \in \mathcal{I}\}$. Then,
+Fixing a set of subsets $\cV$, from Theorem 5.1 in \cite{basisshapeloc}, we know that $L(\cV) \subset \overline{\Sigma(\cV)}$. Let $V$ be the subset of $L(\cV)$ that is the image of the vanishing loci of $R(\cV)$ under the map in \eqref{eq:maps}. That is, $V = L(\cV) \cap \{\Delta_{I_i}(\bf{x}) = 0 | I_i \in \mathcal{I}\}$. Then,
 
 %
 \begin{equation} \label{eqn:rw_vanishes}
 \begin{split}
-V & = V \cap \overline{\Sigma(\VP)} \\
-& = \big(L(\cV) \cap \{\Delta_{I_i} = 0 |  I_i \in \mathcal{I}\}\big) \cap \overline{\Sigma(\VP)} \\
-& = L(\cV) \cap \big(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)\big) \\
-& =  L(\cV) \setminus \Sigma(\VP).
+V & = V \cap \overline{\Sigma(\cV)} \\
+& = \big(L(\cV) \cap \{\Delta_{I_i} = 0 |  I_i \in \mathcal{I}\}\big) \cap \overline{\Sigma(\cV)} \\
+& = L(\cV) \cap \big(\overline{\Sigma(\cV)} \setminus \Sigma(\cV)\big) \\
+& =  L(\cV) \setminus \Sigma(\cV).
 \end{split}
 \end{equation}
 
 
-By Definition \ref{dfn:RV} $R(\cV)$ is the polynomial generating the radical of the idea generated by $\prod_\mathcal{I} \Delta_{I_i}$. 
+By Definition \ref{dfn:RV} $R(\cV)$ is the polynomial generating the radical of the idea generated by $\prod_\mathcal{I} \Delta_{I_i}(\bf{x})$. 
 
-Following Section 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties with opposite Schubert varieties, $\Sigma(\VP)$ is similarly defined as a subset of $\overline{\Sigma(\VP)}$ by $\Delta_{I^{\ast}} \neq 0$ for all $I^{\ast} \in \mathcal{I}^{\ast}$. So, $\prod_{I^{\ast} \in \mathcal{I}^{\ast}} \Delta_{I^{\ast}}$ also defines the subvariety $(\overline{\Sigma(\VP)} \setminus \Sigma(\VP)) \subset \overline{\Sigma(\VP)}$. If $V^\ast$ is the image of the vanishing loci of $R^\ast(\cV)$ under the map in \eqref{eq:maps}.
+Following Section 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties with opposite Schubert varieties, $\Sigma(\VP)$ is similarly defined as a subset of $\overline{\Sigma(\cV)}$ by $\Delta_{I^{\ast}} \neq 0$ for all $I^{\ast} \in \mathcal{I}^{\ast}$. So, $\prod_{I^{\ast} \in \mathcal{I}^{\ast}} \Delta_{I^{\ast}}(\bf{x})$ also defines the subvariety $(\overline{\Sigma(\cV)} \setminus \Sigma(\cV)) \subset \overline{\Sigma(\cV)}$. If $V^\ast$ is the image of the vanishing loci of $R^\ast(\cV)$ under the map in \eqref{eq:maps}.
 
 Following (\ref{eqn:rw_vanishes}), we see that $V^* = V$. That is, the images of the polynomials $R(\cV)$ and $R^{\ast}(\cV)$ vanish on the same set. Since  $R^{\ast}(\cV)$ and $R(\cV)$ are both radical polynomials defining the same variety, $R^{\ast}(\cV) = R(\cV)$. 
 \end{proof} \todo{generalized this proof. Check if I've broken it}
@@ -790,14 +798,14 @@ Note that not every co-dimension one boundary of a $\Sigma(\cV)$ contains the va
 
 Here, we give a characterization of a class of variable valued matrices for which this type of boundary occurs. First, we extend the definitions of $\Prop(V)$ and $V_p$ for general variable valued matrices and not just those representing Wilson loop diagrams.
 
-We consider a variable valued matrix with the following conditon on its cyclic flats. Let $\Sigma(\cV)$ be a positroid cell of dimension $d$ in $\Gr(k,n)$, and $M_\cV$ be a variable valued matrix realizing $\Sigma(\cV)$ with a minimal number of independent variable valued entries. Let $V, W \subset \{1, \ldots n\}$ define cyclic flats of $M_{\cV}$ such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The sets $V$, $W$ and $V \cup W$ are cyclic intervals in $[n]$ and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that the ranks of $V$ and $W$ are related as follows: $\rk(V \setminus W) \geq \rk(W \setminus V)$. That is, the flat $V$ has non-zero entries in more rows outside of the rows of $W$ than vice versa. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non-zero entries in $\cV_V$ and $V\cup W$ such that circuits in $V$ and $W$ are preserved. In other words, for $\cV = \{V_1, \ldots \cV_n\}$ the set $\cV' = \{V'_1, \ldots \cV'_n\}$ is constructed as follows: \begin{enumerate} \item for every $V_i \in \cV_W$, write $V'_i =V_i \setminus W$ \item the number of non-zero entries in $\cV'_V$ increases from that in $\cV_V$ by the number removed from $\cV_W$: \bas \sum_{V'_i \in \cV'_V} |V'_i| = \sum_{V_i \in \cV_V} |V_i| + \sum_{V_j \in \cV_W} |V_j \cap W| \eas \item if $V_i \not \in \cV_{V\cup W}$ then $V_i = V'_i$ \end{enumerate}  An example of this type of boundary pair is given in Example \ref{eg:strangeboundary} and explained in Example \ref{eg:strangeboundary2} below.
+We consider a variable valued matrix, $M_{\cV}$ with the certain conditons on its cyclic flats. Let $V, W \subset \{1, \ldots n\}$ define cyclic flats of $M_{\cV}$ such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The sets $V$, $W$ and $V \cup W$ are cyclic intervals in $[n]$ and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that the ranks of $V$ and $W$ are related as follows: $\rk(V \setminus W) \geq \rk(W \setminus V)$. That is, the flat $V$ has non-zero entries in more rows outside of the rows of $W$ than vice versa. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non-zero entries in $\cV_V$ and $V\cup W$ such that circuits in $V$ and $W$ are preserved. In other words, for $\cV = \{V_1, \ldots \cV_n\}$ the set $\cV' = \{V'_1, \ldots \cV'_n\}$ is constructed as follows: \begin{enumerate} \item for every $V_i \in \cV_W$, write $V'_i =V_i \setminus W$ \item the number of non-zero entries in $\cV'_V$ increases from that in $\cV_V$ by the number removed from $\cV_W$: \bas \sum_{V'_i \in \cV'_V} |V'_i| = \sum_{V_i \in \cV_V} |V_i| + \sum_{V_j \in \cV_W} |V_j \cap W| \eas \item if $V_i \not \in \cV_{V\cup W}$ then $V_i = V'_i$ \end{enumerate}  An example of this type of boundary pair is given in Example \ref{eg:strangeboundary} below.
 
 
 \begin{prop}\label{res:moving variables}
-Let $M_\cV$ and $M_{\cV'}$ are variable valued matrices as above, and both have the same rank, then $M_{\cV'}$ defines a positroid, $\Sigma(\cV')$, that lies in the boundary of the positroid $\Sigma(\cV)$, the positroid defined by $M_\cV$. \todo{awkward sentence structure}\end{prop}
+Let $M_\cV$ and $M_{\cV'}$ are variable valued matrices as above, and both have the same rank, then $M_{\cV'}$ defines a positroid, $\Sigma(\cV')$, that lies in the boundary of the positroid $\Sigma(\cV)$.\end{prop}
 
 \begin{proof} 
-We prove the theorem by showing that the Grassmann Necklace associated to $M_{\cV'}$, call it \hlfix{$GN(\cV')$}{we don't use this notation elsewhere, should we?} is different from the Grassmann Necklace defined by $M_{\cV}$, call it $GN(\cV)$, and that the basis set of $M_{\cV}$ contains the basis set of $M_{\cV'}$. In this way, we show that $\Sigma(\cV') \neq \Sigma(\cV)$, and that  $\Sigma(\cV')$ lies in the boundary of $\Sigma(\cV)$. 
+We prove the theorem by showing that the Grassmann Necklace associated to $M_{\cV'}$, call it $GN(\cV')$ is different from the Grassmann Necklace defined by $M_{\cV}$, call it $GN(\cV)$, and that the basis set of $M_{\cV}$ contains the basis set of $M_{\cV'}$. In this way, we show that $\Sigma(\cV') \neq \Sigma(\cV)$, and that  $\Sigma(\cV')$ lies in the boundary of $\Sigma(\cV)$. 
 
 First, we compare the Grassmann necklaces defining $\Sigma(\cV)$ and $\Sigma(\cV')$. We may read these directly off the matrices $M_{\cV}$ and $M_{\cV'}$. In particular, we wish to show that that $GN(\cV) \neq GN(\cV')$. To see this, first note that $\rk(V)$ (resp. $\rk(W)$) $>0$. If this were not true, then whichever flat had rank $0$ would be contained in the other flat, which contradicts our hypothesis. Since $V \cup W$ is a cyclic interval (in both $M_\cV$ and $M_{\cV'}$), let $v$ denote the first element in the cyclic interaval $V\cup W$ such that $\rk(v) >0$. Let $I_v$ and $I_v'$ be the Grassmann Necklace element starting at the column $v$ in $GN(\cV)$ and $GN(\cV')$ respectively. We have that $v \in I_v$ and $v \in I_v'$. 
 
@@ -821,7 +829,7 @@ Given a matrix $M_{\cV}$ and $M_{\cV'}$ as above, the polynomial $R(\cV)$ does n
 \end{thm} \todo{Cam: check this for correctness}
 
 \begin{proof}
-Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of \hlfix{$M(\cV)$}{Note somehow, here I have a different notation for the matroid}. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.
+Consider the Grassmann Necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann Necklaces for $GN(\cV)$ and $GN(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of $M(\cV)$. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$ and $b = I_v \setminus I'_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. Then, by the basis exchange theorem, there is a basis set $B = (I_v \setminus b)\cup a$, and the non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.
 
 By Proposition \ref{res:vanishonbdny}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
 \end{proof}
@@ -834,37 +842,41 @@ The Wilson loop diagram\bas W =  \begin{tikzpicture}[rotate=67.5,baseline=(curre
 	\drawnumbers
 	\drawlabeledprop{1}{-1}{5}{0}{$p$}
 	\drawlabeledprop{1}{1}{3}{0}{$q$}
-	\end{scope} \end{tikzpicture} \eas can be written as \bas \cV = \{V_1 = \{1, 2, 5,6\} \; ; \; V_2 = \{1, 2, 3,4 \} \} \;.\eas with a matrix \bas M_{\VP} = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; . \eas The Grassmann Necklace of $\Sigma(\VP)$ is $GN(W) = \{ \{12\},\{23\}, \{35\}, \{45\}, \{51\}, \{61\} \}$. From \cite{casestudy}, we see that $\Sigma(\VP)$ shares a boundary with the positroid cells corresponding to \bas M_{\cV_1} = \begin{bmatrix} *&  * & 0& 0 &0 &* \\ 0 &  * & *&  *& * & * \end{bmatrix} \quad \textrm{and} \quad M_{\cV_2} = \begin{bmatrix} *&  * & *& 0 &0 &0 \\0 &  * & *&  *& * & * \end{bmatrix} \;. \eas \hlfix{Here the $*$ correspond not no-zero, independent real variables.}{Should probably actually put variables here} In particular, the common boundary is parametrized by the matrix \bas M_{\D\cV} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\0  &  * & *&  *& * & * \end{bmatrix}.\eas This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. From Proposition \ref{res:vanishonbdny}, the vanishing set of $R(\VP)$ is exactly $L(\VP) \setminus \Sigma(\VP)$. 
+	\end{scope} \end{tikzpicture} \eas can be written as \bas \VP = \{V_p = \{1, 2, 5,6\} \; ; \; V_1 = \{1, 2, 3,4 \} \} \;.\eas with a matrix \bas M_{\VP} = \begin{bmatrix} x_{p,1} &  x_{p,2} & 0 & 0 &x_{p,5} &x_{p,6} \\x_{q,1} &  x_{q,2} & x_{q,3} &  x_{q,4}& 0 & 0 \end{bmatrix}\; . \eas The Grassmann Necklace of $\Sigma(\VP)$ is $GN(W) = \{ \{12\},\{23\}, \{35\}, \{45\}, \{51\}, \{61\} \}$. From \cite{casestudy}, we see that $\Sigma(\VP)$ shares a boundary with the positroid cells corresponding to \bas M_{\cV_1} = \begin{bmatrix} x_{1,1} &  x_{1,2} & 0 & 0 & 0 &x_{1,6} \\0 &  x_{2,2} & x_{2,3} &  x_{2,4}& x_{2,5} & x_{2,6} \end{bmatrix}  \quad \textrm{and} \quad M_{\cV_2} = \begin{bmatrix} x_{1,1} &  x_{1,2} & x_{1,3} & 0 & 0 &0 \\0 &  x_{2,2} & x_{2,3} &  x_{2,4}& x_{2,5} & x_{2,6} \end{bmatrix}  \;. \eas In particular, the common boundary is parametrized by the matrix \bas M_{\D\cV} = \begin{bmatrix} x_{1,1} &  x_{1,2} & 0 & 0 & 0 &0 \\0 &  x_{2,2} & x_{2,3} &  x_{2,4}& x_{2,5} & x_{2,6} \end{bmatrix}  \;.\eas This common boundary is 5 dimensional, parameterized for instance by setting one of the stars in each row to be 1 and allowing the other entries to be free. 
 
-Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(\VP)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(\VP)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\VP)$, the nonvanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(\VP)$ does not intersect this boundary and hence $R(\VP)$ does not vanish on $\Sigma(\cV')$.
+From Proposition \ref{res:vanishonbdny}, the vanishing set of $R(\VP)$ is exactly $L(\VP) \setminus \Sigma(\VP)$. We show that there is a codimension 1 boundary of $\Sigma(\VP)$ that does not intersect the vanishing set of $R(\VP)$. 
 
-Note that $W = \{ 3, 4\}$, and $V = \{5, 6\}$ are two cyclic flats of $M_{\VP}$ that satisfy the conditions of the proposition. Then, up to permuations of the rows, there is only one choice for $M_{\cV'}$: \bas M_{\cV'} = \begin{bmatrix} *&  * & 0& 0 &0 &0 \\ *  &  * & *&  *& * & * \end{bmatrix}. \eas Note that while this is not the same matrix as $M_{\D\cV}$ these two matrices do represent the same matriod. (This can be seen by comparing basis sets.)
+Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$ as defined in Theorem \ref{res:moving variables}. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(\VP)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(\VP)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanising on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\VP)$, the nonvanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the nonvanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(\VP)$ does not intersect this boundary and hence $R(\VP)$ does not vanish on $\Sigma(\cV')$.
+
+Note that $W = \{ 3, 4\}$, and $V = \{5, 6\}$ are two cyclic flats of $M_{\VP}$ that satisfy the conditions of the proposition. Then, up to permuations of the rows, there is only one choice for $M_{\cV'}$: \bas M_{\cV'} = \begin{bmatrix} x_{1,1} &  x_{1,2} & 0 & 0 & 0 &0 \\x_{2,1} &  x_{2,2} & x_{2,3} &  x_{2,4}& x_{2,5} & x_{2,6} \end{bmatrix} \;. \eas Note that while this is not the same matrix as $M_{\D\cV}$ these two matrices do represent the same matriod, which can be seen by comparing basis sets. In fact, the matrix $M_{\cV'}$ is a non-minimal representation of the matrix $M_{\D\cV}$.
 \end{eg}
 
 \begin{rmk}
-As remarked in Example \ref{eg:strangeboundary}, the matrix $M_{\cV'}$ defined above Lemma \ref{res:moving variables} need not have the minimal number of parameters to represent the boundary positroid $\Sigma(\cV')$. In particular, we have that  \bas |\bigcup_{V \in \cV'}V| = 6 \quad \textrm{ while } \max_{V \in  \cV'} (|V|) + |\mathcal{V}| +1 = 5 + 2 +1 = 8 \;.\eas Therefore, setting $\cV' = \mathcal{T}$, we see that the third equivalence of Theorem \ref{ref:minimalrep} doesn't hold, and thus $M_{\cV'}$ is not a minimal representation. In fact, there is a $Gl(k)$ transformation taking $M_{\cV'}$ to $M_{\D\cV}$: \bas \begin{bmatrix}1 & 0  \\ -\frac{x_{q_1}}{x_{p_1}} & 1 \end{bmatrix}  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\x_{q,1}  &  x_{q,2} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} =  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\0  &  x_{q,2} -\frac{x_{q_1}x_{p_2}}{x_{p_1}} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} \eas \todo{is this a Rado theorem thing?}\end{rmk}
+As remarked in Example \ref{eg:strangeboundary}, the matrix $M_{\cV'}$ defined above Lemma \ref{res:moving variables} does not have the minimal number of parameters to represent the boundary positroid $\Sigma(\cV')$. In particular, we have that  \bas |\bigcup_{V \in \cV'}V| = 6 \quad \textrm{ while } \max_{V \in  \cV'} (|V|) + |\mathcal{V}| +1 = 5 + 2 +1 = 8 \;.\eas Therefore, setting $\cV' = \mathcal{T}$, we see that the third equivalence of Theorem \ref{res:minimalrep} doesn't hold, and thus $M_{\cV'}$ is not a minimal representation. In fact, there is a $GL(k)$ transformation taking $M_{\cV'}$ to $M_{\D\cV}$: \bas \begin{bmatrix}1 & 0  \\ -\frac{x_{q_1}}{x_{p_1}} & 1 \end{bmatrix}  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\x_{q,1}  &  x_{q,2} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} =  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\0  &  x_{q,2} -\frac{x_{q_1}x_{p_2}}{x_{p_1}} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} \eas \end{rmk}
 
 
-\begin{rmk}
-The requirement that $V$ and $W$ are cyclic intervals may seem arbitrary until one considers that all flacets of a matroid are cyclic intervals if and only if the matroid is a positroid, and that all flacets are cyclic intervals. In some moral sense, the algorithm prescribed in Proposition \ref{res:moving vairables} aims to combine two flacets into a larger flacets in order to define a new positroid cell. \todo{Don't like this. Cam, do you?} 
-\end{rmk}
+
+The requirement that $V$ and $W$ are cyclic intervals may seem arbitrary until one considers that all flacets of a matroid are cyclic intervals if and only if the matroid is a positroid, and that all flacets are cyclic intervals. In some moral sense, the algorithm prescribed in Proposition \ref{res:moving variables} aims to combine two flacets into a larger flacets in order to define a new positroid cell. 
 
 In the particular case of Wilson loop diagrams ($W = (\cP, [n])$), recall from Lemma 2.28 of \cite{wilsonloops} that all cyclic flats can be represented as a propagator flat, $F(P)$, and that by Lemma 3.35 of the same, any propagator flat that is a cyclic flat has rank equal to the number of propagators in the set defining it. Therefore, the boundaries of the sort considered in Lemma \ref{res:moving variables} occur when there are two propagators flats $F(P)$ and $F(Q)$ such that \begin{enumerate} \item Neither $P$ nor $Q$ are the full propagators set, $\cP$. \item The sets $F(P)$, $F(Q)$ and $F(P) \cup F(Q)$ form cylic intervals in $[n]$, \item One propagator set is not contained in the other. \end{enumerate} It is easy to check that these conditions are met in the Wilson loop diagram $W$ in Examaple \ref{eg:strangeboundary}.
 
 
 \subsection{Cancelation of poles on the boundary}
 
-We are now ready to prove the main result of this section: that the singularities of $I(\VP)$ that lie on codimension $1$ boundaries of $\Sigma(\VP)$ all cancel in the tree amplitude. Before we begin, we recall a few facts about the polynomial $R(\VP)$. As a motivating example, we consider the diagram \ba W =   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
-	\begin{scope}
-	\drawWLD{10}{1.5}
-	\drawnumbers
-	\drawprop{1}{0}{8}{1}
-	\drawprop{3}{0}{8}{0}
-        \drawprop{5}{0}{8}{-1}
-		\end{scope}
-	\end{tikzpicture} \;.\label{eq:relevantexample}\ea %with the associated matrix \bas  M_{\VP}  = \begin{bmatrix}  x_{p,1} & x_{p,2} &0 & 0 & 0 & 0& 0 & x_{p,8} & x_{p,9} & 0 \\ 0 &  0 & x_{r,3} & x_{r,4} & 0  & 0  & 0 & x_{r,8} & x_{r,9} & 0  \\  0 & 0 & 0 &0 &x_{s, 5}  &x_{s,6}& 0  & x_{s,8} & x_{s, 9} & 0 \end{bmatrix} \;.\eas 
+We are now ready to prove the main result of this section: that the singularities of $I(\VP)$ that lie on codimension $1$ boundaries of $\Sigma(\VP)$ all cancel in the tree amplitude. Before we begin, we recall a few facts about the polynomial $R(\VP)$. %As a motivating example, we consider the diagram \ba W =   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+%	\begin{scope}
+%	\drawWLD{10}{1.5}
+%	\drawnumbers
+%	\drawprop{1}{0}{8}{1}
+%	\drawprop{3}{0}{8}{0}
+%        \drawprop{5}{0}{8}{-1}
+%		\end{scope}
+%	\end{tikzpicture} \;.\label{eq:relevantexample}\ea %with the associated matrix \bas  M_{\VP}  = \begin{bmatrix}  x_{p,1} & x_{p,2} &0 & 0 & 0 & 0& 0 & x_{p,8} & x_{p,9} & 0 \\ 0 &  0 & x_{r,3} & x_{r,4} & 0  & 0  & 0 & x_{r,8} & x_{r,9} & 0  \\  0 & 0 & 0 &0 &x_{s, 5}  &x_{s,6}& 0  & x_{s,8} & x_{s, 9} & 0 \end{bmatrix} \;.\eas 
 
-We classify effect of setting the factors of $R(\VP)$ to the diagram $W$. By Definition \ref{dfn:I(W)}, the primitive factors of $R(\VP)$ either either have degree one or two, corresponding to $1 \times 1$ or $2 \times 2$ minors of $M_{\VP}$. In particular, if the edge $e$ supports $\{q_1, \ldots, q_s\}$ ordered as in Definitions \ref{dfn:adjascentprops}. The degree one factors of $R(\VP)$ are of the form  $x_{q_1, e+1}$ or $x_{q_s, e}$. Setting these to $0$ corresponds to removing $x_{q_1, e+1}$ from the support of the first propagator ($e+1 \not \in V_{q_1}$, or $x_{q_1, e+1} = 0 $) or removing $x_{q_s, e}$ from the support of the last propagator ($e \not \in V_{q_s}$, or $x_{q_s, e} = 0 $) . For $W$ as in \eqref{eq:relevantexample}, we depict this diagramatically, for $e = 8$ as \bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+We classify effect of setting the factors of $R(\VP)$ to the diagram $W$. By Definition \ref{dfn:I(W)}, the primitive factors of $R(\VP)$ either either have degree one or two, corresponding to $1 \times 1$ or $2 \times 2$ minors of $M_{\VP}$. In particular, if the edge $e$ supports $\{q_1, \ldots, q_s\}$ ordered as in Definitions \ref{dfn:adjascentprops}. The degree one factors of $R(\VP)$ are of the form  $x_{q_1, e+1}$ or $x_{q_s, e}$. Setting these to $0$ corresponds to removing $x_{q_1, e+1}$ from the support of the first propagator ($e+1 \not \in V_{q_1}$, or $x_{q_1, e+1} = 0 $) or removing $x_{q_s, e}$ from the support of the last propagator ($e \not \in V_{q_s}$, or $x_{q_s, e} = 0 $) . Note that there is never any factor of $R(\VP)$ that involves two non-adjascent propagators. %For $W$ as in \eqref{eq:relevantexample}, we depict this diagramatically, for $e = 8$ as 
+
+\begin{comment}
+\bas   \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.5}
 	\drawnumbers
@@ -890,7 +902,9 @@ Similarly, the degree two factors corresponds to setting two pairs of variables,
 	\modifiedprop{3}{0}{8}{2}{propagator, dashed}
         \drawprop{5}{0}{8}{-1}
 		\end{scope}
-	\end{tikzpicture} \;.\eas. Note that there is never any factor of $R(\VP)$ that involves two non-adjascent propagators.   \todo{is the diagramatics actualy useful here?}
+	\end{tikzpicture} \;.\eas.    \todo{is the diagramatics actualy useful here?}
+\end{comment}
+
 
 \begin{thm} \label{res:deg1polescancel}
 All the codimension 1 poles of admissible Wilson loop diagrams cancel.
@@ -900,15 +914,55 @@ All the codimension 1 poles of admissible Wilson loop diagrams cancel.
 
 We first consider all the possible degree 1 factors of $R(\VP)$. Write $W = (\cP, [n])$ with $p= (i,j)  \in \cP$. There are several cases to consider:
 
-\textbf{Case 1:} Suppose $j > i+2$ (i.e. if $V_p$ does not consist of $4$ cyclically consecutive vertices) and, wihtout loss of generality, assume $x_{p, i}$ is a factor of $R(\VP)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ that is identical to $W$ except that the propagator $p$ is replaced by $q$. Then $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopSteward, correlahedron}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 1 boundary of $\Sigma(\VP)$ \todo{Cam, what should I cite here?}. It is easy to check that $W'$ satisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not \in \cP$, and $W$ satisfies density) conditions for admissibility. Therefore $W'$ is admissible. 
+\textbf{Case 1:} $  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{1}{0}{5}{1}{$p$}
+        \modifiedprop{2}{0}{5}{-1}{propagator, dashed}
+	\end{scope} \end{tikzpicture} $ Suppose $j > i+2$ (i.e. if $V_p$ does not consist of $4$ cyclically consecutive vertices) and, wihtout loss of generality, assume $x_{p, i}$ is a factor of $R(\VP)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ that is identical to $W$ except that the propagator $p$ is replaced by $q$. Then $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopSteward, correlahedron}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 1 boundary of $\Sigma(\VP)$ \todo{Cam, what should I cite here?}. It is easy to check that $W'$ satisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not \in \cP$, and $W$ satisfies density) conditions for admissibility. Therefore $W'$ is admissible. 
 
-\textbf{Case 1a:}If $q = (i+1, j) \in \cP$, then, in the matrix $\lim_{x_{p, i} \rightarrow 0}M_{\VP}$, the row corresponding to the propagator $p$ now has 3 non-zero entries (corresponding to the columns $\{i+1, j, j+1\}$) and the row corresponding to $q$ has $4$ non-zero entries (corresponding to the columns $\{i+1, i+2, j, j+1\}$). That is, we have $2$ rows with non-zero entries in $4$ columns. Therefore, by Theorem \ref{res:minimalrep}, we see that this locus lies in a boundary of $\Sigma(\VP)$ of codimension of at least 2. Therefore, we do not consider these poles in this argument. 
+\textbf{Case 1a:} $  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{1}{0}{5}{1}{$p$}
+        \drawlabeledprop{2}{0}{5}{-1}{$q$}
+	\end{scope} \end{tikzpicture} $  If $q = (i+1, j) \in \cP$, then, in the matrix $\lim_{x_{p, i} \rightarrow 0}M_{\VP}$, the row corresponding to the propagator $p$ now has 3 non-zero entries (corresponding to the columns $\{i+1, j, j+1\}$) and the row corresponding to $q$ has $4$ non-zero entries (corresponding to the columns $\{i+1, i+2, j, j+1\}$). That is, we have $2$ rows with non-zero entries in $4$ columns. Therefore, by Theorem \ref{res:minimalrep}, we see that this locus lies in a boundary of $\Sigma(\VP)$ of codimension of at least 2. Therefore, we do not consider these poles in this argument. 
 
-\textbf{Case 2:}Next, consider the degree one factors of $R(\VP)$ contributed by propagators of the form $p = (i, i+2)$. If $x_{p, i+1}$ or $x_{p, i+2}$ is a factor of $R(\VP)$, then consider the propatator $q = (i-1, i+2)$ or $q = (i, i+3)$ respectively. If $q \not \in \cP$, then the diagram $W' = ((\cP \setminus p)\cup q, [n])$ is admissible, and the argument proceeds as Case 1. If $q \in \cP$, then the argument proceeds as in Case 1a.  If $x_{p, i}$ or $x_{p, i+3}$ is a factor of $R(\VP)$, consider $q = (i+1, i+3)$ and $q = (i-1, i+1)$ respectively. By the non-crossing condition, $p$ and $q$ cannot simultaneously exist in $W$. If $W$ does not contain another propagator of the form $(i+2, k)$ or $(i, k)$ respectively, we may define an admissible diagram $W' = ((\cP \setminus p)\cup q, [n])$ (otherwise, $q$ would cross the existing propagator $(i+2, k)$ or $(i, k)$).  In this case, $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+4} \rightarrow 0} I(W')$ where the negative sign again comes from Lemma \ref{lem:movingpropnegative}.
+\textbf{Case 2:}$  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{1}{5}{0}{$p$}
+        \modifiedprop{3}{-1}{6}{0}{propagator, dashed}
+        \end{scope} \end{tikzpicture} $;  $\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{1}{5}{-1}{$p$}
+        \modifiedprop{2}{0}{5}{1}{propagator, dashed}
+        \end{scope} \end{tikzpicture} $; $  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{0}{5}{0}{$p$}
+        \modifiedprop{4}{0}{6}{0}{propagator, dashed}
+        \end{scope} \end{tikzpicture} $ Next, consider the degree one factors of $R(\VP)$ contributed by propagators of the form $p = (i, i+2)$. If $x_{p, i+1}$ or $x_{p, i+2}$ is a factor of $R(\VP)$, then consider the propatator $q = (i-1, i+2)$ or $q = (i, i+3)$ respectively. If $q \not \in \cP$, then the diagram $W' = ((\cP \setminus p)\cup q, [n])$ is admissible, and the argument proceeds as Case 1. If $q \in \cP$, then the argument proceeds as in Case 1a.  If $x_{p, i}$ or $x_{p, i+3}$ is a factor of $R(\VP)$, consider $q = (i+1, i+3)$ and $q = (i-1, i+1)$ respectively. By the non-crossing condition, $p$ and $q$ cannot simultaneously exist in $W$. If $W$ does not contain another propagator of the form $(i+2, k)$ or $(i, k)$ respectively, we may define an admissible diagram $W' = ((\cP \setminus p)\cup q, [n])$ (otherwise, $q$ would cross the existing propagator $(i+2, k)$ or $(i, k)$).  In this case, $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+4} \rightarrow 0} I(W')$ where the negative sign again comes from Lemma \ref{lem:movingpropnegative}.
 
-\textbf{Case 2a:}When $x_{p, i}$ (resp. $x_{p, i+3}$) is a factor of $R(\VP)$ and there exists a propagator $(i+2, k)$ (resp. $(i, k)$) in $W$, the singularity formed by sending $x_{p, i}$ (resp. $x_{p, i+3}$) to zero cancels with a pole coming from degree 2 factors contributed by other diagrams. Therefore, we return to this during the discussion of $2 \times 2$ minors. 
+\textbf{Case 2a:}$  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{1}{5}{0}{$p$}
+        \drawlabeledprop{3}{-1}{7}{0}{}
+        \end{scope} \end{tikzpicture} $ ; $\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{0}{5}{-1}{$p$}
+        \drawlabeledprop{1}{0}{5}{1}{}
+        \end{scope} \end{tikzpicture} $ When $x_{p, i}$ (resp. $x_{p, i+3}$) is a factor of $R(\VP)$ and there exists a propagator $(i+2, k)$ (resp. $(i, k)$) in $W$, the singularity formed by sending $x_{p, i}$ (resp. $x_{p, i+3}$) to zero cancels with a pole coming from degree 2 factors contributed by other diagrams. Therefore, we return to this during the discussion of $2 \times 2$ minors. 
 
-\textbf{Case 3:} Next, we consider the degree 2 factors of $R(\VP)$. If such a factor to exists, there must be two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjascent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams formed by replacing the propagator $p$ and $q$ by r: $W' = (\cP' = (\cP \setminus p) \cup r, [n])$ and $W'' = (\cP'' = (\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ both satisfy density. Furthermore, since $W$ is admssible, and $p$ and $q$ are adjascent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the other endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy the non-crossing condition. Thus, $W'$ and $W''$ are both admissible. Note that the diagrams $W$, $W'$ and $W''$ are in the configuration layed out in display \eqref{eq:wideV}. By Theorem \ref{res:Rado}, we see that the reparametrization performed in Lemma \ref{res:Vdiagcancel} means that $\lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} M_{\VP}$  parameterized a codimension 1 subspace of $\overline{\Sigma(\VP)}$. By Proposition \ref{res:vanishonbdny}, this is lies in a codimension 1 boundary of $\Sigma(\VP)$. Accoring to Lemma \ref{res:Vdiagcancel}, after appropriate changes of parametrizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(\VP') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(\VP) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(\VP'') = 0 \; .\eas 
+\textbf{Case 3:}  $\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{1}{6}{0}{$p$}
+        \drawlabeledprop{3}{-1}{9}{0}{$q$}
+        \end{scope} \end{tikzpicture} $ Next, we consider the degree 2 factors of $R(\VP)$. If such a factor to exists, there must be two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjascent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams formed by replacing the propagator $p$ and $q$ by r: $W' = (\cP' = (\cP \setminus p) \cup r, [n])$ and $W'' = (\cP'' = (\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ both satisfy density. Furthermore, since $W$ is admssible, and $p$ and $q$ are adjascent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the other endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy the non-crossing condition. Thus, $W'$ and $W''$ are both admissible. Note that the diagrams $W$, $W'$ and $W''$ are in the configuration layed out in display \eqref{eq:wideV}. By Theorem \ref{res:Rado}, we see that the reparametrization performed in Lemma \ref{res:Vdiagcancel} means that $\lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} M_{\VP}$  parameterized a codimension 1 subspace of $\overline{\Sigma(\VP)}$. By Proposition \ref{res:vanishonbdny}, this is lies in a codimension 1 boundary of $\Sigma(\VP)$. Accoring to Lemma \ref{res:Vdiagcancel}, after appropriate changes of parametrizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(\VP') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(\VP) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(\VP'') = 0 \; .\eas 
 \begin{comment}
 That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(\VP) \cap \Sigma(\VP') \cap \Sigma(\VP'')$.    \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
@@ -937,18 +991,22 @@ That is, the limits represented by the following diagrams, paramterize the same 
 	\end{tikzpicture}\eas \end{comment}
 In otherwords, these three singulariries, which lie on the common codimension 1 boundary positroid of $\Sigma(\VP)$, $\Sigma(\VP')$ and $\Sigma(\VP'')$, cancel in the sum of integrals in the tree level amplitude.
 
-\textbf{Case 3a:}If $k > j+1$ but the propagator $r =  (j,k) \in \cP$, we claim that setting any of the minors $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$, $(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})$ or $(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})$ to zero parametrizes a space of codimension greater than 1. As the arguments for all of these are identical, we only show this explicitly for $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) = 0$. Then we may write $x_{q, i} = \lambda x_{p, i}$ and $x_{q, i+1} = \lambda x_{p, i+1}$, with $\lambda$ a real variable. By adding a scalar multiple of the row corresponding to $p$ to the row corresponding to $q$, one may reparametrize $M_{\VP}$ such that the row corresponding to $q$ is supported on the set $V_r =\{j, j+1, k, k+1\}$. Thus, we have 2 propagators supported on $4$ vertices. By Theorem \ref{res:minimalrep}, this is not a minimal representation of $M_{\VP}$. However, in this representation of $M_{\cV}$, the set of variables $\{x_{q, j}, x_{q, j+ 1}, x_{r, j}, x_{r, j+1}\}$ are algebraically independent, and thus the $2 \times 2$ minor they define is diagonalizable by a $GL(k)$ action that acts on the identity on all other rows. Thus after 2 applications of $GL(k)$ transforamations, we have reduced the number of non-zero entries of $M_{\VP}$ by 2, showing that the surface where $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) = 0$ has co-dimension of at least 2 in $\Sigma(\VP)$. \todo{still don't like this argument. Cleaner ideas?}
+\textbf{Case 3a:} $\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
+	\drawWLD{8}{1}
+	\drawnumbers
+	\drawlabeledprop{3}{1}{6}{-1}{$p$}
+        \drawlabeledprop{3}{-1}{1}{1}{$q$}
+        \drawlabeledprop{6}{1}{1}{-1}{$r$}
+        \end{scope} \end{tikzpicture} $ If $k > j+1$ but the propagator $r =  (j,k) \in \cP$, we claim that setting any of the minors $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$, $(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})$ or $(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})$ to zero parametrizes a space of codimension greater than 1. As the arguments for all of these are identical, we only show this explicitly for $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) = 0$. Then we may write $x_{q, i} = \lambda x_{p, i}$ and $x_{q, i+1} = \lambda x_{p, i+1}$, with $\lambda$ a real variable. By adding a scalar multiple of the row corresponding to $p$ to the row corresponding to $q$, one may reparametrize $M_{\VP}$ such that the row corresponding to $q$ is supported on the set $V_r =\{j, j+1, k, k+1\}$. Thus, we have 2 propagators supported on $4$ vertices. By Theorem \ref{res:minimalrep}, this is not a minimal representation of $M_{\VP}$. However, in this representation of $M_{\cV}$, the set of variables $\{x_{q, j}, x_{q, j+ 1}, x_{r, j}, x_{r, j+1}\}$ are algebraically independent, and thus the $2 \times 2$ minor they define is diagonalizable by a $GL(k)$ action that acts on the identity on all other rows. Thus after 2 applications of $GL(k)$ transforamations, we have reduced the number of non-zero entries of $M_{\VP}$ by 2, showing that the surface where $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) = 0$ has co-dimension of at least 2 in $\Sigma(\VP)$. \todo{still don't like this argument. Cleaner ideas?}
 
-\textbf{Case 3b:}The final configuration to check is when $p = (i, j)$ and $q = (i, k)$ with $k = j+1$, as shown below: \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+\textbf{Case 3b:}$\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1}
 	\drawnumbers
 	\drawprop{3}{0}{8}{-1}
 	\drawprop{2}{0}{8}{1}
 		\end{scope}
-	\end{tikzpicture} \eas
-
-Consider the diagrams $W' = (\cP' = (\cP \setminus p) \cup r = (j, j+2), [n])$ and $W'' = (\cP'' = (\cP \setminus p) \cup s = (k-2, k), [n])$. Since the edge $r \not \in \cP$ (it would cross $q$ if it were), and $s \not \in \cP$ (it would cross $p$ if it were), we see that $W'$ and $W''$ satisfy both the non-crossing and density conditions, and thus are admissible. Furthermore, $W$, $W'$ and $W''$ are in the configurations layed out in display \eqref{eq:narrowV} and the diagrams $W'$ and $W''$ are in the configuration laid out in Case 2a.
+	\end{tikzpicture} $ The final configuration to check is when $p = (i, j)$ and $q = (i, k)$ with $k = j+1$. Consider the diagrams $W' = (\cP' = (\cP \setminus p) \cup r = (j, j+2), [n])$ and $W'' = (\cP'' = (\cP \setminus p) \cup s = (k-2, k), [n])$. Since the edge $r \not \in \cP$ (it would cross $q$ if it were), and $s \not \in \cP$ (it would cross $p$ if it were), we see that $W'$ and $W''$ satisfy both the non-crossing and density conditions, and thus are admissible. Furthermore, $W$, $W'$ and $W''$ are in the configurations layed out in display \eqref{eq:narrowV} and the diagrams $W'$ and $W''$ are in the configuration laid out in Case 2a.
 
 We see from Lemma \ref{res:narrowVcancel} that pole defined by the limit of sending $(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})$ to $0$ cancels with degree 1 poles in the diagrams in $W'$ and $W''$ under the correct parametrizations: \bas \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i}) \rightarrow 0}I(\VP) + \lim_{x_{r, k-2}\rightarrow 0}I(W') + \lim_{x_{s, j+3}\rightarrow 0}I(W'') =0 \;.\eas That is, the limits represented by the following diagrams, paramterize the same codimension 1 subspace in the intersection $\Sigma(\VP) \cap \Sigma(W') \cap \Sigma(W'')$.
 \begin{comment}
@@ -1008,21 +1066,21 @@ We restrict our attention to the relavant $2 \times 2$ minor of $M_{\YP}$, $ \be
 
 In future, we use whichever parametrization of the $2 \times 2$ minors is convenient. The need for a change of variables comes up in two cases. The first case involves the cancelation of the $2 \times 2$ minors in following three propagator confgurations: \bml \textrm{Config 1} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{0}{8}{1}
 	\drawprop{3}{0}{8}{-1}
 		\end{scope}
 	\end{tikzpicture} \quad ; \quad \textrm{Config 2} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{-1}{8}{0}
 	\drawprop{1}{1}{3}{0}
 		\end{scope}
 	\end{tikzpicture} \\ \textrm{Config 3} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{0}{3}{-1}
 	\drawprop{3}{1}{8}{0}
@@ -1040,21 +1098,21 @@ From this, we see that, in the limit $f \rightarrow 0$ and $f' \rightarrow 0$, f
 
 The last case to consider consists of understanding the poles shared between the diagrams with the following configureations: \bml \textrm{Config 4} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{2}{0}{8}{1}
 	\drawprop{3}{0}{8}{-1}
 		\end{scope}
 	\end{tikzpicture} \quad ; \quad \textrm{Config 5} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{2}{-1}{8}{0}
 	\drawprop{2}{1}{4}{0}
 		\end{scope}
 	\end{tikzpicture} \\ \textrm{Config 6} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
-	\drawWLD{10}{1.5}
+	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{3}{1}{8}{0}
 	\drawprop{3}{-1}{1}{0}
@@ -1076,6 +1134,8 @@ This proof follows similarly to the above. Write \bas M_{\cY(\cP_4)} = \begin{bm
 For an $k \times n$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $M_I$ to be the matrix formed by restricting $M$ to the rows $I$, and let $\mathrm{span}(M_I)$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters. Let $\mathrm{span}(M_{\emptyset})$ be the origin in $\mathbb{R}^n$.
 \end{dfn}
 
+Note that these matrices are different from the variable valued matrices defined by $M_{\cV}$ above, as we relax the requirement that there be exactly one variable in each entry. In particular, while the entries of $M$ are functions of independent variables, the entries themselves may not be.
+
 \begin{dfn}
 Let $L(M_I)$ be the locus of the variable valued matrix $M_I$ in $\Grall(|I|, n)$, as given by the map in \eqref{eqn:maps}.
 \end{dfn}
@@ -1094,7 +1154,7 @@ Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose las
 \end{eg}
 
 \begin{thm}\label{res:Rado}
-Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. \sanote{Do we need $|\mathbf{x}| = |\mathbf{y}|$?} Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
+Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
 \begin{itemize}
 \item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_{I \cup j}) \neq \mathrm{span}(M_I)$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
 \item[(ii)] $\mathrm{dim}(L(M')) = d-k$.
@@ -1123,7 +1183,11 @@ Condition (ii) from Theorem \ref{res:Rado} relaxes this condition from Rado's th
 
 \todo{Can you make the role of the non-vanishing Jacobian clearer?} 
 \begin{proof}
-  We show that (ii) implies (i) via induction on $k$. When $k = 1$, $L(M')$ is a parameterized subset of projective space and the result holds. Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, and suppose that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever $|I| < l$. For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.
+We show that (ii) implies (i) via induction on $k$. When $k = 1$, $L(M')$ is a parameterized subset of projective space. Since the transformation from the $\mathbf{x}$ to the $\mathbf{y}$ variables are invertible (i.e. the Jacobian is non=vanishing), $M' = M_{\cP}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$ and $M_{\cP}(\mathbf{x})|_{x_{i,j} = 0; x_{i,j} \in S}$ have the same dimesion in $\R^n$. One obtains the corresponding locus in projective space by scaling by a constant, so the dimensions in projective space remain the same. 
+
+For larger $k$, it is not sufficient to use the invertibility of the parametrization as an argument that the dimension does not change. While this holds on the level of matrices, it may not hold after quotienting by $GL(k)$ in order to find the locus $L(M')$.
+
+Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, and suppose that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever $|I| < l$. For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.
 
 Note that $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$. Since $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
 % 
@@ -1142,10 +1206,14 @@ So,
 \noindent
 and thus (ii) implies (i) when $k = l$.
 
-Next, we show that (i) implies (ii). When $k = 1$, $L(M')$ is again a parameterized subset of projective space. Suppose the result holds for $k = l-1$ and let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{1,\dots,l}) \neq \mathrm{span}(M'_{1,\dots,l-1})$. Let $d_l$ be the number of parameters appearing in row $l$ of $M'$ which do not appear in rows $1, \dots, l-1$. Then, for generic $r \in \mathrm{span}(M'_{l})$, $r \notin \mathrm{span}(M'_{1,\dots,l-1})$. So,
+Next, we show that (i) implies (ii). When $k = 1$, $L(M')$ is again a parameterized subset of projective space, and the argument holds similarly to the case for $k=1$ in the other direction of this proof. 
+
+Suppose the result holds for $k = l-1$ and let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{1,\dots,l}) \neq \mathrm{span}(M'_{1,\dots,l-1})$. Let $d_l$ be the number of parameters appearing in row $l$ of $M'$ which do not appear in rows $1, \dots, l-1$. Note that $L(M'_l)$ is $d_l -1$ dimensional by similar arguments as the base case.
+
+Then, for generic point $r \in \mathrm{span}(M'_{l})$ that comes from evaluating the last row of $M'$, note that $r \notin \mathrm{span}(M'_{1,\dots,l-1})$. So,
 %
 \begin{displaymath}
-\dim(L(M'_{1,\dots,l-1})) \cap \Gr(\mathbb{R}^n \perp r, k-1)) = \dim(L(M'_{1,\dots,l-1})).
+\dim(L(M'_{1,\dots,l-1})) \cap \Gr(k-1, \mathbb{R}^n \perp r)) = \dim(L(M'_{1,\dots,l-1})).
 \end{displaymath}
 %
 \noindent
