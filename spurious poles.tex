@@ -638,6 +638,8 @@ Before we define the actual integral, $\cI(\VP)$, recall that if multiple propag
 \item $R(\VP) = \prod_{e \in [n]} R_e$
 \end{enumerate} \end{dfn}
 
+Appendix \ref{sec:appendix} gives examples and context for calculations done with these integrals. 
+
 There are a few features to note in this defintion. First, notice that the spurious poles of the theory correspond to setting the factors of $R(\VP)$ to zero. Specifically, by equations \eqref{eq:matrixvalues} in Appendix \ref{sec:appendix}, the variables $x_{p,0}$ localize to $0$ when the vectors representing the particles do not span $\R^4$. This corresponds to the physical poles of the theory. The spurious poles occur when  $x_{p,0} \neq 0$, but the polynomial $R(\VP)$ goes to $0$. See \cite{casestudy, HeslopSteward, AmplituhedonSquared} for more calculations of this form. 
 
 Secondly, note that in this definition, we take the integral over $(\RP^4)^k$. In particular, the polynomial $R(\VP)$ is defined over $(\RP^4)^k$, and not over $L(\VP)$. Note that by a toric action, we may consider $M_{\YP}$ as a subspace of $(\RP^n)^k$, and since each row has exactly five non-zero entries, we may view each Wilson loop diagram as an isomorphism from $(\RP^4)^k$ to $M_{\YP}$. Finally, by the map in equation \eqref{eq:maps}, we may study the vanishing locus of $R(\VP)$ as a subspace of $L(\YP)$. \sanote{Changed this significantly}
@@ -724,9 +726,9 @@ Let $W=(\mathcal{P},[n])$ be an admissible Wilson loop diagram and let $L' \subs
 
 
 \begin{proof}
-From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $L'$ is a codimension $1$ locus obtained by setting a single variable $x_{p,i}$ to zero. Then, $L'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\VP}$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. \hlfix{Theorem CITE THEOREM  implies that a generic point in $L'$ represents the same matroid.}{Same matroid as what?} Since the positroid stratification is coarser than the matroid stratification, \hlfix{a generic point in $L'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$}{???}. Proposition \ref{res:vanishonbdny} implies that $L' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $L'$ was assumed to be codimension $1$, the matroid represented by a generic point in $L'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{L'} = \overline{\Sigma'}$, as desired.
+From Theorem \ref{res:prop alg gives rad}, $R(\VP)$ is the product of individual entries and two by two minors of $M_{\VP}$. Suppose first that $L'$ is a codimension $1$ locus obtained by setting a single variable $x_{p,i}$ to zero. Then, $L'$ is the subset of the Grassmannian consisting of row spaces of matrices of the form $M_{\VP}$ where $x_{p,i}$ is set to zero and all other entries are evaluated at real numbers. \hlfix{Theorem CITE THEOREM  implies that a generic point in $L'$ represents the same matroid.}{Same matroid as what? as another generic point? should this be moved up in the paper?} Since the positroid stratification is coarser than the matroid stratification, \hlfix{a generic point in $L'$ is contained in the closure of some positroid $\Sigma' \subset \overline{\Sigma}$}{???}. Proposition \ref{res:vanishonbdny} implies that $L' \subset \overline{\Sigma} \setminus \Sigma$ and so $\Sigma' \neq \Sigma$. Since $L'$ was assumed to be codimension $1$, the matroid represented by a generic point in $L'$ is in fact $\Sigma'$. Then, Theorem CITE THEOREM implies that $\overline{L'} = \overline{\Sigma'}$, as desired.
 
-Next, suppose that $L'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $L'$ may be represented by reparameterizing this two by two minor in $M_{\VP}$, then setting one of the new parameters to zero. Let $M'$ denote the variable valued matrix obtained by this operation. Generic points in $L'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $L' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $L'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $L'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{L'} = \overline{\Sigma'}$.
+Next, suppose that $L'$ is a codimension $1$ boundary obtained by setting a two by two minor of $M_{\mathcal{P}}(\mathbf{x})$ to zero. As in Lemma \ref{lem:simplifyR(W)}, $L'$ may be represented by reparameterizing this two by two minor in $M_{\VP}$, then setting one of the new parameters to zero. Let $M'$ denote the variable valued matrix obtained by this change of variables. Generic points in $L'$ represent the same matroid, namely the matroid whose bases are the minors $M'$ which aren't identically zero. Proposition \ref{res:vanishonbdny} implies $L' \subset \overline{\Sigma} \setminus \Sigma$. Then, since $L'$ has codimension $1$ in $\overline{\Sigma}$, the matroid represented by a generic point in $L'$ is a positroid $\Sigma'$. The open positroid $\Sigma'$ has a parameterization via a Marsh-Reitsch matrix $R$ in the same number of variables as $M'$. Then, as in the proof of CITE THEOREM, $M'$ and $R$ are generically related by a change of basis matrix and thus $\overline{L'} = \overline{\Sigma'}$.
 \end{proof}
 
 \begin{eg} \label{eg:codim2}
@@ -1004,8 +1006,8 @@ In otherwords, these three singulariries, which lie on the common codimension 1 
 	\begin{scope}
 	\drawWLD{10}{1}
 	\drawnumbers
-	\drawprop{3}{0}{8}{-1}
-	\drawprop{2}{0}{8}{1}
+	\drawlabeledprop{3}{0}{8}{-1}{$q$}
+	\drawlabeledprop{2}{0}{8}{1}{$p$}
 		\end{scope}
 	\end{tikzpicture} $ The final configuration to check is when $p = (i, j)$ and $q = (i, k)$ with $k = j+1$. Consider the diagrams $W' = (\cP' = (\cP \setminus p) \cup r = (j, j+2), [n])$ and $W'' = (\cP'' = (\cP \setminus p) \cup s = (k-2, k), [n])$. Since the edge $r \not \in \cP$ (it would cross $q$ if it were), and $s \not \in \cP$ (it would cross $p$ if it were), we see that $W'$ and $W''$ satisfy both the non-crossing and density conditions, and thus are admissible. Furthermore, $W$, $W'$ and $W''$ are in the configurations layed out in display \eqref{eq:narrowV} and the diagrams $W'$ and $W''$ are in the configuration laid out in Case 2a.
 
@@ -1043,10 +1045,10 @@ We remark that this cancelation is exact only in the space parametrized by matri
 \end{rmk}
 
 \begin{appendices} 
-\section{Graveyard of Technical Lemmas \ref{sec:appendix}}
+\section{Graveyard of Technical Lemmas \ref{sec:appendix}} 
 In this section, we present some calculations to aid in the understanding of the cancelation of spurious poles. Many of the results here can be found in \cite{casestudy, correlahedron, HeslopStewart}. However, they are presented here for completeness.
 
-Recall from Definition \ref{dfn:I(W)} that \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times n+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \;.\eas Write $\cZ_*^i$ to indicate the $i^{th}$ column of $\cZ_*$ and $\cZ_*^\mu$ to indicate the matrix formed by taking the first 4 columns of $\cZ_*$. Then evaluating the integral $I(\VP)$ corresponds to localizing the expression \bas \frac{\prod_{b = 1}^k (Y_b \cdot \cZ_*^b)^4}{R(\VP)}\eas at the solution to $M_{\YP} \cdot \cZ_*^\mu = 0$. By Cramer's rule, we see that this localization evaluates \ba x_{p, 0} &= \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \\ x_{p, i} = \det(Z_0^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; &; \; x_{p, i+1} = \det( Z_{i}^\mu, Z_0^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; \text{ etc.} \label{eq:matrixvalues}\ea That is, the entry $x_{p, m}$ evaluates to the minor of $\cZ_*^\mu$ indicated by the rows in $V_p$, with the $m^{th}$ row replaced by $Z_0^\mu$.
+Recall from Definition \ref{dfn:I(W)} that \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times n+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \;.\eas Write $\cZ_*^i$ to indicate the $i^{th}$ column of $\cZ_*$ and $\cZ_*^\mu$ to indicate the matrix formed by taking the first 4 columns of $\cZ_*$. Then evaluating the integral $I(\VP)$ corresponds to localizing the expression \bas \frac{\prod_{b = 1}^k (Y_b \cdot \cZ_*^b)^4}{R(\VP)}\eas at the solution to $M_{\YP} \cdot \cZ_*^\mu = 0$. Writing the propagator $p = (i, j)$ with $i <j$,  Cramer's rule implies that this localization evaluates to \ba x_{p, 0} &= \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \\ x_{p, i} = \det(Z_0^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; &; \; x_{p, i+1} = \det( Z_{i}^\mu, Z_0^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; \text{ etc.} \label{eq:matrixvalues}\ea That is, the entry $x_{p, m}$ evaluates to the minor of $\cZ_*^\mu$ indicated by the rows in $V_p$, with the $m^{th}$ row replaced by $Z_0^\mu$.
 
 \begin{lem} \label{lem:movingpropnegative}
 For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j} = -x_{q, j+2}$
@@ -1056,37 +1058,37 @@ For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j
 By the above arguments, note that $x_{p, j} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{0}^\mu, Z_{j+1}^\mu )$ while $x_{q, j+2} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j+1}^\mu , Z_{0}^\mu )$. Thus these two values are negatives.
 \end{proof}
 
-Sometimes, it is necessary to perform changes of variables in order to perform the cancellation of variables. For ease of calculation, we introduce a simplifying change of variables:
+Sometimes, as in Theorem \ref{res:polesonboundaries} and Theorem \ref{res:deg1polescancel}, it is necessary to perform changes of variables in order to perform the cancellation of variables. For ease of calculation, we introduce a simplifying change of variables:
 \begin{lem}\label{lem:simplifyR(W)}
-When two propagators $p = (i, j)$ and $q = (i, k)$ are \hlfix{adjacent }{note, we need to keep the order in mind for this reparameter} on an of $W$, then there is a reparametrization under which one can replace the factor $x_{p, i}(x_{p, i}x_{q, i+1} - x_{p, i+1}x_{q, i})x_{q, i+1}$ in $R(\VP)$ with the product of 4 terms: $xyzw$.
+Consider two propagators $p = (i, j)$ and $q = (i, k)$ that are adjacent on the $i^{th}$ edge of a Wilon loop diagram $(\cP, [n])$, with $p$ appearing closer to the vertex $i$ and $q$ closer to the vertex $i+1$. There is a reparametrization of the matrix $M_{\VP}$ under which one can replace the factor $x_{p, i}(x_{p, i}x_{q, i+1} - x_{p, i+1}x_{q, i})x_{q, i+1}$ in $R(\VP)$ with the product of 4 terms: $xyzw$.
 \end{lem}
 
 \begin{proof}
 We restrict our attention to the relavant $2 \times 2$ minor of $M_{\YP}$, $ \begin{bmatrix} x_{p, i} & x_{p, i+1} \\ x_{q, i} & x_{q, i+1} \end{bmatrix} $,  which we can reparametrize as $ \begin{bmatrix} x & y \\ xz & zy + w \end{bmatrix} $. Then we have that \bas x_{p, i} = x \quad ; \quad  x_{p, i+1} = y \quad ; \quad x_{q, i} = xz\quad  ;\quad x_{q, i+1}  = zy + w \; . \eas Furthermore, \bas dx_{p, i} = dx  \quad ; \quad  d x_{p, i+1} = dy \quad ; \quad dx_{q, i} = x dz + z dx \quad ; \quad d x_{q, i+1} = ydz + z dy + dw \;.\eas Therefore, under these changes of variables, we see that \bas \frac{dx_{p, i}\;dx_{p, i+1}\;dx_{q, i}\;dx_{q, i+1}}{x_{p, i+1}(x_{p, i}x_{q, i+1} - x_{q, i}x_{p, i+1} ) x_{q, i}}  = \frac{ dx\;dy\;x dz\; dw}{y (xyz + xw - xyz)xz}\eas which simplifies to the desired result.
 \end{proof}
 
-In future, we use whichever parametrization of the $2 \times 2$ minors is convenient. The need for a change of variables comes up in two cases. The first case involves the cancelation of the $2 \times 2$ minors in following three propagator confgurations: \bml \textrm{Config 1} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
-	 \begin{scope}
-	\drawWLD{10}{1.2}
-	\drawnumbers
-	\drawprop{1}{0}{8}{1}
-	\drawprop{3}{0}{8}{-1}
-		\end{scope}
-	\end{tikzpicture} \quad ; \quad \textrm{Config 2} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+In future, we use whichever parametrization of the $2 \times 2$ minors is convenient. The need for a change of variables comes up in two cases. The first case involves the cancelation of the $2 \times 2$ minors in following three propagator confgurations (see Case 3 for Theorem \ref{res:deg1polescancel}): \bml  \textrm{Config 1} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{-1}{8}{0}
 	\drawprop{1}{1}{3}{0}
 		\end{scope}
-	\end{tikzpicture} \\ \textrm{Config 3} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+	\end{tikzpicture} \quad ; \quad \textrm{Config 2} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{0}{3}{-1}
 	\drawprop{3}{1}{8}{0}
 		\end{scope}
-	\end{tikzpicture} \label{eq:wideV}\eml
+	\end{tikzpicture} \\ \textrm{Config 3} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+	 \begin{scope}
+	\drawWLD{10}{1.2}
+	\drawnumbers
+	\drawprop{1}{0}{8}{1}
+	\drawprop{3}{0}{8}{-1}
+		\end{scope}
+	\end{tikzpicture}  \label{eq:wideV}\eml
 
 \begin{lem}\label{res:Vdiagcancel}
 Let $(\cP_1, [n])$, $(\cP_2, [n])$ and $(\cP_3, [n])$ be admissible Wilson loop diagrams that are identical except for the fact that the propagator set $\cP_i$ cotains the pair of adjascent propagators shown in $\textrm{Config i}$ above. Then 
@@ -1095,28 +1097,28 @@ Let $(\cP_1, [n])$, $(\cP_2, [n])$ and $(\cP_3, [n])$ be admissible Wilson loop 
 This proof is also given in \cite{HeslopStewart, casestudy} but is included here for completeness.
 \begin{proof}
 Without loss of generality, write $M_{\cY(\cP_i)}$ with the pertinent propagators represented in the first two rows. Then the matrices $M_{\cY(\cP_i)}$ are identical except for the first two rows. Since the propagators are adjacent, by Lemma \ref{lem:simplifyR(W)} we may write the first two rows as \bas M_{\cY(\cP_1)} = \begin{bmatrix}1 & \ldots & a &b &\ldots & 0 & 0 & \ldots & c & d   \ldots\\  1 & \dots &  ae &be + f  & \ldots &g & h & \ldots &0 &0  \ldots   \end{bmatrix}  \\ M_{\cY(\cP_2)} = \begin{bmatrix}1 & \ldots & a' & b' &\ldots & c' & d' & \ldots & 0 & 0   \ldots\\  1 & \dots &  0 & 0  & \ldots &c'e' & d' e' + f' & \ldots &g' &h'  \ldots   \end{bmatrix} \\ M_{\cY(\cP_3)} = \begin{bmatrix}1 & \ldots & 0 &0 &\ldots & a'' & b'' & \ldots & c'' & c''   \ldots\\  1 & \dots &  e'' & f''  & \ldots &0 & 0 & \ldots &c''g'' & d'' g'' + h'' \ldots   \end{bmatrix}\;.\eas We multiply the relavant rows of $M_{\cY(\cP_2)}$ and $M_{\cY(\cP_3)}$ by elements of $GL(2)$, leaving the rest of the rows unchanged. Namely, consider the products: \bas \begin{bmatrix} \frac{- e'}{1-e'} & \frac{1}{1-e'} \\ 1 & 0  \end{bmatrix} M_{\cY(\cP_2)} = \begin{bmatrix}  1 & \dots & \frac{-e' a'}{1- e'}  & \frac{-e' b'}{1- e'}  & \ldots &0 & \frac{ f'}{1-e'} & \ldots &\frac{g'}{1-e'} &\frac{h'}{1-e'}  \ldots  \\ 1 & \ldots & a' & b' &\ldots & c' & d' & \ldots & 0 & 0   \ldots \end{bmatrix}  \\ \begin{bmatrix}  \frac{1}{1-c''} & \frac{-c''}{1-c''}\\ 0  & 1  \end{bmatrix} M_{\cY(\cP_3)} = \begin{bmatrix}1 & \ldots & \frac{-e''c''}{1-c''} &\frac{-f''c''}{1-c''} &\ldots & a'' & b'' & \ldots & 0 & \frac{d''}{1-c''}   \ldots\\  1 & \dots &  e'' & f''  & \ldots &\frac{a''}{1-c''} & \frac{b''}{1-c''} & \ldots &g'' & h'' \ldots   \end{bmatrix}\;.\eas
-From this, we see that, in the limit $f \rightarrow 0$ and $f' \rightarrow 0$, for $x_*(W_2)$, we have the change of variables \bmls a = \frac{-e'a'}{1-e'} \quad ; \quad b = \frac{-e'b'}{1-e'} \quad ; \quad c = \frac{g'}{1-e'} \quad ; \quad d = \frac{d}{1-e'}  \quad ; \\ \quad e = \frac{1-e'}{e'}\quad ; \quad f = 0 \quad ; \quad g = c' \quad ; \quad h = d'\;.\emls Inverting and performing the change of variables, we see that $\lim_{f' \rightarrow 0} I(M_{\cV(\cP_2)}) = \lim_{f \rightarrow 0} \frac{1}{1-e} I(M_{\cV(\cP_1)})$. A similar calculation shows that $\lim_{d'' \rightarrow 0} I(M_{\cV(\cP_3)}) = \lim_{f \rightarrow 0} \frac{-1}{1-e} I(M_{\cV(\cP_1)})$. Thus, in the appropriate limit, \bas \lim_{f \rightarrow 0} I(M_{\cV(\cP_1)}) + \lim_{f' \rightarrow 0} I(M_{\cV(\cP_2)}) + \lim_{d'' \rightarrow 0} I(M_{\cV(\cP_3)}) = 0\;.\eas  \end{proof} \todo{actually check these calculations, minus signs, etc.}
+From this, we see that, in the limit $f \rightarrow 0$ and $M_{\cY(\cP_1)}$ and $f' \rightarrow 0$ for $\begin{bmatrix} \frac{- e'}{1-e'} & \frac{1}{1-e'} \\ 1 & 0  \end{bmatrix} M_{\cY(\cP_2)}$, we have the change of variables \bmls a = \frac{-e'a'}{1-e'} \quad ; \quad b = \frac{-e'b'}{1-e'} \quad ; \quad c = \frac{g'}{1-e'} \quad ; \quad d = \frac{d}{1-e'}  \quad ; \\ \quad e = \frac{1-e'}{e'}\quad ; \quad f = 0 \quad ; \quad g = c' \quad ; \quad h = d'\;.\emls Inverting and performing the change of variables, we see that $\lim_{f' \rightarrow 0} I(\cV(\cP_2)) = \lim_{f \rightarrow 0} \frac{-1}{1-e} I(\cV(\cP_1))$. A similar calculation shows that $\lim_{d'' \rightarrow 0} I(\cV(\cP_3)) = \lim_{f \rightarrow 0} \frac{e}{1-e} I(\cV(\cP_1))$. Thus, in the appropriate limit, \bas \lim_{f \rightarrow 0} I(\cV(\cP_1)) + \lim_{f' \rightarrow 0} I(\cV(\cP_2)) + \lim_{d'' \rightarrow 0} I(\cV(\cP_3)) = 0\;.\eas  \end{proof} \todo{actually check these calculations, minus signs, etc.}
 
 The last case to consider consists of understanding the poles shared between the diagrams with the following configureations: \bml \textrm{Config 4} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
-	\drawprop{2}{0}{8}{1}
-	\drawprop{3}{0}{8}{-1}
+	\drawprop{3}{-1}{9}{0}
+	\drawprop{3}{1}{8}{0}
 		\end{scope}
 	\end{tikzpicture} \quad ; \quad \textrm{Config 5} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
-	\drawprop{2}{-1}{8}{0}
-	\drawprop{2}{1}{4}{0}
+	\drawprop{3}{-1}{9}{0}
+	\drawprop{3}{1}{5}{0}
 		\end{scope}
 	\end{tikzpicture} \\ \textrm{Config 6} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
-	\drawprop{3}{1}{8}{0}
 	\drawprop{3}{-1}{1}{0}
+	\drawprop{3}{1}{8}{0}
 		\end{scope}
 	\end{tikzpicture} \label{eq:narrowV}\eml
 
@@ -1129,16 +1131,21 @@ This proof follows similarly to the above. Write \bas M_{\cY(\cP_4)} = \begin{bm
 
 %Let $\mathcal{P} = \{P_1, P_2, \dots, P_k\}$ be a collection of subsets of $\{1,2,\dots,n\}$. Let $\mathbf{x}=\{x_{i,j}\}$ be algebraically independent invertible variables. Define $M_{\mathcal{P}}(\mathbf{x})$ to be the $n \times k$ matrix having $x_{i,j}$ as its $i,j$ entry if $j \in P_i$ and $0$ otherwise.
 
+Finally, we show that the limits defined in Lemma \ref{res:Vdiagcancel} and Lemma \ref{res:narrowVcancel} do infact give rise to codimension 1 boundaries of $\Sigma(\VP)$. To do this, we define a more general result. In Theorem \ref{res:Rado}, we show that, if $M'$ is a variable valued matrix formed by applying an invertible change of variables to a matrix $M_\cV$, then sending $k$ variables to $0$ in $M'$ drops the dimension of the parametrized space $L(M')$ if and only if no row of $M'$ is contained in the span of any other subset of rows of $M'$.
 
+The results is a generalization of the equivalence of 1 and 3 in Theorem \ref{res:minimalrep}. Condition 3 from Theorem \ref{res:minimalrep} is analogous to the inequality from Hall's Matching Theorem. However, 
+the matrices in Theorem \ref{res:minimalrep} have the restriction that entries are either zero or totally independent. Theorem \ref{res:Rado} below, relaxes this condition, allowing one to view each independent non-zero entry as a function of several variables, and setting one of these component variables to $0$, as in Lemma \ref{res:Vdiagcancel} and Lemma \ref{res:narrowVcancel}. 
+
+We begin with a few definitions. 
 
 \begin{dfn}
 For an $k \times n$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $M_I$ to be the matrix formed by restricting $M$ to the rows $I$, and let $\mathrm{span}(M_I)$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters. Let $\mathrm{span}(M_{\emptyset})$ be the origin in $\mathbb{R}^n$.
 \end{dfn}
 
-Note that these matrices are different from the variable valued matrices defined by $M_{\cV}$ above, as we relax the requirement that there be exactly one variable in each entry. In particular, while the entries of $M$ are functions of independent variables, the entries themselves may not be.
+Note that these matrices are different from the variable valued matrices defined by $M_{\cV}$ above. We relax the requirement that each entry of the matrix be algebraically independent of all the others. Furthermore, while the entries of $M_I$ are functions of independent variables, the entries themselves may be related by algebraic functions.
 
 \begin{dfn}
-Let $L(M_I)$ be the locus of the variable valued matrix $M_I$ in $\Grall(|I|, n)$, as given by the map in \eqref{eqn:maps}.
+Let $L(M_I)$ be the locus of the variable valued matrix $M_I$ in $\Grall(|I|, n)$, as given by the map in \eqref{eq:maps}.
 \end{dfn}
 
 \begin{eg}
@@ -1151,28 +1158,21 @@ M =
 0 & 0 & x_2 & x_1 \end{bmatrix}.
 \end{displaymath}
 \noindent
-Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose last coordinate is zero. $\mathrm{span}(M_{13})$ consists of points of the form $(a,b,\frac{bc}{a},c)$ for some $a,b,c \in \mathbb{R} \setminus \{0\}$ together with points of the form $(0,b,c,0)$. $\mathrm{span}(M_{123})$ is all of $\mathbb{R}^4$.
+Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose last coordinate is zero. On the other hand, $\mathrm{span}(M_{13})$ consists of points of the form $(a,b,\frac{bc}{a},c)$ for some \hlfix{$a,b,c \in \mathbb{R} \setminus \{0\}$}{$b, c \in \R$; $a \in \R^\times$?} together with points of the form $(0,b,c,0)$. Finally, $\mathrm{span}(M_{123})$ is all of $\mathbb{R}^4$.
 \end{eg}
 
 \begin{thm}\label{res:Rado}
-Let $\mathcal{P}$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by a change of variable matrix with nonzero Jacobian. Let $M_{\mathcal{P}}(\mathbf{x})$ and $M_{\mathcal{P}}(\mathbf{y})$ be the variable valued matrices associated to $\mathcal{P}$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$, with $d = |\mathbf{x}| - |S|$ and consider $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. Note that there are $d$ variables in $\mathbf{x}$ remaining. Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. The following are equivalent: 
+Let $\cV$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by an invertible change of variables. Let $M_{\cV}(\mathbf{x})$ and $M_{\cV}(\mathbf{y})$ be the variable valued matrices associated to $\cV$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ be a subset of the variables $\bf{x}$, and write $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$.  Denote by $d = |\mathbf{x}| - |S|$ the number of variables in $\mathbf{x}$ remaining. %Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. 
+The following are equivalent: 
 \begin{itemize}
-\item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_{I \cup j}) \neq \mathrm{span}(M_I)$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
+\item[(i)] For all $I \subsetneq [k]$ and all $j \in I^c$, $\mathrm{span}(M_I) \subsetneq \mathrm{span}(M_{I \cup j})$. That is, adding a row to $\mathrm{span}(M_I)$ always increases the size of the span.
 \item[(ii)] $\mathrm{dim}(L(M')) = d-k$.
 \end{itemize}
 \end{thm}
 
 \begin{rmk}
-This theorem is a generalization of the equivalence of 1 and 3 in Theorem \ref{res:minimalrep}. Condition 3 from Theorem \ref{res:minimalrep} is analogous to the inequality from Hall's Matching Theorem.
-%, which can be interpreted as saying that a variable valued matrix is full rank if (using the notation of Theorem \ref{res:minimalrep}) for all $\mathcal{T} \subseteq \mathcal{V}$
-%%
-%\begin{displaymath}
-%\left| \bigcup_{T \in \mathcal{T}} T|  \geq |\mathcal{T}|.
-%\end{displaymath}
-%%
-%\noindent
-%Condition 3 from \ref{res:minimalrep} says that not only does this condition hold.
-The matrices in Theorem \ref{res:minimalrep} have the restriction that entries are either zero or totally independent. \sanote{relaxing the one variableper matrix entry condition} Theorem \ref{res:Rado} relaxes this condition, allowing one to introduce restrictions such on the entries of the matrix by operations such as performing the change of variables from Lemma \ref{lem:simplifyR(W)} and then setting $w = 0$. This relaxation on the matrix side of the theorem is mirrored by a relaxation of the inequality from Hall's Matching Theorem. Namely, Rado's Theorem, which says that if $S_1, \dots, S_k \subseteq \mathbb{R}^{n}$, then it is possible to select linearly independent vectors $s_1 \in S_1, \dots, s_k \in S_k$ if and only if for all $I \subseteq [k]$,
+% This relaxation on the matrix side of the theorem is mirrored by a relaxation of the inequality from Hall's Matching Theorem. 
+Namely, Rado's Theorem, which says that if $S_1, \dots, S_k \subseteq \mathbb{R}^{n}$, then it is possible to select linearly independent vectors $s_1 \in S_1, \dots, s_k \in S_k$ if and only if for all $I \subseteq [k]$,
 %
 \begin{displaymath}
 \mathrm{dim}\left(\mathrm{span}\left( \bigcup_{i \in I} S_i \right) \right) \geq |I|.
@@ -1182,27 +1182,26 @@ The matrices in Theorem \ref{res:minimalrep} have the restriction that entries a
 Condition (ii) from Theorem \ref{res:Rado} relaxes this condition from Rado's theorem, saying not only does any subset of vectors have the correct dimension, but adding a new vector always increases the dimension.
 \end{rmk}
 
-\todo{Can you make the role of the non-vanishing Jacobian clearer?} 
-\begin{proof}
-We show that (ii) implies (i) via induction on $k$. When $k = 1$, $L(M')$ is a parameterized subset of projective space. Since the transformation from the $\mathbf{x}$ to the $\mathbf{y}$ variables are invertible (i.e. the Jacobian is non=vanishing), $M' = M_{\cP}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$ and $M_{\cP}(\mathbf{x})|_{x_{i,j} = 0; x_{i,j} \in S}$ have the same dimesion in $\R^n$. One obtains the corresponding locus in projective space by scaling by a constant, so the dimensions in projective space remain the same. 
+\begin{proof}\sanote{Cam: changed all $\Gr$ to $\Grall$ in this theorem. Correct?}
+We show that (ii) implies (i) via induction on $k$, the number of rows of $M_\cV(\bf{x})$. When $k = 1$, $L(M')$ is a parameterized subset of projective space. Since the transformation from the $\mathbf{x}$ to the $\mathbf{y}$ variables are invertible, $M' = M_{\cP}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$ and $M_{\cP}(\mathbf{x})|_{x_{i,j} = 0; x_{i,j} \in S}$ have the same dimesion in $\R^n$. One obtains the corresponding locus in projective space by scaling by a constant, so the dimensions in projective space remain the same. 
 
-For larger $k$, it is not sufficient to use the invertibility of the parametrization as an argument that the dimension does not change. While this holds on the level of matrices, it may not hold after quotienting by $GL(k)$ in order to find the locus $L(M')$.
+For larger $k$, it is not sufficient to use the invertibility of the change of variables as an argument that the dimension does not change. While this holds on the level of matrices, it may not hold after quotienting by $GL(k)$ in order to find the locus $L(M')$.
 
-Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, and suppose that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever $|I| < l$. For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.
+Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, but that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever \hlfix{$|I| < l$}{$l-1$? see red}. {\color{red}That is, condition (i) fails to hold only for the sets $|I| = l-1$.} \st{For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.}\sanote{nix. Not used. $d_l$ means something else below}
 
-Note that $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$. Since $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
+\hlfix{Note that $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$}{why?}. \todo{can we talk about planes in $\Grall$?}\todo{We talk about a span of a vector in $\R^n$ and a subspace of $\Grall$. That can't be right?!} Since condition (i) does not hold for $I = \{1,\dots,l-1\}$, $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
 % 
 
 \begin{displaymath}
-\dim(L(M'_{1,\dots,l-1}) \cap \Gr(\mathbb{R}^n \perp r, k-1)) < \dim(L(M'_{1,\dots,l-1})).
-\end{displaymath}
+\dim(L(M'_{1,\dots,l-1}) \cap \Grall(k-1, \mathbb{R}^n \perp r)) < \dim(L(M'_{1,\dots,l-1})). 
+\end{displaymath}\todo{why?}
 %
 \noindent
 So,
 %
 \begin{displaymath}
 \dim(L(M')) \leq \dim(L(M'_{l})) + (\dim(L(M'_{1,\dots,l-1})) - 1) = d -k - 1,
-\end{displaymath}
+\end{displaymath}\todo{why?}
 %
 \noindent
 and thus (ii) implies (i) when $k = l$.
@@ -1214,7 +1213,7 @@ Suppose the result holds for $k = l-1$ and let $M'$ be an $l \times n$ matrix su
 Then, for generic point $r \in \mathrm{span}(M'_{l})$ that comes from evaluating the last row of $M'$, note that $r \notin \mathrm{span}(M'_{1,\dots,l-1})$. So,
 %
 \begin{displaymath}
-\dim(L(M'_{1,\dots,l-1})) \cap \Gr(k-1, \mathbb{R}^n \perp r)) = \dim(L(M'_{1,\dots,l-1})).
+\dim(L(M'_{1,\dots,l-1})) \cap \Grall(k-1, \mathbb{R}^n \perp r)) = \dim(L(M'_{1,\dots,l-1})) = d - d_l -(k-1)\;.
 \end{displaymath}
 %
 \noindent
@@ -1226,6 +1225,14 @@ Thus,
 \end{displaymath}
 \end{proof}
 
+Given Theorem \ref{res:Rado}, we see that the boundaries defined in Lemma \ref{res:Vdiagcancel} and Lemma \ref{res:narrowVcancel} do infact give rise to codimension 1 boundaries of $\Sigma(\VP)$.
+
+\begin{cor}
+After the reparametrization define in Lemma \ref{lem:simplifyR(W)}, setting $y$, $z$ or $w$ to zero reduces the dimension by $1$.
+\end{cor}
+\begin{proof}
+{\color{red} Not sure how to prove this, or what is going on here? For instance, if we set $x \rightarrow 0$ in Lemma \ref{lem:simplifyR(W)}, we set two of the original variables to 0, and thus drop the dimension by 2. For all others, setting a variable to 0 reduces the dimension by 1 }
+\end{proof}
 
 \end{appendices}
 
