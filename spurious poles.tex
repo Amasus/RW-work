@@ -399,7 +399,7 @@ TODO:
 \item SA: Bibliography
 \item SA/CM: Decide notation for Grassmann necklaces. Sometimes $GN(\cV)$, sometimes $\cI$
 \item CM: Therem \ref{res:vanishonbdny}
-\item SA/CM: Cluster algebra discussion in section \ref{sec:clusteralgebras}
+\item SA/CM: \st{Cluster algebra discussion in section {\ref{sec:clusteralgebras}}}
 \item SA: intro for all sections
 \item CM: Final read through
 \item SA/CM: New title for paper/ appendix
@@ -415,8 +415,6 @@ It is also worth noting that this cluster algebra arises from the plabic graph r
 In this paper, we study the geometry of the spurious poles of N=4 SYM theory in tems of positroid varieties. In Theorem \ref{res:vanishonbdny}, we show that the spurious poles lie on the boundaries of the associated positroid cells. Moreover, Theorem \ref{res:polesonboundaries} shows that  the codimension one poles are dense in the codimension \hlfix{one boundary varieties}{Does this hold outside the positive sector?}. Furthermore, we show that while the vanishing locus of square free factor of the product of the Grassmann Necklace minors lies on the boundary of the correspondng positroid variety, not every codimension one boundary intersects the vanishing locus of such a factor. We give a characterization of which codimension one boundaries do not intesect the codimension one vanishing loci of these factors. We use these facts to show that the codimension one spurious poles of tree level Wilson loop diagrams cancel exactly in the tree level amplitude. 
 
 Section \ref{sec:background} gives the necessary background on Wilson loop diagrams (\ref{sec:diagramdefs}) and variable valued matrices and their associated matroids (\ref{sec:matrices and matroids}). Section \ref{sec:WLDgeom} the describes the geometry of the spurious poles, with Section \ref{sec:WLDmatroid} relating the diagrams to their associated positroid varaietes. Section \ref{sec:integrals} introduces the integrals defined by the Wilson loop diagrams as well as introducing the polynomial $R(\VP)$ that determines the spurious poles of N-4 Sym theory, and is determined by the Grassmann Necklace associated to the Wilson loop diagram. Section \ref{sec:clusteralgebras} relates the spurious poles of SYM N=4 theory to the frozen variables of the positroid variety defined by the same variety. Finally, Section \ref{sec:poles} discusses the spurious poles of the three level interactions. We show that while the variety defined by these polynomials lives on the boundary of the corresponding positroid cells, not all codimension one boundaries intersect these varieties \ref{sec:boundarysanspoles}. Finally, in section \ref{sec:cancelation}, we also explicitly show that the codimension one spurious poles cancel exactly (Theorem \ref{res:deg1polescancel}). There are several technical lemmas that are needed in order to perform the necessary caluculations to demonstrate the cancelations in  Theorem \ref{res:deg1polescancel}. The details of these calculations can be found in Appendix \ref{sec:appendix}.
-asdf
-
  
 
 \section{Background \label{sec:background}}
@@ -621,6 +619,11 @@ Given a variable valued $k \times n$ matrix $M_\cV$ with $m$ non-zero entries re
 \end{enumerate}
 \end{thm}
 
+\begin{dfn}
+In this paper, say that $M_{\cV}$ is a minimal representation of $\Sigma(\cV)$ if the matroid $M(\cV)$ is a positroid and if $M_{\cV}$ satisfiies Theorem \ref{res:minimalrep}.
+\end{dfn}
+
+Note that all matrices of the from $M_{\VP}$ is a minimal representation of $\Sigma(\VP)$. 
 
 In \cite[section 2.3]{non-orientable}, the authors show that  the subspace of $\Grall(k,n)$ parameterized by $M_{\YP}$, can be viewed as a real $k$ vector bundle over the space parametrized by $M_{\VP}$, i.e.  $\cup_{W \in \cW_{k,n}}L(\YP) \rightarrow \cup_{W \in \cW_{k,n}}L(\VP)$. Restricting to any given Wilson loop diagram gives a trivial vector bundle $L(\YP) \rightarrow L(\VP)$. As shown in Theorem 2.29 of loc. cit., the space $\cup_{(\cP, [n]) \in \cW_{k,n}}L(\YP)$ need not be orientable. 
 
@@ -746,7 +749,7 @@ x_{q,1} & x_{q,2} & 0 & 0 & x_{q,5} & x_{q,6}
 \begin{displaymath}
 \max_{V \in  \cV (|V|)} + |\cV| -1  = 4 + 2 - 1.
 \end{displaymath}
-Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not parametrize a $5$ dimensional subspace of $\Grall(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. In fact, direct calculation shows that this factor lies on a codimension 2 locus.
+Therefore the third equivalent statement of Theorem \ref{res:minimalrep} does not hold, and thus $M_{\cV}$ is not a minimal representation of a $5$ dimensional subspace of $\Grall(k,n)$. Since, by display (1) of \cite{basisshapeloci}, $5$ was an upper bound on the dimension of $L(\cV)$, setting $x_{p,4}$ must correspond to a higher codimension subspace of $\Sigma(\VP)$. In fact, direct calculation shows that this factor lies on a codimension 2 locus.
 
 \end{eg}
 
@@ -755,17 +758,22 @@ We show in section \ref{sec:boundarysanspoles} that the converse of Theorem \ref
 
 \subsection{Cluster algebras, frozen variables, Grassmann Necklaces \label{sec:clusteralgebras}}
 
-We conclude this section with a brief aside, noting that the polynomial $\prod_{I_i \in \cI}I_i$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma(\cV)$ where $\mathcal{I} = \{I_1,I_2, \dots, I_k\}$ be the Grassmann necklace associated to $\Sigma(\cV)$, \cite{LamGalashin, SS-BW}. However, in this case, the polynomial is considered as a variety in the Pl''{u}cker coordinates coming from $\Grall(k,n)$, while here we consider the polynomial $\R(\cV)$ which are polynomials in the matrix entries $x_{p, i}$. In particular, \hlfix{take a stab at summarizing the Lam Galashin and SS-BWwork}{do this}
+We conclude this section with a brief aside, noting that the polynomial $\prod_{I_i \in \cI}I_i$ has appeared in relation to a cluster algebra associated to the positroid $\Sigma$ where $\cI= \{I_1,I_2, \dots, I_k\}$ be the associated Grassmann necklace \cite{LamGalashin, SS-BW}. Note that there is a difference in the Grassmann Necklace presented in loc. cit. and this work. Namely, in  in that work, the Grassmann necklace is a written in terms of the Pl\''ucker coordinates coming from $\Grall(k,n)$.  In this paper, we fix a (minimal) representaion, $M_{\cV}$, of $\Sigma(\cV)$. Then, instead of the Pl\''ucker coordinates $I_i$, we consider the minors $\Delta_{I_i}$ of $M_{\cV}$ as polynomials in $x_{p, i}$. 
 
+In particular, in \cite{LamGalashin}, the authors consider $\cI^*$ to be the reverse Grassmann necklace associated to $\Sigma$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma$ can equivalently be defined as an intersection of reverse Schubert varieties. In \cite{SS_BW}, the authors show that each positroid variety defines a cluster algebra, and that the prime factors of $\prod_{I_i^\ast \in \cI^\ast}I_i^\ast$ are exactly the frozen variable of said cluster algebra. 
 
-In the notation of this paper, $I_j$ is that minimal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I_j}$ is non-vanishing on $\Sigma(\cV)$. Let $\mathcal{I}^{\ast} = \{I^{\ast}_1, I^{\ast}_2, \dots, I^{\ast}_{k}\}$ be the reverse Grassmann necklace associated to $\Sigma(\cV)$. That is, $I^{\ast}_j$ is that maximal set in the $j^{th}$ cyclic shift of the Gale order on sets such that the Pl\"ucker coordinate $\Delta_{I^*_j}$ is non-vanishing on $\Sigma(\cV)$. Following Chapter 5 of \cite{knutsonlamspeyerjuggling} replacing Schubert varieties in the Grassmannian with reverse Schubert varieties, one sees $\Sigma(\cV)$ can equivalently be defined as an intersection of reverse Schubert varieties. Define
+In the notation of this, paper, given an minimal representation $M_{\cV}$, we may define $\cI^\ast(\cV)$ as the reverse Grassmann Necklace of the associated positroid. Define
 %
 \begin{displaymath}
 R^{\ast}(\cV) = \mathrm{rad}\left(\prod_{i = 1}^{k} \Delta_{I^{\ast}_i}(\bf{x})\right)
 \end{displaymath}
 where $\bf{x}$ is the set of variables defining $M_{\cV}$.
 
-\begin{thm}
+In Theorem \ref{res:reversepoly}, we show that the polynomial $R^{\ast}(\cV)$ and $R(\cV)$ are equal. In this manner, we show that the polynomials $R(\cV)$ defined in this paper generate the radical ideal of the ideal generated by the product of the frozen variables of the associated cluster algebra, expressed in the coordinate system $\cV$. In particular, for $\VP$ defined by a Wilson loop diagram, the locus of the spurious poles (i.e. the vanishing locus of $R(\VP)$) is the vanishing locus of the frozen variables of the cluster algebra defined by $\Sigma(\VP)$. 
+
+In other words, the spurious poles of the Wilson loop diagrams are intricately connected to the geometry of positroid varieties in ways that require further exploration.
+
+\begin{thm}\label{res:reversepoly}
 The two polynomials $R^{\ast}(\cV)$ and $R(\cV)$ are the same.
 \end{thm}
 
@@ -774,7 +782,7 @@ This follows from the fact that $R^{\ast}(\cV)$ and by $R(\cV)$ are both radical
 
 From Section 5 of \cite{knutsonlamspeyerjuggling}, the open positroid variety $\Sigma(\cV)$ is defined as a subset of $\overline{\Sigma(\cV)}$ by $\Delta_I \neq 0$ for all $I \in \mathcal{I}$, where $\mathcal{I}$ is the Grassmann Necklace of $\Sigma(\cV)$. So, $\prod_{I \in \mathcal{I}} \Delta_I$ defines the subvariety $(\overline{\Sigma(\cV)} \setminus \Sigma(\cV)) \subset \overline{\Sigma(\cV)}$, the boundary of the open positroid inside the closed positroid. 
 
-Fixing a set of subsets $\cV$, from Theorem 5.1 in \cite{basisshapeloc}, we know that $L(\cV) \subset \overline{\Sigma(\cV)}$. Let $V$ be the subset of $L(\cV)$ that is the image of the vanishing loci of $R(\cV)$ under the map in \eqref{eq:maps}. That is, $V = L(\cV) \cap \{\Delta_{I_i}(\bf{x}) = 0 | I_i \in \mathcal{I}\}$. Then,
+Fixing a set of subsets $\cV$, from Theorem 5.1 in \cite{basisshapeloc}, we know that $L(\cV) \subset \overline{\Sigma(\cV)}$. Let $V$ be the subset of $L(\cV)$ that is the image of the vanishing loci of $R(\cV)$ under the map in \eqref{eq:maps}. That is, $V = L(\cV) \cap \{\Delta_{I_i}(\mathbf{x}) = 0 | I_i \in \mathcal{I}\}$. Then,
 
 %
 \begin{equation} \label{eqn:rw_vanishes}
@@ -1173,7 +1181,7 @@ M =
 Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose last coordinate is zero. On the other hand, $\mathrm{span}(M_{13})$ consists of points of the form $(a,b,\frac{bc}{a},c)$ for some $a \in \mathbb{R} \setminus \{0\}$ and $b, c \in \mathbb{R}$ together with points of the form $(0,b,c,0)$. Finally, $\mathrm{span}(M_{123})$ is all of $\mathbb{R}^4$.
 \end{eg}
 
-\begin{thm}\label{res:Rado} \todo{don't we need one of these to be a minimal parametrization? - I actually don't think so. In fact, I think this theorem is strictly more general in the sense that if your variable transformation is just the identity, the condition from this theorem forces the minimality condition.}
+\begin{thm}\label{res:Rado} {\color{red}SA: don't we need one of these to be a minimal parametrization? \\  CM: I actually don't think so. In fact, I think this theorem is strictly more general in the sense that if your variable transformation is just the identity, the condition from this theorem forces the minimality condition. \\ SA: But then how do we make the statement about the dimension being the number of variables left minus $k$ if there isn't a minimal parametrization?} \\
 Let $\cV$ be a collection of subsets, and let $\mathbf{x} = \{x_{i,j}\}$ and $\mathbf{y} = \{y_{i',j'}(\mathbf{x})\}$ be two sets of algebraically independent invertible variable which are related by a change of variables. Denote by $M_{\cV}(\mathbf{x})$ and $M_{\cV}(\mathbf{y})$ the variable valued matrices associated to $\cV$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ be a subset of the variables $\bf{x}$, and write $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. If the function $\lim_{x_{i,j} \in S \to 0} \bf{y}(\bf{x})$ is invertible, denote by $d = |\mathbf{x}| - |S|$ the number of variables in $\mathbf{x}$ outside of the set $S$. %Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. 
 
 %Let $\cV$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by an invertible change of variables. Let $M_{\cV}(\mathbf{x})$ and $M_{\cV}(\mathbf{y})$ be the variable valued matrices associated to $\cV$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ be a subset of the variables $\bf{x}$, and write $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$.  Denote by $d = |\mathbf{x}| - |S|$ the number of variables in $\mathbf{x}$ remaining. %Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. 
@@ -1195,14 +1203,14 @@ Similary to how condition 3 in Theorem \ref{res:minimalrep} should be thought of
 Condition (ii) from Theorem \ref{res:Rado} relaxes this condition from Rado's theorem, saying not only does any subset of vectors have the correct dimension, but adding a new vector always increases the dimension.
 \end{rmk}
 
-\begin{proof}\sanote{Cam: changed all $\Gr$ to $\Grall$ in this theorem. Correct? -- yup!}
+\begin{proof}
 We show that (ii) implies (i) via induction on $k$, the number of rows of $M_\cV(\bf{x})$. When $k = 1$, $L(M')$ is a parameterized subset of projective space. Since the transformation from the $\mathbf{x}$ to the $\mathbf{y}$ variables are invertible on $M' = M_{\cP}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$, the matrices $M'$ and $M_{\cP}(\mathbf{x})|_{x_{i,j} = 0; x_{i,j} \in S}$ have the same dimesion in $\R^n$. One obtains the corresponding locus in projective space by scaling by a constant, so the dimensions in projective space remain the same. 
 
 For larger $k$, it is not sufficient to use the invertibility of the change of variables as an argument that the dimension does not change. While this holds on the level of matrices, it may not hold after quotienting by $GL(k)$ in order to find the locus $L(M')$.
 
-Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, but that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever \hlfix{$|I| < l$}{$l-1$? see red}. That is, condition (i) fails to hold only for the sets $|I| = l-1$. %\st{For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.}\sanote{nix. Not used. $d_l$ means something else below}
+Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, but that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever \hlfix{$|I| < l$}{Accepted?}. That is, condition (i) fails to hold only for the sets $|I| = l-1$. %\st{For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.}\sanote{nix. Not used. $d_l$ means something else below}
 
-Note that a plane in $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$. \todo{can we talk about planes in $\Grall$? - I switched the language to 'a plane in L(M'). I think this is clear since L(M) is a set of k-planes, but could add something else.}\todo{We talk about a span of a vector in $\R^n$ and a subspace of $\Grall$. That can't be right?! - This is what I want to say, but could change language to clear things up. Taking the span of a set of vectors is well defined. So, I take the set of vectors from a (k-1)-plane union one additional vector, and this span is a k-plane in L(M). I think the confusion here is that I am thinking of the grassmannian more set theoretically for this proof, "set of planes define in a certain way". So, when I talk about a k-1 plane, i am talking about an element of that setl} Since condition (i) does not hold for $I = \{1,\dots,l-1\}$, $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
+\st{Note that a plane in $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$.} \todo{can we talk about planes in $\Grall$? - I switched the language to 'a plane in L(M'). I think this is clear since L(M) is a set of k-planes, but could add something else.}\todo{We talk about a span of a vector in $\R^n$ and a subspace of $\Grall$. That can't be right?! - This is what I want to say, but could change language to clear things up. Taking the span of a set of vectors is well defined. So, I take the set of vectors from a (k-1)-plane union one additional vector, and this span is a k-plane in L(M). I think the confusion here is that I am thinking of the grassmannian more set theoretically for this proof, "set of planes define in a certain way". So, when I talk about a k-1 plane, i am talking about an element of that setl} {\color{red} Define the rows of $M'$ such that $M'_{I\cup j}= M'$. Note that a point in $L(M')$ represeants an $l$ plane in $\R^n$ that is spanned by an element $r \in \textrm{span}(M'_j)$, plus an $l-1$ plane in $\R^n \perp \vec{r}$. }Since condition (i) does not hold for $I = \{1,\dots,l-1\}$, $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
 % 
 
 \begin{displaymath}
