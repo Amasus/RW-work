@@ -1181,7 +1181,7 @@ M =
 Then, $\mathrm{span}(M_{12})$ consists of all points in $\mathbb{R}^4$ whose last coordinate is zero. On the other hand, $\mathrm{span}(M_{13})$ consists of points of the form $(a,b,\frac{bc}{a},c)$ for some $a \in \mathbb{R} \setminus \{0\}$ and $b, c \in \mathbb{R}$ together with points of the form $(0,b,c,0)$. Finally, $\mathrm{span}(M_{123})$ is all of $\mathbb{R}^4$.
 \end{eg}
 
-\begin{thm}\label{res:Rado} {\color{red}SA: don't we need one of these to be a minimal parametrization? \\  CM: I actually don't think so. In fact, I think this theorem is strictly more general in the sense that if your variable transformation is just the identity, the condition from this theorem forces the minimality condition. \\ SA: But then how do we make the statement about the dimension being the number of variables left minus $k$ if there isn't a minimal parametrization?} \\
+\begin{thm}\label{res:Rado} {\color{red}SA: don't we need one of these to be a minimal parametrization? \\  CM: I actually don't think so. In fact, I think this theorem is strictly more general in the sense that if your variable transformation is just the identity, the condition from this theorem forces the minimality condition. \\ SA: But then how do we make the statement about the dimension being the number of variables left minus $k$ if there isn't a minimal parametrization? \\ CM: Take a parameterization that isn't minimal. Look at row operation you need to do to kill off a variable. For a minimal counterexample, taking any row on the right hand side to be $j$ and all the other rows to be $I$ will be a violation of (i). In that theorem statement, the minimality aspect is almost definitional: the subspace is parametrizable by definition, and if you have a parametrization with the same number of variables as the dimension, it must be minimal. That aspect of the theorem statement was mostly included because my argument at the time of proving it was a variable elimination thing and it seemed a good way to organize.} \\
 Let $\cV$ be a collection of subsets, and let $\mathbf{x} = \{x_{i,j}\}$ and $\mathbf{y} = \{y_{i',j'}(\mathbf{x})\}$ be two sets of algebraically independent invertible variable which are related by a change of variables. Denote by $M_{\cV}(\mathbf{x})$ and $M_{\cV}(\mathbf{y})$ the variable valued matrices associated to $\cV$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ be a subset of the variables $\bf{x}$, and write $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$. If the function $\lim_{x_{i,j} \in S \to 0} \bf{y}(\bf{x})$ is invertible, denote by $d = |\mathbf{x}| - |S|$ the number of variables in $\mathbf{x}$ outside of the set $S$. %Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. 
 
 %Let $\cV$ be a collection of subsets, and let $\mathbf{x} = x_{i,j}$ and $\mathbf{y} = y_{i,j}(\mathbf{x})$ be two sets of algebraically independent invertible variable which are related by an invertible change of variables. Let $M_{\cV}(\mathbf{x})$ and $M_{\cV}(\mathbf{y})$ be the variable valued matrices associated to $\cV$ in the variables $\mathbf{x}$ and $\mathbf{y}$. Let $S \subset \mathbf{x}$ be a subset of the variables $\bf{x}$, and write $M' = M_{\mathcal{P}}(\mathbf{y})|_{x_{i,j} = 0; x_{i,j} \in S}$.  Denote by $d = |\mathbf{x}| - |S|$ the number of variables in $\mathbf{x}$ remaining. %Let $L(M')$ be the subset of $\Gr(k,n)$ consisting of row spaces of matrices obtained by evaluating the remaining $x_{i,j}$ in $M'$ at real parameters. 
@@ -1193,7 +1193,7 @@ The following are equivalent:
 \end{thm}
 
 \begin{rmk}
-Similary to how condition 3 in Theorem \ref{res:minimalrep} should be thought of as analogous to the inequality from Hall's Matching Theorem, condition (i) above should be thought of as analogous to the condition from Rado's Theorem. Rado's Theorem is a generalization of Hall's Theorem, which says that if $S_1, \dots, S_k \subseteq \mathbb{R}^{n}$, then it is possible to select linearly independent vectors $s_1 \in S_1, \dots, s_k \in S_k$ if and only if for all $I \subseteq [k]$,
+Similarly to how Condition 3 in Theorem \ref{res:minimalrep} should be thought of as analogous to the inequality from Hall's Matching Theorem, Condition (i) above should be thought of as analogous to the condition from Rado's Theorem. Rado's Theorem is a generalization of Hall's Theorem, which says that if $S_1, \dots, S_k \subseteq \mathbb{R}^{n}$, then it is possible to select linearly independent vectors $s_1 \in S_1, \dots, s_k \in S_k$ if and only if for all $I \subseteq [k]$,
 %
 \begin{displaymath}
 \mathrm{dim}\left(\mathrm{span}\left( \bigcup_{i \in I} S_i \right) \right) \geq |I|.
@@ -1208,21 +1208,35 @@ We show that (ii) implies (i) via induction on $k$, the number of rows of $M_\cV
 
 For larger $k$, it is not sufficient to use the invertibility of the change of variables as an argument that the dimension does not change. While this holds on the level of matrices, it may not hold after quotienting by $GL(k)$ in order to find the locus $L(M')$.
 
-Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, but that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever \hlfix{$|I| < l$}{Accepted?}. That is, condition (i) fails to hold only for the sets $|I| = l-1$. %\st{For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.}\sanote{nix. Not used. $d_l$ means something else below}
+Suppose that the result holds for $k = l-1$. Let $M'$ be an $l \times n$ matrix such that $\mathrm{span}(M'_{\{1,\dots,l\}}) = \mathrm{span}(M'_{1,\dots,l-1})$, but that $\mathrm{span}(M'_I) \neq \mathrm{span}(M'_{I \cup j})$ for $j \notin I$ whenever $|I| < l$. That is, condition (i) fails to hold only for the sets $|I| = l-1$. %\st{For any subset $I \subset [k]$, let $d_I$ be the number of parameters in the $\mathbf{x}$ variables appearing in the rows of $M'$ indexed by $I$.}\sanote{nix. Not used. $d_l$ means something else below}
 
-\st{Note that a plane in $L(M')$ is spanned by an element $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$.} \todo{can we talk about planes in $\Grall$? - I switched the language to 'a plane in L(M'). I think this is clear since L(M) is a set of k-planes, but could add something else.}\todo{We talk about a span of a vector in $\R^n$ and a subspace of $\Grall$. That can't be right?! - This is what I want to say, but could change language to clear things up. Taking the span of a set of vectors is well defined. So, I take the set of vectors from a (k-1)-plane union one additional vector, and this span is a k-plane in L(M). I think the confusion here is that I am thinking of the grassmannian more set theoretically for this proof, "set of planes define in a certain way". So, when I talk about a k-1 plane, i am talking about an element of that setl} {\color{red} Define the rows of $M'$ such that $M'_{I\cup j}= M'$. Note that a point in $L(M')$ represeants an $l$ plane in $\R^n$ that is spanned by an element $r \in \textrm{span}(M'_j)$, plus an $l-1$ plane in $\R^n \perp \vec{r}$. }Since condition (i) does not hold for $I = \{1,\dots,l-1\}$, $r \in \mathrm{span}(M'_{1, \dots, l-1})$,
+A plane in $L(M')$ is spanned by a nonzero vector $r \in  \mathrm{span}(M'_{l})$, plus a $l-1$ plane in
+\begin{displaymath}
+L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1).
+\end{displaymath}
+Note that here we are talking about the Grassmannian set theoretically. So, since $\Grall(\mathbb{R}^n,k)$ is the set of $k$-planes in $\mathbb{R}^n$ and $(\mathbb{R}^n \perp r)$ is a subset of $\mathbb{R}^n$,
+\begin{displaymath}
+\Grall(\mathbb{R}^n \perp r,k) \subset \Grall(\mathbb{R}^n,k).
+\end{displaymath}
+\noindent
+Thus, when we say $L(M'_{1,\dots,l-1}) \cap \Grall(\mathbb{R}^n \perp r, k-1)$, we mean the set of $(k-1)$-planes in $L(M')$ which are orthogonal to $r$.
+%\todo{We talk about a span of a vector in $\R^n$ and a subspace of $\Grall$. That can't be right?! - This is what I want to say, but could change language to clear things up. Taking the span of a set of vectors is well defined. So, I take the set of vectors from a (k-1)-plane union one additional vector, and this span is a k-plane in L(M). I think the confusion here is that I am thinking of the Grassmannian more set theoretically for this proof, "set of planes define in a certain way". So, when I talk about a k-1 plane, i am talking about an element of that set}
+%{\color{red}
+%Define the rows of $M'$ such that $M'_{I\cup j}= M'$.
+%Note that a point in $L(M')$ represents an $l$-plane in $\R^n$ that is spanned by an element $r \in \textrm{span}(M'_j)$, plus an $l-1$ plane in $\R^n \perp \vec{r}$. }
+Since condition (i) does not hold for $I = \{1,\dots,l-1\}$, $r \in \mathrm{span}(M'_{1, \dots, l-1})$. \hlfix{So, the set of planes in $L(M'_{1,\dots,l-1})$ containing $r$ has positive dimension aside from in the trivial case when $L(M'_{1,\dots,l-1}) = \mathrm{span}(r)$.}{This doesn't really feel necessary, but maybe it helps?} Thus,
 % 
-
 \begin{displaymath}
 \dim(L(M'_{1,\dots,l-1}) \cap \Grall(k-1, \mathbb{R}^n \perp r)) < \dim(L(M'_{1,\dots,l-1})). 
-\end{displaymath}\todo{why?}
+\end{displaymath}
 %
 \noindent
+Note that the subspace of $\Grall(1,\mathbb{R}^n) \times \Grall(k-1 \mathbb{R}^n)$ obtained by evaluating $M'$ and independently taking the span of the $l$th row and of rows $1, \dots, l-1$ (ignoring matrices of improper rank) is $d-k$ by the inductive hypothesis. By the remarks above, $L(M')$ has strictly lower dimension than this set. So,
 So,
 %
 \begin{displaymath}
-\dim(L(M')) \leq \dim(L(M'_{l})) + (\dim(L(M'_{1,\dots,l-1})) - 1) = d -k - 1,
-\end{displaymath}\todo{why?}
+\dim(L(M')) \leq  d -k - 1,
+\end{displaymath}
 %
 \noindent
 and thus (ii) implies (i) when $k = l$.
