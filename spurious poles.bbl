@@ -1,0 +1,122 @@
+\begin{thebibliography}{10}
+
+\bibitem{Adamo:2011pr}
+Tim Adamo and Lionel Mason.
+\newblock {MHV} diagrams in twistor space and the twistor action.
+\newblock {\em Phys. Rev.}, D86, 03 2011.
+\newblock \url{arXiv:1103.1352}.
+
+\bibitem{Boels:2007qn}
+Rutger Boels, Lionel Mason, and David Skinner.
+\newblock {From twistor actions to MHV diagrams}.
+\newblock {\em Phys.Lett.}, B648:90--96, 2007.
+
+\bibitem{Bullimore:2010pj}
+Mathew Bullimore, Lionel Mason, and David Skinner.
+\newblock {MHV Diagrams in Momentum Twistor Space}.
+\newblock {\em JHEP}, 1012:032, 2010.
+
+\bibitem{GrassmannAmplitudebook}
+Nima {A}rkani {H}amed, Jacob Bourjaily, Freddy Cachazo, Alexander Goncharov,
+  Alexander Postnikov, and Jaroslav Trnka.
+\newblock {\em Grassmannian Geometry of Scattering Amplitudes}.
+\newblock Cambridge University Press, Cambridge, UK, 2016.
+
+\bibitem{hodges:2013eliminating}
+Andrew Hodges.
+\newblock Eliminating spurious poles from gauge-theoretic amplitudes.
+\newblock {\em Journal of High Energy Physics}, 2013(5):1--23, 2013.
+
+\bibitem{Adamo:2012xe}
+Tim Adamo and Lionel Mason.
+\newblock {Twistor-strings and gravity tree amplitudes}.
+\newblock {\em Class.Quant.Grav.}, 30:075020, 2013.
+
+\bibitem{HeslopStewart}
+Paul Heslop and Alastair Stewart.
+\newblock The twistor {W}ilson loop and the amplituhedron.
+\newblock {\em J. High Energy Phys.}, (10):142, 2018.
+\newblock \url{arXiv:1807.05921}.
+
+\bibitem{Wilsonloop}
+Susama Agarwala and Eloi~Marin Amat.
+\newblock Wilson loop diagrams and positroids.
+\newblock {\em Communications in Mathematical Physics}, 2016.
+\newblock arXiv:1509.06150.
+
+\bibitem{generalcombinatoricsI}
+Susama Agarwala, Si\^{a}n Fryer, and Karen Yeats.
+\newblock Combinatorics of the geometry of {W}ilson loop diagrams {I}:
+  equivalence classes via matroids and polytopes.
+\newblock \url{arXiv:1908.10919}.
+
+\bibitem{Postnikov}
+Alexander Postnikov.
+\newblock Total positivity, {G}rassmannians, and networks.
+\newblock \url{arXiv:math/0609764}.
+
+\bibitem{galashinlam19}
+Pavel Galashin and Thomas Lam.
+\newblock Positroid varieties and cluster algebras.
+\newblock \url{arXiv:1906.03501}.
+
+\bibitem{SS-BW}
+Khrystyna Serhiyenko, Melissa Sherman-Bennett, and Lauren Williams.
+\newblock Cluster structures in schubert varieties in the grassmannian.
+\newblock {\em Proceedings of the London Mathematical Society}, 119:1694--1744,
+  12 2019.
+
+\bibitem{AmplituhedronDecomposition}
+Steven~N. Karp, Lauren~K. Williams, and Yan~X. Zhang.
+\newblock Decompostions of amplituhedra.
+\newblock {\em Annales de L'Institut Henri Poincar\'{e} D}, 7:303--363.
+\newblock arXiv:1708.09525.
+
+\bibitem{Transversal}
+Richard~A. Brualdi and George~W. Dinolt.
+\newblock Characterizations of transversal matroids and their presentations.
+\newblock {\em Journal of Combinatorial Theory, Series B}, 12:268--286, 06
+  1972.
+
+\bibitem{basisshapeloci}
+Cameron Marcott.
+\newblock Basis shape loci and the positive grassmannian.
+\newblock \url{arXiv:1904.13361}.
+
+\bibitem{positroids13}
+Federico Ardila, Felipe Rinc{\'{o}}n, and Lauren Williams.
+\newblock Positroids and non-crossing partitions.
+\newblock {\em Transactions of the American Mathematical Society}, 2015.
+\newblock arXiv:1308.2698v2.
+
+\bibitem{generalcombinatoricsII}
+Susama Agarwala, Si\^{a}n Fryer, and Karen Yeats.
+\newblock Combinatorics of the geometry of {W}ilson loop diagrams {II}:
+  {G}rassmann necklaces, dimensions, and denominators.
+\newblock \url{arXiv:1910.12158}.
+
+\bibitem{Amplituhedronsquared}
+Burkhard Eden, Paul Heslop, and Lionel Mason.
+\newblock The correlahedron.
+\newblock 2017.
+\newblock arxiv:1701.00453.
+
+\bibitem{non-orientable}
+Susama Agarwala and Cameron Marcott.
+\newblock Wilson loops in {SYM $N=4$} do not parametrize an orientable space.
+\newblock {\em Annales De L’Institut Henry Poincar{\'e} D}.
+\newblock \url{arXiv:1807.05397}.
+
+\bibitem{casestudy}
+Susama Agarwala and Sian Fryer.
+\newblock A study in $\textrm{Gr}_{\geq 0}(2,6)$: from the geometric case book
+  of {W}ilson loop diagrams and {SYM} $n=4$.
+\newblock arXiv:1803.00958.
+
+\bibitem{Juggling}
+Allen Knutson, Thomas Lam, and David~E. Speyer.
+\newblock Positroid varieties {I}: Juggling and geometry.
+\newblock {\em Compositio Mathematica}, 149(10):1710--1752.
+\newblock arXiv:0903.3694.pdf.
+
+\end{thebibliography}

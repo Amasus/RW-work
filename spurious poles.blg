@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: spurious poles.aux
+Case mismatch error between cite keys AmplituhedronSquared and Amplituhedronsquared
+---line 75 of file spurious poles.aux
+ : \citation{AmplituhedronSquared
+ :                               }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys AmplituhedronSquared and Amplituhedronsquared
+---line 78 of file spurious poles.aux
+ : \citation{AmplituhedronSquared
+ :                               }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys AmplituhedronSquared and Amplituhedronsquared
+---line 158 of file spurious poles.aux
+ : \citation{AmplituhedronSquared
+ :                               }
+I'm skipping whatever remains of this command
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+Database file #1: Bibliography.bib
+Warning--there's a number but no volume in HeslopStewart
+Warning--empty journal in generalcombinatoricsI
+Warning--empty year in generalcombinatoricsI
+Warning--empty journal in Postnikov
+Warning--empty year in Postnikov
+Warning--empty journal in galashinlam19
+Warning--empty year in galashinlam19
+Warning--empty year in AmplituhedronDecomposition
+Warning--empty journal in basisshapeloci
+Warning--empty year in basisshapeloci
+Warning--empty journal in generalcombinatoricsII
+Warning--empty year in generalcombinatoricsII
+Warning--empty journal in Amplituhedronsquared
+Warning--empty year in non-orientable
+Warning--empty year in Juggling
+You've used 21 entries,
+            1791 wiz_defined-function locations,
+            582 strings with 6870 characters,
+and the built_in function-call counts, 3955 in all, are:
+= -- 331
+> -- 195
+< -- 0
++ -- 73
+- -- 52
+* -- 255
+:= -- 686
+add.period$ -- 71
+call.type$ -- 21
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 175
+empty$ -- 368
+format.name$ -- 52
+if$ -- 842
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 21
+newline$ -- 116
+num.names$ -- 21
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 66
+stack$ -- 0
+substring$ -- 167
+swap$ -- 14
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 15
+while$ -- 32
+width$ -- 23
+write$ -- 229
+(There were 3 error messages)
