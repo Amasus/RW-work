@@ -379,7 +379,7 @@
 
 
 
-\title{Cancellation of spurious poles in N=4 SYM: an alternative to Brexit}
+\title{Cancellation of spurious poles in N=4 SYM: physical and geometric}
 \author{Susama Agarwala, Cameron Marcott}
 %\date{}
 
@@ -402,7 +402,7 @@ TODO:
 \item SA/CM: \st{Cluster algebra discussion in section {\ref{sec:clusteralgebras}}}
 \item SA: \st{intro for all sections}
 \item CM: Final read through
-\item SA/CM: New title for paper/ appendix
+\item SA/CM: \st{New title for paper/ appendix}
 
 \end{enumerate}
 
@@ -809,7 +809,7 @@ Following (\ref{eqn:rw_vanishes}), we see that $V^* = V$. That is, the images of
 
 \section{The poles of Wilson loop diagrams \label{sec:poles}}
 
-Finally, we are ready to show that the codimension 1 singularies appearing in the integrals $I(\VP)$ cancel in the sum given in \eqref{eq:treelevelamplitude}. We do this by comparing positroid varieties with common codimension 1 boundaries that contain the vanishing loci of the polynomials $R(\VP)$. We first show that there are codimension 1 boundaries of a postitroid variety $\Sigma(\cV)$ that do not contain the vanishing loci of any factor of $R(\cV)$ with codimension 1. \hlfix{This phenomena occurs because while $L(\cV)$ is dense in $\overline{\Sigma(\cV)}$, $L(\cV)$ has empty intersection with certain boundary positroids. Since the vanishing set of $R(\VP)$ is a subset of $L(\cV)$, it will not contain these boundary positroids which do not intersect $L(\cV)$.}{maybe this is saying a little too much?}
+Finally, we are ready to show that the codimension 1 singularies appearing in the integrals $I(\VP)$ cancel in the sum given in \eqref{eq:treelevelamplitude}. We do this by comparing positroid varieties with common codimension 1 boundaries that contain the vanishing loci of the polynomials $R(\VP)$. We first show that there are codimension 1 boundaries of a postitroid variety $\Sigma(\cV)$ that do not contain the vanishing loci of any factor of $R(\cV)$ with codimension 1. This phenomena occurs because while $L(\cV)$ is dense in $\overline{\Sigma(\cV)}$, $L(\cV)$ has empty intersection with certain boundary positroids. Since the vanishing set of $R(\VP)$ is a subset of $L(\cV)$, it will not contain these boundary positroids which do not intersect $L(\cV)$.
 
 \subsection{Boundaries without poles \label{sec:boundarysanspoles}}
 
@@ -819,7 +819,7 @@ In order to reach a boundary of a positroid cell, one must send certain minors t
 
 Here, we give a characterization of a class of variable valued matrices for which this type of boundary occurs. First, we extend the definitions of $\Prop(V)$ and $V_p$ for general variable valued matrices and not just those representing Wilson loop diagrams.
 
-We consider a variable valued matrix, $M_{\cV}$ with the certain conditons on its cyclic flats. Let $V, W \subset \{1, \ldots n\}$ define cyclic flats of $M_{\cV}$ such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The sets $V$, $W$ and $V \cup W$ are cyclic intervals in $[n]$ and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that the ranks of $V$ and $W$ are related as follows: $\rk(V \setminus W) \geq \rk(W \setminus V)$. That is, the flat $V$ has non-zero entries in more rows outside of the rows of $W$ than vice versa. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non-zero entries in $\cV_V$ and $V\cup W$ such that circuits in $V$ and $W$ are preserved. In other words, for $\cV = \{V_1, \ldots \cV_n\}$ the set $\cV' = \{V'_1, \ldots \cV'_n\}$ is constructed as follows: \begin{enumerate} \item for every $V_i \in \cV_W$, write $V'_i =V_i \setminus W$ \item the number of non-zero entries in $\cV'_V$ increases from that in $\cV_V$ by the number removed from $\cV_W$: \bas \sum_{V'_i \in \cV'_V} |V'_i| = \sum_{V_i \in \cV_V} |V_i| + \sum_{V_j \in \cV_W} |V_j \cap W| \eas \item if $V_i \not \in \cV_{V\cup W}$ then $V_i = V'_i$ \end{enumerate}  An example of this type of boundary pair is given in Example \ref{eg:strangeboundary} below.
+We consider a variable valued matrix, $M_{\cV}$ with the certain conditons on its cyclic flats. Let $V, W \subset \{1, \ldots n\}$ define cyclic flats of $M_{\cV}$ such that: \begin{enumerate} \item neither flat has full rank ($\rk (V), \; \rk(W) <k$), \item  The sets $V$, $W$ and $V \cup W$ are cyclic intervals in $[n]$ and \item one cyclc flat is not contained in the other (E.g. $W \not \subset V$) \end{enumerate}  Without loss of generality, suppose that the ranks of $V$ and $W$ are related as follows: $\rk(V \setminus W) \geq \rk(W \setminus V)$. That is, the flat $V$ has non-zero entries in more rows outside of the rows of $W$ than vice versa. Then, construct the variable valued matrix $M_{\cV'}$ from $M_\cV$ by zeroing out the variable entries of $M_\cV|_{W}$ and inserting an equal number of non-zero entries in $\cV_V$ and $V\cup W$ such that circuits in $V$ and $W$ are preserved. In other words, for $\cV = \{V_1, \ldots V_n\}$ the set $\cV' = \{V'_1, \ldots V'_n\}$ is constructed as follows: \begin{enumerate} \item for every $V_i \in \cV_W$, write $V'_i =V_i \setminus W$ \item the number of non-zero entries in $\cV'_V$ increases from that in $\cV_V$ by the number removed from $\cV_W$: \bas \sum_{V'_i \in \cV'_V} |V'_i| = \sum_{V_i \in \cV_V} |V_i| + \sum_{V_j \in \cV_W} |V_j \cap W| \eas \item if $V_i \not \in \cV_{V\cup W}$ then $V_i = V'_i$ \end{enumerate}  An example of this type of boundary pair is given in Example \ref{eg:strangeboundary} below.
 
 
 \begin{prop}\label{res:moving variables}
@@ -850,7 +850,11 @@ Given a matrix $M_{\cV}$ and $M_{\cV'}$ as above, the polynomial $R(\cV)$ does n
 \end{thm} \todo{Cam: check this for correctness}
 
 \begin{proof}
-Consider the Grassmann necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann necklaces for $\cI(\cV)$ and $\cI(\cV')$ respectively. Since $\Sigma(\cV')$ is a boundary cell of $\Sigma(\cV)$, the basis set of $M(\cV')$ is contained in the basis set of $M(\cV)$. Namely, $I'_v$ is a basis set for both $M(\cV)$ and $M(\cV')$, but $I_v$ is one only for $M(\cV)$. Then select two elements, $a = I'_v \setminus I_v$. Note that the set $I'_v$ must contain elements not in the cyclic flat $V \cup W$, otherwise, $I'_v$ would not have full rank in $M(\cV')$. Therefore, chose $a$ to not be in $V \cup W$. \hlfix{Then, by the basis exchange theorem, there is some $b = I_v \setminus I'_v$ such that $B = (I_v \setminus b)\cup a$ is a basis of $M(\cV)$. The non-vanishing of any two of the minors $\{\Delta_{I_v}, \Delta_{I'_v}, \Delta_{B}\}$ in $M_\cV$ implies the non-vanishing of the third. However, in $M_{\cV'}$, $\Delta_{I_v}$ is uniformly zero. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.}{I got confused and tried to fix this. but, i think i might have broken it.}
+Consider the Grassmann necklace elements $I_v$ and $I'_v$ as above, elements of the Grassmann necklaces $\cI(\cV)$ and $\cI(\cV')$ respectively. That is, $I_v =  \{v = v_1, \ldots, v_r, w_1, \ldots w_s, u_1, \ldots u_t\}$, and $I_v' =  \{v = v_1, \ldots, v_r, u_1, \ldots u_{t+s}\}$ where $v_i \in V$, $w_i \in W$ and $u_i \not \in (V \cup W)$. Furthermore, let $I_{w_1}$ be the Grassmann necklace element of $\cI(\cV)$ that is minimal in the $<_{w_1}$ order. That is, $I_{w_1} =  \{ w_1, \ldots w_s, u_1, \ldots u_t, \ldots \}$. 
+
+Note that since the the cycles of $V$ and $W$ are the same in both $M_{\cV}$ and $M_{\cV'}$, $I_{w_1}$ is also an element of the Grassman necklace $\cI(\cV')$. That is, the set $\{ w_1, \ldots w_s\}$ is still the lexicographically minimal set of rank $s$ in $M_{\cV'}$ in the $<_{w_1}$ order. 
+
+Note that the minors $\{\Delta_{I_v}, \Delta_{I_v'}, \Delta_{I_{w_1}}\}$ are non-zero in $\Sigma(\cV)$. Furthermore, the $\Delta_{I_v} = 0$ in $L(\cV)$, this implies that either $\{v_1, \ldots, v_r\}$ is not independent, in which case $\Delta_{I_v'} = 0$, $\{w_1, \ldots, w_s\}$ is not independent, in which case $\Delta_{I_{w_1}} = 0$ or $\{w_1, \ldots, w_s\}$ is not independent, in which case $\Delta_{I_{w_1}} = 0$ or $\{u_1, \ldots, u_t\}$ is not independent, in which case both $\Delta_{I_v}$ and $\Delta_{I_{w_1}} = 0$. Since the columns $V$, $W$ and $(V \cup W)^c$ have non-zero entries in different sets of rows in $M_{\cV}$, these are the only possible combinations in $L(\cV)$. In otherwords, if $\Delta_{I_v} = 0$ in $L(\cV)$, then either $\Delta_{I_{w_1}}$ or $\Delta_{I_v}$ also vanishes. However, in $L(\cV')$, $\Delta_{I_v}$ a uniformly zero while $\Delta_{I_{w_1}}$ and $\Delta_{I_v'}$ are not. Therefore, $L(\cV)$ does not contain the positroid cell $\Sigma(\cV')$.
 
 By Proposition \ref{res:vanishonbdny}, we have that $R(\cV)$ vanishes on $L(\cV) \setminus \Sigma(\cV)$. Therefore, $R(\cV)$ does not vanish on $\Sigma(\cV')$. 
 \end{proof}
@@ -1064,7 +1068,7 @@ We remark that this cancelation is exact only in the space parametrized by matri
 \end{rmk}
 
 \begin{appendices} 
-\section{Graveyard of Technical Lemmas \label{sec:appendix}} 
+\section{Pole Cancellation calculations \label{sec:appendix}} 
 In this section, we present some calculations to aid in the understanding of the cancelation of spurious poles. Many of the results here can be found in \cite{casestudy, Amplituhedronsquared, HeslopStewart}. However, they are presented here for completeness.
 
 Recall from Definition \ref{dfn:I(W)} that \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times n+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \;.\eas Write $\cZ_*^i$ to indicate the $i^{th}$ column of $\cZ_*$ and $\cZ_*^\mu$ to indicate the matrix formed by taking the first 4 columns of $\cZ_*$. Then evaluating the integral $I(\VP)$ corresponds to localizing the expression \bas \frac{\prod_{b = 1}^k (Y_b \cdot \cZ_*^b)^4}{R(\VP)}\eas at the solution to $M_{\YP} \cdot \cZ_*^\mu = 0$. Writing the propagator $p = (i, j)$ with $i <j$,  Cramer's rule implies that this localization evaluates to \ba x_{p, 0} &= \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \\ x_{p, i} = \det(Z_0^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; &; \; x_{p, i+1} = \det( Z_{i}^\mu, Z_0^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; \text{ etc.} \label{eq:matrixvalues}\ea That is, the entry $x_{p, m}$ evaluates to the minor of $\cZ_*^\mu$ indicated by the rows in $V_p$, with the $m^{th}$ row replaced by $Z_0^\mu$.
@@ -1287,7 +1291,7 @@ Since $\mathrm{span}(M'_{p}) \neq \mathrm{span}(M'_{q})$, the equality $\mathrm{
 \ba \mathrm{span}(M'_{r})  \subseteq \mathrm{span}(M'_{P\setminus q}) \label{eq:spandfact2}\;.\ea
 
 
-We claim that this cannot be true. Since $q \in P$ but $p$ is not, we have the equality $M'_{P\setminus q} = M_{\cV(P\setminus q)}$ because the propagator set $P \setminus q$ is unaffected by the limits defining the matrix $M'$. Note that the propagator set $(P\setminus q) \cup r$ is an admissible Wilson loop diagram. By Theorem \ref{res:minimalrep}\hlfix{,}{changed this to talk about locus instead of matrix, which i think is right?}
+We claim that this cannot be true. Since $q \in P$ but $p$ is not, we have the equality $M'_{P\setminus q} = M_{\cV(P\setminus q)}$ because the propagator set $P \setminus q$ is unaffected by the limits defining the matrix $M'$. Note that the propagator set $(P\setminus q) \cup r$ is an admissible Wilson loop diagram. By Theorem \ref{res:minimalrep},
 \bas \dim(L(\cV((P\setminus q) \cup r))) = \dim(L(\cV(P\setminus q))) + 3
 ,\eas
 which contradicts \eqref{eq:spandfact2}. Therefore, condition (i) of Theorem \ref{res:Rado} must hold, and thus the limit $w \rightarrow 0$ defines a codimension $1$ subspace of $L(M_{\VP})$.
