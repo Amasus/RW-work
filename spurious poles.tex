@@ -503,7 +503,7 @@ Given a matroid $M = (E, \mathcal{B})$, and a subset $S \subset E$, the restrict
 A matroid is representable if it can be written as a matrix with the same independence data. In particular, since the matrices $M_\cV$ have algebraically independent non-zero entries, it is straight forward to read off the matriod associated to the collection of sets $\cV$.
 
 \begin{eg}\label{eg:variablevaluesasmatroids}
-Given a collection of subsets $\cV$ as in Definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a ground set consisting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a circuit in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$, i.e. $|\cV_S| < |S|$ \hlfix{and no proper subset of $S$ has this property. Additionally, any zero column of $M_\cV$ is a circuit.}{I think this is now correct with this addition} More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ contains minimally dependent set if there are fewer rows with non-zero entries than columns indicated by $S$.  %A $k$ element subset $S \subset E$ is a basis if and only if the $k \times k$ minor corresponding to $S$, with determinants computed in the ring $\mathbb{R}(\mathbf{x})$, is \hlfix{nonzero.}{i switched this definition to be in terms of bases. commented out, it was inaccurate but in terms of independent sets. if we want the independent set version, i can add that.} %
+Given a collection of subsets $\cV$ as in Definition \ref{dfn:variablevaluedmatrix}, we may define a matroid with a ground set consisting of the columns of $M_\cV$. That is, $E = \{1, \ldots , n\}$. Then, for each subset $S \subset E$ and corresponding set of subsets $\cV_S$ as defined in Definition \ref{dfn:columns}, the set $S$ is a circuit in the matroid defined by $M_\cV$, if $\cV_S$ contains strictly fewer elements than $S$, i.e. $|\cV_S| < |S|$ \hlfix{and no proper subset of $S$ has this property. Additionally, any zero column of $M_\cV$ is a cycle.}{I think this is now correct with this addition} More informally, since the elements of $V$ correspond to rows of $M_\cV$, and the elements of $S$ its columns, this is simply saying that the set of columns $S$ contains minimally dependent set if there are fewer rows with non-zero entries than columns indicated by $S$.  %A $k$ element subset $S \subset E$ is a basis if and only if the $k \times k$ minor corresponding to $S$, with determinants computed in the ring $\mathbb{R}(\mathbf{x})$, is \hlfix{nonzero.}{i switched this definition to be in terms of bases. commented out, it was inaccurate but in terms of independent sets. if we want the independent set version, i can add that.} %
 \end{eg}
 
 \begin{dfn}\label{dfn:matroid}
@@ -888,19 +888,24 @@ The Wilson loop diagram\bas W =  \begin{tikzpicture}[rotate=67.5,baseline=(curre
 
 From Proposition \ref{res:vanishonbdny}, the vanishing set of $R(\VP)$ is exactly $L(\VP) \setminus \Sigma(\VP)$. We show that there is a codimension one boundary of $\Sigma(\VP)$ that does not intersect the vanishing set of $R(\VP)$. 
 
-Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$ as defined in Theorem \ref{res:moving variables}. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(\VP)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(\VP)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanishing on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\VP)$, the non-vanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the non-vanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(\VP)$ does not intersect this boundary and hence $R(\VP)$ does not vanish on $\Sigma(\cV')$.
+Let $\Sigma(\cV')$ be the positroid cell defined by the matrix $M_{\cV'}$ as defined in Theorem \ref{res:moving variables}. By construction $\Sigma(\cV')$ lies on the boundary of $\Sigma(\VP)$. We show that $\overline{\Sigma(\cV')}$ does not contain the vanishing loci of any of the factors of $R(\VP)$. The minors $\Delta_{13}$ and $\Delta_{15}$ are both non-vanishing on $\Sigma(\cV')$, while $\Delta_{35}$ is uniformly zero. However, on $L(\VP)$ the non-vanishing of the minors $\Delta_{13}$ and $\Delta_{15}$ implies the non-vanishing of the minor $\Delta_{35}$. Since $\Delta_{35}$ vanishes on $\Sigma(\cV')$, $L(\VP)$ does not intersect this boundary and hence $R(\VP)$ does not vanish on $\Sigma(\cV')$.
 
 Note that $W = \{ 3, 4\}$, and $V = \{5, 6\}$ are two cyclic flats of $M_{\VP}$ that satisfy the conditions of the proposition. Then, up to permutations of the rows, there is only one choice for $M_{\cV'}$: \bas M_{\cV'} = \begin{bmatrix} x_{1,1} &  x_{1,2} & 0 & 0 & 0 &0 \\x_{2,1} &  x_{2,2} & x_{2,3} &  x_{2,4}& x_{2,5} & x_{2,6} \end{bmatrix} \;. \eas Note that while this is not the same matrix as $M_{\D\cV}$ these two matrices do represent the same matroid, which can be seen by comparing basis sets. In fact, the matrix $M_{\cV'}$ is a non-minimal representation of the matrix $M_{\D\cV}$.
 \end{eg}
 
 \begin{rmk}
-As remarked in Example \ref{eg:strangeboundary}, the matrix $M_{\cV'}$ defined above Lemma \ref{res:moving variables} does not have the minimal number of parameters to represent the boundary positroid $\Sigma(\cV')$. In particular, we have that  \bas |\bigcup_{V \in \cV'}V| = 6 \quad \textrm{ while } \max_{V \in  \cV'} (|V|) + |\mathcal{V}| +1 = 5 + 2 +1 = 8 \;.\eas Therefore, setting $\cV' = \mathcal{T}$, we see that the third equivalence of Theorem \ref{res:minimalrep} doesn't hold, and thus $M_{\cV'}$ is not a minimal representation. In fact, there is a $GL(k)$ transformation taking $M_{\cV'}$ to $M_{\D\cV}$: \bas \begin{bmatrix}1 & 0  \\ -\frac{x_{q_1}}{x_{p_1}} & 1 \end{bmatrix}  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\x_{q,1}  &  x_{q,2} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} =  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\0  &  x_{q,2} -\frac{x_{q_1}x_{p_2}}{x_{p_1}} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} \eas \end{rmk}
+As remarked in Example \ref{eg:strangeboundary}, the matrix $M_{\cV'}$ defined above Lemma \ref{res:moving variables} does not have the minimal number of parameters to represent the boundary positroid $\Sigma(\cV')$. In particular, we have that  \bas |\bigcup_{V \in \cV'}V| = 6 \quad \textrm{ while } \max_{V \in  \cV'} (|V|) + |\mathcal{V}| +1 = 5 + 2 +1 = 8 \;.\eas Therefore, setting $\cV' = \mathcal{T}$, we see that the third equivalence of Theorem \ref{res:minimalrep} doesn't hold, and thus $M_{\cV'}$ is not a minimal representation. In fact, there is a $GL(k)$ transformation taking $M_{\cV'}$ to $M_{\D\cV}$: \bas \begin{bmatrix}1 & 0  \\ -\frac{x_{q_1}}{x_{p_1}} & 1 \end{bmatrix}  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\x_{q,1}  &  x_{q,2} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} =  \begin{bmatrix} x_{p,1}&  x_{p,2} & 0& 0 &0 &0 \\0  &  x_{q,2} -\frac{x_{q_1}x_{p_2}}{x_{p_1}} & x_{q,3}&  x_{q,4}& x_{q,5} & x_{q,6} \end{bmatrix} \;. \eas \end{rmk}
 
 
 
 The requirement that $V$ and $W$ are cyclic intervals may seem arbitrary until one considers that all flacets of a matroid are cyclic intervals if and only if the matroid is a positroid, and that all flacets are cyclic intervals. In some moral sense, the algorithm prescribed in Proposition \ref{res:moving variables} aims to combine two flacets into a larger flacets in order to define a new positroid cell. 
 
-In the particular case of Wilson loop diagrams ($W = (\cP, [n])$), recall from Lemma 2.28 of \cite{Wilsonloop} that all cyclic flats can be represented as a propagator flat, $F(P)$, and that by Lemma 3.35 of the same, any propagator flat that is a cyclic flat has rank equal to the number of propagators in the set defining it. Therefore, the boundaries of the sort considered in Lemma \ref{res:moving variables} occur when there are two propagators flats $F(P)$ and $F(Q)$ such that \begin{enumerate} \item Neither $P$ nor $Q$ are the full propagators set, $\cP$. \item The sets $F(P)$, $F(Q)$ and $F(P) \cup F(Q)$ form cyclic intervals in $[n]$, \item One propagator set is not contained in the other. \end{enumerate} It is easy to check that these conditions are met in the Wilson loop diagram $W$ in Example \ref{eg:strangeboundary}.
+In the particular case of Wilson loop diagrams ($W = (\cP, [n])$), recall from Lemma 2.28 of \cite{Wilsonloop} that all cyclic flats can be represented as a propagator flat, $F(P)$, and that by Lemma 3.35 of the same any propagator flat that is a cyclic flat has rank equal to the number of propagators in the set defining it. Therefore, the boundaries of the sort considered in Lemma \ref{res:moving variables} occur when there are two propagators flats $F(P)$ and $F(Q)$ such that: 
+\begin{enumerate} 
+\item Neither $P$ nor $Q$ are the full propagators set, $\cP$. 
+\item The sets $F(P)$, $F(Q)$ and $F(P) \cup F(Q)$ form cyclic intervals in $[n]$.
+\item One propagator set is not contained in the other. \end{enumerate} 
+It is easy to check that these conditions are met in the Wilson loop diagram $W$ in Example \ref{eg:strangeboundary}.
 
 
 \subsection{Cancelation of poles on the boundary \label{sec:cancelation}}
@@ -962,7 +967,7 @@ We first consider all the possible degree 1 factors of $R(\VP)$. Write $W = (\cP
 	\drawnumbers
 	\drawlabeledprop{1}{0}{5}{1}{$p$}
         \modifiedprop{2}{0}{5}{-1}{propagator, dashed}
-	\end{scope} \end{tikzpicture} $ Suppose $j > i+2$ (i.e. if $V_p$ does not consist of $4$ cyclically consecutive vertices) and, without loss of generality, assume $x_{p, i}$ is a factor of $R(\VP)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ that is identical to $W$ except that the propagator $p$ is replaced by $q$. Then $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopStewart, Amplituhedronsquared}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a co-dimension 1 boundary of $\Sigma(\VP)$ \todo{Cam, what should I cite here?}. It is easy to check that $W'$ satisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not \in \cP$, and $W$ satisfies density) conditions for admissibility. Therefore $W'$ is admissible. 
+	\end{scope} \end{tikzpicture} $ Suppose $j > i+2$ (i.e. if $V_p$ does not consist of $4$ cyclically consecutive vertices) and, without loss of generality, assume $x_{p, i}$ is a factor of $R(\VP)$. Then if $q = (i+1, j) \not \in \cP$ the we may define another diagram $W' = ((\cP \setminus p) \cup q, [n])$ that is identical to $W$ except that the propagator $p$ is replaced by $q$. Then $\lim_{x_{p, i} \rightarrow 0} I(\VP) = -\lim_{x_{q, i+2} \rightarrow 0} I(W')$, where the negative sign comes from the evaluation of $\delta^{4k|4k}$ (see Lemma \ref{lem:movingpropnegative}). For more details on the minus signs, see \cite{casestudy, HeslopStewart, Amplituhedronsquared}. By the arguments of \cite{basisshapeloci}, we see that this parametrizes a codimension 1 boundary of $\Sigma(\VP)$ \todo{Cam, what should I cite here?}. It is easy to check that $W'$ satisfies both non-crossing (because $W$ satisfies non-crossing) and the density (because $q \not \in \cP$, and $W$ satisfies density) conditions for admissibility. Therefore $W'$ is admissible. 
 
 \textbf{Case 1a:} $  \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
 	\drawWLD{8}{1}
@@ -1005,7 +1010,7 @@ We first consider all the possible degree 1 factors of $R(\VP)$. Write $W = (\cP
 	\drawnumbers
 	\drawlabeledprop{3}{1}{6}{0}{$p$}
         \drawlabeledprop{9}{0}{3}{-1}{$q$}
-        \end{scope} \end{tikzpicture} $ Next, we consider the degree 2 factors of $R(\VP)$. If such a factor exists, there must be two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjacent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams formed by replacing the propagator $p$ and $q$ by r: $W' = (\cP' = (\cP \setminus p) \cup r, [n])$ and $W'' = (\cP'' = (\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ both satisfy density. Furthermore, since $W$ is admissible, and $p$ and $q$ are adjacent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the other endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy the non-crossing condition. Thus, $W'$ and $W''$ are both admissible. Note that the diagrams $W$, $W'$ and $W''$ are in the configuration laid out in display \eqref{eq:wideV}. By Corrollary \ref{res:reparamdim}, we see that the reparameterization performed in Lemma \ref{lem:simplifyR(W)} means that $\lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} M_{\VP}$  parameterized a codimension one subspace of $\overline{\Sigma(\VP)}$. By Proposition \ref{res:vanishonbdny}, this is lies in a codimension one boundary of $\Sigma(\VP)$. According to Lemma \ref{res:Vdiagcancel}, after appropriate changes of parameterizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(\VP') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(\VP) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(\VP'') = 0 \; .\eas 
+        \end{scope} \end{tikzpicture} $ Next, we consider the degree 2 factors of $R(\VP)$. If such a factor exists, there must be two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. Suppose $k > j+1$, that is, the other endpoints of $p$ and $q$ are not on adjacent edges. If $r = (j,k) \not \in \cP$, consider two other diagrams formed by replacing the propagator $p$ and $q$ by r: $W' = (\cP' = (\cP \setminus p) \cup r, [n])$ and $W'' = (\cP'' = (\cP \setminus q) \cup r, [n])$. Since $k> j+1$ and $r \not \in \cP$, both $W'$ and $W''$ satisfy density. Furthermore, since $W$ is admissible, and $p$ and $q$ are adjacent on the edge $i$, there does not exist a propagator $(i, m)$ with $j < m <k$, that is, that has one endpoint on the $i^{th}$ edge, and the other between the other endpoints of $p$ and $q$. Therefore, $W'$ and $W''$ satisfy the non-crossing condition. Thus, $W'$ and $W''$ are both admissible. Note that the diagrams $W$, $W'$ and $W''$ are in the configuration laid out in display \eqref{eq:wideV}. By Corrollary \ref{res:reparamdim}, we see that the reparameterization performed in Lemma \ref{lem:simplifyR(W)} means that $\lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} M_{\VP}$  parameterizes a codimension one subspace of $\overline{\Sigma(\VP)}$. By Proposition \ref{res:vanishonbdny}, this is lies in a codimension one boundary of $\Sigma(\VP)$. According to Lemma \ref{res:Vdiagcancel}, after appropriate changes of parameterizations, one may write \bas \lim_{(x_{r,k}x_{q,k+1} -x_{r,k+1}x_{q,k})\rightarrow 0}I(\VP') +  \lim_{(x_{p,i}x_{q,i+1} -x_{p,i+1}x_{q,i})\rightarrow 0} I(\VP) + \lim_{(x_{p,j}x_{r,j+1} -x_{p,j+1}x_{r,j})\rightarrow 0}I(\VP'') = 0 \; .\eas 
 \begin{comment}
 That is, the limits represented by the following diagrams, parameterize the same codimension one subspace in the intersection $\Sigma(\VP) \cap \Sigma(\VP') \cap \Sigma(\VP'')$.    \bas \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	\begin{scope}
@@ -1032,7 +1037,7 @@ That is, the limits represented by the following diagrams, parameterize the same
         \drawprop{5}{0}{8}{-1}
 		\end{scope}
 	\end{tikzpicture}\eas \end{comment}
-In otherwords, these three singulariries, which lie on the common codimension one boundary positroid of $\Sigma(\VP)$, $\Sigma(\VP')$ and $\Sigma(\VP'')$, cancel in the sum of integrals in the tree level amplitude.
+In other words, these three singulariries, which lie on the common codimension one boundary positroid of $\Sigma(\VP)$, $\Sigma(\VP')$ and $\Sigma(\VP'')$, cancel in the sum of integrals in the tree level amplitude.
 
 \textbf{Case 3a:} $\begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)] \begin{scope}
 	\drawWLD{8}{1}
@@ -1091,14 +1096,14 @@ In this section, we present some calculations to aid in the understanding of the
 Recall from Definition \ref{dfn:I(W)} that \bas \cI(\VP) (\cZ_*)  = \int_{(\RP^4)^k} \frac{\prod_{p \in \cP} \prod_{v \in V_p} dx_{p, v}}{R(\VP)} \delta^{4k|4k}(M_{\YP} \cdot \cZ_*) \eas where, for $X$ a $k \times n+4$ matrix, \bas \delta^{4k|4k}(X) = \prod_{b =1}^k (X_{b, 4+b})^4\delta^4((X_{b,1},X_{b,2},X_{b,3},X_{b,4}))  \;.\eas Write $\cZ_*^i$ to indicate the $i^{th}$ column of $\cZ_*$ and $\cZ_*^\mu$ to indicate the matrix formed by taking the first 4 columns of $\cZ_*$. Then evaluating the integral $I(\VP)$ corresponds to localizing the expression \bas \frac{\prod_{b = 1}^k (Y_b \cdot \cZ_*^b)^4}{R(\VP)}\eas at the solution to $M_{\YP} \cdot \cZ_*^\mu = 0$. Writing the propagator $p = (i, j)$ with $i <j$,  Cramer's rule implies that this localization evaluates to \ba x_{p, 0} &= \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \label{eq:matrixvalues1} \\ x_{p, i} = \det(Z_0^\mu, Z_{i+1}^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; &; \; x_{p, i+1} = \det( Z_{i}^\mu, Z_0^\mu, Z_{j}^\mu, Z_{j+1}^\mu ) \; \text{ etc.} \label{eq:matrixvalues2}\ea That is, the entry $x_{p, m}$ evaluates to the minor of $\cZ_*^\mu$ indicated by the rows in $V_p$, with the $m^{th}$ row replaced by $Z_0^\mu$.
 
 \begin{lem} \label{lem:movingpropnegative}
-For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j} = -x_{q, j+2}$
+For two propagators $p = (i, j)$ and $q = (i, j+1)$, after localization $x_{p, j} = -x_{q, j+2}$.
 \end{lem} 
 
 \begin{proof}
 By the above arguments, note that $x_{p, j} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{0}^\mu, Z_{j+1}^\mu )$ while $x_{q, j+2} = \det(Z_i^\mu, Z_{i+1}^\mu, Z_{j+1}^\mu , Z_{0}^\mu )$. Thus these two values are negatives.
 \end{proof}
 
-Sometimes, as in Theorem \ref{res:polesonboundaries} and Theorem \ref{res:deg1polescancel}, it is necessary to perform changes of variables in order to perform the cancellation of variables. For ease of calculation, we introduce a simplifying change of variables:
+Sometimes, as in Theorem \ref{res:polesonboundaries} and Theorem \ref{res:deg1polescancel}, it is necessary to perform changes of variables in order to cancel the singularities in this paper. For ease of calculation, we introduce a simplifying change of variables:
 \begin{lem}\label{lem:simplifyR(W)}
 Consider two propagators $p = (i, j)$ and $q = (i, k)$ that are adjacent on the $i^{th}$ edge of a Wilon loop diagram $(\cP, [n])$, with $p$ appearing closer to the vertex $i$ and $q$ closer to the vertex $i+1$. There is a reparameterization of the matrix $M_{\VP}$ under which one can replace the factor $x_{p, i}(x_{p, i}x_{q, i+1} - x_{p, i+1}x_{q, i})x_{q, i+1}$ in $R(\VP)$ with the product of 4 terms: $xyzw$.
 \end{lem}
@@ -1121,14 +1126,14 @@ In future, we use whichever parameterization of the two by two  minors is conven
 	\drawprop{1}{0}{3}{-1}
 	\drawprop{3}{1}{8}{0}
 		\end{scope}
-	\end{tikzpicture} \\ \textrm{Config 3} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
+	\end{tikzpicture} \quad ; \\ \textrm{Config 3} = \begin{tikzpicture}[rotate=67.5,baseline=(current bounding box.east)]
 	 \begin{scope}
 	\drawWLD{10}{1.2}
 	\drawnumbers
 	\drawprop{1}{0}{8}{1}
 	\drawprop{3}{0}{8}{-1}
 		\end{scope}
-	\end{tikzpicture}  \label{eq:wideV}\eml
+	\end{tikzpicture}  \quad . \label{eq:wideV}\eml
 
 \begin{lem}\label{res:Vdiagcancel}
 Let $(\cP_1, [n])$, $(\cP_2, [n])$ and $(\cP_3, [n])$ be admissible Wilson loop diagrams that are identical except for the fact that the propagator set $\cP_i$ contains the pair of adjacent propagators shown in $\textrm{Config i}$ above. Then 
@@ -1187,7 +1192,7 @@ the matrices in Theorem \ref{res:minimalrep} have the restriction that entries a
 We begin with a few definitions. 
 
 \begin{dfn}
-For an $k \times n$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $M_I$ to be the matrix formed by restricting $M$ to the rows $I$, and let $\mathrm{span}(M_I)$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters. Let $\mathrm{span}(M_{\emptyset})$ be the origin in $\mathbb{R}^n$.
+For a $k \times n$ variable valued matrix $M$ and a set $I \subseteq [k]$, define $M_I$ to be the matrix formed by restricting $M$ to the rows $I$, and let $\mathrm{span}(M_I)$ be the subset of $\mathbb{R}^n$ obtained by evaluating linear combinations of the rows $M$ indexed by $I$ at real parameters. Let $\mathrm{span}(M_{\emptyset})$ be the origin in $\mathbb{R}^n$.
 \end{dfn}
 
 Note that these matrices are different from the variable valued matrices defined by $M_{\cV}$ above. We relax the requirement that each entry of the matrix be algebraically independent of all the others. Furthermore, while the entries of $M_I$ are functions of independent variables, the entries themselves may be related by algebraic functions.
@@ -1277,7 +1282,7 @@ Suppose the result holds for $k = l-1$ and let $M'$ be an $l \times n$ matrix su
 Then, for a generic point $r \in \mathrm{span}(M'_{l})$ that comes from evaluating the last row of $M'$, note that $r \notin \mathrm{span}(M'_{1,\dots,l-1})$. So, $L(M'_{1,\dots,l-1})\cap \Grall(k-1, \mathbb{R}^n \perp r) = L(M'_{1,\dots,l-1})$. In other words
 %
 \begin{displaymath}
-\dim(L(M'_{1,\dots,l-1}) \cap \Grall(k-1, \mathbb{R}^n \perp r)) = \dim(L(M'_{1,\dots,l-1})) = d - d_l -(l-1)\;.
+\dim(L(M'_{1,\dots,l-1}) \cap \Grall(k-1, \mathbb{R}^n \perp r)) = \dim(L(M'_{1,\dots,l-1})) = d - d_l -(l-1)\;,
 \end{displaymath}
 %
 \noindent
@@ -1292,14 +1297,14 @@ where, by induction $\dim(L(M'_{1,\dots,l-1})) = d - d_l -(l-1)$. Thus,
 Given Theorem \ref{res:Rado}, we see that the boundaries defined in Lemma \ref{res:Vdiagcancel} and Lemma \ref{res:narrowVcancel} do in fact give rise to codimension one boundaries of $\Sigma(\VP)$.
 
 \begin{cor} \label{res:reparamdim}
-Let $(\cP, [n])$ be a diagram with propagators two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. After the reparameterization define in Lemma \ref{lem:simplifyR(W)}, setting $w$ to zero reduces the dimension by $1$ if and only if there is not a propagator $r = (j, k)$ in $\cP$.
+Let $(\cP, [n])$ be a diagram with two propagators $p = (i, j)$ and $q = (i, k)$ adjacent on the edge $i$. After the reparameterization define in Lemma \ref{lem:simplifyR(W)}, setting $w$ to zero reduces the dimension by $1$ if and only if there is not a propagator $r = (j, k)$ in $\cP$.
 \end{cor}
 \begin{proof}
-For a Wilson loop diagram $(\cP, [n])$, let $\bf{x}$ be the parameterization that includes the variable $w$, and let $\bf{y}$ be the other set of variables. Note that the Jacobian for the change of variables given in Lemma \ref{lem:simplifyR(W)} has zero determinant when $x$ is sent to $0$. When $w$ are set to zero, the determinant of the Jacobian remains non-zero. Without loss of generality, assume that $w$ is a variable in the row corresponding to the propagator $p$.
+For a Wilson loop diagram $(\cP, [n])$, let $\bf{x}$ be the parameterization that includes the variable $w$, and let $\bf{y}$ be the other set of variables. Note that the Jacobian for the change of variables given in Lemma \ref{lem:simplifyR(W)} has zero determinant when $x$ is sent to $0$. When $w$ is set to zero, the determinant of the Jacobian remains non-zero. Without loss of generality, assume that $w$ is a variable in the row corresponding to the propagator $p$.
 
-Further note that whether or not $r$ is not in $\cP$, the diagram $(\cP \cup r, [n])$ is admissible. If $r$ does not exists in $\cP$, then adding it does not violate density. Furthermore, because $p$ and $q$ are adjacent, adding $r$ does not violate the non-crossing condition either. 
+Further note that whether or not $r$ is in $\cP$, the diagram $(\cP \cup r, [n])$ is admissible. If $r$ does not exist in $\cP$, then adding it does not violate density. Furthermore, because $p$ and $q$ are adjacent, adding $r$ does not violate the non-crossing condition either. 
 
-First we show that when $r \in \cP$, when one sets $w = 0$, the dimension of the span of a row set does not increase with the rows included in the set. In particular, we may write $x_{q, i} = \lambda x_{p, i}$ and $x_{q, i+1} = \lambda x_{p, i+1}$, with $\lambda$ a real variable. By adding a scalar multiple of $M'_p$ to $M'_q$, one gets a row that has independent variable entries exactly in the columns $V_r =\{j, j+1, k, k+1\}$. If $r$ is in $\cP$, the span of the rows $p$ and $q$ contains the span of the row $r$ in $\R^n$:
+First we show that when $r \in \cP$, when one sets $w = 0$ the dimension of the span of a row set does not increase with the rows included in the set. In particular, we may write $x_{q, i} = \lambda x_{p, i}$ and $x_{q, i+1} = \lambda x_{p, i+1}$, with $\lambda$ a real variable. By adding a scalar multiple of $M'_p$ to $M'_q$, one gets a row that has independent variable entries exactly in the columns $V_r =\{j, j+1, k, k+1\}$. If $r$ is in $\cP$, the span of the rows $p$ and $q$ contains the span of the row $r$ in $\R^n$:
 \ba \mathrm{span}(M'_{\{p,q\}}) =  \mathrm{span}(M'_{\{p,q,r\}})\;.\label{eq:spanfact}\ea Thus, Theorem \ref{res:Rado} implies this boundary does not have codimension one
 
 Next, suppose $r \not \in \cP$. In this case, assume toward contradiction there is a set of propagators $P \subset \cP$ such that $p \not \in P$ and  $\mathrm{span}(M'_{P \cup p}) = \mathrm{span}(M'_P)$. Without loss of generality, assume that $P$ one of the smallest sets of propagators such that this is true. Note that $P$ cannot exist if $q \not \in P$, since all the variables in $M'_p$ and $M'_q$ are algebraically independent from the variables in $M'_{P\setminus \{p,q\}}$. Therefore, without loss of generality, assume $q \in P$. 
